@@ -1,0 +1,18 @@
+<div class="container productsContainer grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+  {% for product in collections.all.products %}
+    {% comment %} {{ product.title | link_to: product.url }} {% endcomment %}
+    {% render 'product-item', product: product %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "All Products",
+  "settings": [],
+  "presets": [
+    {
+      "name": "All Products"
+    }
+  ]
+}
+{% endschema %}
