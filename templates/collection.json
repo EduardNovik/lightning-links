@@ -1,0 +1,115 @@
+{
+  "wrapper": "div.row.row--product-list",
+  "sections": {
+    "banner": {
+      "type": "banner--collection",
+      "settings": {
+        "layout": "default",
+        "height": 50,
+        "horizontalAlignment": "start",
+        "verticalAlignment": "middle",
+        "showTitle": false,
+        "showNumber": false,
+        "fontSize": "medium",
+        "showDescription": false,
+        "truncateReadMore": true,
+        "truncateDesc": 0,
+        "contentColor": "rgba(0,0,0,0)",
+        "fillColor": "rgba(0,0,0,0)",
+        "useCollectionImage": false,
+        "overlayOpacity": 0,
+        "overlayColor": "#000000"
+      }
+    },
+    "product_filter_VG7En3": {
+      "type": "product-filter",
+      "settings": {
+      }
+    },
+    "sort": {
+      "type": "sort",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "filters": {
+      "type": "product-list__filters",
+      "blocks": {
+        "filter-01": {
+          "type": "filter",
+          "settings": {
+            "hideDisabled": true,
+            "expanded": true,
+            "useSwatch": true,
+            "useSwatchList": "color, colour"
+          }
+        },
+        "575fbbc3-ab84-4ffe-875f-95aba38a0479": {
+          "type": "typeList",
+          "settings": {
+            "expanded": true,
+            "name": "Car Types"
+          }
+        },
+        "ff78a5c4-b351-41aa-89bc-337d9917e9cd": {
+          "type": "brandList",
+          "settings": {
+            "expanded": true,
+            "name": "Vendors"
+          }
+        }
+      },
+      "block_order": [
+        "filter-01",
+        "575fbbc3-ab84-4ffe-875f-95aba38a0479",
+        "ff78a5c4-b351-41aa-89bc-337d9917e9cd"
+      ],
+      "disabled": true,
+      "settings": {
+        "filter": true
+      }
+    },
+    "content": {
+      "type": "product-list",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "banner-bottom": {
+      "type": "banner--collection__desc",
+      "disabled": true,
+      "settings": {
+        "enabled": false,
+        "layout": "default",
+        "height": 300,
+        "horizontalAlignment": "center",
+        "verticalAlignment": "middle",
+        "showTitle": false,
+        "showNumber": true,
+        "fontSize": "medium",
+        "showDescription": true,
+        "truncateReadMore": true,
+        "truncateDesc": 0,
+        "contentColor": "rgba(0,0,0,0)",
+        "fillColor": "rgba(0,0,0,0)",
+        "useCollectionImage": false,
+        "overlayOpacity": 0,
+        "overlayColor": "#000000"
+      }
+    },
+    "all_products_XCnc3G": {
+      "type": "all-products",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product_filter_VG7En3",
+    "sort",
+    "filters",
+    "content",
+    "banner-bottom",
+    "all_products_XCnc3G"
+  ]
+}

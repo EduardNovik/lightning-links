@@ -1,0 +1,57 @@
+const body = document.querySelector("body");
+const forPartnersButtons = document.querySelectorAll(".forPartnersButton");
+const forPartnersPopup = document.getElementById("for-partners-popup");
+const closePopupButton = document.getElementById("closePopupButton");
+const cancelPopupButton = document.getElementById("cancelButton");
+const successPopup = document.getElementById("successPopup");
+const sendButtonInForPartnersPopup = document.getElementById(
+  "sendButtonInForPartnersPopup"
+);
+const quickOrderPopup = document.getElementById("quick-order-popup");
+const sendButtonInQuickOrderPopup = document.getElementById(
+  "sendButtonInQuickOrderPopup"
+);
+const quickOrderBtn = document.getElementById("quickOrderBtn");
+
+forPartnersButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    forPartnersPopup.classList.toggle("hidden");
+    forPartnersPopup.classList.toggle("flex");
+    body.classList.toggle("overflow-hidden");
+  });
+});
+
+closePopupButton.addEventListener("click", () => {
+  forPartnersPopup.classList.toggle("hidden");
+  forPartnersPopup.classList.toggle("flex");
+  body.classList.toggle("overflow-hidden");
+});
+
+cancelPopupButton.addEventListener("click", () => {
+  forPartnersPopup.classList.toggle("hidden");
+  forPartnersPopup.classList.toggle("flex");
+  body.classList.toggle("overflow-hidden");
+});
+
+sendButtonInForPartnersPopup.addEventListener("click", () => {
+  forPartnersPopup.classList.toggle("hidden");
+  forPartnersPopup.classList.toggle("flex");
+  successPopup.classList.toggle("hidden");
+  successPopup.classList.toggle("flex");
+});
+
+sendButtonInQuickOrderPopup.addEventListener("click", () => {
+  quickOrderPopup.classList.toggle("hidden");
+  quickOrderPopup.classList.toggle("flex");
+  successPopup.classList.toggle("hidden");
+  successPopup.classList.toggle("flex");
+  body.classList.toggle("overflow-hidden");
+});
+
+if (quickOrderBtn) {
+  quickOrderBtn.addEventListener("click", () => {
+    quickOrderPopup.classList.toggle("hidden");
+    quickOrderPopup.classList.toggle("flex");
+    body.classList.toggle("overflow-hidden");
+  });
+}

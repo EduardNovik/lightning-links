@@ -1,0 +1,96 @@
+  <button
+    onclick="topFunction()"
+    class="
+      button--{{settings.backTopBtnStyle}}{% unless settings.backTopBtnMobile %} hide-mobile{% endunless %}
+      {% if settings.floatingContact and settings.messengerID != 'Your page ID here' and settings.messenger %}
+        float_all
+        {% elsif settings.messengerID != 'Your page ID here' and settings.messenger %}
+          float_msgr
+          {% elsif settings.floatingContact %}
+            float_contact
+          {% endif %}
+    "
+    id="scrollTopBtn"
+    title="Go to top"
+  >
+    <span>UP</span>
+    <svg width="8" height="10" viewBox="0 0 8 10" id="Layer_1" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4.35355 0.146446C4.15829 -0.0488157 3.84171 -0.0488157 3.64645 0.146446L0.464466 3.32843C0.269204 3.52369 0.269204 3.84027 0.464466 4.03553C0.659729 4.2308 0.976311 4.2308 1.17157 4.03553L4 1.20711L6.82843 4.03553C7.02369 4.2308 7.34027 4.2308 7.53553 4.03553C7.7308 3.84027 7.7308 3.52369 7.53553 3.32843L4.35355 0.146446ZM4.5 9.5L4.5 0.5L3.5 0.5L3.5 9.5L4.5 9.5Z" fill="#111924" />
+    </svg>
+  </button>
+
+<style>
+  #scrollTopBtn {
+      display: none; /* Hidden by default */
+      /* position: fixed; Fixed/sticky position */
+      /* bottom: 0px !important; */
+      /* right: 4rem; */
+      /* z-index: 99; Make sure it does not overlap */
+      border: none; /* Remove borders */
+      outline: none; /* Remove outline */
+      cursor: pointer; /* Add a mouse pointer on hover */
+      height: 36px;
+      width: 50px;
+      font-size: 14px; /* Increase font size */
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      background-color: #eceff3;
+      color: #111924;
+      font-weight: 900;
+      border-radius: {{settings.backTopBtnBorder}}px;
+    }
+
+    .float_all{
+      bottom: 114pt !important;
+    }
+
+    .float_msgr{
+      bottom: 70pt !important;
+    }
+
+    .float_contact{
+      bottom: 65pt !important;
+    }
+
+    .button--custom{
+      background-color: {{settings.backTopBtnBcolor}}; /* Set a background color */
+      color: {{settings.backTopBtnColor}}; /* Text color */
+    }
+
+    .button--custom svg#Layer_1{
+      fill: {{settings.backTopBtnColor}};
+    }
+
+    .button--primary__filled svg#Layer_1{
+      fill:{{settings.primaryAccentText}};
+    }
+
+    .button--secondary__filled svg#Layer_1{
+      fill:{{settings.secondaryAccentText}};
+    }
+</style>
+
+<script>
+  // Get the button:
+  let mybutton = document.getElementById('scrollTopBtn');
+
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = 'flex';
+    } else {
+      mybutton.style.display = 'none';
+    }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+</script>
