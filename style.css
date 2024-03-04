@@ -14,34 +14,34 @@
 }
 
 @font-face {
-  font-family: "Gosha Sans";
+  font-family: 'Gosha Sans';
   src: url(./PPGoshaSans-Regular.eot);
-  src: url(./PPGoshaSans-Regular.eot?#iefix) format("embedded-opentype"),
-    url(./PPGoshaSans-Regular.otf) format("otf"),
-    url(./PPGoshaSans-Regular.svg#PPGoshaSans-Regular) format("svg"),
-    url(./PPGoshaSans-Regular.ttf) format("truetype"),
-    url(./PPGoshaSans-Regular.woff2) format("woff2");
+  src: url(./PPGoshaSans-Regular.eot?#iefix) format('embedded-opentype'),
+    url(./PPGoshaSans-Regular.otf) format('otf'),
+    url(./PPGoshaSans-Regular.svg#PPGoshaSans-Regular) format('svg'),
+    url(./PPGoshaSans-Regular.ttf) format('truetype'),
+    url(./PPGoshaSans-Regular.woff2) format('woff2');
 }
 
 @font-face {
-  font-family: "Gosha Sans";
+  font-family: 'Gosha Sans';
   src: url(./PPGoshaSans-Bold.eot);
-  src: url(./PPGoshaSans-Bold.eot?#iefix) format("embedded-opentype"),
-    url(./PPGoshaSans-Bold.woff2) format("woff2"),
-    url(./PPGoshaSans-Bold.ttf) format("truetype"),
-    url(./PPGoshaSans-Bold.svg#PPGoshaSans-Bold) format("svg"),
-    url(./PPGoshaSans-Bold.otf) format("otf");
+  src: url(./PPGoshaSans-Bold.eot?#iefix) format('embedded-opentype'),
+    url(./PPGoshaSans-Bold.woff2) format('woff2'),
+    url(./PPGoshaSans-Bold.ttf) format('truetype'),
+    url(./PPGoshaSans-Bold.svg#PPGoshaSans-Bold) format('svg'),
+    url(./PPGoshaSans-Bold.otf) format('otf');
   font-weight: 700;
 }
 
 @font-face {
-  font-family: "Gosha Sans";
+  font-family: 'Gosha Sans';
   src: url(./GoshaSans-Ultralight.eot);
-  src: url(./GoshaSans-Ultralight.eot?#iefix) format("embedded-opentype"),
-    url(./GoshaSans-Ultralight.otf) format("otf"),
-    url(./GoshaSans-Ultralight.svg#GoshaSans-Ultralight) format("svg"),
-    url(./GoshaSans-Ultralight.ttf) format("truetype"),
-    url(./GoshaSans-Ultralight.woff2) format("woff2");
+  src: url(./GoshaSans-Ultralight.eot?#iefix) format('embedded-opentype'),
+    url(./GoshaSans-Ultralight.otf) format('otf'),
+    url(./GoshaSans-Ultralight.svg#GoshaSans-Ultralight) format('svg'),
+    url(./GoshaSans-Ultralight.ttf) format('truetype'),
+    url(./GoshaSans-Ultralight.woff2) format('woff2');
   font-weight: 200;
 }
 
@@ -53,7 +53,7 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: var(--grigio-telesto-0);
   color: var(--grigio-telesto-100);
   font-size: 14px;
@@ -68,7 +68,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Gosha Sans", sans-serif;
+  font-family: 'Gosha Sans', sans-serif;
   font-weight: 400;
 }
 
@@ -162,7 +162,7 @@ section {
   white-space: nowrap;
 
   &::after {
-    content: "";
+    content: '';
     display: block;
     flex: 1 1 auto;
     height: 1px;
@@ -171,18 +171,18 @@ section {
 }
 
 .accent-text {
-  font-family: "Gosha Sans", sans-serif;
+  font-family: 'Gosha Sans', sans-serif;
   font-weight: 200;
   font-size: 40px;
   line-height: 48px;
 }
-.instagram-grig {
+.instagram-grig{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 40px;
-
-  & > * {
+  
+  &>*{
     &:nth-child(1) {
       grid-column: 1 / span 1;
       grid-row: 1 / span 2;
@@ -217,6 +217,6 @@ section {
     }
   }
 }
-.breadcrumb {
+.breadcrumb{
   text-transform: uppercase;
 }
