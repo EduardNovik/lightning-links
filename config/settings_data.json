@@ -13,6 +13,7 @@
     "sYoutube": "",
     "sTikTok": "",
     "baseLayout": "stretchBg",
+    "baseMaxWidth": "1440",
     "baseBorderRadius": 0,
     "baseBorderRadiusSmall": 0,
     "baseBorderWidth": 1,
@@ -200,13 +201,13 @@
       "header--default": {
         "type": "header--default",
         "settings": {
-          "layout": "default",
+          "layout": "stretchContent",
           "minHeight": 50,
           "borderRadius": 0,
           "shadow": false,
-          "menuLinks": "main-menu",
+          "menuLinks": "header",
           "megamenu": true,
-          "logoWidth": 140,
+          "logoWidth": 155,
           "logoHeight": 0,
           "sticky": true,
           "contentMargin": 0,
@@ -267,7 +268,6 @@
       "custom-footer": {
         "type": "custom-footer",
         "settings": {
-          "footer_logo": "shopify:\/\/shop_images\/Frame_2.svg",
           "footer_background": "#5a6476",
           "footer_logo_width": 175
         }
