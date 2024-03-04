@@ -1,0 +1,76 @@
+<footer
+  class="text-white pt-8 pb-10 lg:pt-16 lg:pb-16 mt-5 lg:mt-10 "
+  style="background-color: {{ section.settings.footer_background }};"
+>
+  <div class="container mx-auto gap-8 flex flex-col lg:flex-row lg:items-center lg:justify-between">
+    <a href="/" class="block" >
+      <div class="w-fit" style="width: {{ section.settings.footer_logo_width}}px;">
+        {% if section.settings.footer_logo != blank %}
+          <img
+            src="{{ section.settings.footer_logo | img_url: 'master' }}"
+            alt="{{shop.name}}"
+            width="100%"
+            height="auto"
+          >
+        {% else %}
+          {{ shop.name }}
+        {% endif %}
+      </div>
+    </a>
+    <nav class="[&>*]:uppercase flex gap-y-8 gap-x-4 items-center flex-wrap lg:flex-row lg:justify-center">
+      {% for link in linklists.footer.links -%}
+        {{ link.title | link_to: link.url }}
+      {%- endfor %}
+      <button class="text-start">for partners</button>
+    </nav>
+    <div class="social">
+      <ul class="flex lg:flex-col items-start gap-5 flex-wrap">
+        <li class="flex items-center justify-center gap-2.5">
+          {% render 'icon-footer-mail' %}
+          <a href="mailto:{{ shop.email }}" class="link link--text">
+            {{ shop.email }}
+          </a>
+        </li>
+        <li class="flex items-center justify-center gap-2.5">
+          {% render 'icon-footer-phone' %}
+          <a href="tel:{{ shop.phone }}" class="link link--text">
+            {{ shop.phone }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Custom Footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "Footer Logo"
+    },
+    {
+      "type": "color",
+      "id": "footer_background",
+      "label": "Footer Background",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "footer_logo_width",
+      "label": "Footer Logo Width",
+      "min": 50,
+      "max": 300,
+      "step": 5,
+      "default": 50
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Footer"
+    }
+  ]
+}
+{% endschema %}

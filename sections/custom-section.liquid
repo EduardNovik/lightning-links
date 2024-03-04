@@ -1,0 +1,162 @@
+<section
+  class="py-10 md:py-16 lg:py24 overflow-hidden "
+  {% if section.settings.color_scheme == 'dark' %}
+    style="background-color: var(--grigio-100); color: var(--grigio-0);"
+  {% else %}
+    style="background-color: inherit; color: inherit;"
+  {% endif %}
+>
+  <div class="container mx-auto flex flex-col relative">
+    <h5 class="section-header mb-12">{{ section.settings.title }}</h5>
+
+    <div class="flex flex-col md:flex-row justify-between items-center gap-10">
+      <div class="flex flex-col gap-4  lg:gap-16 md:w-1/2">
+        {% if section.settings.accent_text != blank %}
+          <p
+            class="accent-text"
+            {% if section.settings.color_scheme == 'dark' %}
+              style="color: var(--grigio-0);"
+            {% else %}
+              style="color: inherit;"
+            {% endif %}
+          >
+            {{ section.settings.accent_text }}
+          </p>
+        {% endif %}
+        {% if section.settings.secondary_title != blank %}
+          <h5>{{ section.settings.secondary_title }}</h5>
+        {% endif %}
+        <p
+          {% if section.settings.color_scheme == 'dark' %}
+            style="color: var(--grigio-0);"
+          {% else %}
+            style="color: inherit;"
+          {% endif %}
+        >
+          {{ section.settings.text }}
+        </p>
+
+        {% if section.settings.button_text != blank %}
+          <a
+            href="{{ section.settings.button_url }}"
+            class="w-fit"
+          >
+            {{- section.settings.button_text -}}
+          </a>
+        {% endif %}
+      </div>
+
+      <div class="lg:w-1/2">
+        {% if section.settings.image %}
+          <img
+            class="relative z-[2] w-3/4"
+            src="{{ section.settings.image | img_url: '1024x1024' }}"
+            alt="{{ section.settings.title }}"
+            width="100%"
+            height="auto"
+          >
+        {% endif %}
+
+        {% if section.settings.video_url %}
+          <video
+            autoplay
+            loop
+            playsinline
+            muted
+            class="max-w-80 w-1/2 md:w-2/3 mx-auto h-full object-cover"
+          >
+            <source src="{{ section.settings.video_url }}">
+          </video>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if section.settings.absolute_image %}
+      <div
+        class="w-full h-full pointer-events-none object-cover absolute bottom-0 left-0 bg-no-repeat bg-contain z-[1] transform -translate-x-[15%]"
+        style='background-image: url("{{section.settings.absolute_image | image_url: width: 600}}"); background-position-y: 80%;'
+      ></div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cutom Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Section Title"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "accent_text",
+      "label": "Accent Text"
+    },
+    {
+      "type": "text",
+      "id": "secondary_title",
+      "label": "Secondary Title"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "This is a custom section"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_liquid",
+      "label": "Custom Liquid",
+      "default": "<h1>Custom Liquid</h1>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "absolute_image",
+      "label": "Absolute Image"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Section"
+    }
+  ]
+}
+{% endschema %}
