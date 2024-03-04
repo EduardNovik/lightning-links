@@ -24,6 +24,7 @@
         "secondary_title": "Welcome to the Future of Smooth Driving",
         "text": "Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.",
         "button_text": "Learn more",
+        "button_url": "",
         "custom_liquid": "<h1>Custom Liquid<\/h1>",
         "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a7b438254d004bfe8474852c2d746760.mp4"
       }
@@ -37,9 +38,8 @@
         "secondary_title": "",
         "text": "The story of \"LIGHTNING LINKS\" began with a passion for automotive culture and a desire to provide customers with quality, effective, and stylish products. We define ourselves as a team of professionals that combines creativity, engineering, and a high standard of service. We take pride in our reputation as a reliable provider and innovator in the automotive tuning market. Our goal is to help you realize your ideas and enhance your car, offering unparalleled quality and aesthetics.",
         "button_text": "",
+        "button_url": "",
         "custom_liquid": "<h1>Custom Liquid<\/h1>",
-        "image": "shopify:\/\/shop_images\/car_1_2.png",
-        "absolute_image": "shopify:\/\/shop_images\/Group_82.png",
         "video_url": ""
       }
     },
@@ -104,6 +104,7 @@
         "secondary_title": "",
         "text": "",
         "button_text": "",
+        "button_url": "",
         "custom_liquid": "<h1>Custom Liquid<\/h1>",
         "video_url": ""
       }
@@ -114,7 +115,6 @@
         "advantage_1": "style",
         "advantage_2": "reducing fuel consumption",
         "advantage_3": "effective aerodynamics",
-        "image": "shopify:\/\/shop_images\/Rectangle_1.png",
         "padding_top": 20,
         "padding_bottom": 20
       }
@@ -125,7 +125,6 @@
         "slide_TxH9kq": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_115.png",
             "title": "LightingLinks",
             "post_url": "https:\/\/www.instagram.com\/"
           }
@@ -133,7 +132,6 @@
         "slide_kD7q4r": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_120.png",
             "title": "LightingLinks",
             "post_url": "https:\/\/www.instagram.com\/"
           }
@@ -141,7 +139,6 @@
         "slide_JqPk8Y": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_119.png",
             "title": "LightingLinks",
             "post_url": "https:\/\/www.instagram.com\/"
           }
@@ -149,7 +146,6 @@
         "slide_WpDJrW": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_126.png",
             "title": "LightingLinks",
             "post_url": "https:\/\/www.instagram.com\/"
           }
@@ -157,7 +153,6 @@
         "slide_UwRw3c": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_122.png",
             "title": "LightingLinks",
             "post_url": "https:\/\/www.instagram.com\/"
           }
@@ -165,7 +160,6 @@
         "slide_zdHVER": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_116.png",
             "title": "LightingLinks",
             "post_url": "https:\/\/www.instagram.com\/"
           }
@@ -173,7 +167,6 @@
         "slide_XCMkXH": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_124.png",
             "title": "LightingLinks",
             "post_url": "https:\/\/www.instagram.com\/"
           }
@@ -181,7 +174,6 @@
         "slide_FcbGFp": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_118.png",
             "title": "LightingLinks",
             "post_url": "https:\/\/www.instagram.com\/"
           }
@@ -198,7 +190,8 @@
         "slide_FcbGFp"
       ],
       "settings": {
-        "title": "Instagram"
+        "title": "Instagram",
+        "contacts_instagram": "https:\/\/www.instagram.com\/"
       }
     }
   },
