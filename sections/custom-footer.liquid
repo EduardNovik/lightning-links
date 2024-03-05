@@ -25,18 +25,26 @@
     </nav>
     <div class="social">
       <ul class="flex lg:flex-col items-start gap-5 flex-wrap">
-        <li class="flex items-center justify-center gap-2.5">
-          {% render 'icon-footer-mail' %}
-          <a href="mailto:{{ shop.email }}" class="link link--text">
-            {{  block.settings.emailText  }}
-          </a>
-        </li>
-        <li class="flex items-center justify-center gap-2.5">
-          {% render 'icon-footer-phone' %}
-          <a href="tel:{{ shop.phone }}" class="link link--text">
-            {{  block.settings.phoneText  }}
-          </a>
-        </li>
+        {% for block in section.blocks %}
+          {% if block.type == 'footerContact' %}
+            {% if block.settings.phoneText %}
+              <li class="flex items-center justify-center gap-2.5">
+                {% render 'icon-footer-phone' %}
+                <a href="tel:{{ shop.phone }}" class="link link--text">
+                  {{ block.settings.phoneText }}
+                </a>
+              </li>
+            {% endif %}
+            {% if block.settings.emailText %}
+              <li class="flex items-center justify-center gap-2.5">
+                {% render 'icon-footer-mail' %}
+                <a href="mailto:{{ shop.email }}" class="link link--text">
+                  {{ block.settings.emailText }}
+                </a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
       </ul>
     </div>
   </div>
