@@ -21,7 +21,7 @@
       {% for link in linklists.footer.links -%}
         {{ link.title | link_to: link.url }}
       {%- endfor %}
-      <button class="text-start">for partners</button>
+      <button class="forPartnersButton text-start">for partners</button>
     </nav>
     <div class="social">
       <ul class="flex lg:flex-col items-start gap-5 flex-wrap">
@@ -41,6 +41,9 @@
     </div>
   </div>
 </footer>
+
+{% render 'for-partners-popup' %}
+{% render 'success-popup' %}
 
 {% schema %}
 {
