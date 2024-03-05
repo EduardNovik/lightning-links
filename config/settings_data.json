@@ -152,46 +152,6 @@
       },
       "footer": {
         "type": "footer",
-        "blocks": {
-          "footer_image_igBXKQ": {
-            "type": "footerImage",
-            "settings": {
-              "width": "auto",
-              "horizontalAlignment": "center",
-              "verticalAlignment": "middle",
-              "image": "shopify:\/\/shop_images\/logo.svg",
-              "imageWidth": 45,
-              "url": "",
-              "imageAlt": "logo"
-            }
-          },
-          "footer_links_AknB4k": {
-            "type": "footerLinks",
-            "settings": {
-              "width": "auto",
-              "horizontalAlignment": "center",
-              "verticalAlignment": "middle",
-              "heading": "",
-              "links": "footer"
-            }
-          },
-          "footer_contact_PGnC8B": {
-            "type": "footerContact",
-            "settings": {
-              "width": "auto",
-              "horizontalAlignment": "start",
-              "verticalAlignment": "middle",
-              "heading": "",
-              "phoneText": "+48576535872",
-              "emailText": "eddnovik@gmail.com"
-            }
-          }
-        },
-        "block_order": [
-          "footer_image_igBXKQ",
-          "footer_links_AknB4k",
-          "footer_contact_PGnC8B"
-        ],
         "settings": {
           "layout": "default",
           "fillColor": "#5a6476",
@@ -278,6 +238,22 @@
       },
       "custom-footer": {
         "type": "custom-footer",
+        "blocks": {
+          "footer_contact_dhUEw8": {
+            "type": "footerContact",
+            "settings": {
+              "width": "auto",
+              "horizontalAlignment": "center",
+              "verticalAlignment": "middle",
+              "heading": "",
+              "phoneText": "+48576535872",
+              "emailText": "eddnovik@gmail.com"
+            }
+          }
+        },
+        "block_order": [
+          "footer_contact_dhUEw8"
+        ],
         "settings": {
           "footer_background": "#5a6476",
           "footer_logo_width": 175
