@@ -1,49 +1,49 @@
 <div
   id="for-partners-popup"
-  class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 hidden items-center justify-center"
+  class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden"
 >
-  <div class=" bg-white p-4 z-50 w-full max-w-[750px] m-5">
-    <header class="flex items-center gap-3 justify-between mb-5">
-      <h5 class="font-roboto">Want to become a partner? Let's get linked up!</h5>
-      <button id="closePopupButton" class="min-w-5">
+  <div class="bg-white p-8 z-50 w-full max-w-lg mx-5 rounded">
+    <header class="flex items-center justify-between mb-6">
+      <h5 class="font-bold text-xl">Quick Order</h5>
+      <button id="closePopupButton" class="w-6 h-6">
         {% render 'icon-close' %}
       </button>
     </header>
-    {% form 'contact' %}
-      <div class="mb-5">
-        <label class="uppercase text-grigio-60 mb-2 block">Name</label>
-        <input type="text" name="contact[name]">
+    {% form 'contact', class: "space-y-4" %}
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+        <input type="text" id="name" name="contact[name]" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
       </div>
 
-      <div class="mb-5">
-        <label class="uppercase text-grigio-60 mb-2 block">Phone Number</label>
-        <input type="tel" name="contact[phone]">
+      <div>
+        <label for="phone" class="block text-sm font-medium text-gray-700">Phone number</label>
+        <input type="tel" id="phone" name="contact[phone]" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
       </div>
 
-      <div class="mb-5">
-        <label class="uppercase text-grigio-60 mb-2 block">Email</label>
-        <input type="email" name="contact[email]">
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" id="email" name="contact[email]" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm">
       </div>
 
-      <div class="mb-5">
-        <label class="uppercase text-grigio-60 mb-2 block">Text field</label>
-        <textarea class="min-h-24" name="contact[message]"></textarea>
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-700">Text field</label>
+        <textarea id="message" name="contact[message]" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"></textarea>
       </div>
 
-      <div class="grid grid-cols-2 gap-2 ">
+      <div class="grid grid-cols-2 gap-2 mt-6">
         <button
           id="cancelButton"
           type="button"
-          class=" border border-grigio-40"
+          class="py-2 px-4 border border-gray-300 rounded shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50"
         >
-          cancel
+          CANCEL
         </button>
         <button
           id="sendButtonInForPartnersPopup"
           type="submit"
-          class="bg-grigio-100 text-white uppercase p-2 w-full font-extrabold"
+          class="py-2 px-4 bg-gray-800 text-white rounded shadow-sm text-sm font-medium hover:bg-gray-900"
         >
-          send
+          SEND
         </button>
       </div>
     {% endform %}
