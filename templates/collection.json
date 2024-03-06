@@ -71,7 +71,6 @@
     },
     "content": {
       "type": "product-list",
-      "disabled": true,
       "settings": {
       }
     },
@@ -99,6 +98,7 @@
     },
     "all_products_XCnc3G": {
       "type": "all-products",
+      "disabled": true,
       "settings": {
       }
     }
