@@ -2,7 +2,8 @@
 {% assign desktop = settings.cardDesktop %}
 
 {% paginate collection.products by settings.cardsPerPage %}
-  {% for product in collection.products %}
+  <div class="productsContainer grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+    {% for product in collection.products %}
     {% unless product.tags contains 'featured' %}
       <div class="center col-{{mobile}} col-md-{{desktop}} card--holder">
         {% render 'product-card-default-custom' with product as product %}
@@ -11,6 +12,8 @@
   {% else %}
     <h2 class="h-reset font__size--medium font__family--title col-12 product-list__empty">{{'general.search.no_matches' |t}}</h2>
   {% endfor %}
+  </div>
+  
 
   {% assign sid = 'shopify-section-' | append: section.id %}
   {% render 'pagination', paginate: paginate, section: sid %}
@@ -45,7 +48,7 @@
 {% schema %}
   {
     "name": "Product list custom",
-    "class": "row--product col-12 product__list top",
+    "class": "row--product col-12 product__list top container mx-auto",
     "settings": [
       {
             "type": "header",
