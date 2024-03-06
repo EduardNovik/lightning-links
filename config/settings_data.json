@@ -172,7 +172,7 @@
       "header--default": {
         "type": "header--default",
         "settings": {
-          "layout": "boxed",
+          "layout": "stretchBg",
           "minHeight": 50,
           "borderRadius": 0,
           "shadow": false,
