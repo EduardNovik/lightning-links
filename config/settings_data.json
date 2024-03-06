@@ -46,6 +46,7 @@
     "collectionCardStyle": "default",
     "collectionCardTextAlign": "center",
     "blogCardStyle": "default",
+    "cartStyle": "sidebar",
     "cartAction": "upsell",
     "BPDynTitle": "Auto Dealer",
     "cartTimer": false,
@@ -171,9 +172,12 @@
       },
       "header--default": {
         "type": "header--default",
+        "custom_css": [
+          ".header__logo{padding-left:5px}"
+        ],
         "settings": {
-          "layout": "stretchBg",
-          "minHeight": 50,
+          "layout": "stretchContent",
+          "minHeight": 40,
           "borderRadius": 0,
           "shadow": false,
           "menuLinks": "main-menu",
