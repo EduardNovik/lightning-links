@@ -40,6 +40,8 @@
         "button_text": "",
         "button_url": "",
         "custom_liquid": "<h1>Custom Liquid<\/h1>",
+        "image": "shopify:\/\/shop_images\/yellow_car.png",
+        "absolute_image": "shopify:\/\/shop_images\/Group_82.png",
         "video_url": ""
       }
     },
