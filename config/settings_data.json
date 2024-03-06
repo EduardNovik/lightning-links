@@ -173,7 +173,7 @@
       "header--default": {
         "type": "header--default",
         "custom_css": [
-          ".header__logo{padding-left:5px}"
+          ".header__logo {padding-left: 25px;}"
         ],
         "settings": {
           "layout": "stretchContent",
