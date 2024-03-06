@@ -4,14 +4,14 @@
     "banner": {
       "type": "banner--collection",
       "settings": {
-        "layout": "default",
-        "height": 50,
+        "layout": "boxed",
+        "height": 350,
         "horizontalAlignment": "start",
         "verticalAlignment": "middle",
         "showTitle": false,
         "showNumber": false,
         "fontSize": "medium",
-        "showDescription": false,
+        "showDescription": true,
         "truncateReadMore": true,
         "truncateDesc": 0,
         "contentColor": "rgba(0,0,0,0)",
