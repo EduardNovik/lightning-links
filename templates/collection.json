@@ -14,6 +14,11 @@
       "settings": {
       }
     },
+    "product_list_custom_YgfqiJ": {
+      "type": "product-list-custom",
+      "settings": {
+      }
+    },
     "content": {
       "type": "product-list",
       "disabled": true,
@@ -105,21 +110,16 @@
         "overlayOpacity": 0,
         "overlayColor": "#000000"
       }
-    },
-    "product_list_custom_YgfqiJ": {
-      "type": "product-list-custom",
-      "settings": {
-      }
     }
   },
   "order": [
     "crumbs_qgraMU",
     "product_filter_VG7En3",
+    "product_list_custom_YgfqiJ",
     "content",
     "banner",
     "sort",
     "filters",
-    "banner-bottom",
-    "product_list_custom_YgfqiJ"
+    "banner-bottom"
   ]
 }
