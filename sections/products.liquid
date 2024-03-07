@@ -7,6 +7,11 @@
     {% for block in section.blocks %}
       {% assign product = all_products[block.settings.product] %}
       {% render 'product-item', product: product %}
+      {% if forloop.index0 % 3 == 2 %}
+      <div class="w-full"><hr class="my-10"></div>
+      <p>123</p>
+      {% endif %}
+      <p>123</p>
     {% endfor %}
   </div>
   <a
