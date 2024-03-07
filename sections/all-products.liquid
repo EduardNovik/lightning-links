@@ -1,7 +1,16 @@
-<div class="container productsContainer grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+{% comment %} <div class="container productsContainer grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
   {% for product in collections.all.products %}
     {% comment %} {{ product.title | link_to: product.url }} {% endcomment %}
     {% render 'product-item', product: product %}
+  {% endfor %}
+</div> {% endcomment %}
+
+<div class="container productsContainer grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+  {% for product in collections.all.products %}
+    {% render 'product-item', product: product %}
+    {% if forloop.index != collections.all.products.size and forloop.index0 % 3 == 2 %}
+      <div class="w-full lg:col-span-3"><hr class="my-10"></div>
+    {% endif %}
   {% endfor %}
 </div>
 

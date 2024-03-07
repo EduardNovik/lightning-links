@@ -696,6 +696,11 @@ video {
   margin-right: auto;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -1770,6 +1775,10 @@ section {
 }
 
 @media (min-width: 1024px) {
+  .lg\:col-span-3 {
+    grid-column: span 3 / span 3;
+  }
+
   .lg\:mt-10 {
     margin-top: 2.5rem;
   }
