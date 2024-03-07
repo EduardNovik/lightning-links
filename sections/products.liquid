@@ -7,12 +7,8 @@
     {% for block in section.blocks %}
       {% assign product = all_products[block.settings.product] %}
       {% render 'product-item', product: product %}
-      {% if forloop.index != 0 and forloop.index % 3 == 0 and forloop.index != section.blocks.size %}
-        <div class="col-span-3"><hr class="separator"></div>
-      {% endif %}
       {% if  forloop.index % 3 == 0 %}
         <div class="col-span-3"><hr class="separator"></div>
-        <div class="w-full"><hr class="my-10"></div>
       {% endif %}
     {% endfor %}
   </div>
