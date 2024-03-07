@@ -4,7 +4,7 @@
     "crumbs_qgraMU": {
       "type": "crumbs",
       "custom_css": [
-        ".breadcrumb {margin-top: 10px; margin-bottom: 20px;}"
+
       ],
       "settings": {
       }
@@ -12,7 +12,7 @@
     "product_filter_VG7En3": {
       "type": "product-filter",
       "custom_css": [
-        ".container {margin-top: 10px;}"
+
       ],
       "settings": {
       }
