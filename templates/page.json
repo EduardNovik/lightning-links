@@ -24,16 +24,25 @@
     },
     "crumbs_FQUnFc": {
       "type": "crumbs",
+      "custom_css": [
+        ".breadcrumb {margin-top: 10px; margin-bottom: 20px;}"
+      ],
       "settings": {
       }
     },
     "product_filter_custom_8DYCTx": {
       "type": "product-filter-custom",
+      "custom_css": [
+        ".container {margin-top: 10px;}"
+      ],
       "settings": {
       }
     },
     "all_products_nLnUBX": {
       "type": "all-products",
+      "custom_css": [
+        ".container {margin-top: 40px;}"
+      ],
       "settings": {
       }
     }
