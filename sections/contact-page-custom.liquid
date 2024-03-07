@@ -1,0 +1,184 @@
+{% style %}
+  iframe {
+    /* width: 558px; */
+    width: 100%;
+    aspect-ratio: 3 / 2;
+  }
+  h1,
+  h2 {
+    margin-bottom: 40px;
+  }
+{% endstyle %}
+
+<section class="container mx-auto">
+  <h2 class="text-2xl mb-5 md:mb-10 capitalize">contacts</h2>
+  <div class="flex flex-col md:grid md:grid-cols-5 gap-4">
+    <div class="w-full col-start-1 col-end-4 grid gap-10">
+      {% if block.settings.questionsText %}
+        <p class="text-grigio-60">{{ block.settings.questionsText }}</p>
+      {% endif %}
+      <div class="grid grid-cols-2 gap-y-10 gap-x-2 ">
+        <div class="">
+          <span class="uppercase text-grigio-60 mb-2 block">Email</span>
+          <a href="mailto:{{ shop.email }}" class="flex gap-1">
+            {% render 'icon-mail' %}
+            {% if block.settings.emailText %}
+              <span>{{ block.settings.emailText }}</span>
+            {% endif %}
+          </a>
+        </div>
+        <div class="">
+          <span class="uppercase text-grigio-60 mb-2 block">Phone</span>
+          <a href="tel:{{ shop.phone }}" class="flex gap-1">
+            {% render 'icon-phone' %}
+            {% if block.settings.phoneText %}
+              <span>{{ block.settings.phoneText }}</span>
+            {% endif %}
+          </a>
+        </div>
+        <div class="">
+          <span class="uppercase text-grigio-60 mb-2 block">Weekdays</span>
+          <p class="flex gap-1 uppercase">
+            {% render 'icon-clock' %}
+            {{ section.settings.weekdays }}
+          </p>
+        </div>
+        <div class="">
+          <span class="uppercase text-grigio-60 mb-2 block">address</span>
+          <p class="flex gap-1 ">
+            {% render 'icon-marker' %}
+            {{ section.settings.contacts_address }}
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        {% comment %} <a href="" class="border border-grigio-60 uppercase p-2 block w-fit">follow our Instagram</a> {% endcomment %}
+        {% for linkBlock in section.blocks %}
+          <a
+            href="{{ linkBlock.settings.social_links }}"
+            class="border border-grigio-40 uppercase py-2 px-6 flex justify-center items-center w-fit min-h-[50px] gap-2"
+            target="_blank">
+            {% if linkBlock.settings.icon %}
+              {% render 'icon'
+                , icon: linkBlock.settings.icon %}
+            {% endif %}
+            {{ linkBlock.settings.title }}
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="w-full col-start-4 col-end-6 grid">
+      <iframe
+        src="{{ section.settings.contacts_address_coordinates }}"
+        style="border:0;"
+        width="100%"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="col-start-1 col-end-4">
+      {% form 'contact' %}
+        <h2 class="text-2xl">Feedback</h2>
+        <p class="text-sm text-grigio-60 mb-10">
+          We value your feedback! Share your thoughts and help us improve your experience.
+        </p>
+
+        <div class="mb-5">
+          <label class="uppercase text-grigio-60 mb-2 block">Name</label>
+          <input type="text" name="contact[name]">
+        </div>
+
+        <div class="mb-5">
+          <label class="uppercase text-grigio-60 mb-2 block">Phone number</label>
+          <input type="tel" name="contact[phone]">
+        </div>
+
+        <div class="mb-5">
+          <label class="uppercase text-grigio-60 mb-2 block">Email</label>
+          <input type="email" name="contact[email]">
+        </div>
+
+        <div class="mb-5">
+          <label class="uppercase text-grigio-60 mb-2 block">Text field</label>
+          <textarea name="contact[message]"></textarea>
+        </div>
+
+        <button type="submit" class="bg-grigio-100 text-white uppercase p-2 w-full font-extrabold">
+          send
+        </button>
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Contact page content",
+    "settings": [
+      {
+        "type": "text",
+        "id": "weekdays",
+        "label": "Weekdays",
+        "default": "7am - 9pm"
+      }, {
+        "type": "text",
+        "id": "contacts_address",
+        "label": "Address",
+        "default": "1041 N Dupont Hwy #1049 Dover, DE 19901 USA"
+      }, {
+        "type": "text",
+        "id": "contacts_address_coordinates",
+        "label": "Address coordinates",
+        "default": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32939.41115263142!2d-75.53212674271523!3d39.17882391265458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c77b276929ff4b%3A0x8d485da96110ac0f!2zMTA0MSBOIER1cG9udCBId3kgIzEwNDksIERvdmVyLCBERSAxOTkwMSwg0KHQv9C-0LvRg9GH0LXQvdGWINCo0YLQsNGC0Lgg0JDQvNC10YDQuNC60Lg!5e0!3m2!1suk!2sua!4v1708544247520!5m2!1suk!2sua"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "social_link",
+        "name": "Social link",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Contacts"
+          }, {
+            "type": "text",
+            "id": "social_links",
+            "label": "Social links",
+            "default": "/"
+          },
+          {
+            "type": "text",
+            "id": "phoneText",
+            "label": "Phone text"
+         },
+        {
+            "type": "text",
+            "id": "emailText",
+            "label": "Email text"
+        },
+       {
+        "type": "text",
+        "id": "questionsText",
+        "label": "Questions text"
+        }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Contact page custom"
+      }
+    ]
+  }
+{% endschema %}
+
+
+
