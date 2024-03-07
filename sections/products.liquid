@@ -7,6 +7,9 @@
     {% for block in section.blocks %}
       {% assign product = all_products[block.settings.product] %}
       {% render 'product-item', product: product %}
+      {% if  forloop.index % 3 == 0 %}
+        <div class="col-span-3"><hr class="separator"></div>
+      {% endif %}
     {% endfor %}
   </div>
   <a
@@ -50,3 +53,4 @@
   ]
 }
 {% endschema %}
+

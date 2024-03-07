@@ -1,8 +1,8 @@
 {
   "current": {
-    "defaultLogo": "shopify:\/\/shop_images\/logo.svg",
+    "defaultLogo": "shopify:\/\/shop_images\/Frame_2.svg",
     "darkLogo": "shopify:\/\/shop_images\/Frame_2.svg",
-    "favicon": "shopify:\/\/shop_images\/logo_2c718d90-3ba0-4cba-b3b9-41c43e5dafc7.svg",
+    "favicon": "shopify:\/\/shop_images\/insta-logo.svg",
     "storeLocation": "3157 Glover Road, Coquitlam",
     "storeEmail": "support@boostertheme.com",
     "storePhone": "+000000000000",
@@ -13,9 +13,11 @@
     "sYoutube": "",
     "sTikTok": "",
     "baseLayout": "stretchBg",
+    "baseMaxWidth": "1440",
     "baseBorderRadius": 0,
     "baseBorderRadiusSmall": 0,
     "baseBorderWidth": 1,
+    "breadcrumbs": true,
     "baseSecondaryBackground": "#FFFFFF",
     "baseSecondaryText": "#000000",
     "baseLink": "#202626",
@@ -35,20 +37,29 @@
     "inputCustomBorder": true,
     "inputBorderWidth": 0,
     "cardDesktop": "4",
+    "cardMobile": "12",
+    "cardsPerPage": 25,
     "cardImageFit": "contain",
     "cardImageRatio": "100",
-    "cardShowBrand": true,
+    "cardStyle": "noButton",
+    "cardShowGallery": false,
+    "cardTextAlign": "left",
+    "cardShowBrand": false,
     "cardShowRating": false,
     "cardBrandColor": "#191d21",
     "cardPriceColor": "#1d4c8e",
     "cardNewPriceColor": "#191d21",
+    "tagEnabled": false,
     "collectionCardStyle": "default",
     "collectionCardTextAlign": "center",
     "blogCardStyle": "default",
+    "cartStyle": "sidebar",
     "cartAction": "upsell",
+    "lazyLoadSvg": true,
     "BPDynTitle": "Auto Dealer",
     "cartTimer": false,
     "countdown": true,
+    "countdownCard": false,
     "reviewApp": "booster",
     "freeShippingAmount": "29999.95",
     "messenger": true,
@@ -151,20 +162,6 @@
       },
       "footer": {
         "type": "footer",
-        "blocks": {
-          "06e04fbf-1646-47c1-849b-5f2b943d143a": {
-            "type": "footerSocial",
-            "settings": {
-              "width": "auto",
-              "horizontalAlignment": "end",
-              "verticalAlignment": "middle",
-              "heading": ""
-            }
-          }
-        },
-        "block_order": [
-          "06e04fbf-1646-47c1-849b-5f2b943d143a"
-        ],
         "settings": {
           "layout": "default",
           "fillColor": "#5a6476",
@@ -175,21 +172,6 @@
       },
       "subfooter": {
         "type": "subfooter",
-        "blocks": {
-          "40bcc3b3-65de-4708-bb45-f74e0952f4b0": {
-            "type": "footerLinks",
-            "settings": {
-              "width": "1-5",
-              "horizontalAlignment": "start",
-              "verticalAlignment": "top",
-              "heading": "",
-              "links": "footer"
-            }
-          }
-        },
-        "block_order": [
-          "40bcc3b3-65de-4708-bb45-f74e0952f4b0"
-        ],
         "settings": {
           "layout": "default",
           "fillColor": "#5a6476",
@@ -199,14 +181,17 @@
       },
       "header--default": {
         "type": "header--default",
+        "custom_css": [
+          ".header__logo {padding-left: 25px;}"
+        ],
         "settings": {
-          "layout": "default",
-          "minHeight": 50,
+          "layout": "stretchContent",
+          "minHeight": 40,
           "borderRadius": 0,
           "shadow": false,
           "menuLinks": "main-menu",
           "megamenu": true,
-          "logoWidth": 140,
+          "logoWidth": 155,
           "logoHeight": 0,
           "sticky": true,
           "contentMargin": 0,
@@ -266,10 +251,26 @@
       },
       "custom-footer": {
         "type": "custom-footer",
+        "blocks": {
+          "footer_contact_dhUEw8": {
+            "type": "footerContact",
+            "settings": {
+              "width": "auto",
+              "horizontalAlignment": "center",
+              "verticalAlignment": "middle",
+              "heading": "",
+              "phoneText": "+48576535872",
+              "emailText": "eddnovik@gmail.com"
+            }
+          }
+        },
+        "block_order": [
+          "footer_contact_dhUEw8"
+        ],
         "settings": {
-          "footer_logo": "shopify:\/\/shop_images\/Frame_2.svg",
+          "footer_logo": "shopify:\/\/shop_images\/logo.svg",
           "footer_background": "#5a6476",
-          "footer_logo_width": 175
+          "footer_logo_width": 170
         }
       }
     },
