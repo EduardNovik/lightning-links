@@ -14,26 +14,20 @@
   <h2 class="text-2xl mb-5 md:mb-10 capitalize">contacts</h2>
   <div class="flex flex-col md:grid md:grid-cols-5 gap-4">
     <div class="w-full col-start-1 col-end-4 grid gap-10">
-      {% if block.settings.questionsText %}
-        <p class="text-grigio-60">{{ block.settings.questionsText }}</p>
-      {% endif %}
+      <p class="text-grigio-60">{{ section.settings.questionsText }}</p>
       <div class="grid grid-cols-2 gap-y-10 gap-x-2 ">
         <div class="">
           <span class="uppercase text-grigio-60 mb-2 block">Email</span>
           <a href="mailto:{{ shop.email }}" class="flex gap-1">
             {% render 'icon-mail' %}
-            {% if block.settings.emailText %}
-              <span>{{ block.settings.emailText }}</span>
-            {% endif %}
+            <span>{{ section.settings.emailText }}</span>
           </a>
         </div>
         <div class="">
           <span class="uppercase text-grigio-60 mb-2 block">Phone</span>
           <a href="tel:{{ shop.phone }}" class="flex gap-1">
             {% render 'icon-phone' %}
-            {% if block.settings.phoneText %}
-              <span>{{ block.settings.phoneText }}</span>
-            {% endif %}
+            <span>{{ section.settings.phoneText }}</span>
           </a>
         </div>
         <div class="">
@@ -132,7 +126,22 @@
         "id": "contacts_address_coordinates",
         "label": "Address coordinates",
         "default": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32939.41115263142!2d-75.53212674271523!3d39.17882391265458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c77b276929ff4b%3A0x8d485da96110ac0f!2zMTA0MSBOIER1cG9udCBId3kgIzEwNDksIERvdmVyLCBERSAxOTkwMSwg0KHQv9C-0LvRg9GH0LXQvdGWINCo0YLQsNGC0Lgg0JDQvNC10YDQuNC60Lg!5e0!3m2!1suk!2sua!4v1708544247520!5m2!1suk!2sua"
-      }
+      },
+      {
+            "type": "text",
+            "id": "phoneText",
+            "label": "Phone text"
+         },
+        {
+            "type": "text",
+            "id": "emailText",
+            "label": "Email text"
+        },
+       {
+        "type": "text",
+        "id": "questionsText",
+        "label": "Questions text"
+        }
     ],
     "blocks": [
       {
@@ -153,22 +162,7 @@
             "id": "social_links",
             "label": "Social links",
             "default": "/"
-          },
-          {
-            "type": "text",
-            "id": "phoneText",
-            "label": "Phone text"
-         },
-        {
-            "type": "text",
-            "id": "emailText",
-            "label": "Email text"
-        },
-       {
-        "type": "text",
-        "id": "questionsText",
-        "label": "Questions text"
-        }
+          }
         ]
       }
     ],
