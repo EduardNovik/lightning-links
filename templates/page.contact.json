@@ -13,89 +13,21 @@
       "settings": {
       }
     },
-    "section_map_MMRxHQ": {
-      "type": "section__map",
-      "blocks": {
-        "rich_text_eEGiJV": {
-          "type": "richText",
-          "settings": {
-            "fullWidth": true,
-            "maxBWidth": 100,
-            "content": "<p>Got questions or need assistance? Reach out to us, and we'll be happy to help!<\/p>",
-            "detectLists": true,
-            "textColor": "rgba(0,0,0,0)",
-            "fontFamily": "base",
-            "fontSize": "base"
-          }
-        },
-        "custom_rich_text_chBkfH": {
-          "type": "customRichText",
-          "settings": {
-            "fullWidth": true,
-            "maxBWidth": 100,
-            "content": "<p>This is for your text<\/p>",
-            "textColor": "rgba(0,0,0,0)",
-            "fontSize": "medium",
-            "customFontSize": 18,
-            "customFont": false,
-            "customFontFamily": "work_sans_n6"
-          }
-        },
-        "rich_text_EtccFR": {
-          "type": "richText",
-          "settings": {
-            "fullWidth": true,
-            "maxBWidth": 100,
-            "content": "<p>info@lightlinglinks.com<\/p>",
-            "detectLists": true,
-            "textColor": "rgba(0,0,0,0)",
-            "fontFamily": "base",
-            "fontSize": "base"
-          }
-        }
-      },
-      "block_order": [
-        "rich_text_eEGiJV",
-        "custom_rich_text_chBkfH",
-        "rich_text_EtccFR"
-      ],
-      "settings": {
-        "custom_id": "",
-        "displayFor": "display--both",
-        "layout": "default",
-        "nomargin": false,
-        "scopedCSS": "",
-        "height": 500,
-        "padding": 0,
-        "lineMargin": 12,
-        "backgroundColor": "rgba(0,0,0,0)",
-        "backgroundPosition": "middle",
-        "backgroundFilter": "none",
-        "backdropIntensity": 50,
-        "parallax": false,
-        "backgroundPattern": false,
-        "overlayOpacity": 0,
-        "overlayColor": "#000000",
-        "contentColor": "rgba(0,0,0,0)",
-        "horizontalAlignment": "start",
-        "verticalAlignment": "top",
-        "mapEmbed": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m14!1m8!1m3!1d5560.848895432604!2d16.003121!3d45.822784!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d7a53d6ab5b5%3A0xd531eb4367cf4cce!2sJordanovac%20ul.%2C%2010000%2C%20Zagreb%2C%20Hrvatska!5e0!3m2!1shr!2sus!4v1584804957125!5m2!1shr!2sus\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\"><\/iframe>",
-        "mapStyle": "inside"
-      }
-    },
     "contact_page_content_BNTdwG": {
       "type": "contact-page-content",
+      "custom_css": [
+        ".container{margin-top:50px}"
+      ],
       "settings": {
         "weekdays": "7am - 9pm",
         "contacts_address": "1041 N Dupont Hwy #1049 Dover, DE 19901 USA",
-        "contacts_address_coordinates": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d32939.41115263142!2d-75.53212674271523!3d39.17882391265458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c77b276929ff4b%3A0x8d485da96110ac0f!2zMTA0MSBOIER1cG9udCBId3kgIzEwNDksIERvdmVyLCBERSAxOTkwMSwg0KHQv9C-0LvRg9GH0LXQvdGWINCo0YLQsNGC0Lgg0JDQvNC10YDQuNC60Lg!5e0!3m2!1suk!2sua!4v1708544247520!5m2!1suk!2sua"
+        "contacts_address_coordinates": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d2562.108178521953!2d19.950459113313457!3d50.04680477139909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b446c97d30b%3A0x73ab18a68262b19d!2sPiwna%2021%2C%2030-527%20Krak%C3%B3w!5e0!3m2!1sru!2spl!4v1709827720850!5m2!1sru!2spl"
       }
     }
   },
   "order": [
     "crumbs_tmwCV4",
     "page_title_4JCqw5",
-    "section_map_MMRxHQ",
     "contact_page_content_BNTdwG"
   ]
 }
