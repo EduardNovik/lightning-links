@@ -3,6 +3,9 @@
   "sections": {
     "crumbs_qgraMU": {
       "type": "crumbs",
+      "custom_css": [
+        ".breadcrumb {margin-top: 10px; margin-bottom: 20px;}"
+      ],
       "settings": {
       }
     },
@@ -11,7 +14,7 @@
       "settings": {
       }
     },
-    "product_list_custom_FfFwGU": {
+    "product_list_custom_YgfqiJ": {
       "type": "product-list-custom",
       "settings": {
       }
@@ -112,7 +115,7 @@
   "order": [
     "crumbs_qgraMU",
     "product_filter_VG7En3",
-    "product_list_custom_FfFwGU",
+    "product_list_custom_YgfqiJ",
     "content",
     "banner",
     "sort",
