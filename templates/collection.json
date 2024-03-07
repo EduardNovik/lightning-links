@@ -11,11 +11,17 @@
     },
     "product_filter_VG7En3": {
       "type": "product-filter",
+      "custom_css": [
+        ".container {margin-top: 10px;}"
+      ],
       "settings": {
       }
     },
     "product_list_custom_YgfqiJ": {
       "type": "product-list-custom",
+      "custom_css": [
+        ".container {margin-top: 40px;}"
+      ],
       "settings": {
       }
     },
