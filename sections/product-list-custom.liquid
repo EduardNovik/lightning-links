@@ -6,6 +6,9 @@
     {% for product in collection.products %}
     {% unless product.tags contains 'featured' %}
         {% render 'product-card-default-custom' with product as product %}
+        {% if forloop.index != 0 and forloop.index % 3 == 0 and forloop.index != section.blocks.size %}
+        <div class="col-span-full"><hr class="separator"></div>
+      {% endif %}
     {%endunless%}
   {% else %}
     <h2 class="h-reset font__size--medium font__family--title col-12 product-list__empty">{{'general.search.no_matches' |t}}</h2>
