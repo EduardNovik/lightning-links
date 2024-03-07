@@ -16,6 +16,7 @@
     },
     "content": {
       "type": "product-list",
+      "disabled": true,
       "settings": {
       }
     },
@@ -104,6 +105,11 @@
         "overlayOpacity": 0,
         "overlayColor": "#000000"
       }
+    },
+    "product_list_custom_YgfqiJ": {
+      "type": "product-list-custom",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -113,6 +119,7 @@
     "banner",
     "sort",
     "filters",
-    "banner-bottom"
+    "banner-bottom",
+    "product_list_custom_YgfqiJ"
   ]
 }
