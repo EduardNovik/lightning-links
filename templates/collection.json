@@ -4,7 +4,7 @@
     "crumbs_qgraMU": {
       "type": "crumbs",
       "custom_css": [
-
+        ".breadcrumb {margin-top: 10px; margin-bottom: 20px;}"
       ],
       "settings": {
       }
