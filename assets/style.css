@@ -662,10 +662,6 @@ video {
   z-index: 2;
 }
 
-.col-span-3 {
-  grid-column: span 3 / span 3;
-}
-
 .col-span-full {
   grid-column: 1 / -1;
 }
