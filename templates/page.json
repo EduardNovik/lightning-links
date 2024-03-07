@@ -30,7 +30,7 @@
     "product_filter_custom_8DYCTx": {
       "type": "product-filter-custom",
       "custom_css": [
-
+        ".container{margin-top:10px}"
       ],
       "settings": {
       }
