@@ -30,13 +30,16 @@
     "product_filter_custom_8DYCTx": {
       "type": "product-filter-custom",
       "custom_css": [
-        ".productsContainer{margin-top:20px}"
+
       ],
       "settings": {
       }
     },
     "all_products_nLnUBX": {
       "type": "all-products",
+      "custom_css": [
+        ".container {margin-top: 40px;}"
+      ],
       "settings": {
       }
     }
