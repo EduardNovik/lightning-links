@@ -29,6 +29,9 @@
     },
     "product_filter_custom_8DYCTx": {
       "type": "product-filter-custom",
+      "custom_css": [
+        ".productsContainer{margin-top:20px}"
+      ],
       "settings": {
       }
     },
