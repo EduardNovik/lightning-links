@@ -2,6 +2,10 @@
   "sections": {
     "breadcrumbs": {
       "type": "breadcrumbs",
+      "custom_css": [
+        ".breadcrumb {margin-top: 10px;}",
+        "nav.breadcrumb > :last-child {margin-top: 40px; display: block; font-size: 58px;}"
+      ],
       "settings": {
       }
     },
@@ -99,8 +103,7 @@
       "settings": {
         "view": "default",
         "layout": "max-width",
-        "galleryStyle": "verticalDouble",
-        "galleryPosition": "right",
+        "galleryStyle": "verticalSingle",
         "video_loop": true,
         "video_autoplay": true,
         "autoZoom": false,
@@ -111,49 +114,6 @@
         "productMainImageSize": "crop",
         "imageSticky": true,
         "imageStickyPosition": 100
-      }
-    },
-    "16624329502954f8c7": {
-      "type": "section__content",
-      "blocks": {
-        "cca07ba3-0151-4d5b-b596-f15473bc7666": {
-          "type": "html",
-          "settings": {
-            "blockWidth": "col-md-3",
-            "vertPadding": 0,
-            "horPadding": 0,
-            "horAlign": "center",
-            "vertAlign": "middle",
-            "html": "<div id=\"upsell\"><\/div>",
-            "customCSS": ""
-          }
-        }
-      },
-      "block_order": [
-        "cca07ba3-0151-4d5b-b596-f15473bc7666"
-      ],
-      "settings": {
-        "custom_id": "",
-        "displayFor": "display--both",
-        "layout": "default",
-        "nomargin": false,
-        "scopedCSS": "",
-        "height": 0,
-        "padding": 0,
-        "lineMargin": 12,
-        "backgroundColor": "rgba(0,0,0,0)",
-        "backgroundPosition": "middle",
-        "backgroundFilter": "none",
-        "backdropIntensity": 50,
-        "parallax": false,
-        "backgroundPattern": false,
-        "overlayOpacity": 0,
-        "overlayColor": "#000000",
-        "contentColor": "rgba(0,0,0,0)",
-        "horizontalAlignment": "center",
-        "verticalAlignment": "middle",
-        "vertPaddingAccord": 12,
-        "horPaddingAccord": 4
       }
     },
     "upsell": {
@@ -179,50 +139,6 @@
       "settings": {
       }
     },
-    "16624329241f5b4fd4": {
-      "type": "section__content",
-      "blocks": {
-        "fbfb30a2-840c-4b1e-8f88-9c2b9c22cfc8": {
-          "type": "html",
-          "settings": {
-            "blockWidth": "col-md-3",
-            "vertPadding": 0,
-            "horPadding": 0,
-            "horAlign": "center",
-            "vertAlign": "middle",
-            "html": "<div id=\"reco\"> <\/div>",
-            "customCSS": ""
-          }
-        }
-      },
-      "block_order": [
-        "fbfb30a2-840c-4b1e-8f88-9c2b9c22cfc8"
-      ],
-      "disabled": true,
-      "settings": {
-        "custom_id": "",
-        "displayFor": "display--both",
-        "layout": "default",
-        "nomargin": false,
-        "scopedCSS": "",
-        "height": 0,
-        "padding": 0,
-        "lineMargin": 12,
-        "backgroundColor": "rgba(0,0,0,0)",
-        "backgroundPosition": "middle",
-        "backgroundFilter": "none",
-        "backdropIntensity": 50,
-        "parallax": false,
-        "backgroundPattern": false,
-        "overlayOpacity": 0,
-        "overlayColor": "#000000",
-        "contentColor": "rgba(0,0,0,0)",
-        "horizontalAlignment": "center",
-        "verticalAlignment": "middle",
-        "vertPaddingAccord": 12,
-        "horPaddingAccord": 4
-      }
-    },
     "recommended": {
       "type": "product-page__recommended",
       "disabled": true,
@@ -241,9 +157,7 @@
   "order": [
     "breadcrumbs",
     "page",
-    "16624329502954f8c7",
     "upsell",
-    "16624329241f5b4fd4",
     "recommended"
   ]
 }
