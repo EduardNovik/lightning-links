@@ -20,6 +20,9 @@
       "block_order": [
         "social_link_KKAEUV"
       ],
+      "custom_css": [
+        "h2{font-size:50px;}"
+      ],
       "settings": {
         "weekdays": "7am - 9pm",
         "contacts_address": "1041 N Dupont Hwy #1049 Dover, DE 19901 USA",
