@@ -10,7 +10,7 @@
 {% endstyle %}
 
 <section class="container mx-auto">
-  <h2 class="text-2xl mb-5 md:mb-10 capitalize contact-header">contacts</h2>
+  <h2 class="text-2xl mb-5 md:mb-10 capitalize contact-header">contact</h2>
   <div class="flex flex-col md:grid md:grid-cols-5 gap-4">
     <div class="w-full col-start-1 col-end-4 grid gap-10">
       <p class="text-grigio-60">{{ section.settings.questionsText }}</p>
@@ -50,7 +50,7 @@
         {% for linkBlock in section.blocks %}
           <a
             href="{{ linkBlock.settings.social_links }}"
-            class="border border-grigio-40 uppercase py-2 px-6 flex justify-center items-center w-fit min-h-[50px] gap-2"
+            class="border border-grigio-40 uppercase py-2 px-6 flex justify-center items-center w-fit min-h-[50px] max-h-[50px] gap-2"
             target="_blank">
             {% if linkBlock.settings.icon %}
               <img src="{{ linkBlock.settings.icon | img_url: 'original' }}" alt="{{ linkBlock.settings.title }}" class="icon-class w-auto">
