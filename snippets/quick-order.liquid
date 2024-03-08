@@ -15,7 +15,7 @@
         <input type="text" id="name" name="contact[name]" class="block w-full border-gray-300 shadow-sm h-12 border-2 bg-white">
       </div>
 
-      <div class="mb-5"> 
+      <div class="mb-5">
         <label for="phone" class="block text-sm font-medium text-gray-600">Phone number</label>
         <input type="tel" id="phone" name="contact[phone]" class="block w-full border-gray-300 shadow-sm h-12 border-2 bg-white">
       </div>
@@ -30,18 +30,18 @@
         <textarea id="message" name="contact[message]" class="block w-full border-gray-300 shadow-sm h-24 border-2 bg-white"></textarea>
       </div>
 
-      <div class="flex justify-between gap-4">
+      <div class="grid grid-cols-2 gap-2 ">
         <button
-          id="cancelButton"
+          id="cancelButtonQuickOrderPopup"
           type="button"
           class="py-2 px-4 border  w-full border-gray-300 text-sm font-medium text-gray-700 bg-white hover:bg-gray-100"
         >
           CANCEL
         </button>
         <button
-          id="sendButtonInForPartnersPopup"
+          id="sendButtonInQuickOrderPopup"
           type="submit"
-          class="py-3 px-4 bg-black w-full text-white text-sm font-medium hover:bg-gray-800"
+           class="py-3 px-4 bg-black w-full text-white text-sm font-medium hover:bg-gray-800"
         >
           SEND
         </button>
@@ -65,7 +65,7 @@
 
 
 
-
+{% comment %} 
 <div
   id="quick-order-popup"
   class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 hidden items-center justify-center"
@@ -129,4 +129,4 @@
     document.getElementById('quick-order-popup').classList.toggle('flex')
     document.querySelector("body").classList.toggle("overflow-hidden");
   })
-</script> 
+</script>  {% endcomment %}
