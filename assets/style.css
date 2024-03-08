@@ -781,10 +781,6 @@ video {
   max-height: 50px;
 }
 
-.min-h-24 {
-  min-height: 6rem;
-}
-
 .min-h-\[40vw\] {
   min-height: 40vw;
 }
