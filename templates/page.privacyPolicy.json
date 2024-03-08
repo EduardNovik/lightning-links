@@ -7,6 +7,9 @@
     },
     "page_title_4JCqw4": {
       "type": "page-title",
+      "custom_css": [
+        "h1{margin-top:40px;}"
+      ],
       "settings": {
       }
     },
