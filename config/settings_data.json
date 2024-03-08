@@ -162,6 +162,9 @@
       },
       "footer": {
         "type": "footer",
+        "custom_css": [
+          ".wrapper--bottom{padding-top:none;}"
+        ],
         "settings": {
           "layout": "default",
           "fillColor": "#5a6476",
