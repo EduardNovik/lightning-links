@@ -9,41 +9,41 @@
         {% render 'icon-close' %}
       </button>
     </header>
-    {% form 'contact' class: "flex flex-col gap-9" %}
-      <div>
+    {% form 'contact' %}
+      <div class="mb-5">
         <label for="name" class="block text-sm font-medium text-gray-600">Name</label>
         <input type="text" id="name" name="contact[name]" class="block w-full border-gray-300 shadow-sm h-12 border-2 bg-white">
       </div>
 
-      <div>
+      <div class="mb-5"> 
         <label for="phone" class="block text-sm font-medium text-gray-600">Phone number</label>
         <input type="tel" id="phone" name="contact[phone]" class="block w-full border-gray-300 shadow-sm h-12 border-2 bg-white">
       </div>
 
-      <div>
+      <div class="mb-5">
         <label for="email" class="block text-sm font-medium text-gray-600">Email</label>
         <input type="email" id="email" name="contact[email]" class="block w-full border-gray-300 shadow-sm h-12 border-2 bg-white">
       </div>
 
-      <div>
+      <div class="mb-5">
         <label for="message" class="block text-sm font-medium text-gray-600">Text field</label>
         <textarea id="message" name="contact[message]" class="block w-full border-gray-300 shadow-sm h-24 border-2 bg-white"></textarea>
       </div>
 
-      <div class="grid grid-cols-2 gap-2 ">
+      <div class="flex justify-between gap-4">
         <button
-          id="cancelButtonQuickOrderPopup"
+          id="cancelButton"
           type="button"
-          class=" border border-grigio-40"
+          class="py-2 px-4 border  w-full border-gray-300 text-sm font-medium text-gray-700 bg-white hover:bg-gray-100"
         >
-          cancel
+          CANCEL
         </button>
         <button
-          id="sendButtonInQuickOrderPopup"
+          id="sendButtonInForPartnersPopup"
           type="submit"
-          class="bg-grigio-100 text-white uppercase p-2 w-full font-extrabold"
+          class="py-3 px-4 bg-black w-full text-white text-sm font-medium hover:bg-gray-800"
         >
-          send
+          SEND
         </button>
       </div>
     {% endform %}
@@ -65,8 +65,6 @@
 
 
 
-
-{% comment %} 
 
 <div
   id="quick-order-popup"
@@ -131,4 +129,4 @@
     document.getElementById('quick-order-popup').classList.toggle('flex')
     document.querySelector("body").classList.toggle("overflow-hidden");
   })
-</script> {% endcomment %}
+</script> 
