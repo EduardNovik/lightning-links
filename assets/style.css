@@ -877,10 +877,6 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.transform-none {
-  transform: none;
-}
-
 .resize {
   resize: both;
 }
@@ -1205,6 +1201,11 @@ video {
   line-height: 2rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .text-7xl {
   font-size: 4.5rem;
   line-height: 1;
@@ -1229,11 +1230,6 @@ video {
   line-height: 1rem;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .font-black {
   font-weight: 900;
 }
@@ -1254,8 +1250,8 @@ video {
   text-transform: uppercase;
 }
 
-.lowercase {
-  text-transform: lowercase;
+.normal-case {
+  text-transform: none;
 }
 
 .text-gray-600 {
