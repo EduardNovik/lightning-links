@@ -22,6 +22,7 @@
       ],
       "custom_css": [
         ".contact-header {font-size: 58px;}",
+        ".feedback-header{margin-bottom:40px;}",
         ".container {margin-top: 20px;}"
       ],
       "settings": {
