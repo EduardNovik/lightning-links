@@ -3,13 +3,14 @@
     "crumbs_LmxpVq": {
       "type": "crumbs",
       "custom_css": [
-        "nav.breadcrumb > :last-child {font-size:40px;}"
+        "nav.breadcrumb > :last-child {margin-top: 40px; display: block; font-size: 58px;}"
       ],
       "settings": {
       }
     },
     "page_title_qnnLyK": {
       "type": "page-title",
+      "disabled": true,
       "custom_css": [
         "h1 {margin-top: 40px;}"
       ],
