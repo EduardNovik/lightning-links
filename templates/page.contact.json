@@ -22,7 +22,7 @@
       ],
       "custom_css": [
         ".contact-header {font-size: 58px;}",
-        "container {margin-top:20px;}"
+        ".container {margin-top: 20px;}"
       ],
       "settings": {
         "weekdays": "7am - 9pm",
