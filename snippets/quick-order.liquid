@@ -4,11 +4,11 @@
 >
   <div class=" bg-white p-4 z-50 w-full max-w-[750px] m-5">
     <header class="flex items-center gap-3 justify-between mb-10">
-      <p class="font-roboto text-3xl font-bold transform-none">Quick Order</p>
+      <h5 class="font-roboto text-3xl font-bold transform-none">Quick Order</h5>
       <button id="closeQuickOrderPopupButton" class="min-w-5">
         {% render 'icon-close' %}
       </button>
-    </вг>
+    </header>
     {% form 'contact' %}
       <div class="mb-5">
         <label for="name" class="block text-sm font-medium text-gray-600">Name</label>
@@ -62,6 +62,3 @@
     document.querySelector("body").classList.toggle("overflow-hidden");
   })
 </script>
-
-
-
