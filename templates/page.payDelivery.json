@@ -3,15 +3,8 @@
     "crumbs_MRReHT": {
       "type": "crumbs",
       "custom_css": [
-        ".breadcrumb {margin-top: 10px;}"
-      ],
-      "settings": {
-      }
-    },
-    "page_title_8xB8rA": {
-      "type": "page-title",
-      "custom_css": [
-        "h1 {margin-top: 40px;}"
+        ".breadcrumb {margin-top: 10px;}",
+        "nav.breadcrumb > :last-child {margin-top: 40px; display: block; font-size: 58px;}"
       ],
       "settings": {
       }
@@ -28,7 +21,6 @@
   },
   "order": [
     "crumbs_MRReHT",
-    "page_title_8xB8rA",
     "text_block_wefciq"
   ]
 }

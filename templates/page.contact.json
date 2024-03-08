@@ -3,7 +3,8 @@
     "crumbs_tmwCV4": {
       "type": "crumbs",
       "custom_css": [
-        ".breadcrumb {margin-top: 10px;}"
+        ".breadcrumb {margin-top: 10px;}",
+        "nav.breadcrumb > :last-child {margin-top: 40px; display: block; font-size: 58px;}"
       ],
       "settings": {
       }
