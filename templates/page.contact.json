@@ -8,17 +8,17 @@
     "contact_page_custom_8jUAVp": {
       "type": "contact-page-custom",
       "blocks": {
-        "social_link_6XEM3U": {
+        "social_link_KKAEUV": {
           "type": "social_link",
           "settings": {
             "icon": "shopify:\/\/shop_images\/insta.svg",
-            "title": "follow our Instagram",
-            "social_links": "\/"
+            "title": "Contacts",
+            "social_links": "https:\/\/www.instagram.com\/"
           }
         }
       },
       "block_order": [
-        "social_link_6XEM3U"
+        "social_link_KKAEUV"
       ],
       "settings": {
         "weekdays": "7am - 9pm",
