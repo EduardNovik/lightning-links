@@ -5,22 +5,14 @@
       "settings": {
       }
     },
-    "page_title_4JCqw5": {
-      "type": "page-title",
-      "custom_css": [
-        "h1 {margin-top: 40px;}"
-      ],
-      "settings": {
-      }
-    },
     "contact_page_custom_8jUAVp": {
       "type": "contact-page-custom",
       "blocks": {
         "social_link_6XEM3U": {
           "type": "social_link",
           "settings": {
-            "icon": "shopify:\/\/shop_images\/yellow_car.png",
-            "title": "instagram",
+            "icon": "shopify:\/\/shop_images\/insta.svg",
+            "title": "follow our Instagram",
             "social_links": "\/"
           }
         }
@@ -40,7 +32,6 @@
   },
   "order": [
     "crumbs_tmwCV4",
-    "page_title_4JCqw5",
     "contact_page_custom_8jUAVp"
   ]
 }
