@@ -161,6 +161,28 @@
         "title": "Instagram",
         "contacts_instagram": "https:\/\/www.instagram.com\/"
       }
+    },
+    "all_products_WQpKfa": {
+      "type": "all-products",
+      "settings": {
+      }
+    },
+    "products_GiYHWc": {
+      "type": "products",
+      "blocks": {
+        "product_QfLdgE": {
+          "type": "product",
+          "settings": {
+            "product": "audi"
+          }
+        }
+      },
+      "block_order": [
+        "product_QfLdgE"
+      ],
+      "settings": {
+        "title": "Products"
+      }
     }
   },
   "order": [
@@ -171,6 +193,8 @@
     "products_tDNdzk",
     "custom_section_pAJajT",
     "advantages_kD9rqK",
-    "instagram_UNh6hL"
+    "instagram_UNh6hL",
+    "all_products_WQpKfa",
+    "products_GiYHWc"
   ]
 }
