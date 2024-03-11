@@ -81,24 +81,25 @@ if (quickOrderBtn) {
 // });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const buyButtons = document.querySelectorAll(".buyPopupCustomButton");
+  // Target buttons correctly using the class '.buyPopupCustomButtons'
+  const buyButtons = document.querySelectorAll(".buyPopupCustomButtons");
 
   buyButtons.forEach((button) => {
     button.addEventListener("click", function () {
+      // This 'this' keyword refers to the button clicked
       const popupId = this.getAttribute("data-popup-id");
       const popup = document.getElementById(popupId);
       if (popup) {
+        // Removes 'hidden' class to show the popup
         popup.classList.remove("hidden");
-        // Additional logic to properly show the popup, e.g., adding overlay, disabling background scroll, etc.
       }
     });
   });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
   // Close popup functionality
-  document.querySelectorAll("#closeBuyPopupCustomButton").forEach((button) => {
+  document.querySelectorAll(".closeBuyPopupCustomButton").forEach((button) => {
     button.addEventListener("click", function () {
+      // 'this.closest' finds the nearest parent with the '.buy-popup-custom' class and adds 'hidden'
       this.closest(".buy-popup-custom").classList.add("hidden");
     });
   });
