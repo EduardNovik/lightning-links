@@ -14,7 +14,7 @@
             "noMargin": true,
             "color": "rgba(0,0,0,0)",
             "fontFamily": "base",
-            "fontSize": "medium"
+            "fontSize": "big"
           }
         },
         "ppPrice": {
@@ -28,118 +28,29 @@
             "fontSize": "base"
           }
         },
-        "bc90e998-d134-431e-8cf3-3a27eee32c19": {
-          "type": "productPageDelivery",
-          "settings": {
-            "noMargin": false,
-            "icon": "none",
-            "iconColor": "rgba(0,0,0,0)",
-            "text": "<p>This is a Demo Store created for booster theme. If you would like to buy the products in this store you may buy them on  <a href=\"https:\/\/www.carmax.com\/\" target=\"_blank\" title=\"https:\/\/www.carmax.com\/\"><em><strong>Carmax website.<\/strong><\/em><\/a><\/p>",
-            "textColor": "rgba(0,0,0,0)"
-          }
-        },
-        "7c681d42-a5a0-4648-b20b-8673ce6b9add": {
-          "type": "productPageWatching",
-          "disabled": true,
-          "settings": {
-            "noMargin": true,
-            "max": "100",
-            "customMax": "",
-            "interval": 8,
-            "iconColor": "rgba(0,0,0,0)",
-            "textColor": "rgba(0,0,0,0)"
-          }
-        },
-        "2c83bf6c-ac4f-4517-abb9-386ad313bda8": {
-          "type": "productPageLDelivery",
-          "disabled": true,
-          "settings": {
-            "noMargin": false,
-            "icon": "",
-            "iconColor": "rgba(0,0,0,0)",
-            "text": "<p>This car can be delivered between %start% and %end%.<\/p>",
-            "start": "1",
-            "end": "5",
-            "textColor": "rgba(0,0,0,0)"
-          }
-        },
         "ppSwatch": {
           "type": "productPageSwatch",
           "settings": {
-            "noMargin": false
+            "noMargin": true
           }
         },
         "ppATC": {
           "type": "productPageATC",
           "settings": {
             "noMargin": true,
-            "stickyATC": "scroll"
-          }
-        },
-        "03e4ccef-7c44-4b2a-988f-71fcd8753873": {
-          "type": "productPageDescription",
-          "settings": {
-            "heading": "Product description",
-            "noMargin": false
-          }
-        },
-        "product_page_countdown_wf3Bpa": {
-          "type": "productPageCountdown",
-          "settings": {
-            "noMargin": false,
-            "style": "compact",
-            "title": "LIMITED TIME OFFER",
-            "text": "The price of this item will revert back to %price% at the end of this countdown."
-          }
-        },
-        "product_page_sku_EykKgf": {
-          "type": "productPageSKU",
-          "settings": {
-            "noMargin": false
-          }
-        },
-        "product_page_tab_WCN9iK": {
-          "type": "productPageTab",
-          "settings": {
-            "showInline": false,
-            "heading": "Description",
-            "content": "description",
-            "metafieldNS": "global",
-            "metafieldKey": "",
-            "page": "",
-            "customContent": "<p>Add custom content here!<\/p>"
-          }
-        },
-        "product_page_accordion_4XGmHz": {
-          "type": "productPageAccordion",
-          "settings": {
-            "noMargin": false,
-            "heading": "Description",
-            "content": "description",
-            "metafieldNS": "global",
-            "metafieldKey": "",
-            "page": "",
-            "customContent": "<p>Add custom content here!<\/p>"
+            "stickyATC": "disabled"
           }
         }
       },
       "block_order": [
         "ppTitle",
         "ppPrice",
-        "bc90e998-d134-431e-8cf3-3a27eee32c19",
-        "7c681d42-a5a0-4648-b20b-8673ce6b9add",
-        "2c83bf6c-ac4f-4517-abb9-386ad313bda8",
         "ppSwatch",
-        "ppATC",
-        "03e4ccef-7c44-4b2a-988f-71fcd8753873",
-        "product_page_countdown_wf3Bpa",
-        "product_page_sku_EykKgf",
-        "product_page_tab_WCN9iK",
-        "product_page_accordion_4XGmHz"
+        "ppATC"
       ],
       "settings": {
-        "view": "marketplace",
-        "layout": "full-width",
+        "view": "default",
+        "layout": "max-width",
         "galleryStyle": "verticalSingle",
         "video_loop": true,
         "video_autoplay": true,
@@ -159,7 +70,7 @@
         "81a40f37-601a-4c6b-a6cd-a40d8a18203e": {
           "type": "priceSpecific",
           "settings": {
-            "conditionType": "mt",
+            "conditionType": "lt",
             "condition": "499",
             "upsellProduct1": "audi",
             "upsellProduct2": "audi",
@@ -172,50 +83,8 @@
       "block_order": [
         "81a40f37-601a-4c6b-a6cd-a40d8a18203e"
       ],
+      "disabled": true,
       "settings": {
-      }
-    },
-    "16624329241f5b4fd4": {
-      "type": "section__content",
-      "blocks": {
-        "fbfb30a2-840c-4b1e-8f88-9c2b9c22cfc8": {
-          "type": "html",
-          "settings": {
-            "blockWidth": "col-md-3",
-            "vertPadding": 0,
-            "horPadding": 0,
-            "horAlign": "center",
-            "vertAlign": "middle",
-            "html": "<div id=\"reco\"> <\/div>",
-            "customCSS": ""
-          }
-        }
-      },
-      "block_order": [
-        "fbfb30a2-840c-4b1e-8f88-9c2b9c22cfc8"
-      ],
-      "settings": {
-        "custom_id": "",
-        "displayFor": "display--both",
-        "layout": "default",
-        "nomargin": false,
-        "scopedCSS": "",
-        "height": 0,
-        "padding": 0,
-        "lineMargin": 12,
-        "backgroundColor": "rgba(0,0,0,0)",
-        "backgroundPosition": "middle",
-        "backgroundFilter": "none",
-        "backdropIntensity": 50,
-        "parallax": false,
-        "backgroundPattern": false,
-        "overlayOpacity": 0,
-        "overlayColor": "#000000",
-        "contentColor": "rgba(0,0,0,0)",
-        "horizontalAlignment": "center",
-        "verticalAlignment": "middle",
-        "vertPaddingAccord": 12,
-        "horPaddingAccord": 4
       }
     },
     "recommended": {
@@ -229,7 +98,7 @@
         "subheading": "CHERRY PICKED PRODUCTS",
         "subheadingPosition": "above",
         "textAlignment": "start",
-        "defaultCollection": ""
+        "defaultCollection": "audi"
       }
     }
   },
@@ -237,7 +106,6 @@
     "breadcrumbs",
     "page",
     "upsell",
-    "16624329241f5b4fd4",
     "recommended"
   ]
 }

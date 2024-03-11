@@ -184,6 +184,11 @@
         "video_loop": true,
         "video_autoplay": true
       }
+    },
+    "all_products_cKHtAC": {
+      "type": "all-products",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -195,6 +200,7 @@
     "custom_section_pAJajT",
     "advantages_kD9rqK",
     "instagram_UNh6hL",
-    "section_featured_product_X9XUFh"
+    "section_featured_product_X9XUFh",
+    "all_products_cKHtAC"
   ]
 }
