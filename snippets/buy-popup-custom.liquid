@@ -1,5 +1,5 @@
 
-<style>
+{% comment %} <style>
     {%- unless block.settings.color contains "rgba(0,0,0,0)" -%}
     .product__price--{{block.id}} .product__price {
         color: {{block.settings.color}};
@@ -17,7 +17,7 @@
         color: {{block.settings.oldPriceColor}};
     }
     {%- endunless -%}
-</style>
+</style> {% endcomment %}
 
   {% assign current_variant = product.selected_or_first_available_variant %}
   {% assign s_type = settings.saleType | default: 'percent' %}
@@ -89,7 +89,7 @@
             </div>
 
         {% comment %} ---- {% endcomment %}
-        {% if product.variants.size > 1 %}
+       {% if product.variants.size > 1 %}
 
         {% assign altSelector = settings.altSelectorList | downcase | split: ',' %}
 
@@ -172,7 +172,7 @@
                     </div>
                 {% endfor %}
             </div>
-        {% endif %} 
+        {% endif %}
         </div>
         
     </div>
