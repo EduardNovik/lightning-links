@@ -40,58 +40,21 @@
         "button_text": "",
         "button_url": "",
         "custom_liquid": "<h1>Custom Liquid<\/h1>",
-        "image": "shopify:\/\/shop_images\/yellow_car.png",
-        "absolute_image": "shopify:\/\/shop_images\/Group_82.png",
         "video_url": ""
       }
     },
     "products_tDNdzk": {
       "type": "products",
       "blocks": {
-        "product_Pd8QDn": {
-          "type": "product",
-          "settings": {
-            "product": "bmw-m5-2020"
-          }
-        },
-        "product_GfKiNn": {
-          "type": "product",
-          "settings": {
-            "product": "mercedes-benz-glb-250-specs-2020"
-          }
-        },
         "product_kkT7Bk": {
           "type": "product",
           "settings": {
-            "product": "porsche-macan-2020"
-          }
-        },
-        "product_n6VPrF": {
-          "type": "product",
-          "settings": {
-            "product": "bmw-x5-2020"
-          }
-        },
-        "product_EEVLAN": {
-          "type": "product",
-          "settings": {
-            "product": "audi-q5-2020"
-          }
-        },
-        "product_bynXgD": {
-          "type": "product",
-          "settings": {
-            "product": "audi-a3-2020"
+            "product": "audi"
           }
         }
       },
       "block_order": [
-        "product_Pd8QDn",
-        "product_GfKiNn",
-        "product_kkT7Bk",
-        "product_n6VPrF",
-        "product_EEVLAN",
-        "product_bynXgD"
+        "product_kkT7Bk"
       ],
       "custom_css": [
 
@@ -120,7 +83,6 @@
         "advantage_1": "style",
         "advantage_2": "reducing fuel consumption",
         "advantage_3": "effective aerodynamics",
-        "image": "shopify:\/\/shop_images\/Frame_76.png",
         "padding_top": 20,
         "padding_bottom": 20
       }
@@ -131,7 +93,6 @@
         "slide_TxH9kq": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/car-1.jpg",
             "title": "LightingLinks",
             "post_url": "https:\/\/www.instagram.com\/"
           }
@@ -139,7 +100,6 @@
         "slide_kD7q4r": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/car-2.jpg",
             "title": "LightingLinks",
             "post_url": "https:\/\/www.instagram.com\/"
           }
@@ -147,7 +107,6 @@
         "slide_JqPk8Y": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/car-3.jpg",
             "title": "LightingLinks",
             "post_url": "https:\/\/www.instagram.com\/"
           }
@@ -155,7 +114,6 @@
         "slide_WpDJrW": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/car-4.jpg",
             "title": "LightingLinks",
             "post_url": "https:\/\/www.instagram.com\/"
           }
@@ -163,7 +121,6 @@
         "slide_UwRw3c": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/car-5.jpg",
             "title": "LightingLinks",
             "post_url": "https:\/\/www.instagram.com\/"
           }
@@ -171,7 +128,6 @@
         "slide_zdHVER": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/car-6.jpg",
             "title": "LightingLinks",
             "post_url": "https:\/\/www.instagram.com\/"
           }
@@ -179,7 +135,6 @@
         "slide_XCMkXH": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/car-7.jpg",
             "title": "LightingLinks",
             "post_url": "https:\/\/www.instagram.com\/"
           }
@@ -187,7 +142,6 @@
         "slide_FcbGFp": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/car-8.jpg",
             "title": "LightingLinks",
             "post_url": "https:\/\/www.instagram.com\/"
           }
