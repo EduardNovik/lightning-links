@@ -15,10 +15,6 @@
       {% render 'buy-popup-custom', product: product %}
     {% endfor %}
   </div> {% endcomment %}
-   {% for product in collections.all.products %}
-    {% comment %} {{ product.title | link_to: product.url }} {% endcomment %}
-    {% render 'product-item', product: product %}
-  {% endfor %}
   <a
     href="/collections/all"
     class="buttonWithLine block w-fit mx-auto relative py-2 px-3 border border-grigio-40 uppercase font-extrabold"
