@@ -1,5 +1,5 @@
 
-{% comment %} <style>
+<style>
     {%- unless block.settings.color contains "rgba(0,0,0,0)" -%}
     .product__price--{{block.id}} .product__price {
         color: {{block.settings.color}};
@@ -17,7 +17,7 @@
         color: {{block.settings.oldPriceColor}};
     }
     {%- endunless -%}
-</style> {% endcomment %}
+</style>
 
   {% assign current_variant = product.selected_or_first_available_variant %}
   {% assign s_type = settings.saleType | default: 'percent' %}
@@ -29,7 +29,7 @@
         <div class="flex justify-between items-center mb-10">
             <h1 class="text-2xl font-bold">{{ product.title }}</h1>
             <h1 class="text-2xl font-bold">{{ product.url }}</h1>
-            <button id="closeBuyPopupCustomButton" class="text-2xl closeBuyPopupCustomButton">
+            <button class="text-2xl closeBuyPopupCustomButton">
                 x
             </button>
         </div>
