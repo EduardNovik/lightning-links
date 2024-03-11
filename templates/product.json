@@ -23,9 +23,9 @@
             "noMargin": false,
             "color": "rgba(0,0,0,0)",
             "newPriceColor": "rgba(0,0,0,0)",
-            "oldPriceColor": "rgba(0,0,0,0)",
+            "oldPriceColor": "#000000",
             "fontFamily": "base",
-            "fontSize": "medium"
+            "fontSize": "base"
           }
         },
         "bc90e998-d134-431e-8cf3-3a27eee32c19": {
