@@ -1,6 +1,11 @@
 const body = document.querySelector("body");
 const forPartnersButtons = document.querySelectorAll(".forPartnersButton");
 const forPartnersPopup = document.getElementById("for-partners-popup");
+const buyPopupCustomButtons = document.querySelectorAll(
+  ".buyPopupCustomButtons"
+);
+const buyPopupCustom = document.getElementById("buy-popup-custom");
+
 const closePopupButton = document.getElementById("closePopupButton");
 const cancelPopupButton = document.getElementById("cancelButton");
 const successPopup = document.getElementById("successPopup");
@@ -55,3 +60,11 @@ if (quickOrderBtn) {
     body.classList.toggle("overflow-hidden");
   });
 }
+
+buyPopupCustomButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    buyPopupCustom.classList.toggle("hidden");
+    buyPopupCustom.classList.toggle("flex");
+    body.classList.toggle("overflow-hidden");
+  });
+});
