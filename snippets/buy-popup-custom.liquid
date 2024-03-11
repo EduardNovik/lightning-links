@@ -88,7 +88,7 @@
             </div>
 
         {% comment %} ---- {% endcomment %}
-        {% comment %} {% if product.variants.size > 1 %}
+        {% if product.variants.size > 1 %}
 
         {% assign altSelector = settings.altSelectorList | downcase | split: ',' %}
 
@@ -171,7 +171,7 @@
                     </div>
                 {% endfor %}
             </div>
-        {% endif %} {% endcomment %}
+        {% endif %} 
         </div>
         
     </div>
