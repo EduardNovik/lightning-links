@@ -1,14 +1,18 @@
 const body = document.querySelector("body");
 const forPartnersButtons = document.querySelectorAll(".forPartnersButton");
 const forPartnersPopup = document.getElementById("for-partners-popup");
+const closePopupButton = document.getElementById("closePopupButton");
+const cancelPopupButton = document.getElementById("cancelButton");
 
 const buyPopupCustomButtons = document.querySelectorAll(
   ".buyPopupCustomButtons"
 );
 const buyPopupCustom = document.getElementById("buy-popup-custom");
 
-const closePopupButton = document.getElementById("closePopupButton");
-const cancelPopupButton = document.getElementById("cancelButton");
+const closeBuyPopupCustomButton = document.getElementById(
+  "closeBuyPopupCustomButton"
+);
+
 const successPopup = document.getElementById("successPopup");
 const sendButtonInForPartnersPopup = document.getElementById(
   "sendButtonInForPartnersPopup"
@@ -68,4 +72,10 @@ buyPopupCustomButtons.forEach((button) => {
     buyPopupCustom.classList.toggle("flex");
     body.classList.toggle("overflow-hidden");
   });
+});
+
+closeBuyPopupCustomButton.addEventListener("click", () => {
+  buyPopupCustom.classList.toggle("hidden");
+  buyPopupCustom.classList.toggle("flex");
+  body.classList.toggle("overflow-hidden");
 });
