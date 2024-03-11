@@ -7,6 +7,7 @@
     {% for block in section.blocks %}
       {% assign product = all_products[block.settings.product] %}
       {% render 'product-item', product: product %}
+      {% render 'buy-popup-custom', product: product, class:'hidden'%}
     {% endfor %}
   </div>
   <a
