@@ -83,6 +83,45 @@
             "heading": "Product description",
             "noMargin": false
           }
+        },
+        "product_page_countdown_wf3Bpa": {
+          "type": "productPageCountdown",
+          "settings": {
+            "noMargin": false,
+            "style": "compact",
+            "title": "LIMITED TIME OFFER",
+            "text": "The price of this item will revert back to %price% at the end of this countdown."
+          }
+        },
+        "product_page_sku_EykKgf": {
+          "type": "productPageSKU",
+          "settings": {
+            "noMargin": false
+          }
+        },
+        "product_page_tab_WCN9iK": {
+          "type": "productPageTab",
+          "settings": {
+            "showInline": false,
+            "heading": "Description",
+            "content": "description",
+            "metafieldNS": "global",
+            "metafieldKey": "",
+            "page": "",
+            "customContent": "<p>Add custom content here!<\/p>"
+          }
+        },
+        "product_page_accordion_4XGmHz": {
+          "type": "productPageAccordion",
+          "settings": {
+            "noMargin": false,
+            "heading": "Description",
+            "content": "description",
+            "metafieldNS": "global",
+            "metafieldKey": "",
+            "page": "",
+            "customContent": "<p>Add custom content here!<\/p>"
+          }
         }
       },
       "block_order": [
@@ -93,7 +132,11 @@
         "2c83bf6c-ac4f-4517-abb9-386ad313bda8",
         "ppSwatch",
         "ppATC",
-        "03e4ccef-7c44-4b2a-988f-71fcd8753873"
+        "03e4ccef-7c44-4b2a-988f-71fcd8753873",
+        "product_page_countdown_wf3Bpa",
+        "product_page_sku_EykKgf",
+        "product_page_tab_WCN9iK",
+        "product_page_accordion_4XGmHz"
       ],
       "settings": {
         "view": "default",
@@ -119,9 +162,9 @@
           "settings": {
             "conditionType": "mt",
             "condition": "499",
-            "upsellProduct1": "2015-370z-touring",
-            "upsellProduct2": "",
-            "upsellProduct3": "",
+            "upsellProduct1": "audi",
+            "upsellProduct2": "audi",
+            "upsellProduct3": "audi",
             "heading": "",
             "subheading": ""
           }

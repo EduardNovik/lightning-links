@@ -162,26 +162,27 @@
         "contacts_instagram": "https:\/\/www.instagram.com\/"
       }
     },
-    "all_products_WQpKfa": {
-      "type": "all-products",
+    "section_featured_product_X9XUFh": {
+      "type": "section__featured-product",
       "settings": {
-      }
-    },
-    "products_GiYHWc": {
-      "type": "products",
-      "blocks": {
-        "product_QfLdgE": {
-          "type": "product",
-          "settings": {
-            "product": "audi"
-          }
-        }
-      },
-      "block_order": [
-        "product_QfLdgE"
-      ],
-      "settings": {
-        "title": "Products"
+        "custom_id": "",
+        "displayFor": "display--both",
+        "layout": "default",
+        "nomargin": false,
+        "scopedCSS": "",
+        "height": 0,
+        "padding": 0,
+        "backgroundColor": "rgba(0,0,0,0)",
+        "heading": "Check out this product!",
+        "headingColor": "rgba(0,0,0,0)",
+        "subheading": "...it's really cool!",
+        "subheadingColor": "rgba(0,0,0,0)",
+        "subheadingPosition": "below",
+        "headingAlignment": "start",
+        "product": "",
+        "showDescription": true,
+        "video_loop": true,
+        "video_autoplay": true
       }
     }
   },
@@ -194,7 +195,6 @@
     "custom_section_pAJajT",
     "advantages_kD9rqK",
     "instagram_UNh6hL",
-    "all_products_WQpKfa",
-    "products_GiYHWc"
+    "section_featured_product_X9XUFh"
   ]
 }
