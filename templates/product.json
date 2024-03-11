@@ -30,7 +30,6 @@
         },
         "bc90e998-d134-431e-8cf3-3a27eee32c19": {
           "type": "productPageDelivery",
-          "disabled": true,
           "settings": {
             "noMargin": false,
             "icon": "none",
@@ -139,9 +138,9 @@
         "product_page_accordion_4XGmHz"
       ],
       "settings": {
-        "view": "default",
-        "layout": "max-width",
-        "galleryStyle": "verticalDouble",
+        "view": "marketplace",
+        "layout": "full-width",
+        "galleryStyle": "verticalSingle",
         "video_loop": true,
         "video_autoplay": true,
         "autoZoom": false,
