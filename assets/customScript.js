@@ -1,6 +1,7 @@
 const body = document.querySelector("body");
 const forPartnersButtons = document.querySelectorAll(".forPartnersButton");
 const forPartnersPopup = document.getElementById("for-partners-popup");
+
 const buyPopupCustomButtons = document.querySelectorAll(
   ".buyPopupCustomButtons"
 );
