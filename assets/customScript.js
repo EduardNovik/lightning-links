@@ -71,7 +71,8 @@ buyPopupCustomButtons.forEach((button) => {
     const popupId = this.getAttribute("data-popup-id");
     const popup = document.getElementById(popupId);
     if (popup) {
-      popup.classList.remove("invisible");
+      popup.classList.toggle("hidden");
+      popup.classList.toggle("flex");
       body.classList.toggle("overflow-hidden");
     }
   });
@@ -81,7 +82,7 @@ buyPopupCustomButtons.forEach((button) => {
 closeBuyPopupCustomButtons.forEach((button) => {
   button.addEventListener("click", () => {
     // 'this.closest' finds the nearest parent with the '.buy-popup-custom' class and adds 'hidden'
-    this.closest(".buy-popup-custom").classList.add("invisible");
+    this.closest(".buy-popup-custom").classList.add("hidden");
     body.classList.toggle("overflow-hidden");
   });
 });
