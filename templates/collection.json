@@ -19,7 +19,6 @@
     },
     "product_list_custom_YgfqiJ": {
       "type": "product-list-custom",
-      "disabled": true,
       "custom_css": [
         ".container {margin-top: 40px;}"
       ],
@@ -28,6 +27,7 @@
     },
     "content": {
       "type": "product-list",
+      "disabled": true,
       "settings": {
       }
     },
