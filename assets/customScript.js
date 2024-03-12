@@ -88,7 +88,7 @@ buyButtons.forEach((button) => {
 document.querySelectorAll(".closeBuyPopupCustomButton").forEach((button) => {
   button.addEventListener("click", function () {
     // 'this.closest' finds the nearest parent with the '.buy-popup-custom' class and adds 'hidden'
-    this.closest(".buy-popup-custom").classList.add("hidden");
+    this.closest(".buy-popup-custom").classList.add("invisible");
   });
 });
 
