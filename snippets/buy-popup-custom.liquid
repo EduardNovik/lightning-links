@@ -1,24 +1,4 @@
 
-<style>
-    {%- unless block.settings.color contains "rgba(0,0,0,0)" -%}
-    .product__price--{{block.id}} .product__price {
-        color: {{block.settings.color}};
-    }
-    {%- endunless -%}
-    
-    {%- unless block.settings.newPriceColor contains "rgba(0,0,0,0)" -%}
-    .product__price--{{block.id}} .product__price.product__price--sale {
-        color: {{block.settings.newPriceColor}};
-    }
-    {%- endunless -%}
-    
-    {%- unless block.settings.oldPriceColor contains "rgba(0,0,0,0)" -%}
-    .product__price--{{block.id}} .product__price--old {
-        color: {{block.settings.oldPriceColor}};
-    }
-    {%- endunless -%}
-</style>
-
   {% assign current_variant = product.selected_or_first_available_variant %}
   {% assign s_type = settings.saleType | default: 'percent' %}
 
@@ -29,7 +9,6 @@
   <div class="bg-white p-6 max-w-[760px] w-full mx-4">
         <div class="flex justify-between items-center mb-10">
             <h1 class="text-2xl font-bold">{{ product.title }}</h1>
-            <h1 class="text-2xl font-bold">{{ product.url }}</h1>
             <button class="text-2xl closeBuyPopupCustomButton">
                 x
             </button>
@@ -45,47 +24,20 @@
             </div>
         {% comment %} ---- {% endcomment %}
         
-            <div 
-            class="product__price--holder product__price--{{block.id}}
-            font__family--{{-block.settings.fontFamily}} font__size--{{-block.settings.fontSize}} 
-            {% if block.settings.noMargin or noMargin %}margin__bottom--reduced{%endif-%}" {{block.shopify_attributes}}>
-                {% if product.compare_at_price_min > 0 %}
-                {% assign sale = true %}
-                {% if current_variant.compare_at_price > 0 %}
-                {% assign currsale = true %}
+            <div class="flex items-center justify-between gap-5">
+                <p class="mr-auto text-2xl">Price</p>
+                {% if product.compare_at_price %}
+                <p class="group-hover:text-white transition duration-700 line-through">
+                    {{ product.compare_at_price | money_without_trailing_zeros }}
+                </p>
                 {% else %}
-                {% assign currsale = false %}
+                <p class="group-hover:text-white transition duration-700">
+                    {{ product.price | money_without_trailing_zeros }}
+                </p>
                 {% endif %}
-                {% else %}
-                {% assign sale = false %}
-                {% assign currsale = false %}
+                {% if product.compare_at_price %}
+                <p class="bg-yellow p-2">{{ product.price | money_without_trailing_zeros }}</p>
                 {% endif %}
-                <span data-product-price="{{product.id}}" class="product__price {% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}product__price--sale{% endunless %}{% endif %} jsPrice">
-                {% if settings.currencyFormat == 'money_with_currency_format' %}
-                    {{ current_variant.price | money_with_currency | strip_html }}
-                {% else %}
-                    {{ current_variant.price | money | strip_html }}
-                {% endif %}
-                </span>
-                {% unless current_variant.price >= current_variant.compare_at_price %}
-                    <span data-product-price-sale="{{product.id}}" class="product__price--old jsPrice">{% if currsale %}{{ current_variant.compare_at_price | money | strip_html }}{% endif %}</span>
-                {% if sale %}
-                {%- unless s_type == 'none' or sale == false %}
-                <span data-tag-product="{{product.id}}" data-tag-type="{{s_type}}" class="tag tag--sale {% unless currsale %}hide{% endunless %} {% if s_type == 'amount' %}jsPrice{% endif %}">
-                {% if currsale %}
-                    {%- case s_type %}
-                        {% when 'percent' %}
-                            {{ current_variant.price | minus: current_variant.compare_at_price | times: 100 | divided_by: current_variant.compare_at_price }}% {{'general.tags.off'|t}}
-                        {% when 'amount' %}
-                            {{ current_variant.compare_at_price | minus: current_variant.price | money | strip_html }}
-                        {% when 'text' %}
-                            {{'general.tags.sale' | t}}
-                    {%- endcase -%}
-                {% endif %}
-                </span>
-                {%- endunless -%}
-                {% endif %}
-                {% endunless %}
             </div>
 
         {% comment %} ---- {% endcomment %}
