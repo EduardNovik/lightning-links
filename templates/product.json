@@ -29,7 +29,7 @@
             "newPriceColor": "rgba(0,0,0,0)",
             "oldPriceColor": "rgba(0,0,0,0)",
             "fontFamily": "base",
-            "fontSize": "medium"
+            "fontSize": "base"
           }
         },
         "bc90e998-d134-431e-8cf3-3a27eee32c19": {
