@@ -144,13 +144,31 @@
                 
             </div>
 
-            {% comment %} <button class="flex gap-2 py-2 px-3 bg-grigio-20 hover:bg-yellow">
+             
+            <a class="button button--primary button--ghost  button--primary__ghost button--full-width" href="/checkout">
+            <button class="flex gap-2 py-2 px-3 bg-grigio-20 hover:bg-yellow">
+                
                 {% render 'icon-cart' %}
                 <span class="text-sm uppercase font-extrabold">BUY</span>
-            </button> {% endcomment %}
+            </button> 
+            </a>
+        
 
-        {% comment %} ---- {% endcomment %}
+        </div>
+        
+    </div>
+</div>
 
+
+
+
+
+
+
+
+
+{% comment %} ---- {% endcomment %}
+{% comment %} 
 
                 {% assign button = button | default: 'addToCart' %}
                 {% assign color = button | append: 'Color' %}
@@ -202,23 +220,8 @@
                 {% endunless %}
                 <span data-button-text>{{- text -}}</span> 
                 </button>
-                
+                 {% endcomment %}
             {% comment %}  ----- {% endcomment %}
-
-        </div>
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
 
     
 
