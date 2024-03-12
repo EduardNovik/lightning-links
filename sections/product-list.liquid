@@ -5,7 +5,7 @@
   {% for product in collection.products %}
     {% unless product.tags contains 'featured' %}
       <div class="center col-{{mobile}} col-md-{{desktop}} card--holder">
-        {% render 'product-card-default' with product as product %}
+        {% render 'product-card-default-custom' with product as product %}
         {% render 'buy-popup-custom', product: product %}
       </div>
     {%endunless%}
