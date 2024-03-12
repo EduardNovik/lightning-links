@@ -17,31 +17,12 @@
         <div class="bg-[#ECEFF3]">
             <div class="flex justify-between items-center mb-10">
                 {% for image in product.images %}
-                <div>
-                    {% render 'image', size: '900x', src: image.src, alt: image.alt, class: imageClass %}
-                </div>
+                 {% render 'image', size: '900x', src: image.src, alt: image.alt, class: imageClass %}
                 {% endfor %}
             </div>
-        {% comment %} ---- {% endcomment %}
-        
-            <div class="flex items-center justify-between gap-5">
-                <p class="mr-auto text-2xl">Price</p>
-                {% if product.compare_at_price %}
-                <p class="group-hover:text-white transition duration-700 line-through">
-                    {{ product.compare_at_price | money_without_trailing_zeros }}
-                </p>
-                {% else %}
-                <p class="group-hover:text-white transition duration-700">
-                    {{ product.price | money_without_trailing_zeros }}
-                </p>
-                {% endif %}
-                {% if product.compare_at_price %}
-                <p class="bg-yellow p-2">{{ product.price | money_without_trailing_zeros }}</p>
-                {% endif %}
-            </div>
 
-        {% comment %} ---- {% endcomment %}
-       {% if product.variants.size > 1 %}
+        {% comment %} ----- {% endcomment %}
+         {% if product.variants.size > 1 %}
 
         {% assign altSelector = settings.altSelectorList | downcase | split: ',' %}
 
@@ -125,6 +106,27 @@
                 {% endfor %}
             </div>
         {% endif %}
+
+        {% comment %} ---- {% endcomment %}
+        
+            <div class="flex items-center justify-between gap-5">
+                <p class="mr-auto text-2xl">Price</p>
+                {% if product.compare_at_price %}
+                <p class="group-hover:text-white transition duration-700 line-through">
+                    {{ product.compare_at_price | money_without_trailing_zeros }}
+                </p>
+                {% else %}
+                <p class="group-hover:text-white transition duration-700">
+                    {{ product.price | money_without_trailing_zeros }}
+                </p>
+                {% endif %}
+                {% if product.compare_at_price %}
+                <p class="bg-yellow p-2">{{ product.price | money_without_trailing_zeros }}</p>
+                {% endif %}
+            </div>
+
+        {% comment %} ---- {% endcomment %}
+      
         </div>
         
     </div>

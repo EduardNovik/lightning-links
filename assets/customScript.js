@@ -4,14 +4,13 @@ const forPartnersPopup = document.getElementById("for-partners-popup");
 const closePopupButton = document.getElementById("closePopupButton");
 const cancelPopupButton = document.getElementById("cancelButton");
 
-// const buyPopupCustomButtons = document.querySelectorAll(
-//   ".buyPopupCustomButtons"
-// );
-// const buyPopupCustom = document.getElementById("buy-popup-custom");
+const buyPopupCustomButtons = document.querySelectorAll(
+  ".buyPopupCustomButtons"
+);
 
-// const closeBuyPopupCustomButton = document.getElementById(
-//   "closeBuyPopupCustomButton"
-// );
+const closeBuyPopupCustomButtons = document.querySelectorAll(
+  ".closeBuyPopupCustomButton"
+);
 
 const successPopup = document.getElementById("successPopup");
 const sendButtonInForPartnersPopup = document.getElementById(
@@ -66,10 +65,8 @@ if (quickOrderBtn) {
   });
 }
 
-const buyButtons = document.querySelectorAll(".buyPopupCustomButtons");
-
-buyButtons.forEach((button) => {
-  button.addEventListener("click", function () {
+buyPopupCustomButtons.forEach((button) => {
+  button.addEventListener("click", () => {
     // This 'this' keyword refers to the button clicked
     const popupId = this.getAttribute("data-popup-id");
     const popup = document.getElementById(popupId);
@@ -81,8 +78,8 @@ buyButtons.forEach((button) => {
 });
 
 // Close popup functionality
-document.querySelectorAll(".closeBuyPopupCustomButton").forEach((button) => {
-  button.addEventListener("click", function () {
+closeBuyPopupCustomButtons.forEach((button) => {
+  button.addEventListener("click", () => {
     // 'this.closest' finds the nearest parent with the '.buy-popup-custom' class and adds 'hidden'
     this.closest(".buy-popup-custom").classList.add("invisible");
     body.classList.toggle("overflow-hidden");
