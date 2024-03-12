@@ -1,30 +1,14 @@
-
-  {% assign current_variant = product.selected_or_first_available_variant %}
-  {% assign s_type = settings.saleType | default: 'percent' %}
-
-<div
-  id="buy-popup-{{ product.handle }}"
-  class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 items-center justify-center buy-popup-custom flex invisible"
->
-  <div class="bg-white p-6 max-w-[760px] w-full mx-4">
-        <div class="flex justify-between items-center mb-10">
-            <h1 class="text-2xl font-bold">{{ product.title }}</h1>
-            <button class="text-2xl closeBuyPopupCustomButton">
-                x
-            </button>
-        </div>
-        
-        <div class="bg-[#ECEFF3]">
-            <div class="flex justify-center items-center mb-10">
-                {% for image in product.images %}
-                    <div class="w-[80%]">
-                        {% render 'image', size: '900x', src: image.src, alt: image.alt, class: imageClass %}
-                    </div>
-                {% endfor %}
-            </div>
-
-        {% comment %} ----- {% endcomment %}
-         {% if product.variants.size > 1 %}
+<div class="grid grid-col-1 sm:grid-col-4">
+  <div class="flex flex-col">
+    <p>Chose car brand and model</p>
+    <select name="" id="">
+      {%- for product in collection -%}
+      <option value="">Select a collection</option>
+      {%- endfor -%}
+    </select>
+  </div>
+  <div class="flex flex-col">
+     {% if product.variants.size > 1 %}
 
         {% assign altSelector = settings.altSelectorList | downcase | split: ',' %}
 
@@ -111,47 +95,71 @@
             </div>
         {% endif %}
 
-        {% comment %} ---- {% endcomment %}
-        
-            <div 
-                class="flex items-center mb-5 justify-between gap-5 product__price--
-                font__family-- font__size-- 
-                " {{block.shopify_attributes}}>
-                <p class="mr-auto text-sm text-grigio-60">Price</p>
-                {% if product.compare_at_price_min > 0 %}
-                {% assign sale = true %}
-                {% if current_variant.compare_at_price > 0 %}
-                {% assign currsale = true %}
-                {% else %}
-                {% assign currsale = false %}
-                {% endif %}
-                {% else %}
-                {% assign sale = false %}
-                {% assign currsale = false %}
-                {% endif %}
 
-                {% unless current_variant.price >= current_variant.compare_at_price %}
-                    <p data-product-price-sale="{{product.id}}" class="text-sm product__price--old jsPrice">{% if currsale %}{{ current_variant.compare_at_price | money | strip_html }}{% endif %}</p>
-                {% endunless %}
+  </div>
+  <div 
+    class="flex flex-col items-start mb-5 justify-between gap-5 product__price--
+    font__family-- font__size-- 
+    " {{block.shopify_attributes}}>
+    <p class="mr-auto text-sm text-grigio-60">Price</p>
+    {% if product.compare_at_price_min > 0 %}
+    {% assign sale = true %}
+    {% if current_variant.compare_at_price > 0 %}
+    {% assign currsale = true %}
+    {% else %}
+    {% assign currsale = false %}
+    {% endif %}
+    {% else %}
+    {% assign sale = false %}
+    {% assign currsale = false %}
+    {% endif %}
 
-                <p data-product-price="{{product.id}}" class="{% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}{% endunless %}{% endif %} jsPrice bg-yellow p-2 text-sm">
-                {% if settings.currencyFormat == 'money_with_currency_format' %}
-                    {{ current_variant.price | money_with_currency | strip_html }}
-                {% else %}
-                    {{ current_variant.price | money | strip_html }}
-                {% endif %}
-                </p>
-                
-            </div>
-
-            <a class="button button--primary button--ghost  button--primary__ghost button--full-width" href="/checkout">
-            <button class="flex justify-center items-center w-full gap-2 py-4 px-3 bg-grigio-40 hover:bg-yellow text-white">
-                {% render 'icon-cart-white'%}
-                <span class="text-sm uppercase font-extrabold text-white">BUY</span>
-            </button> 
-            </a>
-
-        </div>
-        
+    {% unless current_variant.price >= current_variant.compare_at_price %}
+        <p data-product-price-sale="{{product.id}}" class="text-sm product__price--old jsPrice">{% if currsale %}{{ current_variant.compare_at_price | money | strip_html }}{% endif %}</p>
+    {% endunless %}
+    <div class="flex gap-4">
+      <p data-product-price="{{product.id}}" class="{% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}{% endunless %}{% endif %} jsPrice bg-yellow p-2 text-sm">
+        {% if settings.currencyFormat == 'money_with_currency_format' %}
+          {{ current_variant.price | money_with_currency | strip_html }}
+          {% else %}
+          {{ current_variant.price | money | strip_html }}
+        {% endif %}
+      </p>
     </div>
+  </div>
+
+  <a class="button button--primary button--ghost  button--primary__ghost button--full-width" href="/checkout">
+    <button class="flex justify-center items-center w-full gap-2 py-4 px-3 bg-grigio-40 hover:bg-yellow text-white">
+        {% render 'icon-cart-white'%}
+        <span class="text-sm uppercase font-extrabold text-white">BUY</span>
+    </button> 
+  </a>
+
+
 </div>
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Product page custom",
+    "class": "",
+    "settings": [
+      {
+            "type": "header",
+            "content": "Help"
+        },
+        {
+        "type": "paragraph",
+        "content": "[Click here to follow an interactive Tutorial](https://vimeo.com/458187473)"
+        }
+    ],
+      "presets": [
+    {
+      "name": "Product page custom"
+    }
+  ] 
+  }
+{% endschema%}
