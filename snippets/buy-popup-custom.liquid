@@ -99,9 +99,9 @@
                                     {% for value in product_option.values %}
                                         {% assign vars = avvars | where: optix, value %}
                                         {% if colorArray contains product_option_lc or imageArray contains product_option_lc %}
-                                            <span class="lazyload swatch--color w-full" {%-render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%} data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}></span>
+                                            <span class="lazyload swatch--color w-full bg-white border-2 border-grigio-40" {%-render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%} data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}></span>
                                         {% else %}
-                                            <span class="w-full" data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}>{{value| escape}}</span>
+                                            <span class="w-full bg-white border-2 border-grigio-40" data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}>{{value| escape}}</span>
                                         {% endif %}
                                     {% endfor %}
                             {% endcase %}
@@ -114,9 +114,9 @@
         {% comment %} ---- {% endcomment %}
         
             <div 
-                class="flex items-center justify-between gap-5 product__price--holder product__price--{{block.id}}
-                font__family--{{-block.settings.fontFamily}} font__size--{{-block.settings.fontSize}} 
-                {% if block.settings.noMargin or noMargin %}margin__bottom--reduced{%endif-%}" {{block.shopify_attributes}}>
+                class="flex items-center mb-5 justify-between gap-5 product__price--
+                font__family-- font__size-- 
+                " {{block.shopify_attributes}}>
                 <p class="mr-auto text-sm text-grigio-60">Price</p>
                 {% if product.compare_at_price_min > 0 %}
                 {% assign sale = true %}

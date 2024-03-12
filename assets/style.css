@@ -1037,6 +1037,11 @@ video {
   border-color: rgb(90 100 118 / var(--tw-border-opacity));
 }
 
+.border-grigio-0 {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
 .bg-\[\#ECEFF3\] {
   --tw-bg-opacity: 1;
   background-color: rgb(236 239 243 / var(--tw-bg-opacity));
