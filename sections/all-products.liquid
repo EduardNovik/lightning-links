@@ -2,6 +2,7 @@
   {% for product in collections.all.products %}
     {% comment %} {{ product.title | link_to: product.url }} {% endcomment %}
     {% render 'product-item', product: product %}
+    {% render 'buy-popup-custom', product: product %}
   {% endfor %}
 </div>
 
