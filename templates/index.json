@@ -49,19 +49,26 @@
         "product_kkT7Bk": {
           "type": "product",
           "settings": {
-            "product": "porsche"
+            "product": "volvo"
           }
         },
-        "product_rrchrE": {
+        "product_XrLgU3": {
           "type": "product",
           "settings": {
-            "product": "volvo"
+            "product": "audi"
+          }
+        },
+        "product_YPebEk": {
+          "type": "product",
+          "settings": {
+            "product": "porsche"
           }
         }
       },
       "block_order": [
         "product_kkT7Bk",
-        "product_rrchrE"
+        "product_XrLgU3",
+        "product_YPebEk"
       ],
       "custom_css": [
 
