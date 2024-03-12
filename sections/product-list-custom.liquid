@@ -4,9 +4,9 @@
 {% paginate collection.products by settings.cardsPerPage %}
   <div class="productsContainer grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
     {% for product in collection.products %}
+      {% render 'buy-popup-custom', product: product %}
     {% unless product.tags contains 'featured' %}
         {% render 'product-card-default-custom' with product as product %}
-        {% render 'buy-popup-custom', product: product %}
         {% if forloop.index != 0 and forloop.index % 3 == 0 and forloop.index != section.blocks.size %}
         <div class="col-span-full"><hr class="separator"></div>
         {% endif %}
