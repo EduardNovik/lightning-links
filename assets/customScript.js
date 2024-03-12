@@ -66,13 +66,12 @@ if (quickOrderBtn) {
 }
 
 buyPopupCustomButtons.forEach((button) => {
-  button.addEventListener("click", () => {
+  button.addEventListener("click", function () {
     // This 'this' keyword refers to the button clicked
     const popupId = this.getAttribute("data-popup-id");
     const popup = document.getElementById(popupId);
     if (popup) {
-      popup.classList.toggle("hidden");
-      popup.classList.toggle("flex");
+      popup.classList.remove("invisible");
       body.classList.toggle("overflow-hidden");
     }
   });
@@ -80,9 +79,9 @@ buyPopupCustomButtons.forEach((button) => {
 
 // Close popup functionality
 closeBuyPopupCustomButtons.forEach((button) => {
-  button.addEventListener("click", () => {
+  button.addEventListener("click", function () {
     // 'this.closest' finds the nearest parent with the '.buy-popup-custom' class and adds 'hidden'
-    this.closest(".buy-popup-custom").classList.add("hidden");
+    this.closest(".buy-popup-custom").classList.add("invisible");
     body.classList.toggle("overflow-hidden");
   });
 });
