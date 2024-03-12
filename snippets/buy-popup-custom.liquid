@@ -78,7 +78,7 @@
                         {% endif %}
                     {% endif %}
                     <div class="swatches__holder">
-                    <p class="text-[19px] text-grigio-60">Chose your suspension style</p>
+                    <p class="text-sm text-grigio-60">Chose your suspension style</p>
                         <div class="flex justify-between">
                             {% case selector_type %}
                                 {% when 'dropdown' %}
@@ -143,6 +143,11 @@
                 </p>
                 
             </div>
+
+            <button class="flex gap-2 py-2 px-3 bg-grigio-20 hover:bg-yellow">
+                {% render 'icon-cart' %}
+                <span class="text-sm uppercase font-extrabold">BUY</span>
+            </button>
 
         {% comment %} ---- {% endcomment %}
       
