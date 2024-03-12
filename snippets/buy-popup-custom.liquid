@@ -145,32 +145,18 @@
                 {% assign sale = false %}
                 {% assign currsale = false %}
                 {% endif %}
+
                 {% unless current_variant.price >= current_variant.compare_at_price %}
-                    <span data-product-price-sale="{{product.id}}" class="product__price--old jsPrice">{% if currsale %}{{ current_variant.compare_at_price | money | strip_html }}{% endif %}</span>
-                {% if sale %}
-                {%- unless s_type == 'none' or sale == false %}
-                <span data-tag-product="{{product.id}}" data-tag-type="{{s_type}}" class="tag tag--sale {% unless currsale %}hide{% endunless %} {% if s_type == 'amount' %}jsPrice{% endif %}">
-                {% if currsale %}
-                    {%- case s_type %}
-                        {% when 'percent' %}
-                            {{ current_variant.price | minus: current_variant.compare_at_price | times: 100 | divided_by: current_variant.compare_at_price }}% {{'general.tags.off'|t}}
-                        {% when 'amount' %}
-                            {{ current_variant.compare_at_price | minus: current_variant.price | money | strip_html }}
-                        {% when 'text' %}
-                            {{'general.tags.sale' | t}}
-                    {%- endcase -%}
-                {% endif %}
-                </span>
-                {%- endunless -%}
-                {% endif %}
+                    <p data-product-price-sale="{{product.id}}" class="product__price--old jsPrice">{% if currsale %}{{ current_variant.compare_at_price | money | strip_html }}{% endif %}</p>
                 {% endunless %}
-                <span data-product-price="{{product.id}}" class="product__price {% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}product__price--sale{% endunless %}{% endif %} jsPrice">
+
+                <p data-product-price="{{product.id}}" class="{% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}{% endunless %}{% endif %} jsPrice bg-yellow p-2">
                 {% if settings.currencyFormat == 'money_with_currency_format' %}
                     {{ current_variant.price | money_with_currency | strip_html }}
                 {% else %}
                     {{ current_variant.price | money | strip_html }}
                 {% endif %}
-                </span>
+                </p>
                 
             </div>
 
