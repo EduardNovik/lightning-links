@@ -1072,6 +1072,11 @@ video {
   background-color: rgb(250 182 15 / var(--tw-bg-opacity));
 }
 
+.bg-grigio-40 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(199 204 211 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }

@@ -145,7 +145,7 @@
             </div>
 
             <a class="button button--primary button--ghost  button--primary__ghost button--full-width" href="/checkout">
-            <button class="flex justify-center w-full gap-2 py-2 px-6 bg-grigio-0 hover:bg-yellow">
+            <button class="flex justify-center w-full gap-2 py-2 px-6 bg-grigio-40 hover:bg-yellow">
                 {% render 'icon-cart' %}
                 <span class="text-sm uppercase font-extrabold">BUY</span>
             </button> 
@@ -222,19 +222,3 @@
 
     
 
-    
-{% comment %} <div class="flex items-center justify-between gap-5">
-                <p class="mr-auto text-xl text-grigio-60">Price</p>
-                {% if product.compare_at_price %}
-                <p class="group-hover:text-white transition duration-700 line-through">
-                    {{ product.compare_at_price | money_without_trailing_zeros }}
-                </p>
-                {% else %}
-                <p class="group-hover:text-white transition duration-700">
-                    {{ product.price | money_without_trailing_zeros }}
-                </p>
-                {% endif %}
-                {% if product.compare_at_price %}
-                <p class="bg-yellow p-2">{{ product.price | money_without_trailing_zeros }}</p>
-                {% endif %}
-            </div> {% endcomment %}
