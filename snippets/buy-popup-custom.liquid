@@ -113,27 +113,11 @@
 
         {% comment %} ---- {% endcomment %}
         
-            {% comment %} <div class="flex items-center justify-between gap-5">
-                <p class="mr-auto text-xl text-grigio-60">Price</p>
-                {% if product.compare_at_price %}
-                <p class="group-hover:text-white transition duration-700 line-through">
-                    {{ product.compare_at_price | money_without_trailing_zeros }}
-                </p>
-                {% else %}
-                <p class="group-hover:text-white transition duration-700">
-                    {{ product.price | money_without_trailing_zeros }}
-                </p>
-                {% endif %}
-                {% if product.compare_at_price %}
-                <p class="bg-yellow p-2">{{ product.price | money_without_trailing_zeros }}</p>
-                {% endif %}
-            </div> {% endcomment %}
-
             <div 
                 class="flex items-center justify-between gap-5 product__price--holder product__price--{{block.id}}
                 font__family--{{-block.settings.fontFamily}} font__size--{{-block.settings.fontSize}} 
                 {% if block.settings.noMargin or noMargin %}margin__bottom--reduced{%endif-%}" {{block.shopify_attributes}}>
-                <p class="mr-auto text-xl text-grigio-60">Price</p>
+                <p class="mr-auto text-sm text-grigio-60">Price</p>
                 {% if product.compare_at_price_min > 0 %}
                 {% assign sale = true %}
                 {% if current_variant.compare_at_price > 0 %}
@@ -147,10 +131,10 @@
                 {% endif %}
 
                 {% unless current_variant.price >= current_variant.compare_at_price %}
-                    <p data-product-price-sale="{{product.id}}" class="product__price--old jsPrice">{% if currsale %}{{ current_variant.compare_at_price | money | strip_html }}{% endif %}</p>
+                    <p data-product-price-sale="{{product.id}}" class="text-sm product__price--old jsPrice">{% if currsale %}{{ current_variant.compare_at_price | money | strip_html }}{% endif %}</p>
                 {% endunless %}
 
-                <p data-product-price="{{product.id}}" class="{% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}{% endunless %}{% endif %} jsPrice bg-yellow p-2">
+                <p data-product-price="{{product.id}}" class="{% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}{% endunless %}{% endif %} jsPrice bg-yellow p-2 text-sm">
                 {% if settings.currencyFormat == 'money_with_currency_format' %}
                     {{ current_variant.price | money_with_currency | strip_html }}
                 {% else %}
@@ -180,3 +164,18 @@
     
 
     
+{% comment %} <div class="flex items-center justify-between gap-5">
+                <p class="mr-auto text-xl text-grigio-60">Price</p>
+                {% if product.compare_at_price %}
+                <p class="group-hover:text-white transition duration-700 line-through">
+                    {{ product.compare_at_price | money_without_trailing_zeros }}
+                </p>
+                {% else %}
+                <p class="group-hover:text-white transition duration-700">
+                    {{ product.price | money_without_trailing_zeros }}
+                </p>
+                {% endif %}
+                {% if product.compare_at_price %}
+                <p class="bg-yellow p-2">{{ product.price | money_without_trailing_zeros }}</p>
+                {% endif %}
+            </div> {% endcomment %}
