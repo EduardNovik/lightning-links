@@ -99,9 +99,9 @@
                                     {% for value in product_option.values %}
                                         {% assign vars = avvars | where: optix, value %}
                                         {% if colorArray contains product_option_lc or imageArray contains product_option_lc %}
-                                            <span class="lazyload swatch--color px-6 py-2 border border-gray-300 text-sm font-medium uppercase tracking-wide hover:bg-gray-100 focus:outline-none focus:border-gray-500" {%-render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%} data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}></span>
+                                            <span class="lazyload swatch--color w-full" {%-render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%} data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}></span>
                                         {% else %}
-                                            <span class="lazyload swatch--color px-6 py-2 border border-gray-300 text-sm font-medium uppercase tracking-wide hover:bg-gray-100 focus:outline-none focus:border-gray-500" data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}>{{value| escape}}</span>
+                                            <span data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}>{{value| escape}}</span>
                                         {% endif %}
                                     {% endfor %}
                             {% endcase %}
@@ -130,9 +130,10 @@
             </div> {% endcomment %}
 
             <div 
-                class="product__price--holder product__price--{{block.id}}
+                class="flex items-center justify-between gap-5 product__price--holder product__price--{{block.id}}
                 font__family--{{-block.settings.fontFamily}} font__size--{{-block.settings.fontSize}} 
                 {% if block.settings.noMargin or noMargin %}margin__bottom--reduced{%endif-%}" {{block.shopify_attributes}}>
+                <p class="mr-auto text-xl text-grigio-60">Price</p>
                 {% if product.compare_at_price_min > 0 %}
                 {% assign sale = true %}
                 {% if current_variant.compare_at_price > 0 %}
@@ -144,13 +145,6 @@
                 {% assign sale = false %}
                 {% assign currsale = false %}
                 {% endif %}
-                <span data-product-price="{{product.id}}" class="product__price {% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}product__price--sale{% endunless %}{% endif %} jsPrice">
-                {% if settings.currencyFormat == 'money_with_currency_format' %}
-                    {{ current_variant.price | money_with_currency | strip_html }}
-                {% else %}
-                    {{ current_variant.price | money | strip_html }}
-                {% endif %}
-                </span>
                 {% unless current_variant.price >= current_variant.compare_at_price %}
                     <span data-product-price-sale="{{product.id}}" class="product__price--old jsPrice">{% if currsale %}{{ current_variant.compare_at_price | money | strip_html }}{% endif %}</span>
                 {% if sale %}
@@ -170,6 +164,14 @@
                 {%- endunless -%}
                 {% endif %}
                 {% endunless %}
+                <span data-product-price="{{product.id}}" class="product__price {% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}product__price--sale{% endunless %}{% endif %} jsPrice">
+                {% if settings.currencyFormat == 'money_with_currency_format' %}
+                    {{ current_variant.price | money_with_currency | strip_html }}
+                {% else %}
+                    {{ current_variant.price | money | strip_html }}
+                {% endif %}
+                </span>
+                
             </div>
 
         {% comment %} ---- {% endcomment %}
