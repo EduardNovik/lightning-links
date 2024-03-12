@@ -49,12 +49,19 @@
         "product_kkT7Bk": {
           "type": "product",
           "settings": {
-            "product": "audi"
+            "product": "porsche"
+          }
+        },
+        "product_rrchrE": {
+          "type": "product",
+          "settings": {
+            "product": "volvo"
           }
         }
       },
       "block_order": [
-        "product_kkT7Bk"
+        "product_kkT7Bk",
+        "product_rrchrE"
       ],
       "custom_css": [
 
@@ -161,11 +168,6 @@
         "title": "Instagram",
         "contacts_instagram": "https:\/\/www.instagram.com\/"
       }
-    },
-    "all_products_cKHtAC": {
-      "type": "all-products",
-      "settings": {
-      }
     }
   },
   "order": [
@@ -176,7 +178,6 @@
     "products_tDNdzk",
     "custom_section_pAJajT",
     "advantages_kD9rqK",
-    "instagram_UNh6hL",
-    "all_products_cKHtAC"
+    "instagram_UNh6hL"
   ]
 }
