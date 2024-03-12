@@ -194,7 +194,7 @@
           "shadow": false,
           "menuLinks": "main-menu",
           "megamenu": true,
-          "logoWidth": 155,
+          "logoWidth": 180,
           "logoHeight": 0,
           "sticky": true,
           "contentMargin": 0,
@@ -283,7 +283,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".wrapper--bottom{padding-top:0px;}"
+      ".wrapper--bottom {padding-top: 0px;}"
     ]
   }
 }
