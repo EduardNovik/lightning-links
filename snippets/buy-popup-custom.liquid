@@ -76,8 +76,8 @@
                         {% endif %}
                     {% endif %}
                     <div class="swatches__holder">
-                    <p class="text-xl text-grigio-60">Chose your suspension style</p>
-                        <div class="flex justify-center">
+                    <p class="text-[19px] text-grigio-60">Chose your suspension style</p>
+                        <div class="flex justify-between">
                             {% case selector_type %}
                                 {% when 'dropdown' %}
                                     <select data-swatch-index="{{product.id}}-{{index}}">
@@ -97,7 +97,7 @@
                                     {% for value in product_option.values %}
                                         {% assign vars = avvars | where: optix, value %}
                                         {% if colorArray contains product_option_lc or imageArray contains product_option_lc %}
-                                            <span class="lazyload swatch--color" {%-render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%} data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}></span>
+                                            <span class="lazyload swatch--color px-6 py-2 border border-gray-300  hover:bg-gray-100 focus:outline-none focus:border-gray-500" {%-render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%} data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}></span>
                                         {% else %}
                                             <span data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}>{{value| escape}}</span>
                                         {% endif %}
