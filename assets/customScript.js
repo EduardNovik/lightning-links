@@ -74,11 +74,10 @@ buyButtons.forEach((button) => {
     const popupId = this.getAttribute("data-popup-id");
     const popup = document.getElementById(popupId);
     if (popup) {
-      // Removes 'hidden' class to show the popup
       popup.classList.remove("invisible");
       // popup.classList.toggle("hidden");
       // popup.classList.toggle("flex");
-      // body.classList.toggle("overflow-hidden");
+      body.classList.toggle("overflow-hidden");
     }
   });
 });
