@@ -77,7 +77,7 @@
                             {% assign selector_type = "dropdown" %}
                         {% endif %}
                     {% endif %}
-                    <div class="swatches__holder">
+                    <div>
                     <p class="text-sm text-grigio-60">Chose your suspension style</p>
                         <div class="flex justify-between">
                             {% case selector_type %}
@@ -101,7 +101,7 @@
                                         {% if colorArray contains product_option_lc or imageArray contains product_option_lc %}
                                             <span class="lazyload swatch--color w-full" {%-render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%} data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}></span>
                                         {% else %}
-                                            <span data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}>{{value| escape}}</span>
+                                            <span class="w-full" data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}>{{value| escape}}</span>
                                         {% endif %}
                                     {% endfor %}
                             {% endcase %}
@@ -145,9 +145,9 @@
             </div>
 
             <a class="button button--primary button--ghost  button--primary__ghost button--full-width" href="/checkout">
-            <button class="flex justify-center w-full gap-2 py-2 px-6 bg-grigio-40 hover:bg-yellow">
-                {% render 'icon-cart' %}
-                <span class="text-sm uppercase font-extrabold">BUY</span>
+            <button class="flex justify-center items-center w-full gap-2 py-4 px-3 bg-grigio-40 hover:bg-yellow">
+                {% render 'icon-cart' class="text-white"%}
+                <span class="text-sm uppercase font-extrabold text-white">BUY</span>
             </button> 
             </a>
 
