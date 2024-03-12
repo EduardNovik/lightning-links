@@ -75,7 +75,7 @@ buyButtons.forEach((button) => {
     const popup = document.getElementById(popupId);
     if (popup) {
       // Removes 'hidden' class to show the popup
-      popup.classList.remove("hidden");
+      popup.classList.remove("invisible");
       popup.classList.add("flex");
       // popup.classList.toggle("hidden");
       // popup.classList.toggle("flex");
