@@ -1930,6 +1930,6 @@ section {
 }
 
 span[data-swatch-option] {
-  border: 2px solid gray !important;
-  background-color: white !important;
+  border: 2px solid gray;
+  background-color: white;
 }
