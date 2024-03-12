@@ -17,7 +17,9 @@
         <div class="bg-[#ECEFF3]">
             <div class="flex justify-center items-center mb-10">
                 {% for image in product.images %}
+                    <div class="w-[80%]">
                         {% render 'image', size: '900x', src: image.src, alt: image.alt, class: imageClass %}
+                    </div>
                 {% endfor %}
             </div>
 
@@ -97,9 +99,9 @@
                                     {% for value in product_option.values %}
                                         {% assign vars = avvars | where: optix, value %}
                                         {% if colorArray contains product_option_lc or imageArray contains product_option_lc %}
-                                            <span class="lazyload swatch--color px-6 py-2 border border-gray-300  hover:bg-gray-100 focus:outline-none focus:border-gray-500" {%-render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%} data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}></span>
+                                            <span class="lazyload swatch--color px-6 py-2 border border-gray-300 text-sm font-medium uppercase tracking-wide hover:bg-gray-100 focus:outline-none focus:border-gray-500" {%-render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%} data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}></span>
                                         {% else %}
-                                            <span data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}>{{value| escape}}</span>
+                                            <span class="lazyload swatch--color px-6 py-2 border border-gray-300 text-sm font-medium uppercase tracking-wide hover:bg-gray-100 focus:outline-none focus:border-gray-500" data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}>{{value| escape}}</span>
                                         {% endif %}
                                     {% endfor %}
                             {% endcase %}
