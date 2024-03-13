@@ -43,7 +43,7 @@
 
     <p class="text-2xl font-bold">How it works?</p>
     <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
-{% comment %} 
+
     <div class="tximage__video video--responsive">
         {% unless section.settings.video == blank %}
             {% if section.settings.video.type == 'youtube' %}
@@ -54,7 +54,7 @@
                 <iframe class="lazyload" data-src="https://player.vimeo.com/video/{{-section.settings.video.id}}" frameborder="0" allowfullscreen></iframe>
             {% endif %}
         {% endunless %}
-    </div> {% endcomment %}
+    </div>
 
      <p class="text-xl font-bold mt-6">Advantages</p>
      <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
@@ -240,12 +240,30 @@
 {% schema %}
   {
     "name": "Product page details",
-   "settings": [{
-    "type": "video_url",
-    "accepts": ["youtube", "vimeo"],
-    "id": "video",
-    "label": "Video URL"
-  }],
+   "settings": [
+      {
+        "type": "video_picker",
+        "id": "video",
+        "label": "Video"
+      },
+      {
+        "type": "checkbox",
+        "id": "video_autoplay",
+        "label": "Autoplay video",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "video_loop",
+        "label": "Loop video",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "autoZoom",
+        "label": "Auto zoom",
+        "default": true
+      }],
   "presets": [
     {
       "name": "Product page details"
