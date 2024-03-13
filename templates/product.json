@@ -152,12 +152,18 @@
         "textAlignment": "start",
         "defaultCollection": ""
       }
+    },
+    "product_page_custom_nQyc3M": {
+      "type": "product-page-custom",
+      "settings": {
+      }
     }
   },
   "order": [
     "breadcrumbs",
     "page",
     "upsell",
-    "recommended"
+    "recommended",
+    "product_page_custom_nQyc3M"
   ]
 }
