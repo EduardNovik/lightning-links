@@ -1,9 +1,48 @@
+<script type="application/ld+json">
+  {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "{{product.title |escape}}",
+        {% if product.featured_image != nil %}
+        "image": [
+          "https:{{product.featured_image | img_url: '960x960'}}",
+          "https:{{product.featured_image | img_url: '960x720'}}",
+          "https:{{product.featured_image | img_url: '960x540'}}"
+         ],
+        {% endif %}
+        "description": "{{product.description | strip_html | escape}}",
+        "brand": {
+          "@type": "Brand",
+          "name": "{{product.vendor |escape}}"
+        },
+        "offers" : {
+          "@type" : "Offer",
+          "availability" : "https://schema.org/{% if product.available %}InStock{%else%}SoldOut{%endif%}",
+          "price" : "{{product.price | money_without_currency }}",
+          "priceCurrency": "{{shop.currency}}",
+          "url" : "{{ shop.url }}{{routes.root_url}}{{product.url}}"
+        }
+  }
+</script>
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign featured_image = product.featured_image %}
+{% assign isAutoZoom = section.settings.autoZoom %}
+{% assign video_loop = section.settings.video_loop %}
+{% assign video_autoplay = section.settings.video_autoplay %}
+
+{% assign imageClass = '' %}
+{% if isAutoZoom %}
+  {% assign imageClass = 'image-zoom' %}
+{% endif %}
+
+
 <div class="grid grid-col-1 sm:grid-col-4">
-  <div class="flex flex-col">
-    <p>Chose car brand and model</p>
-    <select name="" id="">
+   <div class="flex flex-col">
+    <label for="car-select" class="mb-2 text-sm font-semibold text-gray-700">Choose car brand and model</label>
+    <select name="car" id="car-select" class="form-select block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
         {% for product in collections.all.products %}
-          <option value=""><a href="{{product.url}}">{{ product.title }}</a></option>
+          <option value="{{ product.handle }}">{{ product.title }}</option>
         {% endfor %}
     </select>
   </div>
