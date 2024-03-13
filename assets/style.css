@@ -732,14 +732,6 @@ video {
   margin-top: 2rem;
 }
 
-.mt-\[22px\] {
-  margin-top: 22px;
-}
-
-.mt-\[26px\] {
-  margin-top: 26px;
-}
-
 .mt-\[28px\] {
   margin-top: 28px;
 }
@@ -789,12 +781,12 @@ video {
   height: 6rem;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .h-\[44px\] {
   height: 44px;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .max-h-\[50px\] {
@@ -1870,26 +1862,6 @@ body::-webkit-scrollbar {
 
   .lg\:grid-cols-7 {
     grid-template-columns: repeat(7, minmax(0, 1fr));
-  }
-
-  .lg\:grid-cols-\[1fr\2c 1\.5fr\2c 0\.5fr\2c auto\] {
-    grid-template-columns: 1fr 1.5fr 0.5fr auto;
-  }
-
-  .lg\:grid-cols-\[1fr\2c 1fr\2c 0\.5fr\2c auto\] {
-    grid-template-columns: 1fr 1fr 0.5fr auto;
-  }
-
-  .lg\:grid-cols-\[1fr\2c 1fr\2c auto\2c auto\] {
-    grid-template-columns: 1fr 1fr auto auto;
-  }
-
-  .lg\:grid-cols-\[1fr\2c 1fr\2c auto\2c 1fr\] {
-    grid-template-columns: 1fr 1fr auto 1fr;
-  }
-
-  .lg\:grid-cols-\[1fr\2c 1fr\2c auto\2c 0\.7fr\] {
-    grid-template-columns: 1fr 1fr auto 0.7fr;
   }
 
   .lg\:grid-cols-\[1fr\2c 1fr\2c auto\2c 0\.6fr\] {

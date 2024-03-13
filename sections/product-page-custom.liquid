@@ -194,7 +194,16 @@
   </a>
 
 
-</div>
+  </div>
+
+  <div class="flex justify-center items-center mb-10 mt-5 w-full bg-grigio-40">
+      {% for image in product.images %}
+          <div class="w-[80%]">
+              {% render 'image', size: '900x', src: image.src, alt: image.alt, class: imageClass %}
+          </div>
+      {% endfor %}
+  </div>
+
 </div>
 
 
