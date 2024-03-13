@@ -37,16 +37,55 @@
 {% endif %}
 
 
-<div class="container mx-auto">
+<div class="container mx-auto flex gap-8">
+
+  <div class="flex justify-start items-center flex-col w-[60%] gap-6">
+
+    <p class="text-2xl font-bold">How it works?</p>
+    <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
+
+    <div class="tximage__video video--responsive">
+        {% unless section.settings.video == blank %}
+            {% if section.settings.video.type == 'youtube' %}
+                <iframe class="lazyload" id="player" type="text/html"
+                data-src="https://www.youtube.com/embed/{{-section.settings.video.id}}"
+                frameborder="0"></iframe>
+            {% else %}
+                <iframe class="lazyload" data-src="https://player.vimeo.com/video/{{-section.settings.video.id}}" frameborder="0" allowfullscreen></iframe>
+            {% endif %}
+        {% endunless %}
+    </div>
+
+     <p class="text-xl font-bold mt-6">Advantages</p>
+     <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
+
+    {% for image in product.images %}
+      <div>
+          {% render 'image', size: '900x', src: image.src, alt: image.alt, class: imageClass %}
+      </div>
+    {% endfor %}
+
+    <p class="text-xl font-bold mt-6">Result</p>
+    <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
+
+
+    {% for image in product.images %}
+      <div>
+          {% render 'image', size: '900x', src: image.src, alt: image.alt, class: imageClass %}
+      </div>
+    {% endfor %}
+ 
+      
+  </div>
 
   
-  <div class="grid grid-cols-1 gap-4 items-start sticky w-[400px] h-[500px] bg-[#ECEFF3]">
+  <div class="grid grid-cols-1 gap-4 items-start sticky w-[400px] h-[500px] bg-[#ECEFF3]p-4">
       
       {% comment %} DROPDOWN {% endcomment %}
 
       <div class="flex flex-col gap-2">
         <label for="car-select" class="text-sm text-grigio-60">Choose car brand and model</label>
-        <select name="car" id="car-select" class="form-select block w-full p-3 border border-gray-300 bg-white shadow-sm focus:outline-none focus:ring-yellow focus:border-yellow sm:text-sm">
+        <select name="car" id="car-select-mini" class="form-select block w-full p-3 border border-gray-300 bg-white shadow-sm focus:outline-none focus:ring-yellow focus:border-yellow sm:text-sm">
           {% for product_option in collections.all.products %}
             <option value="{{ product_option.url }}" {% if product_option.title == product.title %}selected{% endif %}>
               {{ product_option.title }}
@@ -56,7 +95,7 @@
       </div>
 
       <script>
-        document.getElementById('car-select').addEventListener('change', function() {
+        document.getElementById('car-select-mini').addEventListener('change', function() {
           window.location.href = this.value;
         });
       </script>
@@ -196,21 +235,17 @@
       </a>
 
   </div>
-
-  <div class="flex justify-center items-center mb-10 mt-5 w-full bg-grigio-40 p-10">
-      {% for image in product.images %}
-          <div class="w-[65%]">
-              {% render 'image', size: '900x', src: image.src, alt: image.alt, class: imageClass %}
-          </div>
-      {% endfor %}
-  </div>
-
 </div>
 
 {% schema %}
   {
     "name": "Product page details",
-  "settings": [],
+   "settings": [{
+    "type": "video_url",
+    "accepts": ["youtube", "vimeo"],
+    "id": "video",
+    "label": "Video URL"
+  }],
   "presets": [
     {
       "name": "Product page details"
