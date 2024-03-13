@@ -55,6 +55,11 @@
       ],
       "settings": {
       }
+    },
+    "product_page_details_Tn34BG": {
+      "type": "product-page-details",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -62,6 +67,7 @@
     "page",
     "upsell",
     "recommended",
-    "product_page_custom_nQyc3M"
+    "product_page_custom_nQyc3M",
+    "product_page_details_Tn34BG"
   ]
 }
