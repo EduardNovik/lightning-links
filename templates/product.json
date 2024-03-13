@@ -11,98 +11,6 @@
     },
     "page": {
       "type": "product-page__product",
-      "blocks": {
-        "ppTitle": {
-          "type": "productPageTitle",
-          "disabled": true,
-          "settings": {
-            "noMargin": true,
-            "color": "rgba(0,0,0,0)",
-            "fontFamily": "base",
-            "fontSize": "medium"
-          }
-        },
-        "ppPrice": {
-          "type": "productPagePrice",
-          "disabled": true,
-          "settings": {
-            "noMargin": false,
-            "color": "rgba(0,0,0,0)",
-            "newPriceColor": "rgba(0,0,0,0)",
-            "oldPriceColor": "rgba(0,0,0,0)",
-            "fontFamily": "base",
-            "fontSize": "base"
-          }
-        },
-        "bc90e998-d134-431e-8cf3-3a27eee32c19": {
-          "type": "productPageDelivery",
-          "disabled": true,
-          "settings": {
-            "noMargin": false,
-            "icon": "none",
-            "iconColor": "rgba(0,0,0,0)",
-            "text": "<p>This is a Demo Store created for booster theme. If you would like to buy the products in this store you may buy them on  <a href=\"https:\/\/www.carmax.com\/\" target=\"_blank\" title=\"https:\/\/www.carmax.com\/\"><em><strong>Carmax website.<\/strong><\/em><\/a><\/p>",
-            "textColor": "rgba(0,0,0,0)"
-          }
-        },
-        "7c681d42-a5a0-4648-b20b-8673ce6b9add": {
-          "type": "productPageWatching",
-          "disabled": true,
-          "settings": {
-            "noMargin": true,
-            "max": "100",
-            "customMax": "",
-            "interval": 8,
-            "iconColor": "rgba(0,0,0,0)",
-            "textColor": "rgba(0,0,0,0)"
-          }
-        },
-        "2c83bf6c-ac4f-4517-abb9-386ad313bda8": {
-          "type": "productPageLDelivery",
-          "disabled": true,
-          "settings": {
-            "noMargin": false,
-            "icon": "",
-            "iconColor": "rgba(0,0,0,0)",
-            "text": "<p>This car can be delivered between %start% and %end%.<\/p>",
-            "start": "1",
-            "end": "5",
-            "textColor": "rgba(0,0,0,0)"
-          }
-        },
-        "ppSwatch": {
-          "type": "productPageSwatch",
-          "disabled": true,
-          "settings": {
-            "noMargin": false
-          }
-        },
-        "ppATC": {
-          "type": "productPageATC",
-          "settings": {
-            "noMargin": true,
-            "stickyATC": "scroll"
-          }
-        },
-        "03e4ccef-7c44-4b2a-988f-71fcd8753873": {
-          "type": "productPageDescription",
-          "disabled": true,
-          "settings": {
-            "heading": "Product description",
-            "noMargin": false
-          }
-        }
-      },
-      "block_order": [
-        "ppTitle",
-        "ppPrice",
-        "bc90e998-d134-431e-8cf3-3a27eee32c19",
-        "7c681d42-a5a0-4648-b20b-8673ce6b9add",
-        "2c83bf6c-ac4f-4517-abb9-386ad313bda8",
-        "ppSwatch",
-        "ppATC",
-        "03e4ccef-7c44-4b2a-988f-71fcd8753873"
-      ],
       "disabled": true,
       "settings": {
         "view": "default",
@@ -122,23 +30,6 @@
     },
     "upsell": {
       "type": "api__upsell--inline",
-      "blocks": {
-        "81a40f37-601a-4c6b-a6cd-a40d8a18203e": {
-          "type": "priceSpecific",
-          "settings": {
-            "conditionType": "mt",
-            "condition": "499",
-            "upsellProduct1": "2015-370z-touring",
-            "upsellProduct2": "",
-            "upsellProduct3": "",
-            "heading": "",
-            "subheading": ""
-          }
-        }
-      },
-      "block_order": [
-        "81a40f37-601a-4c6b-a6cd-a40d8a18203e"
-      ],
       "disabled": true,
       "settings": {
       }
@@ -164,6 +55,11 @@
       ],
       "settings": {
       }
+    },
+    "product_page_details_Tn34BG": {
+      "type": "product-page-details",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -171,6 +67,7 @@
     "page",
     "upsell",
     "recommended",
-    "product_page_custom_nQyc3M"
+    "product_page_custom_nQyc3M",
+    "product_page_details_Tn34BG"
   ]
 }
