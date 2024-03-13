@@ -17,6 +17,7 @@
     "baseBorderRadius": 0,
     "baseBorderRadiusSmall": 0,
     "baseBorderWidth": 1,
+    "baseSectionMargin": 0,
     "breadcrumbs": true,
     "baseSecondaryBackground": "#FFFFFF",
     "baseSecondaryText": "#000000",
