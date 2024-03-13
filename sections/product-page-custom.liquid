@@ -37,17 +37,20 @@
 {% endif %}
 
 
-<div class="grid grid-col-1 sm:grid-col-4">
+<div class="container grid grid-cols-1 md:grid-cols-4 gap-4">
+
+  {% comment %} DROPDOWN {% endcomment %}
+
   <div class="flex flex-col">
-  <label for="car-select" class="mb-2 text-sm font-semibold text-gray-700">Choose car brand and model</label>
-  <select name="car" id="car-select" class="form-select block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-    {% for product_option in collections.all.products %}
-      <option value="{{ product_option.url }}" {% if product_option.title == product.title %}selected{% endif %}>
-        {{ product_option.title }}
-      </option>
-    {% endfor %}
-  </select>
-</div>
+    <label for="car-select" class="mb-2 text-sm font-semibold text-grigio-60">Choose car brand and model</label>
+    <select name="car" id="car-select" class="form-select block w-full px-3 py-2 border border-gray-300 bg-white shadow-sm focus:outline-none focus:ring-yellow focus:border-yellow sm:text-sm">
+      {% for product_option in collections.all.products %}
+        <option value="{{ product_option.url }}" {% if product_option.title == product.title %}selected{% endif %}>
+          {{ product_option.title }}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
 
   <script>
     document.getElementById('car-select').addEventListener('change', function() {
@@ -56,6 +59,7 @@
   </script>
 
 
+  {% comment %} VARIANTS {% endcomment %}
 
   <div class="flex flex-col">
      {% if product.variants.size > 1 %}
@@ -147,6 +151,9 @@
 
 
   </div>
+
+  {% comment %} Price {% endcomment %}
+  
   <div 
     class="flex flex-col items-start mb-5 justify-between gap-5 product__price--
     font__family-- font__size-- 
@@ -177,6 +184,8 @@
       </p>
     </div>
   </div>
+
+  {% comment %} BUY BUTTON {% endcomment %}
 
   <a class="button button--primary button--ghost  button--primary__ghost button--full-width" href="/checkout">
     <button class="flex justify-center items-center w-full gap-2 py-4 px-3 bg-grigio-40 hover:bg-yellow text-white">
