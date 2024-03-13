@@ -1,3 +1,65 @@
+<style>
+{% render 'common-css' with section as section %}
+
+{% if section.settings.overlayOpacity > 0 %}
+.overlay--{{-section.id}} {
+    opacity: {{section.settings.overlayOpacity | times: 0.01}};
+    background-color: {{section.settings.overlayColor}};
+}
+{% endif %}
+
+#s--{{section.id}} .s__content {
+  {% if section.settings.imagePosition == "right" %}
+  flex-direction: row-reverse;
+  {%endif%}
+  padding: {{section.settings.padding}}px;
+}
+
+{% if section.settings.layout == "stretchContent" %}
+#s--{{section.id}} .tximage__image {
+  padding: 0px;
+}
+{%endif%}
+
+#tximage--{{section.id}} img {
+  width: 100%;
+}
+
+#s--{{section.id}} .accordion__item {
+    background: {{section.settings.backgroundColor}};
+    text-align: left;
+}
+
+#s--{{section.id}} .accordion__item--title {
+    padding: 0.5rem 1rem;
+}
+
+#s--{{section.id}} .accordion__item--content p, #s--{{section.id}} .accordion__item--title {
+    color: {% unless section.settings.contentColor contains 'rgba(0,0,0,0)' %}{{section.settings.contentColor}}{% else %}initial{% endunless %};
+}
+
+#s--{{section.id}} .accordion {
+    max-width: 800px;
+    margin: auto;
+}
+
+#s--{{section.id}} .accordion__input{
+    display: none;
+}
+
+@media only screen and (max-width: 768px){
+    #s--{{section.id}} .accordion{
+        padding: {{ section.settings.vertPaddingAccord }}px {{ section.settings.horPaddingAccord }}px;
+    }
+}
+
+#colorcode{}
+</style>
+
+{% assign iWidth = section.settings.imageWidth %}
+{% assign tWidth = 12 | minus: section.settings.imageWidth %}
+{% assign customID = section.settings.custom_id %}
+
 <script type="application/ld+json">
   {
         "@context": "https://schema.org/",
@@ -77,7 +139,7 @@
   </div>
 
   
-  <div class="grid grid-cols-1 gap-4 items-start sticky w-[400px] h-[500px] bg-[#ECEFF3]p-4">
+  <div class="grid grid-cols-1 gap-4 items-start sticky w-[400px] h-[500px] bg-[#ECEFF3] p-4">
       
       {% comment %} DROPDOWN {% endcomment %}
 
@@ -244,7 +306,7 @@
       "accepts": ["youtube", "vimeo"],
       "id": "video",
       "label": "Video URL"
-    },
+    }
    ],
   "presets": [
     {
