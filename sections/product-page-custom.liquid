@@ -38,7 +38,7 @@
 
 <div class="container mx-auto">
 
-  <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 items-center">
+  <div class="grid grid-cols-1 lg:grid-cols-[1fr,1.5fr,0.5fr,auto] gap-4 items-start">
     
   {% comment %} DROPDOWN {% endcomment %}
 
@@ -154,7 +154,7 @@
   {% comment %} Price {% endcomment %}
   
   <div 
-    class="flex flex-col items-start justify-between gap-5 product__price--
+    class="flex flex-col items-start justify-between gap-2 product__price--
     font__family-- font__size-- 
     " {{block.shopify_attributes}}>
     <p class="mr-auto text-sm text-grigio-60">Price</p>
@@ -186,7 +186,7 @@
 
   {% comment %} BUY BUTTON {% endcomment %}
 
-  <a class="button button--primary button--ghost  button--primary__ghost button--full-width" href="/checkout">
+  <a class="mt-[22px] button button--primary button--ghost  button--primary__ghost button--full-width" href="/checkout">
     <button class="flex justify-center items-center w-full gap-2 py-4 px-3 bg-grigio-40 hover:bg-yellow text-white">
         {% render 'icon-cart-white'%}
         <span class="text-sm uppercase font-extrabold text-white">BUY</span>

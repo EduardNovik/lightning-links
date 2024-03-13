@@ -732,6 +732,10 @@ video {
   margin-top: 2rem;
 }
 
+.mt-\[22px\] {
+  margin-top: 22px;
+}
+
 .block {
   display: block;
 }
@@ -1852,12 +1856,12 @@ body::-webkit-scrollbar {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .lg\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
   .lg\:grid-cols-7 {
     grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .lg\:grid-cols-\[1fr\2c 1\.5fr\2c 0\.5fr\2c auto\] {
+    grid-template-columns: 1fr 1.5fr 0.5fr auto;
   }
 
   .lg\:flex-row {
