@@ -1117,6 +1117,10 @@ video {
   background-color: rgb(250 182 15 / var(--tw-bg-opacity));
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -1899,10 +1903,6 @@ body::-webkit-scrollbar {
 
   .lg\:grid-cols-\[1fr\2c 1fr\2c auto\2c 0\.6fr\] {
     grid-template-columns: 1fr 1fr auto 0.6fr;
-  }
-
-  .lg\:grid-cols-\[1fr\2c 1fr\] {
-    grid-template-columns: 1fr 1fr;
   }
 
   .lg\:flex-row {
