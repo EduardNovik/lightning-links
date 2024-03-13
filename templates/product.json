@@ -59,6 +59,30 @@
     "product_page_details_CNqk8E": {
       "type": "product-page-details",
       "settings": {
+        "custom_id": "",
+        "displayFor": "display--both",
+        "layout": "default",
+        "nomargin": false,
+        "scopedCSS": "",
+        "height": 0,
+        "padding": 0,
+        "lineMargin": 12,
+        "backgroundColor": "rgba(0,0,0,0)",
+        "backgroundPosition": "middle",
+        "backgroundFilter": "none",
+        "backdropIntensity": 50,
+        "parallax": false,
+        "backgroundPattern": false,
+        "overlayOpacity": 0,
+        "overlayColor": "#000000",
+        "contentColor": "rgba(0,0,0,0)",
+        "horizontalAlignment": "center",
+        "verticalAlignment": "middle",
+        "imagePosition": "left",
+        "imageWidth": "9",
+        "video": "https:\/\/www.youtube.com\/watch?v=YwiZuflY51I",
+        "vertPaddingAccord": 12,
+        "horPaddingAccord": 4
       }
     }
   },
