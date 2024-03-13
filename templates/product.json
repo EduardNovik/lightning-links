@@ -14,6 +14,7 @@
       "blocks": {
         "ppTitle": {
           "type": "productPageTitle",
+          "disabled": true,
           "settings": {
             "noMargin": true,
             "color": "rgba(0,0,0,0)",
@@ -23,6 +24,7 @@
         },
         "ppPrice": {
           "type": "productPagePrice",
+          "disabled": true,
           "settings": {
             "noMargin": false,
             "color": "rgba(0,0,0,0)",
@@ -70,6 +72,7 @@
         },
         "ppSwatch": {
           "type": "productPageSwatch",
+          "disabled": true,
           "settings": {
             "noMargin": false
           }
