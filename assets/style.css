@@ -789,6 +789,10 @@ video {
   height: 100%;
 }
 
+.h-\[44px\] {
+  height: 44px;
+}
+
 .max-h-\[50px\] {
   max-height: 50px;
 }
