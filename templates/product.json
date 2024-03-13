@@ -14,6 +14,7 @@
       "blocks": {
         "ppTitle": {
           "type": "productPageTitle",
+          "disabled": true,
           "settings": {
             "noMargin": true,
             "color": "rgba(0,0,0,0)",
@@ -23,6 +24,7 @@
         },
         "ppPrice": {
           "type": "productPagePrice",
+          "disabled": true,
           "settings": {
             "noMargin": false,
             "color": "rgba(0,0,0,0)",
@@ -70,6 +72,7 @@
         },
         "ppSwatch": {
           "type": "productPageSwatch",
+          "disabled": true,
           "settings": {
             "noMargin": false
           }
@@ -100,6 +103,7 @@
         "ppATC",
         "03e4ccef-7c44-4b2a-988f-71fcd8753873"
       ],
+      "disabled": true,
       "settings": {
         "view": "default",
         "layout": "max-width",
@@ -155,6 +159,9 @@
     },
     "product_page_custom_nQyc3M": {
       "type": "product-page-custom",
+      "custom_css": [
+        ".container {margin-top: 60px;}"
+      ],
       "settings": {
       }
     }
