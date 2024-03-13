@@ -56,9 +56,86 @@
       "settings": {
       }
     },
-    "product_page_details_Tn34BG": {
+    "product_page_details_CNqk8E": {
       "type": "product-page-details",
       "settings": {
+      }
+    },
+    "section_video_text_WJc3ai": {
+      "type": "section__video-text",
+      "blocks": {
+        "title_h43QGK": {
+          "type": "title",
+          "settings": {
+            "fullWidth": true,
+            "content": "Hey check this out!",
+            "textColor": "rgba(0,0,0,0)",
+            "fontFamily": "title",
+            "fontSize": "medium"
+          }
+        },
+        "rich_text_H9fbJ6": {
+          "type": "richText",
+          "settings": {
+            "fullWidth": true,
+            "maxBWidth": 100,
+            "content": "<p>This is for your text<\/p>",
+            "detectLists": true,
+            "textColor": "rgba(0,0,0,0)",
+            "fontFamily": "base",
+            "fontSize": "base"
+          }
+        },
+        "button_J6tcjX": {
+          "type": "button",
+          "settings": {
+            "fullWidth": true,
+            "text": "Get this now!",
+            "url": "",
+            "icon": "",
+            "iconPosition": "icon--left",
+            "wideButton": false,
+            "buttonStyle": "primary",
+            "buttonType": "default",
+            "fontSize": "base",
+            "fontFamily": "base",
+            "animation": "none",
+            "animationDuration": 1000,
+            "animationInfinite": true
+          }
+        }
+      },
+      "block_order": [
+        "title_h43QGK",
+        "rich_text_H9fbJ6",
+        "button_J6tcjX"
+      ],
+      "settings": {
+        "custom_id": "",
+        "displayFor": "display--both",
+        "layout": "default",
+        "nomargin": false,
+        "scopedCSS": "",
+        "height": 0,
+        "padding": 0,
+        "lineMargin": 12,
+        "backgroundColor": "rgba(0,0,0,0)",
+        "backgroundImage": "shopify:\/\/shop_images\/car-4.jpg",
+        "backgroundPosition": "middle",
+        "backgroundFilter": "none",
+        "backdropIntensity": 50,
+        "parallax": false,
+        "backgroundPattern": false,
+        "overlayOpacity": 0,
+        "overlayColor": "#000000",
+        "contentColor": "rgba(0,0,0,0)",
+        "horizontalAlignment": "center",
+        "verticalAlignment": "middle",
+        "imagePosition": "left",
+        "imageWidth": "8",
+        "video": "https:\/\/www.youtube.com\/watch?v=rev2fDMusEA",
+        "vertPaddingAccord": 12,
+        "horPaddingAccord": 4
       }
     }
   },
@@ -68,6 +145,7 @@
     "upsell",
     "recommended",
     "product_page_custom_nQyc3M",
-    "product_page_details_Tn34BG"
+    "product_page_details_CNqk8E",
+    "section_video_text_WJc3ai"
   ]
 }
