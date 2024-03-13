@@ -224,6 +224,7 @@ section {
 span[data-swatch-option] {
   border: 2px solid #c7ccd3;
   background-color: white;
+  margin: 0px;
 }
 
 body::-webkit-scrollbar {

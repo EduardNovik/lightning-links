@@ -38,13 +38,13 @@
 
 <div class="container mx-auto">
 
-  <div class="grid grid-cols-1 md:grid-cols-[1fr,2fr,auto,auto] gap-4 items-center">
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 items-center">
     
   {% comment %} DROPDOWN {% endcomment %}
 
-  <div class="flex flex-col">
-    <label for="car-select" class="mb-2 text-sm font-semibold text-grigio-60">Choose car brand and model</label>
-    <select name="car" id="car-select" class="form-select block w-full px-3 py-2 border border-gray-300 bg-white shadow-sm focus:outline-none focus:ring-yellow focus:border-yellow sm:text-sm">
+  <div class="flex flex-col gap-2">
+    <label for="car-select" class="text-sm text-grigio-60">Choose car brand and model</label>
+    <select name="car" id="car-select" class="form-select block w-full p-3 border border-gray-300 bg-white shadow-sm focus:outline-none focus:ring-yellow focus:border-yellow sm:text-sm">
       {% for product_option in collections.all.products %}
         <option value="{{ product_option.url }}" {% if product_option.title == product.title %}selected{% endif %}>
           {{ product_option.title }}
@@ -62,7 +62,6 @@
 
   {% comment %} VARIANTS {% endcomment %}
 
-  <div class="flex flex-col">
      {% if product.variants.size > 1 %}
 
         {% assign altSelector = settings.altSelectorList | downcase | split: ',' %}
@@ -116,9 +115,9 @@
                             {% assign selector_type = "dropdown" %}
                         {% endif %}
                     {% endif %}
-                    <div>
+                    <div class="flex flex-col gap-2">
                     <p class="text-sm text-grigio-60">Chose your suspension style</p>
-                        <div class="flex justify-between">
+                        <div class="flex justify-between gap-3">
                             {% case selector_type %}
                                 {% when 'dropdown' %}
                                     <select data-swatch-index="{{product.id}}-{{index}}">
@@ -151,12 +150,11 @@
         {% endif %}
 
 
-  </div>
 
   {% comment %} Price {% endcomment %}
   
   <div 
-    class="flex flex-col items-start mb-5 justify-between gap-5 product__price--
+    class="flex flex-col items-start justify-between gap-5 product__price--
     font__family-- font__size-- 
     " {{block.shopify_attributes}}>
     <p class="mr-auto text-sm text-grigio-60">Price</p>
@@ -176,7 +174,7 @@
         <p data-product-price-sale="{{product.id}}" class="text-sm product__price--old jsPrice">{% if currsale %}{{ current_variant.compare_at_price | money | strip_html }}{% endif %}</p>
     {% endunless %}
     <div class="flex gap-4">
-      <p data-product-price="{{product.id}}" class="{% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}{% endunless %}{% endif %} jsPrice bg-yellow p-2 text-sm">
+      <p data-product-price="{{product.id}}" class="{% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}{% endunless %}{% endif %} jsPrice bg-yellow p-3 text-sm">
         {% if settings.currencyFormat == 'money_with_currency_format' %}
           {{ current_variant.price | money_with_currency | strip_html }}
           {% else %}
