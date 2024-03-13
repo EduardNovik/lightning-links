@@ -74,8 +74,6 @@
           {% render 'image', size: '900x', src: image.src, alt: image.alt, class: imageClass %}
       </div>
     {% endfor %}
- 
-      
   </div>
 
   
@@ -240,7 +238,14 @@
 {% schema %}
   {
     "name": "Product page details",
-   "settings": [],
+   "settings": [
+    {
+      "type": "video_url",
+      "accepts": ["youtube", "vimeo"],
+      "id": "video",
+      "label": "Video URL"
+    },
+   ],
   "presets": [
     {
       "name": "Product page details"
@@ -248,6 +253,8 @@
   ]
 }
 {% endschema %}
+
+      
 
 
 
