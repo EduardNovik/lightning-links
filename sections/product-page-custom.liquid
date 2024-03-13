@@ -2,11 +2,12 @@
   <div class="flex flex-col">
     <p>Chose car brand and model</p>
     <select name="" id="">
-      {%- for product in collection -%}
-      <option value="">Select a collection</option>
-      {%- endfor -%}
+        {% for product in collections.all.products %}
+          <option value="">{{ product.title }}{{ product.url }}</option>
+        {% endfor %}
     </select>
   </div>
+
   <div class="flex flex-col">
      {% if product.variants.size > 1 %}
 
@@ -150,3 +151,10 @@
   ]
 }
 {% endschema %}
+
+
+
+
+
+
+
