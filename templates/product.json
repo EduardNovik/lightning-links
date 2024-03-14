@@ -64,10 +64,24 @@
           "settings": {
             "icon": "shopify:\/\/shop_images\/car-8.jpg"
           }
+        },
+        "social_link_DDAVDh": {
+          "type": "social_link",
+          "settings": {
+          }
+        },
+        "page_block_gpeRJE": {
+          "type": "pageBlock",
+          "settings": {
+            "fullWidth": true,
+            "page": ""
+          }
         }
       },
       "block_order": [
-        "social_link_AnGNiY"
+        "social_link_AnGNiY",
+        "social_link_DDAVDh",
+        "page_block_gpeRJE"
       ],
       "settings": {
         "custom_id": "",
