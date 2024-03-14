@@ -74,8 +74,8 @@
 
     <div div class="w-full">
       {% for linkBlock in section.blocks %}
-          {% if linkBlock.settings.icon %}
-            <img src="{{ linkBlock.settings.icon | img_url: 'original' }}" alt="image advantage" class="advantage">
+          {% if linkBlock.settings.icon1 %}
+            <img src="{{ linkBlock.settings.icon1 | img_url: 'original' }}" alt="image advantage" class="advantage">
           {% endif %}
       {% endfor %}
     </div>
@@ -84,22 +84,13 @@
     <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
 
 
-    <div class="w-full">
-      {% for Image2 in section.blocks %}
-        {% if Image2.settings.icon2 %}
-          <img src="{{ Image2.settings.image_result | img_url: 'original' }}" alt="image result" class="result">
-        {% endif %}
+    <div div class="w-full">
+      {% for textBlock in section.blocks %}
+          {% if textBlock.settings.icon2 %}
+            <img src="{{ textBlock.settings.icon2 | img_url: 'original' }}" alt="image result" class="result">
+          {% endif %}
       {% endfor %}
     </div>
-  </div>
-
-  <div div class="w-full">
-    {% for textBlock in section.blocks %}
-        {% if textBlock.settings.icon %}
-          <img src="{{ textBlock.settings.icon | img_url: 'original' }}" alt="image result" class="result">
-        {% endif %}
-    {% endfor %}
-  </div>
 
 
   <div class="grid grid-cols-1 gap-4 items-start sticky w-[400px] h-[500px] bg-[#ECEFF3] p-4 top-20">
@@ -604,11 +595,11 @@
     "blocks": [
       {
         "type": "social_link",
-        "name": "Social link",
+        "name": "Img1",
         "settings": [
           {
             "type": "image_picker",
-            "id": "icon",
+            "id": "icon1",
             "label": "Icon"
           }
         ]
@@ -619,7 +610,7 @@
         "settings": [
           {
             "type": "image_picker",
-            "id": "icon",
+            "id": "icon2",
             "label": "Icon"
           }
         ]
