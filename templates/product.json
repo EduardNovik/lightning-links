@@ -55,6 +55,34 @@
       ],
       "settings": {
       }
+    },
+    "product_page_details_3nTtVN": {
+      "type": "product-page-details",
+      "settings": {
+        "custom_id": "",
+        "displayFor": "display--both",
+        "layout": "default",
+        "nomargin": false,
+        "scopedCSS": "",
+        "height": 0,
+        "padding": 0,
+        "lineMargin": 12,
+        "backgroundColor": "rgba(0,0,0,0)",
+        "backgroundPosition": "middle",
+        "backgroundFilter": "none",
+        "backdropIntensity": 50,
+        "parallax": false,
+        "backgroundPattern": false,
+        "overlayOpacity": 0,
+        "overlayColor": "#000000",
+        "contentColor": "rgba(0,0,0,0)",
+        "horizontalAlignment": "center",
+        "verticalAlignment": "middle",
+        "imagePosition": "left",
+        "imageWidth": "6",
+        "vertPaddingAccord": 12,
+        "horPaddingAccord": 4
+      }
     }
   },
   "order": [
@@ -62,6 +90,7 @@
     "page",
     "upsell",
     "recommended",
-    "product_page_custom_nQyc3M"
+    "product_page_custom_nQyc3M",
+    "product_page_details_3nTtVN"
   ]
 }
