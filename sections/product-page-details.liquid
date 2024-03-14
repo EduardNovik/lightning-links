@@ -72,7 +72,7 @@
     <p class="w-full text-xl font-bold mt-6">Advantages</p>
     <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
 
-    {% for image in product.images %}
+    {% comment %} {% for image in product.images %}
       <div class="w-full">
         {% render 'image'
           , size: '900x'
@@ -80,7 +80,16 @@
           , alt: image.alt
           , class: imageClass %}
       </div>
-    {% endfor %}
+    {% endfor %} {% endcomment %}
+
+    <div class="w-full">
+      {% for linkBlock in section.blocks %}
+        {% if linkBlock.settings.icon %}
+          <img src="{{ linkBlock.settings.icon | img_url: 'original' }}" alt="{{ linkBlock.settings.title }}" class="imageClass">
+        {% endif %}
+        {{ linkBlock.settings.title }}
+      {% endfor %}
+    </div>
 
     <p class="w-full text-xl font-bold mt-6">Result</p>
     <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
@@ -597,7 +606,19 @@
         "id": "horPaddingAccord"
     }
     ],
-    "blocks": [{"type": "@app"},{
+    "blocks": [{"type": "@app"},
+      {
+        "type": "social_link",
+        "name": "Social link",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          }
+        ]
+      },
+    {
     "type": "title",
     "name": "Heading",
     "settings": [
