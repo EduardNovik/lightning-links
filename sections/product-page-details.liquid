@@ -73,9 +73,9 @@
     <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
 
     <div class="w-full">
-      {% for linkBlock in section.blocks %}
-        {% if linkBlock.settings.advantage %}
-          <img src="{{ linkBlock.settings.image_advantage | img_url: 'original' }}" alt="image advantage" class="advantage">
+      {% for Image1 in section.blocks %}
+        {% if Image1.settings.icon %}
+          <img src="{{ Image1.settings.image_advantage | img_url: 'original' }}" alt="image advantage" class="advantage">
         {% endif %}
       {% endfor %}
     </div>
@@ -85,9 +85,9 @@
 
 
     <div class="w-full">
-      {% for linkBlock in section.blocks %}
-        {% if linkBlock.settings.result %}
-          <img src="{{ linkBlock.settings.image_result | img_url: 'original' }}" alt="image result" class="result">
+      {% for Image2 in section.blocks %}
+        {% if Image2.settings.icon2 %}
+          <img src="{{ Image2.settings.image_result | img_url: 'original' }}" alt="image result" class="result">
         {% endif %}
       {% endfor %}
     </div>
@@ -595,21 +595,28 @@
     ],
     "blocks": [
       {
-        "type": "social_link",
+        "type": "Image1",
         "name": "images",
         "settings": [
           {
             "type": "image_picker",
-            "id": "advantage",
+            "id": "icon",
             "label": "Image advantage"
-          },
-           {
-            "type": "image_picker",
-            "id": "result",
-            "label": "Image result"
           }
         ]
       },
+      {
+        "type": "Image2",
+        "name": "images",
+        "settings": [
+           {
+            "type": "image_picker",
+            "id": "icon2",
+            "label": "Image result"
+          },
+        ]
+      },
+
     ],
     "presets": [
       {
