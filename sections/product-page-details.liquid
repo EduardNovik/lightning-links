@@ -106,12 +106,7 @@
     <p class="text-2xl font-bold">How it works?</p>
     <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
 
-    <div id="s--{{section.id}}"
-    {% unless section.settings.backgroundImage == nil -%}{% render 'background', image: section.settings.backgroundImage %}{%- endunless %}
-    class="{% render 'common-class', section: section, class: 'row', bg: true, vAlign: false %}">
-      {% if section.settings.overlayOpacity > 0 %}
-        <div class="overlay overlay--{{-section.id}}"></div>
-      {% endif %}
+    <div id="s--{{section.id}}">
       <div id="{{customID}}" class="row s__content {{ section.settings.verticalAlignment }} layout__content">
         <div class="col-12 col-md-{{-iWidth}} tximage__video video--responsive">
             {% unless section.settings.video == blank %}
@@ -317,14 +312,6 @@
         "en": "Product page details"
     },
     "settings": [
-      {
-      "type": "header",
-      "content": "Help"
-    },
-    {
-      "type": "paragraph",
-      "content": "[Click here to follow an interactive Tutorial](https://vimeo.com/458157962)"
-    },
     {
         "type": "header",
         "content": "Section ID"
@@ -337,243 +324,12 @@
     {
     "type": "header",
     "content": "Section layout"
-},
-{
-  "type": "radio",
-  "id": "displayFor",
-  "label": "Show this section on",
-  "options": [
-    {"value": "display--both", "label": "All devices"},
-    {"value": "hide-desktop", "label": "Mobile only"},
-    {"value": "hide-mobile", "label": "Desktop only"}
-  ],
-  "default": "display--both"
-},
-{
-  "type": "select",
-  "id": "layout",
-  "label": "Section layout",
-  "options": [
-    {"value": "default", "label": "Global default"},
-    {"value": "boxed", "label": "Boxed"},
-    {"value": "stretchBg", "label": "Full width background"},
-    {"value": "stretchContent", "label": "Full width"}
-  ],
-  "default": "default"
-},
-{
-  "type": "checkbox",
-  "id": "nomargin",
-  "default": false,
-  "label": "Remove section's bottom margin"
-},
-{
-  "type": "textarea",
-  "id": "scopedCSS",
-  "label": "Section-scoped CSS",
-  "info": "Rules beginning with ##scoped will be scoped to this section. (Example: ##scoped h1 {color: blue})"
-},
-{
-  "type": "range",
-  "id": "height",
-  "label": "Minimum height",
-  "default": 0,
-  "min": 0,
-  "max": 800,
-  "step": 10,
-  "unit": "px"
-},
-{
-  "type": "range",
-  "id": "padding",
-  "label": "Section padding",
-  "default": 0,
-  "min": 0,
-  "max": 50,
-  "step": 5,
-  "unit": "px"
-},
-{
-  "type": "range",
-  "id": "lineMargin",
-  "label": "Space between blocks",
-  "default": 12,
-  "min": 0,
-  "max": 50,
-  "step": 1,
-  "unit": "px"
-},
-    {
-    "type": "header",
-    "content": "Section background"
-},
-{
-  "id": "backgroundColor",
-  "type": "color",
-  "default": "rgba(0,0,0,0)",
-  "label": "Background color"
-},
-{
-  "type": "image_picker",
-  "id": "backgroundImage",
-  "label": "Background image"
-},
-{
-  "type": "select",
-  "id": "backgroundPosition",
-  "label": "Background image position",
-  "options": [
-    {"value": "top", "label": "Top"},
-    {"value": "middle", "label": "Middle"},
-    {"value": "bottom", "label": "Bottom"}
-  ],
-  "default": "middle"
-},
-{
-  "type": "select",
-  "options": [
-    {"value": "none", "label": "None"},
-    {"value": "blur", "label": "Blur"},
-    {"value": "contrast", "label": "Contrast"},
-    {"value": "grayscale", "label": "Black & White"},
-    {"value": "invert", "label": "Invert colors"},
-    {"value": "sepia", "label": "Sepia (retro)"},
-    {"value": "saturate", "label": "Saturation"}
-  ],
-  "id": "backgroundFilter",
-  "label": "Background effect",
-  "default": "none"
-},
-{
-  "type": "range",
-  "min": 0,
-  "max": 100,
-  "step": 5,
-  "label": "Effect intensity",
-  "id": "backdropIntensity",
-  "default": 50,
-  "unit": "%"
-},
-{
-  "type": "checkbox",
-  "id": "parallax",
-  "label": "Enable parallax",
-  "default": false
-},
-{
-  "type": "checkbox",
-  "id": "backgroundPattern",
-  "label": "Background pattern",
-  "default": false
-},
-{
-  "type": "header",
-  "content": "Background overlay"
-},
-{
-  "type": "range",
-  "id": "overlayOpacity",
-  "min": 0,
-  "max": 100,
-  "step": 5,
-  "label": "Overlay opacity",
-  "default": 0,
-  "unit": "%"
-},
-{
-  "type": "color",
-  "id": "overlayColor",
-  "label": "Overlay color",
-  "default": "#000000"
-},
-    {
-    "type": "header",
-    "content": "Section content"
-},
-{
-  "type": "color",
-  "id": "contentColor",
-  "label": "Default text color",
-  "default": "rgba(0,0,0,0)"
-},
-{
-  "type": "select",
-  "id": "horizontalAlignment",
-  "label": "Content alignment (left to right)",
-  "options": [
-    {"value": "start", "label": "Left"},
-    {"value": "center", "label": "Center"},
-    {"value": "end", "label": "Right"}
-  ],
-  "default": "center"
-},
-{
-  "type": "select",
-  "id": "verticalAlignment",
-  "label": "Content alignment (top to bottom)",
-  "options": [
-    {"value": "top", "label": "Top"},
-    {"value": "middle", "label": "Middle"},
-    {"value": "bottom", "label": "Bottom"}
-  ],
-  "default": "middle"
-},
-    {
-      "type": "header",
-      "content": "Video"
-    },
-    {
-      "type": "select",
-      "id": "imagePosition",
-      "label": "Video position",
-      "options": [
-        {"value": "left", "label": "Left"},
-        {"value": "right", "label": "Right"}
-      ],
-      "default": "left"
-    },
-    {
-      "type": "select",
-      "id": "imageWidth",
-      "label": "Video width",
-      "options": [
-        {"value": "9", "label": "75%"},
-        {"value": "8", "label": "66%"},
-        {"value": "6", "label": "50%"},
-        {"value": "4", "label": "33%"},
-        {"value": "3", "label": "25%"}
-      ],
-      "default": "6"
     },
     {
       "type": "video_url",
-      "accept": ["youtube", "vimeo"],
+      "accepts": ["youtube", "vimeo"],
       "id": "video",
       "label": "Video URL"
-    },
-    {
-      "type": "header",
-      "content": "Accordion padding"
-    },
-    {
-        "type": "range",
-        "label": "Vertical padding",
-        "min": 0,
-        "max": 50,
-        "step": 1,
-        "default": 12,
-        "unit": "px",
-        "id": "vertPaddingAccord"
-    },
-    {
-        "type": "range",
-        "label": "Horizontal padding",
-        "min": 0,
-        "max": 50,
-        "step": 1,
-        "default": 4,
-        "unit": "px",
-        "id": "horPaddingAccord"
     }
     ],
     "blocks": [{"type": "@app"},{
