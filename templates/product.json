@@ -56,8 +56,55 @@
       "settings": {
       }
     },
-    "product_page_details_CNqk8E": {
+    "product_page_details_UER4qg": {
       "type": "product-page-details",
+      "blocks": {
+        "title_D6fpd7": {
+          "type": "title",
+          "settings": {
+            "fullWidth": true,
+            "content": "Hey check this out!",
+            "textColor": "rgba(0,0,0,0)",
+            "fontFamily": "title",
+            "fontSize": "medium"
+          }
+        },
+        "rich_text_ChTi3T": {
+          "type": "richText",
+          "settings": {
+            "fullWidth": true,
+            "maxBWidth": 100,
+            "content": "<p>This is for your text<\/p>",
+            "detectLists": true,
+            "textColor": "rgba(0,0,0,0)",
+            "fontFamily": "base",
+            "fontSize": "base"
+          }
+        },
+        "button_FC9rX8": {
+          "type": "button",
+          "settings": {
+            "fullWidth": true,
+            "text": "Get this now!",
+            "url": "",
+            "icon": "",
+            "iconPosition": "icon--left",
+            "wideButton": false,
+            "buttonStyle": "primary",
+            "buttonType": "default",
+            "fontSize": "base",
+            "fontFamily": "base",
+            "animation": "none",
+            "animationDuration": 1000,
+            "animationInfinite": true
+          }
+        }
+      },
+      "block_order": [
+        "title_D6fpd7",
+        "rich_text_ChTi3T",
+        "button_FC9rX8"
+      ],
       "settings": {
         "custom_id": "",
         "displayFor": "display--both",
@@ -79,8 +126,7 @@
         "horizontalAlignment": "center",
         "verticalAlignment": "middle",
         "imagePosition": "left",
-        "imageWidth": "9",
-        "video": "https:\/\/www.youtube.com\/watch?v=YwiZuflY51I",
+        "imageWidth": "6",
         "vertPaddingAccord": 12,
         "horPaddingAccord": 4
       }
@@ -92,6 +138,6 @@
     "upsell",
     "recommended",
     "product_page_custom_nQyc3M",
-    "product_page_details_CNqk8E"
+    "product_page_details_UER4qg"
   ]
 }
