@@ -58,6 +58,24 @@
     },
     "product_page_details_ecEXAt": {
       "type": "product-page-details",
+      "blocks": {
+        "social_link_ebY3Md": {
+          "type": "social_link",
+          "settings": {
+            "icon1": "shopify:\/\/shop_images\/car-4.jpg"
+          }
+        },
+        "text_33aNYF": {
+          "type": "text",
+          "settings": {
+            "icon2": "shopify:\/\/shop_images\/car-8.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "social_link_ebY3Md",
+        "text_33aNYF"
+      ],
       "settings": {
         "custom_id": "",
         "displayFor": "display--both",
