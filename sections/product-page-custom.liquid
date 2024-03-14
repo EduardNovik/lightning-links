@@ -1,28 +1,24 @@
 <script type="application/ld+json">
   {
-        "@context": "https://schema.org/",
-        "@type": "Product",
-        "name": "{{product.title |escape}}",
-        {% if product.featured_image != nil %}
-        "image": [
-          "https:{{product.featured_image | img_url: '960x960'}}",
-          "https:{{product.featured_image | img_url: '960x720'}}",
-          "https:{{product.featured_image | img_url: '960x540'}}"
-         ],
-        {% endif %}
-        "description": "{{product.description | strip_html | escape}}",
-        "brand": {
-          "@type": "Brand",
-          "name": "{{product.vendor |escape}}"
-        },
-        "offers" : {
-          "@type" : "Offer",
-          "availability" : "https://schema.org/{% if product.available %}InStock{%else%}SoldOut{%endif%}",
-          "price" : "{{product.price | money_without_currency }}",
-          "priceCurrency": "{{shop.currency}}",
-          "url" : "{{ shop.url }}{{routes.root_url}}{{product.url}}"
-        }
-  }
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "{{ product.title |escape }}",
+      {% if product.featured_image != nil %}
+      "image" : ["https: {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      {% endif %}
+      "description": "{{ product.description | strip_html | escape }}",
+      "brand": {
+        "@type": "Brand",
+        "name": "{{ product.vendor |escape }}"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/{% if product.available %} InStock{% else %}SoldOut{% endif %}",
+        "price": "{{ product.price | money_without_currency }}",
+        "priceCurrency": "{{ shop.currency }}",
+        "url": "{{ shop.url }} {{ routes.root_url }}{{ product.url }}"
+      }
+    }
 </script>
 
 {% assign current_variant = product.selected_or_first_available_variant %}
@@ -39,56 +35,62 @@
 <div class="container mx-auto">
 
   <div class="grid grid-cols-1 lg:grid-cols-[1fr,1fr,auto,0.6fr] gap-4 items-start">
-    
-  {% comment %} DROPDOWN {% endcomment %}
 
-  <div class="flex flex-col gap-2">
-    <label for="car-select" class="text-sm text-grigio-60">Choose car brand and model</label>
-    <select name="car" id="car-select" class="form-select block w-full p-3 border border-gray-300 bg-white shadow-sm focus:outline-none focus:ring-yellow focus:border-yellow sm:text-sm">
-      {% for product_option in collections.all.products %}
-        <option value="{{ product_option.url }}" {% if product_option.title == product.title %}selected{% endif %}>
-          {{ product_option.title }}
-        </option>
-      {% endfor %}
-    </select>
-  </div>
+    {% comment %} DROPDOWN {% endcomment %}
 
-  <script>
-    document.getElementById('car-select').addEventListener('change', function() {
+    <div class="flex flex-col gap-2">
+      <label for="car-select" class="text-sm text-grigio-60">Choose car brand and model</label>
+      <select
+        name="car"
+        id="car-select"
+        class="form-select block w-full p-3 border border-gray-300 bg-white shadow-sm focus:outline-none focus:ring-yellow focus:border-yellow sm:text-sm">
+        {% for product_option in collections.all.products %}
+          <option
+            value="{{ product_option.url }}"
+            {% if product_option.title == product.title %}
+            selected{% endif %}>
+            {{ product_option.title }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <script>
+          document.getElementById('car-select').addEventListener('change', function() {
       window.location.href = this.value;
-    });
-  </script>
+          });
+    </script>
 
 
-  {% comment %} VARIANTS {% endcomment %}
+    {% comment %} VARIANTS {% endcomment %}
 
-     {% if product.variants.size > 1 %}
+    {% if product.variants.size > 1 %}
 
-        {% assign altSelector = settings.altSelectorList | downcase | split: ',' %}
+      {% assign altSelector = settings.altSelectorList | downcase | split: ',' %}
 
-        {% if altSelector.size or settings.defaultSelector == "swatch" %}
+      {% if altSelector.size or settings.defaultSelector == "swatch" %}
 
         {% assign colorArray = settings.colorSwatches | downcase | split: ',' %}
         {% assign imageArray = settings.imageSwatches | downcase | split: ',' %}
 
         {% assign optionIndex = "" %}
         {% for option in product.options %}
-        {% assign tempOption = option | downcase %}
-        {% if imageArray contains tempOption %}
-        {% assign optionIndex = optionIndex | append: forloop.index0 | append: ',' %}
-        {% endif %}
+          {% assign tempOption = option | downcase %}
+          {% if imageArray contains tempOption %}
+            {% assign optionIndex = optionIndex | append: forloop.index0 | append: ',' %}
+          {% endif %}
         {% endfor %}
 
         {% assign optionIndex = optionIndex | split: ',' %}
 
         {% if optionIndex.size %}
-        {% assign imageOptions = true %}
-        {% assign colorImages = "" %}
+          {% assign imageOptions = true %}
+          {% assign colorImages = "" %}
         {% endif %}
 
-        {% endif %}
+      {% endif %}
 
-        {% capture vArray %}{ {%- for variant in product.variants -%}{%- if variant.featured_image != nil and imageOptions -%}
+      {% capture vArray %}{ {%- for variant in product.variants -%}{%- if variant.featured_image != nil and imageOptions -%}
         {%- assign img = variant.featured_image | img_url: '100x100' -%}
         {%- for ix in optionIndex -%}
         {%- assign idx = ix | plus: 0 -%}
@@ -97,111 +99,135 @@
         {%- endfor -%}
         {%-endif-%}"{{variant.id}}": {"sku": {{ variant.sku | json }}, "available": {{variant.available | json}} ,"id": {{variant.id | json}}, "price_raw": {{variant.price}}, "sale_raw": {{variant.compare_at_price | default: false}}, "price": {{variant.price | money | strip_html | json}}, "sale": {{variant.compare_at_price | money | strip_html | json}}, "options": {{variant.options | json }} }{%- unless forloop.last -%},{% endunless -%}{%- endfor -%}}{%- endcapture %}
 
-        <noscript data-bstr-preselect="{{product.selected_or_first_available_variant.id}}" data-bstr-swatch="{{product.id}}">
-        {{vArray}}
-        </noscript>
+      <noscript data-bstr-preselect="{{product.selected_or_first_available_variant.id}}" data-bstr-swatch="{{product.id}}">
+        {{ vArray }}
+      </noscript>
 
-            <div class="product__swatches">
-                {% assign avvars = product.variants | where: 'available', true %}
-                {% for product_option in product.options_with_values %}
-                    {% assign product_option_lc = product_option.name | downcase %}
-                    {% assign index = forloop.index0 %}
-                    {% assign optix = 'option' | append: product_option.position %}
-                    {% assign selector_type = settings.defaultSelector %}
-                    {% if altSelector contains product_option_lc %}
-                        {% if settings.defaultSelector == "dropdown" %}
-                            {% assign selector_type = "swatch" %}
-                        {% else %}
-                            {% assign selector_type = "dropdown" %}
+      <div class="product__swatches">
+        {% assign avvars = product.variants | where: 'available', true %}
+        {% for product_option in product.options_with_values %}
+          {% assign product_option_lc = product_option.name | downcase %}
+          {% assign index = forloop.index0 %}
+          {% assign optix = 'option' | append: product_option.position %}
+          {% assign selector_type = settings.defaultSelector %}
+          {% if altSelector contains product_option_lc %}
+            {% if settings.defaultSelector == "dropdown" %}
+              {% assign selector_type = "swatch" %}
+            {% else %}
+              {% assign selector_type = "dropdown" %}
+            {% endif %}
+          {% endif %}
+          <div class="flex flex-col gap-2">
+            <p class="text-sm text-grigio-60">Chose your suspension style</p>
+            <div class="flex justify-between gap-3">
+              {% case selector_type %}
+                {% when 'dropdown' %}
+                  <select data-swatch-index="{{product.id}}-{{index}}">
+                    <option value="bstrSelectNill" selected>Select a {{ product_option_lc }}</option>
+                    {% for value in product_option.values %}
+                      {% assign vars = avvars | where: optix, value %}
+                      <option
+                        {% if vars.size == 0 %}
+                        disabled
+                        data-swatch-soldout="true"
                         {% endif %}
+                        value="{{value | escape}}"
+                        data-swatch-index="{{product.id}}-{{index}}">{{ value }}</option>
+                    {% endfor %}
+                  </select>
+                {% when 'swatch' %}
+                  {% assign ix = product_option.position | minus: 1 | append: '' %}
+                  {% if imageArray contains product_option_lc %}
+                    {% assign useImages = true %}
+                  {% else %}
+                    {% assign useImages = false %}
+                  {% endif %}
+                  {% for value in product_option.values %}
+                    {% assign vars = avvars | where: optix, value %}
+                    {% if colorArray contains product_option_lc or imageArray contains product_option_lc %}
+                      <span
+                        class="lazyload swatch--color w-full bg-white border-2 border-grigio-40"
+                        {%- render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%}
+                        data-swatch-option="{{value| escape}}"
+                        data-swatch-index="{{product.id}}-{{index}}"
+                        {% if vars.size == 0 %}
+                        data-swatch-soldout="true"
+                        {% endif %}></span>
+                    {% else %}
+                      <span
+                        class="w-full bg-white border-2 border-grigio-40"
+                        data-swatch-option="{{value| escape}}"
+                        data-swatch-index="{{product.id}}-{{index}}"
+                        {% if vars.size == 0 %}
+                        data-swatch-soldout="true"
+                        {% endif %}>{{ value | escape }}</span>
                     {% endif %}
-                    <div class="flex flex-col gap-2">
-                    <p class="text-sm text-grigio-60">Chose your suspension style</p>
-                        <div class="flex justify-between gap-3">
-                            {% case selector_type %}
-                                {% when 'dropdown' %}
-                                    <select data-swatch-index="{{product.id}}-{{index}}">
-                                        <option value="bstrSelectNill" selected>Select a {{product_option_lc}}</option>
-                                        {% for value in product_option.values %}
-                                            {% assign vars = avvars | where: optix, value %}
-                                            <option {% if vars.size == 0 %} disabled data-swatch-soldout="true"{% endif %} value="{{value | escape}}" data-swatch-index="{{product.id}}-{{index}}">{{value}}</option>
-                                        {% endfor %}
-                                    </select>
-                                {% when 'swatch' %}
-                                    {% assign ix = product_option.position | minus: 1 | append: '' %}
-                                    {% if imageArray contains product_option_lc %}
-                                    {% assign useImages = true %}
-                                    {% else %}
-                                    {% assign useImages = false %}
-                                    {% endif %}
-                                    {% for value in product_option.values %}
-                                        {% assign vars = avvars | where: optix, value %}
-                                        {% if colorArray contains product_option_lc or imageArray contains product_option_lc %}
-                                            <span class="lazyload swatch--color w-full bg-white border-2 border-grigio-40" {%-render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%} data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}></span>
-                                        {% else %}
-                                            <span class="w-full bg-white border-2 border-grigio-40" data-swatch-option="{{value| escape}}" data-swatch-index="{{product.id}}-{{index}}" {% if vars.size == 0 %}data-swatch-soldout="true"{% endif %}>{{value| escape}}</span>
-                                        {% endif %}
-                                    {% endfor %}
-                            {% endcase %}
-                        </div>
-                    </div>
-                {% endfor %}
+                  {% endfor %}
+              {% endcase %}
             </div>
-        {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
 
 
+    {% comment %} Price {% endcomment %}
 
-  {% comment %} Price {% endcomment %}
-  
-  <div 
-    class="flex flex-col items-start justify-between gap-2 product__price--
+    <div class="flex flex-col items-start justify-between gap-2 product__price--
     font__family-- font__size-- 
-    " {{block.shopify_attributes}}>
-    <p class="mr-auto text-sm text-grigio-60">Price</p>
-    {% if product.compare_at_price_min > 0 %}
-    {% assign sale = true %}
-    {% if current_variant.compare_at_price > 0 %}
-    {% assign currsale = true %}
-    {% else %}
-    {% assign currsale = false %}
-    {% endif %}
-    {% else %}
-    {% assign sale = false %}
-    {% assign currsale = false %}
-    {% endif %}
-
-    {% unless current_variant.price >= current_variant.compare_at_price %}
-        <p data-product-price-sale="{{product.id}}" class="text-sm product__price--old jsPrice">{% if currsale %}{{ current_variant.compare_at_price | money | strip_html }}{% endif %}</p>
-    {% endunless %}
-    <div class="flex gap-4">
-      <p data-product-price="{{product.id}}" class="{% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}{% endunless %}{% endif %} jsPrice bg-yellow p-3 text-sm">
-        {% if settings.currencyFormat == 'money_with_currency_format' %}
-          {{ current_variant.price | money_with_currency | strip_html }}
-          {% else %}
-          {{ current_variant.price | money | strip_html }}
+    " {{ block.shopify_attributes }}>
+      <p class="mr-auto text-sm text-grigio-60">Price</p>
+      {% if product.compare_at_price_min > 0 %}
+        {% assign sale = true %}
+        {% if current_variant.compare_at_price > 0 %}
+          {% assign currsale = true %}
+        {% else %}
+          {% assign currsale = false %}
         {% endif %}
-      </p>
+      {% else %}
+        {% assign sale = false %}
+        {% assign currsale = false %}
+      {% endif %}
+
+      {% unless current_variant.price >= current_variant.compare_at_price %}
+        <p data-product-price-sale="{{product.id}}" class="text-sm product__price--old jsPrice">
+          {% if currsale %}
+            {{ current_variant.compare_at_price | money | strip_html }}{% endif %}
+        </p>
+      {% endunless %}
+      <div class="flex gap-4">
+        <p data-product-price="{{product.id}}" class="{% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}{% endunless %}{% endif %} jsPrice bg-yellow p-3 text-sm">
+          {% if settings.currencyFormat == 'money_with_currency_format' %}
+            {{ current_variant.price | money_with_currency | strip_html }}
+          {% else %}
+            {{ current_variant.price | money | strip_html }}
+          {% endif %}
+        </p>
+      </div>
     </div>
-  </div>
 
-  {% comment %} BUY BUTTON {% endcomment %}
+    {% comment %} BUY BUTTON {% endcomment %}
 
-  <a class="mt-[28px] button button--primary button--ghost  button--primary__ghost button--full-width" href="/checkout">
-    <button class="flex justify-center items-center w-full h-[44px] gap-2 p-3 bg-grigio-40 hover:bg-yellow text-white">
-        {% render 'icon-cart-white'%}
+    <a class="mt-[28px] button button--primary button--ghost  button--primary__ghost button--full-width" href="/checkout">
+      <button class="flex justify-center items-center w-full h-[44px] gap-2 p-3 bg-grigio-40 hover:bg-yellow text-white">
+        {% render 'icon-cart-white' %}
         <span class="text-sm uppercase font-extrabold text-white">BUY</span>
-    </button> 
-  </a>
+      </button>
+    </a>
 
 
   </div>
 
   <div class="flex justify-center items-center mb-10 mt-5 w-full bg-grigio-40 p-10">
-      {% for image in product.images %}
-          <div class="w-[65%]">
-              {% render 'image', size: '900x', src: image.src, alt: image.alt, class: imageClass %}
-          </div>
-      {% endfor %}
+    {% for image in product.images %}
+      <div class="w-[65%]">
+        {% render 'image'
+          , size: '900x'
+          , src: image.src
+          , alt: image.alt
+          , class: imageClass %}
+      </div>
+    {% endfor %}
   </div>
 
 </div>
@@ -210,18 +236,11 @@
 {% schema %}
   {
     "name": "Product page custom",
-  "settings": [],
-  "presets": [
-    {
-      "name": "Product page custom"
-    }
-  ]
-}
+    "settings": [],
+    "presets": [
+      {
+        "name": "Product page custom"
+      }
+    ]
+  }
 {% endschema %}
-
-
-
-
-
-
-
