@@ -74,7 +74,7 @@
 
     <div class="w-full">
       {% for linkBlock in section.blocks %}
-        {% if linkBlock.settings.icon %}
+        {% if linkBlock.settings.image_advantage %}
           <img src="{{ linkBlock.settings.image_advantage | img_url: 'original' }}" alt="image advantage" class="advantage">
         {% endif %}
       {% endfor %}
@@ -86,7 +86,7 @@
 
     <div class="w-full">
       {% for linkBlock in section.blocks %}
-        {% if linkBlock.settings.icon %}
+        {% if linkBlock.settings.image_result %}
           <img src="{{ linkBlock.settings.image_result | img_url: 'original' }}" alt="image result" class="result">
         {% endif %}
       {% endfor %}
@@ -595,7 +595,7 @@
     ],
     "blocks": [
       {
-        "type": "social_link",
+        "type": "image_advantage",
         "name": "images",
         "settings": [
           {
@@ -603,6 +603,12 @@
             "id": "image_advantage",
             "label": "Image advantage"
           },
+        ]
+      },
+      {
+        "type": "image_result",
+        "name": "images",
+        "settings": [
           {
             "type": "image_picker",
             "id": "image_result",
