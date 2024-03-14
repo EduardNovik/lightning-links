@@ -73,7 +73,7 @@
     <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
 
     {% for image in product.images %}
-      <div>
+      <div class="w-full">
         {% render 'image'
           , size: '900x'
           , src: image.src
@@ -87,7 +87,7 @@
 
 
     {% for image in product.images %}
-      <div>
+      <div class="w-full">
         {% render 'image'
           , size: '900x'
           , src: image.src
