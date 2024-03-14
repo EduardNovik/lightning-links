@@ -72,11 +72,11 @@
     <p class="w-full text-xl font-bold mt-6">Advantages</p>
     <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
 
-    <div class="w-full">
-      {% for Image1 in section.blocks %}
-        {% if Image1.settings.icon %}
-          <img src="{{ Image1.settings.image_advantage | img_url: 'original' }}" alt="image advantage" class="advantage">
-        {% endif %}
+    <div div class="w-full">
+      {% for linkBlock in section.blocks %}
+          {% if linkBlock.settings.icon %}
+            <img src="{{ linkBlock.settings.icon | img_url: 'original' }}" alt="image advantage" class="advantage">
+          {% endif %}
       {% endfor %}
     </div>
 
@@ -91,6 +91,14 @@
         {% endif %}
       {% endfor %}
     </div>
+  </div>
+
+  <div div class="w-full">
+    {% for textBlock in section.blocks %}
+        {% if textBlock.settings.icon %}
+          <img src="{{ textBlock.settings.icon | img_url: 'original' }}" alt="image result" class="result">
+        {% endif %}
+    {% endfor %}
   </div>
 
 
@@ -595,28 +603,27 @@
     ],
     "blocks": [
       {
-        "type": "Image1",
-        "name": "images",
+        "type": "social_link",
+        "name": "Social link",
         "settings": [
           {
             "type": "image_picker",
             "id": "icon",
-            "label": "Image advantage"
+            "label": "Icon"
           }
         ]
       },
       {
-        "type": "Image2",
-        "name": "images",
+        "type": "text",
+        "name": "Img2",
         "settings": [
-           {
+          {
             "type": "image_picker",
-            "id": "icon2",
-            "label": "Image result"
-          },
+            "id": "icon",
+            "label": "Icon"
+          }
         ]
-      },
-
+      }
     ],
     "presets": [
       {
@@ -624,17 +631,7 @@
         "name": "Product page details",
         "settings": {
         },
-        "blocks": [
-            {
-                "type": "title"
-            },
-            {
-                "type": "richText"
-            },
-            {
-                "type": "button"
-            }
-        ]
+        "blocks": []
       }
     ]
   }
