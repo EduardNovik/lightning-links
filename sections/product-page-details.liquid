@@ -52,7 +52,7 @@
     {% if section.settings.overlayOpacity > 0 %}
       <div class="overlay overlay--{{-section.id}}"></div>
     {% endif %}
-      <div id="{{customID}}" class="row s__content {{ section.settings.verticalAlignment }} layout__content">
+      <div id="{{customID}}" class="s__content {{ section.settings.verticalAlignment }} layout__content">
         <div class="tximage__video video--responsive">
             {% unless section.settings.video == blank %}
                 {% if section.settings.video.type == 'youtube' %}
