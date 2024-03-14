@@ -56,55 +56,8 @@
       "settings": {
       }
     },
-    "product_page_details_VjRhxG": {
+    "product_page_details_87hjDB": {
       "type": "product-page-details",
-      "blocks": {
-        "title_KUngXH": {
-          "type": "title",
-          "settings": {
-            "fullWidth": true,
-            "content": "Hey check this out!",
-            "textColor": "rgba(0,0,0,0)",
-            "fontFamily": "title",
-            "fontSize": "medium"
-          }
-        },
-        "rich_text_FXQJVW": {
-          "type": "richText",
-          "settings": {
-            "fullWidth": true,
-            "maxBWidth": 100,
-            "content": "<p>This is for your text<\/p>",
-            "detectLists": true,
-            "textColor": "rgba(0,0,0,0)",
-            "fontFamily": "base",
-            "fontSize": "base"
-          }
-        },
-        "button_NRAJGM": {
-          "type": "button",
-          "settings": {
-            "fullWidth": true,
-            "text": "Get this now!",
-            "url": "",
-            "icon": "",
-            "iconPosition": "icon--left",
-            "wideButton": false,
-            "buttonStyle": "primary",
-            "buttonType": "default",
-            "fontSize": "base",
-            "fontFamily": "base",
-            "animation": "none",
-            "animationDuration": 1000,
-            "animationInfinite": true
-          }
-        }
-      },
-      "block_order": [
-        "title_KUngXH",
-        "rich_text_FXQJVW",
-        "button_NRAJGM"
-      ],
       "settings": {
         "custom_id": "",
         "displayFor": "display--both",
@@ -113,7 +66,7 @@
         "scopedCSS": "",
         "height": 0,
         "padding": 0,
-        "lineMargin": 12,
+        "lineMargin": 0,
         "backgroundColor": "rgba(0,0,0,0)",
         "backgroundPosition": "middle",
         "backgroundFilter": "none",
@@ -126,10 +79,10 @@
         "horizontalAlignment": "center",
         "verticalAlignment": "middle",
         "imagePosition": "left",
-        "imageWidth": "9",
-        "video": "https:\/\/www.youtube.com\/watch?v=nzCm7kKyHew",
-        "vertPaddingAccord": 0,
-        "horPaddingAccord": 0
+        "imageWidth": "6",
+        "video": "https:\/\/www.youtube.com\/watch?v=T5jZ4Wf7W6o",
+        "vertPaddingAccord": 12,
+        "horPaddingAccord": 4
       }
     }
   },
@@ -139,6 +92,6 @@
     "upsell",
     "recommended",
     "product_page_custom_nQyc3M",
-    "product_page_details_VjRhxG"
+    "product_page_details_87hjDB"
   ]
 }
