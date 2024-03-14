@@ -58,6 +58,17 @@
     },
     "product_page_details_ecEXAt": {
       "type": "product-page-details",
+      "blocks": {
+        "social_link_AnGNiY": {
+          "type": "social_link",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/car-8.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "social_link_AnGNiY"
+      ],
       "settings": {
         "custom_id": "",
         "displayFor": "display--both",
