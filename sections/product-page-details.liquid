@@ -53,7 +53,7 @@
       <div class="overlay overlay--{{-section.id}}"></div>
     {% endif %}
       <div id="{{customID}}" class="row s__content {{ section.settings.verticalAlignment }} layout__content">
-        <div class="col-12 col-md-{{-iWidth}} tximage__video video--responsive">
+        <div class="tximage__video video--responsive">
             {% unless section.settings.video == blank %}
                 {% if section.settings.video.type == 'youtube' %}
                     <iframe class="lazyload" id="player" type="text/html"
