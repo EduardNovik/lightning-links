@@ -58,21 +58,6 @@
     },
     "product_page_details_87hjDB": {
       "type": "product-page-details",
-      "blocks": {
-        "title_jMmkke": {
-          "type": "title",
-          "settings": {
-            "fullWidth": true,
-            "content": "Hey check this out!",
-            "textColor": "rgba(0,0,0,0)",
-            "fontFamily": "title",
-            "fontSize": "medium"
-          }
-        }
-      },
-      "block_order": [
-        "title_jMmkke"
-      ],
       "settings": {
         "custom_id": "",
         "displayFor": "display--both",
@@ -81,7 +66,7 @@
         "scopedCSS": "",
         "height": 0,
         "padding": 0,
-        "lineMargin": 12,
+        "lineMargin": 0,
         "backgroundColor": "rgba(0,0,0,0)",
         "backgroundPosition": "middle",
         "backgroundFilter": "none",
@@ -95,7 +80,7 @@
         "verticalAlignment": "middle",
         "imagePosition": "left",
         "imageWidth": "6",
-        "video": "",
+        "video": "https:\/\/www.youtube.com\/watch?v=T5jZ4Wf7W6o",
         "vertPaddingAccord": 12,
         "horPaddingAccord": 4
       }
