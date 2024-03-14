@@ -1905,6 +1905,10 @@ body::-webkit-scrollbar {
     grid-template-columns: 3fr 2fr;
   }
 
+  .lg\:grid-cols-\[3fr\2c 1fr\] {
+    grid-template-columns: 3fr 1fr;
+  }
+
   .lg\:flex-row {
     flex-direction: row;
   }
