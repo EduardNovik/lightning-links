@@ -227,6 +227,6 @@ span[data-swatch-option] {
   margin: 0px;
 }
 
-/* body::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
-} */
+}
