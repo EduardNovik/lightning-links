@@ -36,8 +36,8 @@
   {% assign imageClass = 'image-zoom' %}
 {% endif %}
 
+
 {% assign iWidth = section.settings.imageWidth %}
-{% assign tWidth = 12 | minus: section.settings.imageWidth %}
 {% assign customID = section.settings.custom_id %}
 
 
@@ -313,21 +313,7 @@
 }],
     "presets": [
       {
-        "category": "Content + text",
         "name": "Product page details",
-        "settings": {
-        },
-        "blocks": [
-            {
-                "type": "title"
-            },
-            {
-                "type": "richText"
-            },
-            {
-                "type": "button"
-            }
-        ]
       }
     ]
   }
