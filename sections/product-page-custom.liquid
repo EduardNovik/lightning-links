@@ -4,7 +4,7 @@
       "@type": "Product",
       "name": "{{ product.title |escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:  {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:   {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -189,7 +189,7 @@
         {% assign currsale = false %}
       {% endif %}
 
-      <div class="flex gap-4">
+      <div class="flex gap-4 items-center justify-start">
         {% unless current_variant.price >= current_variant.compare_at_price %}
           <p data-product-price-sale="{{product.id}}" class="text-sm product__price--old jsPrice">
             {% if currsale %}
