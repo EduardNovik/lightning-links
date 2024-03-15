@@ -101,6 +101,52 @@
         "vertPaddingAccord": 12,
         "horPaddingAccord": 4
       }
+    },
+    "section_slider_responsive_h779it": {
+      "type": "section__slider--responsive",
+      "blocks": {
+        "image_slide_responsive_X3Lf8j": {
+          "type": "imageSlideResponsive",
+          "settings": {
+            "horizontalAlignment": "center",
+            "verticalAlignment": "middle",
+            "padding": 16,
+            "contentSpacing": 12,
+            "backgroundColor": "rgba(0,0,0,0)",
+            "backgroundPosition": "middle",
+            "overlayOpacity": 40,
+            "overlayColor": "#000000",
+            "slideURL": "",
+            "heading": "This is your slide's heading",
+            "headingColor": "rgba(0,0,0,0)",
+            "content": "<p>Enjoy the flexibility<\/p>",
+            "contentColor": "rgba(0,0,0,0)",
+            "button1Text": "Primary button",
+            "button1Link": "",
+            "button1Style": "primary",
+            "button1Type": "default",
+            "button2Text": "Secondary button",
+            "button2Link": "",
+            "button2Style": "secondary",
+            "button2Type": "default"
+          }
+        }
+      },
+      "block_order": [
+        "image_slide_responsive_X3Lf8j"
+      ],
+      "settings": {
+        "custom_id": "",
+        "displayFor": "display--both",
+        "layout": "default",
+        "nomargin": false,
+        "height": 300,
+        "contentColor": "rgba(0,0,0,0)",
+        "autoplay": true,
+        "slideSpeed": 3,
+        "animation": "none",
+        "delayAnimation": false
+      }
     }
   },
   "order": [
@@ -109,6 +155,7 @@
     "upsell",
     "recommended",
     "product_page_custom_nQyc3M",
-    "product_page_details_ecEXAt"
+    "product_page_details_ecEXAt",
+    "section_slider_responsive_h779it"
   ]
 }
