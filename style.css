@@ -230,17 +230,3 @@ span[data-swatch-option] {
 body::-webkit-scrollbar {
   display: none;
 }
-
-@keyframes vertical-move {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-100%);
-  }
-}
-
-.car-animation {
-  animation: vertical-move 2s ease-in-out infinite;
-}
