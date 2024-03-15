@@ -149,20 +149,22 @@
 
     <div data-bstr-section-slider="{{section.id}}" {% if section.settings.autoplay %}data-autoplay=true{% endif %} onmouseover="this.dataset.paused = -1;" onmouseout="this.dataset.paused = new Date().getTime();" 
     id="s--{{section.id}}" class="w-full {% render 'common-class', section: section, class: 'slider slider--responsive', vAlign: false %}">
-    {% if section.blocks.size > 1 %}
-    <button data-bstr-slider-button="-" class="slider__button hide-mobile" aria-label="Previous"><i class="uil uil-angle-left-b"></i></button>
-    <button data-bstr-slider-button="+" class="slider__button slider__button--next hide-mobile" aria-label="Next"><i class="uil uil-angle-right-b"></i></button>
-    {% endif %}
-    <div id="{{customID2}}" class="slider__holder" data-bstr-slide-loop="true" data-bstr-slider-orientation="horizontal" data-bstr-slide-holder="1|1|1" data-bstr-slider-current="2"
-    {%if section.settings.autoplay %} data-bstr-autoplay=true {% endif %}
-    data-bstr-slide-speed="{{ section.settings.slideSpeed | times: 1000 }}"
-    >
-    {%- for block in section.blocks %}
-    <div data-bstr-slide data-type="bannerSlider" class="slide">
-    {% render 'get-block', block: block, first: forloop.first %}
-    </div>
-    {% endfor %}
-    </div>
+      {% if section.blocks.size > 1 %}
+      <button data-bstr-slider-button="-" class="slider__button hide-mobile" aria-label="Previous"><i class="uil uil-angle-left-b"></i></button>
+      <button data-bstr-slider-button="+" class="slider__button slider__button--next hide-mobile" aria-label="Next"><i class="uil uil-angle-right-b"></i></button>
+      {% endif %}
+      <div id="{{customID2}}" class="slider__holder" data-bstr-slide-loop="true" data-bstr-slider-orientation="horizontal" data-bstr-slide-holder="1|1|1" data-bstr-slider-current="2"
+      {%if section.settings.autoplay %} data-bstr-autoplay=true {% endif %}
+      data-bstr-slide-speed="{{ section.settings.slideSpeed | times: 1000 }}"
+      >
+      {%- for block in section.blocks %}
+        {%- if block.type != 'social_link' %}
+          <div data-bstr-slide data-type="bannerSlider" class="slide">
+            {% render 'get-block', block: block, first: forloop.first %}
+          </div>
+        {%- endif %}
+      {% endfor %}
+      </div>
     </div>
     
   </div>
@@ -515,17 +517,6 @@
           {
             "type": "image_picker",
             "id": "icon1",
-            "label": "Icon"
-          }
-        ]
-      },
-      {
-        "type": "text",
-        "name": "Img2",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "icon2",
             "label": "Icon"
           }
         ]
