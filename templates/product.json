@@ -65,11 +65,6 @@
             "icon1": "shopify:\/\/shop_images\/porsche-yellow.gif"
           }
         },
-        "text_A93bYP": {
-          "type": "text",
-          "settings": {
-          }
-        },
         "image_slide_responsive_RbegJT": {
           "type": "imageSlideResponsive",
           "settings": {
@@ -181,7 +176,6 @@
       },
       "block_order": [
         "social_link_wd9ENj",
-        "text_A93bYP",
         "image_slide_responsive_RbegJT",
         "image_slide_responsive_9XCLA6",
         "image_slide_responsive_dNcfNL",
