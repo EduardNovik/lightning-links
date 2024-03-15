@@ -618,6 +618,10 @@ video {
   position: sticky;
 }
 
+.inset-0 {
+  inset: 0px;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -668,6 +672,10 @@ video {
 
 .z-\[2\] {
   z-index: 2;
+}
+
+.z-10 {
+  z-index: 10;
 }
 
 .col-span-full {
@@ -795,6 +803,10 @@ video {
 
 .h-\[500px\] {
   height: 500px;
+}
+
+.h-auto {
+  height: auto;
 }
 
 .h-full {
@@ -1663,17 +1675,18 @@ body::-webkit-scrollbar {
 }
 
 @keyframes vertical-move {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
 
   50% {
-    transform: translateY(-100%);
+    transform: translateY(-8%);
   }
 }
 
 .car-animation {
-  animation: vertical-move 2s ease-in-out infinite;
+  animation: vertical-move 3s cubic-bezier(0.59, 0.35, 0.6, 0.33) infinite;
 }
 
 .before\:absolute::before {

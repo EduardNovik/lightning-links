@@ -72,15 +72,15 @@
     <p class="w-full text-xl font-bold mt-6">Advantages</p>
     <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
 
-    <div div class="w-full">
+    <div div class="w-full relative">
       {% for linkBlock in section.blocks %}
           {% if linkBlock.settings.icon1 %}
-            <img src="{{ linkBlock.settings.icon1 | img_url: 'original' }}" alt="Car Body" class="car-animation absolute inset-0 w-full h-auto">
+            <img src="{{ linkBlock.settings.icon1 | img_url: 'original' }}" alt="Car Body" class="car-animation w-full h-auto">
           {% endif %}
       {% endfor %}
       {% for linkBlock in section.blocks %}
           {% if linkBlock.settings.icon2 %}
-            <img src="{{ linkBlock.settings.icon2 | img_url: 'original' }}" alt="Wheels" class="absolute inset-0 w-full h-auto">
+            <img src="{{ linkBlock.settings.icon2 | img_url: 'original' }}" alt="Wheels" class="w-full h-auto absolute z-10">
           {% endif %}
       {% endfor %}
     </div>
