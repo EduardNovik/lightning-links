@@ -351,56 +351,6 @@
 </div>
 
 
-{% comment %} {% schema %}
-{
-    "name": {
-        "en": "Product page content"
-    },
-    "settings": [
-    {
-      "type": "header",
-      "content": "Video"
-    },
-    {
-      "type": "select",
-      "id": "imagePosition",
-      "label": "Video position",
-      "options": [
-        {"value": "left", "label": "Left"},
-        {"value": "right", "label": "Right"}
-      ],
-      "default": "left"
-    },
-    {
-      "type": "select",
-      "id": "imageWidth",
-      "label": "Video width",
-      "options": [
-        {"value": "9", "label": "75%"},
-        {"value": "8", "label": "66%"},
-        {"value": "6", "label": "50%"},
-        {"value": "4", "label": "33%"},
-        {"value": "3", "label": "25%"}
-      ],
-      "default": "6"
-    },
-    {
-      "type": "video_url",
-      "accept": ["youtube", "vimeo"],
-      "id": "video",
-      "label": "Video URL"
-    },
-    ],
-    "presets": [
-      {
-        "name": "Product page content",
-      }
-    ]
-  }
-{% endschema %} {% endcomment %}
-
-
-
 
 {% schema %}
 {
@@ -665,6 +615,73 @@
         "default": 4,
         "unit": "px",
         "id": "horPaddingAccord"
+    },
+    {
+      "type": "range",
+      "id": "height",
+      "label": "Height",
+      "default": 300,
+      "min": 0,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "info": "If set to 0px, slider will take up all of screen's height. Best used in combination with a transparent header."
+    },
+    {
+      "type": "header",
+      "content": "Content layout"
+    },
+    {
+      "type": "color",
+      "id": "contentColor",
+      "label": "Text color",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "default": true,
+      "label": "Autoplay slides",
+      "info": "If checked, slider will automatically rotate between slides"
+    },
+    {
+      "type": "range",
+      "id": "slideSpeed",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "Sec",
+      "label": "Slide Speed",
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "animation",
+      "label": "Content animation",
+      "options": [
+        {"value": "none", "label": "None"},
+        {"value": "fade", "label": "Fade in"},
+        {"value": "slide-fade", "label": "Slide and fade in"},
+        {"value": "slide-top", "label": "Slide from top"},
+        {"value": "slide-bottom", "label": "Slide from bottom"},
+        {"value": "slide-left", "label": "Slide from left"},
+        {"value": "slide-right", "label": "Slide from right"},
+        {"value": "scale", "label": "Grow"},
+        {"value": "scale-rotate", "label": "Rotate and grow"},
+        {"value": "shake", "label": "Shake"}
+      ],
+      "default": "none"
+    },
+    {
+      "type": "checkbox",
+      "label": "Animate all elements at once",
+      "default": false,
+      "info": "If left unchecked, elements will start animating with a slight delay inbetween.",
+      "id": "delayAnimation"
     }
     ],
     "blocks": [
