@@ -140,7 +140,7 @@
         "contentColor": "rgba(0,0,0,0)",
         "autoplay": true,
         "slideSpeed": 3,
-        "animation": "none",
+        "animation": "fade",
         "delayAnimation": false,
         "imagePosition": "left",
         "imageWidth": "9",
