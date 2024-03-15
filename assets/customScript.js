@@ -3,6 +3,8 @@ const forPartnersButtons = document.querySelectorAll(".forPartnersButton");
 const forPartnersPopup = document.getElementById("for-partners-popup");
 const closePopupButton = document.getElementById("closePopupButton");
 const cancelPopupButton = document.getElementById("cancelButton");
+const inchValueElement = document.getElementsByClassName("inch-value")[0];
+const swatchButtonsElement = document.querySelectorAll(".swatch-btn");
 
 const buyPopupCustomButtons = document.querySelectorAll(
   ".buyPopupCustomButtons"
@@ -83,5 +85,12 @@ closeBuyPopupCustomButtons.forEach((button) => {
     // 'this.closest' finds the nearest parent with the '.buy-popup-custom' class and adds 'hidden'
     this.closest(".buy-popup-custom").classList.add("invisible");
     body.classList.toggle("overflow-hidden");
+  });
+});
+
+swatchButtonsElement.forEach((button) => {
+  button.addEventListener("click", function () {
+    const activeOptionValue = this.getAttribute("data-swatch-option");
+    inchValueElement.innerText = activeOptionValue;
   });
 });
