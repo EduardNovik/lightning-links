@@ -126,7 +126,7 @@
             "button1Link": "",
             "button1Style": "primary",
             "button1Type": "default",
-            "button2Text": "Secondary button",
+            "button2Text": "",
             "button2Link": "",
             "button2Style": "secondary",
             "button2Type": "default"
