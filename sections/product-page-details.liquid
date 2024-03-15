@@ -72,15 +72,10 @@
     <p class="w-full text-xl font-bold mt-6">Advantages</p>
     <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
 
-    <div div class="w-full relative">
+    <div div class="w-full">
       {% for linkBlock in section.blocks %}
           {% if linkBlock.settings.icon1 %}
-            <img src="{{ linkBlock.settings.icon1 | img_url: 'original' }}" alt="Car Body" class="car-animation w-full h-auto">
-          {% endif %}
-      {% endfor %}
-      {% for linkBlock in section.blocks %}
-          {% if linkBlock.settings.icon2 %}
-            <img src="{{ linkBlock.settings.icon2 | img_url: 'original' }}" alt="Wheels" class="w-full h-auto absolute z-10">
+            <img src="{{ linkBlock.settings.icon1 | img_url: 'original' }}" alt="image advantages" class="advantages">
           {% endif %}
       {% endfor %}
     </div>
@@ -91,8 +86,8 @@
 
     <div div class="w-full">
       {% for textBlock in section.blocks %}
-          {% if textBlock.settings.icon3 %}
-            <img src="{{ textBlock.settings.icon3 | img_url: 'original' }}" alt="image result" class="result">
+          {% if textBlock.settings.icon2 %}
+            <img src="{{ textBlock.settings.icon2 | img_url: 'original' }}" alt="image result" class="result">
           {% endif %}
       {% endfor %}
     </div>
@@ -607,11 +602,6 @@
             "type": "image_picker",
             "id": "icon1",
             "label": "Icon"
-          },
-          {
-            "type": "image_picker",
-            "id": "icon2",
-            "label": "Icon"
           }
         ]
       },
@@ -621,7 +611,7 @@
         "settings": [
           {
             "type": "image_picker",
-            "id": "icon3",
+            "id": "icon2",
             "label": "Icon"
           }
         ]
