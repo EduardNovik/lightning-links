@@ -1687,6 +1687,10 @@ body::-webkit-scrollbar {
   right: 0px;
 }
 
+.product__price--old {
+  display: block !important;
+}
+
 .before\:absolute::before {
   content: var(--tw-content);
   position: absolute;

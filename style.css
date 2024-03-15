@@ -254,3 +254,7 @@ body::-webkit-scrollbar {
   left: auto;
   right: 0px;
 }
+
+.product__price--old {
+  display: block !important;
+}
