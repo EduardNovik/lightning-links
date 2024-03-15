@@ -84,12 +84,19 @@
     <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
 
 
-    <div div class="w-full">
+    <div class="w-full relative">
+      <!-- Wheels -->
       {% for textBlock in section.blocks %}
-          {% if textBlock.settings.icon2 %}
-            <img src="{{ textBlock.settings.icon2 | img_url: 'original' }}" alt="image result" class="result">
-          {% endif %}
+        {% if textBlock.settings.icon2 %}
+          <img src="{{ textBlock.settings.icon2 | img_url: 'original' }}" alt="Wheels" class="absolute inset-0 w-full h-auto">
+        {% endif %}
       {% endfor %}
+      <!-- Car Body -->
+      {% for textBlock in section.blocks %}
+        {% if textBlock.settings.icon3 %}
+          <img src="{{ textBlock.settings.icon3 | img_url: 'original' }}" alt="Car Body" class="car-animation absolute inset-0 w-full h-auto">
+        {% endif %}
+      {% endfor %}  
     </div>
     
   </div>
@@ -612,6 +619,11 @@
           {
             "type": "image_picker",
             "id": "icon2",
+            "label": "Icon"
+          },
+          {
+            "type": "image_picker",
+            "id": "icon3",
             "label": "Icon"
           }
         ]
