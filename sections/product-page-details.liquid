@@ -75,7 +75,12 @@
     <div div class="w-full">
       {% for linkBlock in section.blocks %}
           {% if linkBlock.settings.icon1 %}
-            <img src="{{ linkBlock.settings.icon1 | img_url: 'original' }}" alt="image advantage" class="advantage">
+            <img src="{{ linkBlock.settings.icon1 | img_url: 'original' }}" alt="Car Body" class="car-animation absolute inset-0 w-full h-auto">
+          {% endif %}
+      {% endfor %}
+      {% for linkBlock in section.blocks %}
+          {% if linkBlock.settings.icon2 %}
+            <img src="{{ linkBlock.settings.icon2 | img_url: 'original' }}" alt="Wheels" class="absolute inset-0 w-full h-auto">
           {% endif %}
       {% endfor %}
     </div>
@@ -86,8 +91,8 @@
 
     <div div class="w-full">
       {% for textBlock in section.blocks %}
-          {% if textBlock.settings.icon2 %}
-            <img src="{{ textBlock.settings.icon2 | img_url: 'original' }}" alt="image result" class="result">
+          {% if textBlock.settings.icon3 %}
+            <img src="{{ textBlock.settings.icon3 | img_url: 'original' }}" alt="image result" class="result">
           {% endif %}
       {% endfor %}
     </div>
@@ -602,6 +607,11 @@
             "type": "image_picker",
             "id": "icon1",
             "label": "Icon"
+          },
+          {
+            "type": "image_picker",
+            "id": "icon2",
+            "label": "Icon"
           }
         ]
       },
@@ -611,7 +621,7 @@
         "settings": [
           {
             "type": "image_picker",
-            "id": "icon2",
+            "id": "icon3",
             "label": "Icon"
           }
         ]
