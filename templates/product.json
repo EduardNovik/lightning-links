@@ -101,6 +101,81 @@
         "vertPaddingAccord": 12,
         "horPaddingAccord": 4
       }
+    },
+    "section_slider_responsive_E4KKwP": {
+      "type": "section__slider--responsive",
+      "blocks": {
+        "image_slide_responsive_cUjHJy": {
+          "type": "imageSlideResponsive",
+          "settings": {
+            "horizontalAlignment": "center",
+            "verticalAlignment": "middle",
+            "padding": 16,
+            "contentSpacing": 12,
+            "backgroundColor": "rgba(0,0,0,0)",
+            "backgroundImage": "shopify:\/\/shop_images\/image_25.png",
+            "backgroundPosition": "middle",
+            "overlayOpacity": 40,
+            "overlayColor": "#000000",
+            "slideURL": "",
+            "heading": "",
+            "headingColor": "rgba(0,0,0,0)",
+            "content": "<p> <\/p>",
+            "contentColor": "rgba(0,0,0,0)",
+            "button1Text": "",
+            "button1Link": "",
+            "button1Style": "primary",
+            "button1Type": "default",
+            "button2Text": "Secondary button",
+            "button2Link": "",
+            "button2Style": "secondary",
+            "button2Type": "default"
+          }
+        },
+        "image_slide_responsive_aDyXJU": {
+          "type": "imageSlideResponsive",
+          "settings": {
+            "horizontalAlignment": "center",
+            "verticalAlignment": "middle",
+            "padding": 16,
+            "contentSpacing": 12,
+            "backgroundColor": "rgba(0,0,0,0)",
+            "backgroundImage": "shopify:\/\/shop_images\/image_25.png",
+            "backgroundPosition": "middle",
+            "overlayOpacity": 40,
+            "overlayColor": "#000000",
+            "slideURL": "",
+            "heading": "IMAGE SLIDE",
+            "headingColor": "rgba(0,0,0,0)",
+            "content": "<p>Tell your brand's story through images<\/p>",
+            "contentColor": "rgba(0,0,0,0)",
+            "button1Text": "Primary button",
+            "button1Link": "",
+            "button1Style": "primary",
+            "button1Type": "default",
+            "button2Text": "Secondary button",
+            "button2Link": "",
+            "button2Style": "secondary",
+            "button2Type": "default"
+          }
+        }
+      },
+      "block_order": [
+        "image_slide_responsive_cUjHJy",
+        "image_slide_responsive_aDyXJU"
+      ],
+      "settings": {
+        "custom_id": "",
+        "displayFor": "display--both",
+        "layout": "default",
+        "nomargin": false,
+        "height": 440,
+        "contentColor": "rgba(0,0,0,0)",
+        "autoplay": true,
+        "slideSpeed": 3,
+        "animation": "none",
+        "delayAnimation": false
+      }
     }
   },
   "order": [
@@ -109,6 +184,7 @@
     "upsell",
     "recommended",
     "product_page_custom_nQyc3M",
-    "product_page_details_ecEXAt"
+    "product_page_details_ecEXAt",
+    "section_slider_responsive_E4KKwP"
   ]
 }
