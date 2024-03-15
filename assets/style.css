@@ -1905,6 +1905,10 @@ body::-webkit-scrollbar {
 }
 
 @media (min-width: 1024px) {
+  .lg\:top-20 {
+    top: 5rem;
+  }
+
   .lg\:mt-10 {
     margin-top: 2.5rem;
   }
