@@ -102,10 +102,10 @@
         "horPaddingAccord": 4
       }
     },
-    "section_slider_responsive_h779it": {
+    "section_slider_responsive_E4KKwP": {
       "type": "section__slider--responsive",
       "blocks": {
-        "image_slide_responsive_X3Lf8j": {
+        "image_slide_responsive_cUjHJy": {
           "type": "imageSlideResponsive",
           "settings": {
             "horizontalAlignment": "center",
@@ -113,19 +113,47 @@
             "padding": 16,
             "contentSpacing": 12,
             "backgroundColor": "rgba(0,0,0,0)",
+            "backgroundImage": "shopify:\/\/shop_images\/image_25.png",
             "backgroundPosition": "middle",
             "overlayOpacity": 40,
             "overlayColor": "#000000",
             "slideURL": "",
-            "heading": "This is your slide's heading",
+            "heading": "",
             "headingColor": "rgba(0,0,0,0)",
-            "content": "<p>Enjoy the flexibility<\/p>",
+            "content": "<p> <\/p>",
             "contentColor": "rgba(0,0,0,0)",
-            "button1Text": "Primary button",
+            "button1Text": "",
             "button1Link": "",
             "button1Style": "primary",
             "button1Type": "default",
-            "button2Text": "Secondary button",
+            "button2Text": "",
+            "button2Link": "",
+            "button2Style": "secondary",
+            "button2Type": "default"
+          }
+        },
+        "image_slide_responsive_aDyXJU": {
+          "type": "imageSlideResponsive",
+          "settings": {
+            "horizontalAlignment": "center",
+            "verticalAlignment": "middle",
+            "padding": 16,
+            "contentSpacing": 12,
+            "backgroundColor": "rgba(0,0,0,0)",
+            "backgroundImage": "shopify:\/\/shop_images\/image_25.png",
+            "backgroundPosition": "middle",
+            "overlayOpacity": 40,
+            "overlayColor": "#000000",
+            "slideURL": "",
+            "heading": "",
+            "headingColor": "rgba(0,0,0,0)",
+            "content": "<p> <\/p>",
+            "contentColor": "rgba(0,0,0,0)",
+            "button1Text": "",
+            "button1Link": "",
+            "button1Style": "primary",
+            "button1Type": "default",
+            "button2Text": "",
             "button2Link": "",
             "button2Style": "secondary",
             "button2Type": "default"
@@ -133,14 +161,15 @@
         }
       },
       "block_order": [
-        "image_slide_responsive_X3Lf8j"
+        "image_slide_responsive_cUjHJy",
+        "image_slide_responsive_aDyXJU"
       ],
       "settings": {
         "custom_id": "",
         "displayFor": "display--both",
         "layout": "default",
         "nomargin": false,
-        "height": 300,
+        "height": 440,
         "contentColor": "rgba(0,0,0,0)",
         "autoplay": true,
         "slideSpeed": 3,
@@ -156,6 +185,6 @@
     "recommended",
     "product_page_custom_nQyc3M",
     "product_page_details_ecEXAt",
-    "section_slider_responsive_h779it"
+    "section_slider_responsive_E4KKwP"
   ]
 }
