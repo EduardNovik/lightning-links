@@ -321,14 +321,13 @@
         {% assign sale = false %}
         {% assign currsale = false %}
       {% endif %}
-
-      {% unless current_variant.price >= current_variant.compare_at_price %}
+      <div class="flex gap-4 items-center justify-start">
+        {% unless current_variant.price >= current_variant.compare_at_price %}
         <p data-product-price-sale="{{product.id}}" class="text-sm product__price--old jsPrice">
           {% if currsale %}
             {{ current_variant.compare_at_price | money | strip_html }}{% endif %}
         </p>
-      {% endunless %}
-      <div class="flex gap-4">
+        {% endunless %}
         <p data-product-price="{{product.id}}" class="{% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}{% endunless %}{% endif %} jsPrice bg-yellow p-3 text-sm">
           {% if settings.currencyFormat == 'money_with_currency_format' %}
             {{ current_variant.price | money_with_currency | strip_html }}
