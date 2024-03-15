@@ -62,14 +62,12 @@
         "social_link_wd9ENj": {
           "type": "social_link",
           "settings": {
-            "icon1": "shopify:\/\/shop_images\/car_1.png",
-            "icon2": "shopify:\/\/shop_images\/car_2.png"
+            "icon1": "shopify:\/\/shop_images\/porsche-yellow.gif"
           }
         },
         "text_A93bYP": {
           "type": "text",
           "settings": {
-            "icon3": "shopify:\/\/shop_images\/image_25.png"
           }
         }
       },
