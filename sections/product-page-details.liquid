@@ -356,6 +356,123 @@
         "en": "Product page details"
     },
     "settings": [
+      {
+      "type": "header",
+      "content": "Help"
+    },
+    {
+      "type": "paragraph",
+      "content": "[Click here to follow an interactive Tutorial](https://vimeo.com/458157772)"
+    },
+    {
+      "type": "header",
+      "content": "Section ID"
+    },
+    {
+        "type": "text",
+        "id": "custom_id",
+        "label": "Add custom section ID"
+    },
+    {
+    "type": "header",
+    "content": "Section layout"
+},
+{
+  "type": "radio",
+  "id": "displayFor",
+  "label": "Show this section on",
+  "options": [
+    {"value": "display--both", "label": "All devices"},
+    {"value": "hide-desktop", "label": "Mobile only"},
+    {"value": "hide-mobile", "label": "Desktop only"}
+  ],
+  "default": "display--both"
+},
+{
+  "type": "select",
+  "id": "layout",
+  "label": "Section layout",
+  "options": [
+    {"value": "default", "label": "Global default"},
+    {"value": "boxed", "label": "Boxed"},
+    {"value": "stretchBg", "label": "Full width background"},
+    {"value": "stretchContent", "label": "Full width"}
+  ],
+  "default": "default"
+},
+{
+  "type": "checkbox",
+  "id": "nomargin",
+  "default": false,
+  "label": "Remove section's bottom margin"
+},
+    {
+      "type": "range",
+      "id": "height",
+      "label": "Height",
+      "default": 300,
+      "min": 0,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "info": "If set to 0px, slider will take up all of screen's height. Best used in combination with a transparent header."
+    },
+    {
+      "type": "header",
+      "content": "Content layout"
+    },
+    {
+      "type": "color",
+      "id": "contentColor",
+      "label": "Text color",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "default": true,
+      "label": "Autoplay slides",
+      "info": "If checked, slider will automatically rotate between slides"
+    },
+    {
+      "type": "range",
+      "id": "slideSpeed",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "Sec",
+      "label": "Slide Speed",
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "animation",
+      "label": "Content animation",
+      "options": [
+        {"value": "none", "label": "None"},
+        {"value": "fade", "label": "Fade in"},
+        {"value": "slide-fade", "label": "Slide and fade in"},
+        {"value": "slide-top", "label": "Slide from top"},
+        {"value": "slide-bottom", "label": "Slide from bottom"},
+        {"value": "slide-left", "label": "Slide from left"},
+        {"value": "slide-right", "label": "Slide from right"},
+        {"value": "scale", "label": "Grow"},
+        {"value": "scale-rotate", "label": "Rotate and grow"},
+        {"value": "shake", "label": "Shake"}
+      ],
+      "default": "none"
+    },
+    {
+      "type": "checkbox",
+      "label": "Animate all elements at once",
+      "default": false,
+      "info": "If left unchecked, elements will start animating with a slight delay inbetween.",
+      "id": "delayAnimation"
+    },
     {
       "type": "header",
       "content": "Video"
