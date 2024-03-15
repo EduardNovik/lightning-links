@@ -4,7 +4,7 @@
       "@type": "Product",
       "name": "{{ product.title |escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:   {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:     {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -209,7 +209,7 @@
     {% comment %} BUY BUTTON {% endcomment %}
 
     <a class="mt-[28px] button button--primary button--ghost  button--primary__ghost button--full-width" href="/checkout">
-      <button class="flex justify-center items-center w-full h-[44px] gap-2 p-3 bg-grigio-40 hover:bg-yellow text-white">
+      <button class="flex justify-center items-center w-full h-[44px] gap-2 p-3 bg-black hover:bg-yellow text-white">
         {% render 'icon-cart-white' %}
         <span class="text-sm uppercase font-extrabold text-white">BUY</span>
       </button>
