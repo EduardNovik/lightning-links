@@ -110,13 +110,13 @@
     <p class="w-full text-start text-2xl font-bold">How it works?</p>
     <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
 
-    <div id="s--{{section.id}}"
+    <div
     {% unless section.settings.backgroundImage == nil -%}{% render 'background', image: section.settings.backgroundImage %}{%- endunless %}
     class="{% render 'common-class', section: section, class: 'row', bg: true, vAlign: false %}">
     {% if section.settings.overlayOpacity > 0 %}
       <div class="overlay overlay--{{-section.id}}"></div>
     {% endif %}
-      <div id="{{customID}}" class="s__content {{ section.settings.verticalAlignment }} layout__content">
+      <div id="{{customID}}" class="w-full s__content {{ section.settings.verticalAlignment }} layout__content">
         <div class="tximage__video video--responsive">
             {% unless section.settings.video == blank %}
                 {% if section.settings.video.type == 'youtube' %}
