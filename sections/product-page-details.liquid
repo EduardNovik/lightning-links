@@ -148,7 +148,7 @@
     <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
 
     <div data-bstr-section-slider="{{section.id}}" {% if section.settings.autoplay %}data-autoplay=true{% endif %} onmouseover="this.dataset.paused = -1;" onmouseout="this.dataset.paused = new Date().getTime();" 
-    id="s--{{section.id}}" class="{% render 'common-class', section: section, class: 'slider slider--responsive', vAlign: false %}">
+    id="s--{{section.id}}" class="w-full {% render 'common-class', section: section, class: 'slider slider--responsive', vAlign: false %}">
     {% if section.blocks.size > 1 %}
     <button data-bstr-slider-button="-" class="slider__button hide-mobile" aria-label="Previous"><i class="uil uil-angle-left-b"></i></button>
     <button data-bstr-slider-button="+" class="slider__button slider__button--next hide-mobile" aria-label="Next"><i class="uil uil-angle-right-b"></i></button>
