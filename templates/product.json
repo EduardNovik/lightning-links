@@ -123,13 +123,69 @@
             "button2Style": "secondary",
             "button2Type": "default"
           }
+        },
+        "image_slide_responsive_dNcfNL": {
+          "type": "imageSlideResponsive",
+          "settings": {
+            "horizontalAlignment": "center",
+            "verticalAlignment": "middle",
+            "padding": 16,
+            "contentSpacing": 12,
+            "backgroundColor": "rgba(0,0,0,0)",
+            "backgroundImage": "shopify:\/\/shop_images\/car-6.jpg",
+            "backgroundPosition": "middle",
+            "overlayOpacity": 40,
+            "overlayColor": "#000000",
+            "slideURL": "",
+            "heading": "IMAGE SLIDE",
+            "headingColor": "rgba(0,0,0,0)",
+            "content": "<p>Tell your brand's story through images<\/p>",
+            "contentColor": "rgba(0,0,0,0)",
+            "button1Text": "Primary button",
+            "button1Link": "",
+            "button1Style": "primary",
+            "button1Type": "default",
+            "button2Text": "Secondary button",
+            "button2Link": "",
+            "button2Style": "secondary",
+            "button2Type": "default"
+          }
+        },
+        "image_slide_responsive_BxABTi": {
+          "type": "imageSlideResponsive",
+          "settings": {
+            "horizontalAlignment": "center",
+            "verticalAlignment": "middle",
+            "padding": 16,
+            "contentSpacing": 12,
+            "backgroundColor": "rgba(0,0,0,0)",
+            "backgroundImage": "shopify:\/\/shop_images\/car-5.jpg",
+            "backgroundPosition": "middle",
+            "overlayOpacity": 40,
+            "overlayColor": "#000000",
+            "slideURL": "",
+            "heading": "IMAGE SLIDE",
+            "headingColor": "rgba(0,0,0,0)",
+            "content": "<p>Tell your brand's story through images<\/p>",
+            "contentColor": "rgba(0,0,0,0)",
+            "button1Text": "Primary button",
+            "button1Link": "",
+            "button1Style": "primary",
+            "button1Type": "default",
+            "button2Text": "Secondary button",
+            "button2Link": "",
+            "button2Style": "secondary",
+            "button2Type": "default"
+          }
         }
       },
       "block_order": [
         "social_link_wd9ENj",
         "text_A93bYP",
         "image_slide_responsive_RbegJT",
-        "image_slide_responsive_9XCLA6"
+        "image_slide_responsive_9XCLA6",
+        "image_slide_responsive_dNcfNL",
+        "image_slide_responsive_BxABTi"
       ],
       "settings": {
         "custom_id": "",
