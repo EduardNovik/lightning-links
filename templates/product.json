@@ -69,37 +69,44 @@
           "type": "text",
           "settings": {
           }
+        },
+        "image_slide_responsive_RbegJT": {
+          "type": "imageSlideResponsive",
+          "settings": {
+            "horizontalAlignment": "center",
+            "verticalAlignment": "middle",
+            "padding": 16,
+            "contentSpacing": 12,
+            "backgroundColor": "rgba(0,0,0,0)",
+            "backgroundImage": "shopify:\/\/shop_images\/image_25.png",
+            "backgroundPosition": "middle",
+            "overlayOpacity": 40,
+            "overlayColor": "#000000",
+            "slideURL": "",
+            "heading": "IMAGE SLIDE",
+            "headingColor": "rgba(0,0,0,0)",
+            "content": "<p>Tell your brand's story through images<\/p>",
+            "contentColor": "rgba(0,0,0,0)",
+            "button1Text": "Primary button",
+            "button1Link": "",
+            "button1Style": "primary",
+            "button1Type": "default",
+            "button2Text": "Secondary button",
+            "button2Link": "",
+            "button2Style": "secondary",
+            "button2Type": "default"
+          }
         }
       },
       "block_order": [
         "social_link_wd9ENj",
-        "text_A93bYP"
+        "text_A93bYP",
+        "image_slide_responsive_RbegJT"
       ],
       "settings": {
-        "custom_id": "",
-        "displayFor": "display--both",
-        "layout": "default",
-        "nomargin": false,
-        "scopedCSS": "",
-        "height": 0,
-        "padding": 0,
-        "lineMargin": 12,
-        "backgroundColor": "rgba(0,0,0,0)",
-        "backgroundPosition": "middle",
-        "backgroundFilter": "none",
-        "backdropIntensity": 50,
-        "parallax": false,
-        "backgroundPattern": false,
-        "overlayOpacity": 0,
-        "overlayColor": "#000000",
-        "contentColor": "rgba(0,0,0,0)",
-        "horizontalAlignment": "center",
-        "verticalAlignment": "middle",
         "imagePosition": "left",
         "imageWidth": "9",
-        "video": "https:\/\/www.youtube.com\/watch?v=T5jZ4Wf7W6o",
-        "vertPaddingAccord": 12,
-        "horPaddingAccord": 4
+        "video": "https:\/\/www.youtube.com\/watch?v=T5jZ4Wf7W6o"
       }
     }
   },
