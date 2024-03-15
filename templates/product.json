@@ -59,22 +59,23 @@
     "product_page_details_ecEXAt": {
       "type": "product-page-details",
       "blocks": {
-        "social_link_ebY3Md": {
+        "social_link_wd9ENj": {
           "type": "social_link",
           "settings": {
-            "icon1": "shopify:\/\/shop_images\/Group_82_398ef3d5-5a0d-47ec-8449-65ce4811fd6c.png"
+            "icon1": "shopify:\/\/shop_images\/car_1.png",
+            "icon2": "shopify:\/\/shop_images\/car_2.png"
           }
         },
-        "text_33aNYF": {
+        "text_A93bYP": {
           "type": "text",
           "settings": {
-            "icon2": "shopify:\/\/shop_images\/image_25.png"
+            "icon3": "shopify:\/\/shop_images\/image_25.png"
           }
         }
       },
       "block_order": [
-        "social_link_ebY3Md",
-        "text_33aNYF"
+        "social_link_wd9ENj",
+        "text_A93bYP"
       ],
       "settings": {
         "custom_id": "",
