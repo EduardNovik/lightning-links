@@ -17,6 +17,7 @@
     "baseBorderRadius": 0,
     "baseBorderRadiusSmall": 0,
     "baseBorderWidth": 1,
+    "baseSectionMargin": 0,
     "breadcrumbs": true,
     "baseSecondaryBackground": "#FFFFFF",
     "baseSecondaryText": "#000000",
@@ -145,7 +146,7 @@
           "scopedCSS": "",
           "height": 0,
           "padding": 0,
-          "lineMargin": 12,
+          "lineMargin": 0,
           "backgroundColor": "rgba(0,0,0,0)",
           "backgroundPosition": "middle",
           "backgroundFilter": "none",
@@ -162,6 +163,9 @@
       },
       "footer": {
         "type": "footer",
+        "custom_css": [
+          ".wrapper--bottom {padding-top: none;}"
+        ],
         "settings": {
           "layout": "default",
           "fillColor": "#5a6476",
@@ -176,7 +180,7 @@
           "layout": "default",
           "fillColor": "#5a6476",
           "contentColor": "#ffffff",
-          "spacing": 18
+          "spacing": 0
         }
       },
       "header--default": {
@@ -191,7 +195,7 @@
           "shadow": false,
           "menuLinks": "main-menu",
           "megamenu": true,
-          "logoWidth": 155,
+          "logoWidth": 180,
           "logoHeight": 0,
           "sticky": true,
           "contentMargin": 0,
@@ -220,7 +224,7 @@
           "enabled": false,
           "enabledMobile": false,
           "layout": "default",
-          "height": 30,
+          "height": 10,
           "fontSize": "font__size--small",
           "colorCombo": "primaryCombo",
           "customFillColor": "rgba(0,0,0,0)",
@@ -276,6 +280,11 @@
     },
     "content_for_index": [
 
+    ]
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".wrapper--bottom {padding-top: 0px;}"
     ]
   }
 }

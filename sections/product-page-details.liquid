@@ -1,0 +1,811 @@
+<script type="application/ld+json">
+  {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "{{ product.title |escape }}",
+      {% if product.featured_image != nil %}
+      "image" : ["https: {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      {% endif %}
+      "description": "{{ product.description | strip_html | escape }}",
+      "brand": {
+        "@type": "Brand",
+        "name": "{{ product.vendor |escape }}"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/{% if product.available %} InStock{% else %}SoldOut{% endif %}",
+        "price": "{{ product.price | money_without_currency }}",
+        "priceCurrency": "{{ shop.currency }}",
+        "url": "{{ shop.url }} {{ routes.root_url }}{{ product.url }}"
+      }
+    }
+</script>
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign featured_image = product.featured_image %}
+{% assign isAutoZoom = section.settings.autoZoom %}
+{% assign video_loop = section.settings.video_loop %}
+{% assign video_autoplay = section.settings.video_autoplay %}
+
+{% assign imageClass = '' %}
+{% if isAutoZoom %}
+  {% assign imageClass = 'image-zoom' %}
+{% endif %}
+
+
+
+{% assign iWidth = section.settings.imageWidth %}
+{% assign tWidth = 12 | minus: section.settings.imageWidth %}
+{% assign customID = section.settings.custom_id %}
+
+
+<style type="text/css">
+#s--{{section.id}} {
+  {% if section.settings.height > 0 %}
+  height: {{section.settings.height}}px;
+  {% else %}
+  height: 100vh;
+  {% endif %}
+  overflow: hidden;
+  color: {% unless section.settings.contentColor contains 'rgba(0,0,0,0)'  %}{{section.settings.contentColor}}{% else %}initial{% endunless %};
+}
+
+{% if section.settings.nomargin %}
+#shopify-section-{{section.id}}{
+  margin-bottom: 0px !important;
+}
+{% endif %}
+
+{% case section.settings.displayFor %}
+{% when 'hide-desktop' %}
+@media screen and (min-width: 768px){
+  #shopify-section-{{section.id}}{
+    display: none !important;
+  }
+}
+{% when 'hide-mobile' %}
+@media screen and (max-width: 767px){
+  #shopify-section-{{section.id}}{
+    display: none !important;
+  }
+}
+{% endcase %}
+
+#s--{{-section.id}} .slide__animation .animate, #s--{{-section.id}} .slide__animation .animate:hover {
+  animation-name: animation-{{-section.settings.animation}} !important;
+}
+
+{% if section.animation != "none" %}
+#s--{{-section.id}} .slide:not(.slide__animation) > .slide__content > .animate {
+  opacity: 0;
+}
+
+#s--{{-section.id}} .slide.slide__animation > .slide__content > .animate {
+  opacity: 1;
+}
+{% endif %}
+
+{% unless section.settings.delayAnimation %}
+#s--{{-section.id}} .animate:nth-child(2) {
+  animation-delay: 0.20s;
+}
+ 
+#s--{{-section.id}} .animate:nth-child(3) {
+  animation-delay: 0.40s;
+}
+
+#s--{{-section.id}} .animate:nth-child(4) {
+  animation-delay: 0.60s;
+}
+{% endunless %}
+</style>
+
+{% assign customID2 = section.settings.custom_id %}
+
+
+<div class="container mx-auto grid grid-cols-1 lg:grid-cols-[3fr,1fr] gap-8 items-start justify-between">
+
+  <div class="flex justify-start items-center flex-col gap-6">
+
+    <p class="w-full text-start text-2xl font-bold">How it works?</p>
+    <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
+
+    <div
+    {% unless section.settings.backgroundImage == nil -%}{% render 'background', image: section.settings.backgroundImage %}{%- endunless %}
+    class="{% render 'common-class', section: section, class: 'row', bg: true, vAlign: false %}">
+    {% if section.settings.overlayOpacity > 0 %}
+      <div class="overlay overlay--{{-section.id}}"></div>
+    {% endif %}
+      <div id="{{customID}}" class="w-full s__content {{ section.settings.verticalAlignment }} layout__content">
+        <div class="tximage__video video--responsive">
+            {% unless section.settings.video == blank %}
+                {% if section.settings.video.type == 'youtube' %}
+                    <iframe class="lazyload" id="player" type="text/html"
+                    data-src="https://www.youtube.com/embed/{{-section.settings.video.id}}"
+                    frameborder="0"></iframe>
+                {% else %}
+                    <iframe class="lazyload" data-src="https://player.vimeo.com/video/{{-section.settings.video.id}}" frameborder="0" allowfullscreen></iframe>
+                {% endif %}
+            {% endunless %}
+        </div>
+      </div>
+    </div>
+
+
+
+    <p class="w-full text-xl font-bold mt-6">Advantages</p>
+    <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
+
+    <div div class="w-full">
+      {% for linkBlock in section.blocks %}
+          {% if linkBlock.settings.icon1 %}
+            <img src="{{ linkBlock.settings.icon1 | img_url: 'original' }}" alt="image advantages" class="advantages">
+          {% endif %}
+      {% endfor %}
+    </div>
+
+    <p class="w-full text-xl font-bold mt-6">Result</p>
+    <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
+
+    <div data-bstr-section-slider="{{section.id}}" {% if section.settings.autoplay %}data-autoplay=true{% endif %} onmouseover="this.dataset.paused = -1;" onmouseout="this.dataset.paused = new Date().getTime();" 
+    id="s--{{section.id}}" class="w-full {% render 'common-class', section: section, class: 'slider slider--responsive', vAlign: false %}">
+      {% if section.blocks.size > 1 %}
+      <button data-bstr-slider-button="-" class="slider__button hide-mobile" aria-label="Previous"><i class="uil uil-angle-left-b"></i></button>
+      <button data-bstr-slider-button="+" class="slider__button slider__button--next hide-mobile" aria-label="Next"><i class="uil uil-angle-right-b"></i></button>
+      {% endif %}
+      <div id="{{customID2}}" class="slider__holder" data-bstr-slide-loop="true" data-bstr-slider-orientation="horizontal" data-bstr-slide-holder="1|1|1" data-bstr-slider-current="2"
+      {%if section.settings.autoplay %} data-bstr-autoplay=true {% endif %}
+      data-bstr-slide-speed="{{ section.settings.slideSpeed | times: 1000 }}"
+      >
+      {%- for block in section.blocks %}
+        {%- if block.type != 'social_link' %}
+          <div data-bstr-slide data-type="bannerSlider" class="slide">
+            {% render 'get-block', block: block, first: forloop.first %}
+          </div>
+        {%- endif %}
+      {% endfor %}
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="grid grid-cols-1 gap-4 items-start sticky w-full lg:w-[400px] lg:h-[500px] bg-[#ECEFF3] p-4 top-0 lg:top-20">
+    {% comment %} DROPDOWN {% endcomment %}
+
+    <div class="flex flex-col gap-2">
+      <label for="car-select" class="text-sm text-grigio-60">Choose car brand and model</label>
+      <select
+        name="car"
+        id="car-select-mini"
+        class="form-select block w-full p-3 border border-gray-300 bg-white shadow-sm focus:outline-none focus:ring-yellow focus:border-yellow sm:text-sm">
+        {% for product_option in collections.all.products %}
+          <option
+            value="{{ product_option.url }}"
+            {% if product_option.title == product.title %}
+            selected{% endif %}>
+            {{ product_option.title }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <script>
+        document.getElementById('car-select-mini').addEventListener('change', function() {
+          window.location.href = this.value;
+        });
+    </script>
+
+
+    {% comment %} VARIANTS {% endcomment %}
+
+    {% if product.variants.size > 1 %}
+
+      {% assign altSelector = settings.altSelectorList | downcase | split: ',' %}
+
+      {% if altSelector.size or settings.defaultSelector == "swatch" %}
+
+        {% assign colorArray = settings.colorSwatches | downcase | split: ',' %}
+        {% assign imageArray = settings.imageSwatches | downcase | split: ',' %}
+
+        {% assign optionIndex = "" %}
+        {% for option in product.options %}
+          {% assign tempOption = option | downcase %}
+          {% if imageArray contains tempOption %}
+            {% assign optionIndex = optionIndex | append: forloop.index0 | append: ',' %}
+          {% endif %}
+        {% endfor %}
+
+        {% assign optionIndex = optionIndex | split: ',' %}
+
+        {% if optionIndex.size %}
+          {% assign imageOptions = true %}
+          {% assign colorImages = "" %}
+        {% endif %}
+
+      {% endif %}
+
+      {% capture vArray %}{ {%- for variant in product.variants -%}{%- if variant.featured_image != nil and imageOptions -%}
+          {%- assign img = variant.featured_image | img_url: '100x100' -%}
+          {%- for ix in optionIndex -%}
+          {%- assign idx = ix | plus: 0 -%}
+          {%- assign option = variant.options[idx] | handleize -%}
+          {%- assign colorImages = colorImages | append: idx | append: '##'  | append: option | append: '##' | append: img | append: "," -%}
+          {%- endfor -%}
+          {%-endif-%}"{{variant.id}}": {"sku": {{ variant.sku | json }}, "available": {{variant.available | json}} ,"id": {{variant.id | json}}, "price_raw": {{variant.price}}, "sale_raw": {{variant.compare_at_price | default: false}}, "price": {{variant.price | money | strip_html | json}}, "sale": {{variant.compare_at_price | money | strip_html | json}}, "options": {{variant.options | json }} }{%- unless forloop.last -%},{% endunless -%}{%- endfor -%}}{%- endcapture %}
+      <noscript data-bstr-preselect="{{product.selected_or_first_available_variant.id}}" data-bstr-swatch="{{product.id}}">
+        {{ vArray }}
+      </noscript>
+
+      <div class="product__swatches">
+        {% assign avvars = product.variants | where: 'available', true %}
+        {% for product_option in product.options_with_values %}
+          {% assign product_option_lc = product_option.name | downcase %}
+          {% assign index = forloop.index0 %}
+          {% assign optix = 'option' | append: product_option.position %}
+          {% assign selector_type = settings.defaultSelector %}
+          {% if altSelector contains product_option_lc %}
+            {% if settings.defaultSelector == "dropdown" %}
+              {% assign selector_type = "swatch" %}
+            {% else %}
+              {% assign selector_type = "dropdown" %}
+            {% endif %}
+          {% endif %}
+          <div class="flex flex-col gap-2">
+            <p class="text-sm text-grigio-60">Chose your suspension style</p>
+            <div class="flex justify-between gap-3">
+              {% case selector_type %}
+                {% when 'dropdown' %}
+                  <select data-swatch-index="{{product.id}}-{{index}}">
+                    <option value="bstrSelectNill" selected>Select a {{ product_option_lc }}</option>
+                    {% for value in product_option.values %}
+                      {% assign vars = avvars | where: optix, value %}
+                      <option
+                        {% if vars.size == 0 %}
+                        disabled
+                        data-swatch-soldout="true"
+                        {% endif %}
+                        value="{{value | escape}}"
+                        data-swatch-index="{{product.id}}-{{index}}">{{ value }}</option>
+                    {% endfor %}
+                  </select>
+                {% when 'swatch' %}
+                  {% assign ix = product_option.position | minus: 1 | append: '' %}
+                  {% if imageArray contains product_option_lc %}
+                    {% assign useImages = true %}
+                  {% else %}
+                    {% assign useImages = false %}
+                  {% endif %}
+                  {% for value in product_option.values %}
+                    {% assign vars = avvars | where: optix, value %}
+                    {% if colorArray contains product_option_lc or imageArray contains product_option_lc %}
+                      <span
+                        class="lazyload swatch--color w-full bg-white border-2 border-grigio-40"
+                        {%- render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%}
+                        data-swatch-option="{{value| escape}}"
+                        data-swatch-index="{{product.id}}-{{index}}"
+                        {% if vars.size == 0 %}
+                        data-swatch-soldout="true"
+                        {% endif %}></span>
+                    {% else %}
+                      <span
+                        class="w-full bg-white border-2 border-grigio-40"
+                        data-swatch-option="{{value| escape}}"
+                        data-swatch-index="{{product.id}}-{{index}}"
+                        {% if vars.size == 0 %}
+                        data-swatch-soldout="true"
+                        {% endif %}>{{ value | escape }}</span>
+                    {% endif %}
+                  {% endfor %}
+              {% endcase %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+
+    {% comment %} Price {% endcomment %}
+
+    <div class="flex flex-col items-start justify-between gap-2 product__price--
+      font__family-- font__size-- 
+      " {{ block.shopify_attributes }}>
+      <p class="mr-auto text-sm text-grigio-60">Price</p>
+      {% if product.compare_at_price_min > 0 %}
+        {% assign sale = true %}
+        {% if current_variant.compare_at_price > 0 %}
+          {% assign currsale = true %}
+        {% else %}
+          {% assign currsale = false %}
+        {% endif %}
+      {% else %}
+        {% assign sale = false %}
+        {% assign currsale = false %}
+      {% endif %}
+      <div class="flex gap-4 items-center justify-start">
+        {% unless current_variant.price >= current_variant.compare_at_price %}
+        <p data-product-price-sale="{{product.id}}" class="text-sm product__price--old jsPrice">
+          {% if currsale %}
+            {{ current_variant.compare_at_price | money | strip_html }}{% endif %}
+        </p>
+        {% endunless %}
+        <p data-product-price="{{product.id}}" class="{% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}{% endunless %}{% endif %} jsPrice bg-yellow p-3 text-sm">
+          {% if settings.currencyFormat == 'money_with_currency_format' %}
+            {{ current_variant.price | money_with_currency | strip_html }}
+          {% else %}
+            {{ current_variant.price | money | strip_html }}
+          {% endif %}
+        </p>
+      </div>
+    </div>
+
+    {% comment %}BUTTON {% endcomment %}
+
+    <a class="mt-[28px] button button--primary button--ghost  button--primary__ghost button--full-width" href="/checkout">
+      <button class="flex justify-center items-center w-full h-[44px] gap-2 p-3 bg-black hover:bg-yellow text-white">
+        {% render 'icon-cart-white' %}
+        <span class="text-sm uppercase font-extrabold text-white">BUY</span>
+      </button>
+    </a>
+
+  </div>
+</div>
+
+
+{% schema %}
+{
+    "name": {
+        "en": "Product page details"
+    },
+    "settings": [
+      {
+      "type": "header",
+      "content": "Help"
+    },
+    {
+      "type": "paragraph",
+      "content": "[Click here to follow an interactive Tutorial](https://vimeo.com/458157772)"
+    },
+    {
+      "type": "header",
+      "content": "Section ID"
+    },
+    {
+        "type": "text",
+        "id": "custom_id",
+        "label": "Add custom section ID"
+    },
+    {
+    "type": "header",
+    "content": "Section layout"
+},
+{
+  "type": "radio",
+  "id": "displayFor",
+  "label": "Show this section on",
+  "options": [
+    {"value": "display--both", "label": "All devices"},
+    {"value": "hide-desktop", "label": "Mobile only"},
+    {"value": "hide-mobile", "label": "Desktop only"}
+  ],
+  "default": "display--both"
+},
+{
+  "type": "select",
+  "id": "layout",
+  "label": "Section layout",
+  "options": [
+    {"value": "default", "label": "Global default"},
+    {"value": "boxed", "label": "Boxed"},
+    {"value": "stretchBg", "label": "Full width background"},
+    {"value": "stretchContent", "label": "Full width"}
+  ],
+  "default": "default"
+},
+{
+  "type": "checkbox",
+  "id": "nomargin",
+  "default": false,
+  "label": "Remove section's bottom margin"
+},
+    {
+      "type": "range",
+      "id": "height",
+      "label": "Height",
+      "default": 300,
+      "min": 0,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "info": "If set to 0px, slider will take up all of screen's height. Best used in combination with a transparent header."
+    },
+    {
+      "type": "header",
+      "content": "Content layout"
+    },
+    {
+      "type": "color",
+      "id": "contentColor",
+      "label": "Text color",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "default": true,
+      "label": "Autoplay slides",
+      "info": "If checked, slider will automatically rotate between slides"
+    },
+    {
+      "type": "range",
+      "id": "slideSpeed",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "Sec",
+      "label": "Slide Speed",
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "animation",
+      "label": "Content animation",
+      "options": [
+        {"value": "none", "label": "None"},
+        {"value": "fade", "label": "Fade in"},
+        {"value": "slide-fade", "label": "Slide and fade in"},
+        {"value": "slide-top", "label": "Slide from top"},
+        {"value": "slide-bottom", "label": "Slide from bottom"},
+        {"value": "slide-left", "label": "Slide from left"},
+        {"value": "slide-right", "label": "Slide from right"},
+        {"value": "scale", "label": "Grow"},
+        {"value": "scale-rotate", "label": "Rotate and grow"},
+        {"value": "shake", "label": "Shake"}
+      ],
+      "default": "none"
+    },
+    {
+      "type": "checkbox",
+      "label": "Animate all elements at once",
+      "default": false,
+      "info": "If left unchecked, elements will start animating with a slight delay inbetween.",
+      "id": "delayAnimation"
+    },
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "select",
+      "id": "imagePosition",
+      "label": "Video position",
+      "options": [
+        {"value": "left", "label": "Left"},
+        {"value": "right", "label": "Right"}
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "imageWidth",
+      "label": "Video width",
+      "options": [
+        {"value": "9", "label": "75%"},
+        {"value": "8", "label": "66%"},
+        {"value": "6", "label": "50%"},
+        {"value": "4", "label": "33%"},
+        {"value": "3", "label": "25%"}
+      ],
+      "default": "6"
+    },
+    {
+      "type": "video_url",
+      "accept": ["youtube", "vimeo"],
+      "id": "video",
+      "label": "Video URL"
+    }
+    ],
+    "blocks": [
+      {
+        "type": "social_link",
+        "name": "Img1",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon1",
+            "label": "Icon"
+          }
+        ]
+      },
+      {
+    "type": "imageSlideResponsive",
+    "name": "Image slide",
+    "settings": [
+        {
+            "type": "select",
+            "id": "horizontalAlignment",
+            "label": "Content alignment (left to right)",
+            "options": [
+                {
+                    "value": "start",
+                    "label": "Left"
+                },
+                {
+                    "value": "center",
+                    "label": "Center"
+                },
+                {
+                    "value": "end",
+                    "label": "Right"
+                }
+            ],
+            "default": "center"
+        },
+        {
+            "type": "select",
+            "id": "verticalAlignment",
+            "label": "Content alignment (top to bottom)",
+            "options": [
+                {
+                    "value": "top",
+                    "label": "Top"
+                },
+                {
+                    "value": "middle",
+                    "label": "Middle"
+                },
+                {
+                    "value": "bottom",
+                    "label": "Bottom"
+                }
+            ],
+            "default": "middle"
+        },
+        {
+            "type": "range",
+            "id": "padding",
+            "min": 0,
+            "max": 50,
+            "default": 16,
+            "unit": "px",
+            "label": "Padding"
+        },
+        {
+            "type": "range",
+            "id": "contentSpacing",
+            "min": 0,
+            "max": 50,
+            "default": 12,
+            "unit": "px",
+            "label": "Space between content"
+        },
+        {
+            "type": "header",
+            "content": "Background"
+        },
+        {
+            "type": "color",
+            "id": "backgroundColor",
+            "label": "Background color",
+            "default": "rgba(0,0,0,0)"
+        },
+        {
+            "type": "image_picker",
+            "id": "backgroundImage",
+            "label": "Slide Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "backgroundImageMobile",
+            "label": "Mobile Slide Image (optional)",
+            "info": "It's recommended to  use a different aspect ratio to better fit content on mobile."
+        },
+        {
+            "type": "select",
+            "id": "backgroundPosition",
+            "label": "Background image position",
+            "options": [
+                {
+                    "value": "top",
+                    "label": "Top"
+                },
+                {
+                    "value": "middle",
+                    "label": "Middle"
+                },
+                {
+                    "value": "bottom",
+                    "label": "Bottom"
+                }
+            ],
+            "default": "middle"
+        },
+        {
+            "type": "header",
+            "content": "Overlay"
+        },
+        {
+            "type": "range",
+            "id": "overlayOpacity",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "label": "Overlay opacity",
+            "default": 40,
+            "unit": "%"
+        },
+        {
+            "type": "color",
+            "id": "overlayColor",
+            "label": "Overlay color",
+            "default": "#000000"
+        },
+        {
+            "type": "header",
+            "content": "Content"
+        },
+        {
+            "type": "url",
+            "label": "Slide URL",
+            "info": "Makes the whole image clickable, best used when no buttons are present. Disables button URLs.",
+            "id": "slideURL"
+        },
+        {
+            "type": "text",
+            "label": "Heading",
+            "id": "heading",
+            "default": "IMAGE SLIDE"
+        },
+        {
+            "type": "color",
+            "id": "headingColor",
+            "label": "Heading color",
+            "default": "rgba(0,0,0,0)"
+        },
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>Tell your brand's story through images</p>"
+        },
+        {
+            "type": "color",
+            "id": "contentColor",
+            "label": "Content color",
+            "default": "rgba(0,0,0,0)"
+        },
+        {
+            "type": "header",
+            "content": "Primary button"
+        },
+        {
+            "type": "text",
+            "label": "Button text",
+            "id": "button1Text",
+            "default": "Primary button"
+        },
+        {
+            "type": "url",
+            "label": "Button link",
+            "id": "button1Link"
+        },
+        {
+            "type": "select",
+            "id": "button1Style",
+            "label": "Button style",
+            "options": [
+                {
+                    "value": "primary",
+                    "label": "Primary button"
+                },
+                {
+                    "value": "secondary",
+                    "label": "Secondary button"
+                }
+            ],
+            "default": "primary"
+        },
+        {
+            "id": "button1Type",
+            "type": "select",
+            "label": "Button type",
+            "options": [
+                {
+                    "value": "default",
+                    "label": "Default"
+                },
+                {
+                    "value": "filled",
+                    "label": "Filled"
+                },
+                {
+                    "value": "ghost",
+                    "label": "Ghost"
+                },
+                {
+                    "value": "underlined",
+                    "label": "Underlined"
+                },
+                {
+                    "value": "text",
+                    "label": "Text"
+                }
+            ],
+            "default": "default"
+        },
+        {
+            "type": "header",
+            "content": "Secondary button"
+        },
+        {
+            "type": "text",
+            "label": "Button text",
+            "id": "button2Text",
+            "default": "Secondary button"
+        },
+        {
+            "type": "url",
+            "label": "Button link",
+            "id": "button2Link"
+        },
+        {
+            "type": "select",
+            "id": "button2Style",
+            "label": "Button style",
+            "options": [
+                {
+                    "value": "primary",
+                    "label": "Primary button"
+                },
+                {
+                    "value": "secondary",
+                    "label": "Secondary button"
+                }
+            ],
+            "default": "secondary"
+        },
+        {
+            "id": "button2Type",
+            "type": "select",
+            "label": "Button type",
+            "options": [
+                {
+                    "value": "default",
+                    "label": "Default"
+                },
+                {
+                    "value": "filled",
+                    "label": "Filled"
+                },
+                {
+                    "value": "ghost",
+                    "label": "Ghost"
+                },
+                {
+                    "value": "underlined",
+                    "label": "Underlined"
+                },
+                {
+                    "value": "text",
+                    "label": "Text"
+                }
+            ],
+            "default": "default"
+        }
+    ]
+}
+    ],
+    "presets": [
+      {
+        "category": "Content + text",
+        "name": "Product page details",
+        "settings": {
+        },
+        "blocks": []
+      }
+    ]
+  }
+{% endschema %}

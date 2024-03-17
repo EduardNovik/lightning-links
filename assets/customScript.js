@@ -3,6 +3,17 @@ const forPartnersButtons = document.querySelectorAll(".forPartnersButton");
 const forPartnersPopup = document.getElementById("for-partners-popup");
 const closePopupButton = document.getElementById("closePopupButton");
 const cancelPopupButton = document.getElementById("cancelButton");
+const inchValueElement = document.getElementsByClassName("inch-value")[0];
+const swatchButtonsElement = document.querySelectorAll(".swatch-btn");
+
+const buyPopupCustomButtons = document.querySelectorAll(
+  ".buyPopupCustomButtons"
+);
+
+const closeBuyPopupCustomButtons = document.querySelectorAll(
+  ".closeBuyPopupCustomButton"
+);
+
 const successPopup = document.getElementById("successPopup");
 const sendButtonInForPartnersPopup = document.getElementById(
   "sendButtonInForPartnersPopup"
@@ -55,3 +66,31 @@ if (quickOrderBtn) {
     body.classList.toggle("overflow-hidden");
   });
 }
+
+buyPopupCustomButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    // This 'this' keyword refers to the button clicked
+    const popupId = this.getAttribute("data-popup-id");
+    const popup = document.getElementById(popupId);
+    if (popup) {
+      popup.classList.remove("invisible");
+      body.classList.toggle("overflow-hidden");
+    }
+  });
+});
+
+// Close popup functionality
+closeBuyPopupCustomButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    // 'this.closest' finds the nearest parent with the '.buy-popup-custom' class and adds 'hidden'
+    this.closest(".buy-popup-custom").classList.add("invisible");
+    body.classList.toggle("overflow-hidden");
+  });
+});
+
+swatchButtonsElement.forEach((button) => {
+  button.addEventListener("click", function () {
+    const activeOptionValue = this.getAttribute("data-swatch-option");
+    inchValueElement.innerText = activeOptionValue;
+  });
+});

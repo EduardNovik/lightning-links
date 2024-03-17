@@ -6,13 +6,12 @@
     {% for product in collection.products %}
     {% unless product.tags contains 'featured' %}
         {% render 'product-card-default-custom' with product as product %}
+        {% render 'buy-popup-custom', product: product %}
     {%endunless%}
   {% else %}
     <h2 class="h-reset font__size--medium font__family--title col-12 product-list__empty">{{'general.search.no_matches' |t}}</h2>
   {% endfor %}
   </div>
-  
-
   {% assign sid = 'shopify-section-' | append: section.id %}
   {% render 'pagination', paginate: paginate, section: sid %}
 {% endpaginate %}
@@ -64,3 +63,8 @@
   ]
   }
 {% endschema%}
+
+{% comment %} 
+         {% if forloop.index != 0 and forloop.index % 3 == 0 and forloop.index != section.blocks.size %}
+        <div class="col-span-full"><hr class="separator"></div>
+        {% endif %} {% endcomment %}
