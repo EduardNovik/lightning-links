@@ -116,7 +116,7 @@ swatchButtonsElement.forEach((button) => {
     switch (activeOptionValue) {
       case "MILD":
         inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
-        curtain.style.transform = "translateY(80%)";
+        curtain.style.transform = "translateY(30%)";
         break;
       case "MEDIUM":
         inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
@@ -125,7 +125,7 @@ swatchButtonsElement.forEach((button) => {
         break;
       case "STANCE":
         inchValueElement.innerHTML = " — Stance lower <b>- 3 inch</b>";
-        curtain.style.transform = "translateY(30%)";
+        curtain.style.transform = "translateY(80%)";
         break;
       default:
         break;
