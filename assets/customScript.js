@@ -119,19 +119,19 @@ swatchButtonsElement.forEach((button) => {
         // productBgElement.style.background =
         //   "linear-gradient(0deg, #C7CCD3 80%, #FFFFFF 0%)";
         // productBgElement.style.transition = "opacity 0.5s ease";
-        curtain.style.transform = "translateY(-80%)";
+        curtain.style.transform = "translateY(80%)";
         break;
       case "MEDIUM":
         inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
         // productBgElement.style.background =
         //   "linear-gradient(0deg, #C7CCD3 50%, #FFFFFF 0%)";
         // productBgElement.style.transition = "opacity 0.5s ease";
-        curtain.style.transform = "translateY(-50%)";
+        curtain.style.transform = "translateY(50%)";
 
         break;
       case "STANCE":
         inchValueElement.innerHTML = " — Stance lower <b>- 3 inch</b>";
-        curtain.style.transform = "translateY(-30%)";
+        curtain.style.transform = "translateY(30%)";
         // productBgElement.style.background =
         //   "linear-gradient(0deg, #C7CCD3 30%, #FFFFFF 0%)";
         // productBgElement.style.transition = "opacity 0.5s ease";
