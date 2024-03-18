@@ -4,7 +4,7 @@
       "@type": "Product",
       "name": "{{ product.title |escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:                                  {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:                                     {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -221,13 +221,13 @@
   </div>
 
 
-  <p class="inch-value mt-5 text-[23px]"></p>
+  <p class="inch-value mt-5 text-xl"></p>
 
 
-  <div id="bgElement" class="relative overflow-hidden transition-transform duration-500">
+  <div id="bgElement" class="relative overflow-hidden transition-transform duration-500 mb-10">
     <div class="curtain"></div>
 
-    <div class="flex justify-center items-center mb-10 mt-5 w-full p-10 z-20">
+    <div class="flex justify-center items-center mb-10 mt-5 w-full p-10">
       {% for image in product.images %}
         <div class="w-[65%] z-20">
           {% render 'image'
