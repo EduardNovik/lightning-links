@@ -112,24 +112,29 @@ switch (activeAtributeValue) {
 swatchButtonsElement.forEach((button) => {
   button.addEventListener("click", function () {
     const activeOptionValue = this.getAttribute("data-swatch-option");
+    const curtain = document.querySelector(".curtain");
     switch (activeOptionValue) {
       case "MILD":
         inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
-        productBgElement.style.background =
-          "linear-gradient(0deg, #C7CCD3 80%, #FFFFFF 0%)";
-        productBgElement.style.transition = "opacity 0.5s ease";
+        // productBgElement.style.background =
+        //   "linear-gradient(0deg, #C7CCD3 80%, #FFFFFF 0%)";
+        // productBgElement.style.transition = "opacity 0.5s ease";
+        curtain.style.transform = "translateY(-80%)";
         break;
       case "MEDIUM":
         inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
-        productBgElement.style.background =
-          "linear-gradient(0deg, #C7CCD3 50%, #FFFFFF 0%)";
-        productBgElement.style.transition = "opacity 0.5s ease";
+        // productBgElement.style.background =
+        //   "linear-gradient(0deg, #C7CCD3 50%, #FFFFFF 0%)";
+        // productBgElement.style.transition = "opacity 0.5s ease";
+        curtain.style.transform = "translateY(-50%)";
+
         break;
       case "STANCE":
         inchValueElement.innerHTML = " — Stance lower <b>- 3 inch</b>";
-        productBgElement.style.background =
-          "linear-gradient(0deg, #C7CCD3 30%, #FFFFFF 0%)";
-        productBgElement.style.transition = "opacity 0.5s ease";
+        curtain.style.transform = "translateY(-30%)";
+        // productBgElement.style.background =
+        //   "linear-gradient(0deg, #C7CCD3 30%, #FFFFFF 0%)";
+        // productBgElement.style.transition = "opacity 0.5s ease";
         break;
       default:
         break;
@@ -152,12 +157,3 @@ swatchButtonsElement.forEach((button) => {
 //       rightPanel.style.transform = "translateX(100%)";
 //     }
 //   });
-
-document
-  .getElementById("toggleCurtainBtn")
-  .addEventListener("click", function () {
-    const curtain = document.querySelector(".curtain");
-
-    // Move the curtain up to reveal 80% of the content
-    curtain.style.transform = "translateY(-80%)";
-  });
