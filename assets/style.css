@@ -654,10 +654,6 @@ video {
   z-index: -10;
 }
 
-.z-10 {
-  z-index: 10;
-}
-
 .z-50 {
   z-index: 50;
 }
@@ -668,6 +664,10 @@ video {
 
 .z-\[2\] {
   z-index: 2;
+}
+
+.z-10 {
+  z-index: 10;
 }
 
 .col-span-full {
@@ -1729,6 +1729,37 @@ body::-webkit-scrollbar {
   );
   transition: --gradientStart 1s, --gradientEnd 1s;
   /* Smooth transition for the gradient */
+}
+
+#bgElement {
+  position: relative;
+  width: 100%;
+  /* Adjust to match the container size */
+  height: auto;
+  /* Adjust based on content, or set a fixed height */
+  overflow: hidden;
+}
+
+.curtain-panel {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #c7ccd3;
+  /* Your curtain color */
+  transition: transform 0.5s ease-in-out;
+  z-index: 20;
+  /* Ensure it's above the product images */
+}
+
+.left-panel {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.right-panel {
+  right: 0;
+  transform: translateX(100%);
 }
 
 .before\:absolute::before {

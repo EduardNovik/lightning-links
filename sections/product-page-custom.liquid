@@ -240,6 +240,23 @@
   </div>
 
 
+  <div id="bgElement" class="relative overflow-hidden transition-transform duration-500">
+  <!-- Curtain Panels -->
+  <div class="curtain-panel left-panel"></div>
+  <div class="curtain-panel right-panel"></div>
+
+  <!-- Existing Content -->
+  <div class="flex justify-center items-center mb-10 mt-5 w-full bg-grigio-40 p-10 product-bg z-10">
+    {% for image in product.images %}
+      <div class="w-[65%]">
+        {% render 'image', size: '900x', src: image.src, alt: image.alt, class: imageClass %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+<button id="toggleCurtainBtn">Toggle Curtain</button>
+
+
 </div>
 
 
