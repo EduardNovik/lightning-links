@@ -785,10 +785,6 @@ video {
   height: 1.25rem;
 }
 
-.h-1\/3 {
-  height: 33.333333%;
-}
-
 .h-12 {
   height: 3rem;
 }
@@ -1711,6 +1707,27 @@ body::-webkit-scrollbar {
   /* Ensure it's above the product images */
 }
 
+.image-container:first-child {
+  /* Positioning for the first image (considered as "second" in your loop) */
+  top: 10%;
+  /* Adjust based on design */
+  left: 50%;
+  transform: translate(
+    -50%,
+    -10%
+  );
+  /* Adjust for centering and vertical position */
+}
+
+.image-container:last-child {
+  /* Positioning for the second image (considered as "third" in your loop) */
+  top: 30%;
+  /* Adjust so it depends on the first image position */
+  left: 50%;
+  transform: translate(-50%, -30%);
+  /* Adjust based on design */
+}
+
 .before\:absolute::before {
   content: var(--tw-content);
   position: absolute;
@@ -1936,10 +1953,6 @@ body::-webkit-scrollbar {
   .lg\:size-7 {
     width: 1.75rem;
     height: 1.75rem;
-  }
-
-  .lg\:h-2\/3 {
-    height: 66.666667%;
   }
 
   .lg\:h-\[500px\] {
