@@ -4,7 +4,7 @@
       "@type": "Product",
       "name": "{{ product.title |escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:                                                   {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:                                                     {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -223,6 +223,7 @@
     <div class="curtain"></div>
     <p class="inch-value text-xl"></p>
     <div class="flex justify-center items-center mb-10 mt-5 w-full p-10">
+      <div class="relative"></div>
       {% for image in product.images %}
         {% if forloop.index == 2 %}
           <div class="w-[65%] z-20 absolute car-body">
@@ -234,7 +235,7 @@
           </div>
         {% endif %}
         {% if forloop.index == 3 %}
-          <div class="w-[65%] z-20 absolute bottom-0">
+          <div class="w-[65%] z-20 relative bottom-0">
             {% render 'image'
               , size: '900x'
               , src: image.src
