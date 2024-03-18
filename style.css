@@ -275,3 +275,20 @@ body::-webkit-scrollbar {
   transition: transform 0.5s ease-in-out;
   z-index: 10; /* Ensure it's above the product images */
 }
+
+.image-container:first-child {
+  /* Positioning for the first image (considered as "second" in your loop) */
+  top: 10%; /* Adjust based on design */
+  left: 50%;
+  transform: translate(
+    -50%,
+    -10%
+  ); /* Adjust for centering and vertical position */
+}
+
+.image-container:last-child {
+  /* Positioning for the second image (considered as "third" in your loop) */
+  top: 30%; /* Adjust so it depends on the first image position */
+  left: 50%;
+  transform: translate(-50%, -30%); /* Adjust based on design */
+}
