@@ -6,6 +6,7 @@ const cancelPopupButton = document.getElementById("cancelButton");
 const inchValueElement = document.getElementsByClassName("inch-value")[0];
 const swatchButtonsElement = document.querySelectorAll(".swatch-btn");
 const swatchActiveButtonElement = document.querySelector(".swatch--active");
+const productBgElement = document.querySelector(".product-bg");
 
 const buyPopupCustomButtons = document.querySelectorAll(
   ".buyPopupCustomButtons"
@@ -114,15 +115,19 @@ swatchButtonsElement.forEach((button) => {
     switch (activeOptionValue) {
       case "MILD":
         inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
-
+        productBgElement.style.background =
+          "linear-gradient(0deg, #C7CCD3 80%, #FFFFFF 0%)";
+        break;
         break;
       case "MEDIUM":
         inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
-
+        productBgElement.style.background =
+          "linear-gradient(0deg, #C7CCD3 50%, #FFFFFF 0%)";
         break;
       case "STANCE":
         inchValueElement.innerHTML = " — Stance lower <b>- 3 inch</b>";
-
+        productBgElement.style.background =
+          "linear-gradient(0deg, #C7CCD3 30%, #FFFFFF 0%)";
         break;
       default:
         break;
