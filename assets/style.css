@@ -1688,7 +1688,7 @@ body::-webkit-scrollbar {
 }
 
 .bread-title::before {
-  content: "Lighting links for Tesla Model S 2022+";
+  content: "Lighting links for ";
 }
 
 #bgElement {
