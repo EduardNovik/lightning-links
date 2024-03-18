@@ -3,8 +3,6 @@ const forPartnersButtons = document.querySelectorAll(".forPartnersButton");
 const forPartnersPopup = document.getElementById("for-partners-popup");
 const closePopupButton = document.getElementById("closePopupButton");
 const cancelPopupButton = document.getElementById("cancelButton");
-const inchValueElement = document.getElementsByClassName("inch-value")[0];
-const swatchButtonsElement = document.querySelectorAll(".swatch-btn");
 
 const buyPopupCustomButtons = document.querySelectorAll(
   ".buyPopupCustomButtons"
@@ -91,6 +89,48 @@ closeBuyPopupCustomButtons.forEach((button) => {
 swatchButtonsElement.forEach((button) => {
   button.addEventListener("click", function () {
     const activeOptionValue = this.getAttribute("data-swatch-option");
-    inchValueElement.innerText = activeOptionValue;
+    switch (activeOptionValue) {
+      case "MILD":
+        inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
+
+        break;
+      case "MEDIUM":
+        inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
+
+        break;
+      case "STANCE":
+        inchValueElement.innerHTML = " — Stance lower <b>- 3 inch</b>";
+
+        break;
+      default:
+        break;
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const inchValueElement = document.getElementsByClassName("inch-value")[0];
+  const swatchButtonsElement = document.querySelectorAll(".swatch-btn");
+
+  swatchButtonsElement.forEach((button) => {
+    button.addEventListener("click", function () {
+      const activeOptionValue = this.getAttribute("data-swatch-option");
+      switch (activeOptionValue) {
+        case "MILD":
+          inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
+
+          break;
+        case "MEDIUM":
+          inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
+
+          break;
+        case "STANCE":
+          inchValueElement.innerHTML = " — Stance lower <b>- 3 inch</b>";
+
+          break;
+        default:
+          break;
+      }
+    });
   });
 });
