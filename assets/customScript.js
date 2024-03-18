@@ -8,6 +8,7 @@ const swatchButtonsElement = document.querySelectorAll(".swatch-btn");
 const swatchActiveButtonElement = document.querySelector(".swatch--active");
 const productBgElement = document.querySelector(".product-bg");
 const curtain = document.querySelector(".curtain");
+const carBodyElement = document.querySelector(".car-body;");
 
 const buyPopupCustomButtons = document.querySelectorAll(
   ".buyPopupCustomButtons"
@@ -97,17 +98,21 @@ switch (activeAtributeValue) {
   case "MILD":
     inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
     curtain.style.transform = "translateY(30%)";
+    carBodyElement.style.bottom = "20px";
     break;
 
   case "MEDIUM":
     inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
     curtain.style.transform = "translateY(50%)";
+    carBodyElement.style.bottom = "15px";
     break;
 
   case "STANCE":
     inchValueElement.innerHTML = " — Stance lower <b>- 3 inch</b>";
     curtain.style.transform = "translateY(80%)";
+    carBodyElement.style.bottom = "10px";
     break;
+
   default:
     break;
 }
@@ -119,16 +124,21 @@ swatchButtonsElement.forEach((button) => {
       case "MILD":
         inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
         curtain.style.transform = "translateY(30%)";
+        carBodyElement.style.bottom = "20px";
         break;
+
       case "MEDIUM":
         inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
         curtain.style.transform = "translateY(50%)";
-
+        carBodyElement.style.bottom = "15px";
         break;
+
       case "STANCE":
         inchValueElement.innerHTML = " — Stance lower <b>- 3 inch</b>";
         curtain.style.transform = "translateY(80%)";
+        carBodyElement.style.bottom = "10px";
         break;
+
       default:
         break;
     }
