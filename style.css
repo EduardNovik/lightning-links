@@ -282,7 +282,6 @@ body::-webkit-scrollbar {
   transition: --gradientStart 1s, --gradientEnd 1s; /* Smooth transition for the gradient */
 }
 
-
 #bgElement {
   position: relative;
   width: 100%;
