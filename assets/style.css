@@ -654,6 +654,10 @@ video {
   z-index: -10;
 }
 
+.z-10 {
+  z-index: 10;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -1725,6 +1729,13 @@ body::-webkit-scrollbar {
   );
   transition: --gradientStart 1s, --gradientEnd 1s;
   /* Smooth transition for the gradient */
+}
+
+#gradientForeground {
+  background: linear-gradient(to bottom, #c7ccd3 50%, transparent 50%);
+  transition: background-position 1s ease;
+  background-size: 100% 200%;
+  background-position: top;
 }
 
 .before\:absolute::before {

@@ -4,7 +4,7 @@
       "@type": "Product",
       "name": "{{ product.title |escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:                    {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:                     {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -224,9 +224,26 @@
   <p class="inch-value mt-5 text-[23px]"></p>
 
 
-  <div id="bgElement" class="transition-transform duration-500">
+  {% comment %} <div id="bgElement" class="transition-transform duration-500">
+  
+        <div class="flex justify-center items-center mb-10 mt-5 w-full bg-grigio-40 p-10 product-bg">
+          {% for image in product.images %}
+            <div class="w-[65%]">
+              {% render 'image'
+                , size: '900x'
+                , src: image.src
+                , alt: image.alt
+                , class: imageClass %}
+            </div>
+          {% endfor %}
+        </div>
+    </div> {% endcomment %}
 
-    <div class="flex justify-center items-center mb-10 mt-5 w-full bg-grigio-40 p-10 product-bg">
+
+  <div id="bgElement" class="relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full" id="gradientForeground"></div>
+
+    <div class="flex justify-center items-center mb-10 mt-5 w-full bg-grigio-40 p-10 product-bg z-10 relative">
       {% for image in product.images %}
         <div class="w-[65%]">
           {% render 'image'

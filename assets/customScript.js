@@ -112,36 +112,46 @@ switch (activeAtributeValue) {
 
 // product-bg element data changer-----
 
-swatchButtonsElement.forEach((button) => {
-  button.addEventListener("click", function () {
-    const activeOptionValue = this.getAttribute("data-swatch-option");
-    const productBgElement = document.querySelector(".product-bg");
+// swatchButtonsElement.forEach((button) => {
+//   button.addEventListener("click", function () {
+//     const activeOptionValue = this.getAttribute("data-swatch-option");
+//     const productBgElement = document.querySelector(".product-bg");
 
-    switch (activeOptionValue) {
-      case "MILD":
-        productBgElement.style.setProperty("--gradientStart", "#C7CCD3");
-        productBgElement.style.setProperty("--gradientEnd", "#FFFFFF");
-        // Adjust the gradient percentage as needed
-        productBgElement.style.background =
-          "linear-gradient(0deg, var(--gradientStart) 80%, var(--gradientEnd) 0%)";
-        break;
-      case "MEDIUM":
-        productBgElement.style.setProperty("--gradientStart", "#A8B1B8");
-        productBgElement.style.setProperty("--gradientEnd", "#FFFFFF");
-        // Adjust the gradient percentage as needed
-        productBgElement.style.background =
-          "linear-gradient(0deg, var(--gradientStart) 50%, var(--gradientEnd) 0%)";
-        break;
-      case "STANCE":
-        productBgElement.style.setProperty("--gradientStart", "#8A949A");
-        productBgElement.style.setProperty("--gradientEnd", "#FFFFFF");
-        // Adjust the gradient percentage as needed
-        productBgElement.style.background =
-          "linear-gradient(0deg, var(--gradientStart) 30%, var(--gradientEnd) 0%)";
-        break;
-      default:
-        // Handle default case or reset to initial values
-        break;
-    }
+//     switch (activeOptionValue) {
+//       case "MILD":
+//         productBgElement.style.setProperty("--gradientStart", "#C7CCD3");
+//         productBgElement.style.setProperty("--gradientEnd", "#FFFFFF");
+//         // Adjust the gradient percentage as needed
+//         productBgElement.style.background =
+//           "linear-gradient(0deg, var(--gradientStart) 80%, var(--gradientEnd) 0%)";
+//         break;
+//       case "MEDIUM":
+//         productBgElement.style.setProperty("--gradientStart", "#A8B1B8");
+//         productBgElement.style.setProperty("--gradientEnd", "#FFFFFF");
+//         // Adjust the gradient percentage as needed
+//         productBgElement.style.background =
+//           "linear-gradient(0deg, var(--gradientStart) 50%, var(--gradientEnd) 0%)";
+//         break;
+//       case "STANCE":
+//         productBgElement.style.setProperty("--gradientStart", "#8A949A");
+//         productBgElement.style.setProperty("--gradientEnd", "#FFFFFF");
+//         // Adjust the gradient percentage as needed
+//         productBgElement.style.background =
+//           "linear-gradient(0deg, var(--gradientStart) 30%, var(--gradientEnd) 0%)";
+//         break;
+//       default:
+//         // Handle default case or reset to initial values
+//         break;
+//     }
+//   });
+// });
+
+document.querySelectorAll(".your-trigger-selector").forEach((button) => {
+  button.addEventListener("click", function () {
+    // Example: move the gradient to simulate "dragging"
+    const newPosition = "bottom"; // Change based on the button clicked or interaction
+
+    const gradientForeground = document.getElementById("gradientForeground");
+    gradientForeground.style.backgroundPosition = newPosition;
   });
 });
