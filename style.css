@@ -259,6 +259,10 @@ body::-webkit-scrollbar {
   display: block !important;
 }
 
+.bread-title::before {
+  content: "Lighting links for ";
+}
+
 #bgElement {
   position: relative;
   width: 100%;

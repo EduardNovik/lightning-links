@@ -1687,6 +1687,10 @@ body::-webkit-scrollbar {
   display: block !important;
 }
 
+.bread-title::before {
+  content: "Lighting links for Tesla Model S 2022+";
+}
+
 #bgElement {
   position: relative;
   width: 100%;
