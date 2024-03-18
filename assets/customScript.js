@@ -98,26 +98,17 @@ switch (activeAtributeValue) {
   case "MILD":
     inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
     curtain.style.transform = "translateY(30%)";
-    if (carBodyElement) {
-      curtain.style.transform = "translateY(20px)";
-    }
     break;
 
   case "MEDIUM":
     inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
     curtain.style.transform = "translateY(50%)";
-    if (carBodyElement) {
-      curtain.style.transform = "translateY(15px)";
-    }
+
     break;
 
   case "STANCE":
     inchValueElement.innerHTML = " — Stance lower <b>- 3 inch</b>";
     curtain.style.transform = "translateY(80%)";
-    if (carBodyElement) {
-      curtain.style.transform = "translateY(10px)";
-    }
-
     break;
   default:
     break;
@@ -130,24 +121,24 @@ swatchButtonsElement.forEach((button) => {
       case "MILD":
         inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
         curtain.style.transform = "translateY(30%)";
-        if (carBodyElement) {
-          curtain.style.transform = "translateY(20px)";
-        }
+        // if (carBodyElement) {
+        //   curtain.style.transform = "translateY(20px)";
+        // }
         break;
       case "MEDIUM":
         inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
         curtain.style.transform = "translateY(50%)";
-        if (carBodyElement) {
-          curtain.style.transform = "translateY(15px)";
-        }
+        // if (carBodyElement) {
+        //   curtain.style.transform = "translateY(15px)";
+        // }
 
         break;
       case "STANCE":
         inchValueElement.innerHTML = " — Stance lower <b>- 3 inch</b>";
         curtain.style.transform = "translateY(80%)";
-        if (carBodyElement) {
-          curtain.style.transform = "translateY(10px)";
-        }
+        // if (carBodyElement) {
+        //   curtain.style.transform = "translateY(10px)";
+        // }
         break;
       default:
         break;
