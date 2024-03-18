@@ -137,18 +137,27 @@ swatchButtonsElement.forEach((button) => {
   });
 });
 
+// document
+//   .getElementById("toggleCurtainBtn")
+//   .addEventListener("click", function () {
+//     const leftPanel = document.querySelector(".left-panel");
+//     const rightPanel = document.querySelector(".right-panel");
+
+//     // Toggle the curtain open or closed
+//     if (leftPanel.style.transform === "translateX(-100%)") {
+//       leftPanel.style.transform = "translateX(0)";
+//       rightPanel.style.transform = "translateX(0)";
+//     } else {
+//       leftPanel.style.transform = "translateX(-100%)";
+//       rightPanel.style.transform = "translateX(100%)";
+//     }
+//   });
+
 document
   .getElementById("toggleCurtainBtn")
   .addEventListener("click", function () {
-    const leftPanel = document.querySelector(".left-panel");
-    const rightPanel = document.querySelector(".right-panel");
+    const curtain = document.querySelector(".curtain");
 
-    // Toggle the curtain open or closed
-    if (leftPanel.style.transform === "translateX(-100%)") {
-      leftPanel.style.transform = "translateX(0)";
-      rightPanel.style.transform = "translateX(0)";
-    } else {
-      leftPanel.style.transform = "translateX(-100%)";
-      rightPanel.style.transform = "translateX(100%)";
-    }
+    // Move the curtain up to reveal 80% of the content
+    curtain.style.transform = "translateY(-80%)";
   });
