@@ -1,0 +1,43 @@
+/* productBgElement.style.background = "linear-gradient(0deg, #C7CCD3 80%, #FFFFFF 0%)";
+productBgElement.style.transition = "opacity 0.5s ease"; */
+
+@property --gradientStart {
+  syntax: "<color>";
+  initial-value: #c7ccd3; /* Adjust to your initial gradient color */
+  inherits: false;
+}
+
+@property --gradientEnd {
+  syntax: "<color>";
+  initial-value: #ffffff; /* Adjust to your initial gradient end color */
+  inherits: false;
+}
+
+.product-bg {
+  width: 100%; /* Adjust as needed */
+  height: 300px; /* Adjust as needed */
+  background: linear-gradient(
+    0deg,
+    var(--gradientStart) 80%,
+    var(--gradientEnd) 0%
+  );
+  transition: --gradientStart 1s, --gradientEnd 1s; /* Smooth transition for the gradient */
+}
+
+#bgElement {
+  position: relative;
+  width: 100%;
+  height: auto; /* Adjust based on content, or set a fixed height */
+  overflow: hidden;
+}
+
+.curtain {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%; /* Cover the whole area initially */
+  background: #c7ccd3; /* Your curtain color */
+  transition: transform 0.5s ease-in-out;
+  transform: translateY(0); /* Start fully covering the content */
+  z-index: 20; /* Ensure it's above the product images */
+}

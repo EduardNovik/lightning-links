@@ -116,44 +116,19 @@ swatchButtonsElement.forEach((button) => {
     switch (activeOptionValue) {
       case "MILD":
         inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
-        // productBgElement.style.background =
-        //   "linear-gradient(0deg, #C7CCD3 80%, #FFFFFF 0%)";
-        // productBgElement.style.transition = "opacity 0.5s ease";
         curtain.style.transform = "translateY(80%)";
         break;
       case "MEDIUM":
         inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
-        // productBgElement.style.background =
-        //   "linear-gradient(0deg, #C7CCD3 50%, #FFFFFF 0%)";
-        // productBgElement.style.transition = "opacity 0.5s ease";
         curtain.style.transform = "translateY(50%)";
 
         break;
       case "STANCE":
         inchValueElement.innerHTML = " — Stance lower <b>- 3 inch</b>";
         curtain.style.transform = "translateY(30%)";
-        // productBgElement.style.background =
-        //   "linear-gradient(0deg, #C7CCD3 30%, #FFFFFF 0%)";
-        // productBgElement.style.transition = "opacity 0.5s ease";
         break;
       default:
         break;
     }
   });
 });
-
-// document
-//   .getElementById("toggleCurtainBtn")
-//   .addEventListener("click", function () {
-//     const leftPanel = document.querySelector(".left-panel");
-//     const rightPanel = document.querySelector(".right-panel");
-
-//     // Toggle the curtain open or closed
-//     if (leftPanel.style.transform === "translateX(-100%)") {
-//       leftPanel.style.transform = "translateX(0)";
-//       rightPanel.style.transform = "translateX(0)";
-//     } else {
-//       leftPanel.style.transform = "translateX(-100%)";
-//       rightPanel.style.transform = "translateX(100%)";
-//     }
-//   });
