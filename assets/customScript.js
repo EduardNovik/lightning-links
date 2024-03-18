@@ -116,18 +116,18 @@ swatchButtonsElement.forEach((button) => {
       case "MILD":
         inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
         productBgElement.style.background =
-          "linear-gradient(0deg, #C7CCD3 80%, #FFFFFF 0%)";
+          "transition: opacity 0.5s ease linear-gradient(0deg, #C7CCD3 80%, #FFFFFF 0%)";
         break;
         break;
       case "MEDIUM":
         inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
         productBgElement.style.background =
-          "linear-gradient(0deg, #C7CCD3 50%, #FFFFFF 0%)";
+          "transition: opacity 0.5s ease linear-gradient(0deg, #C7CCD3 50%, #FFFFFF 0%)";
         break;
       case "STANCE":
         inchValueElement.innerHTML = " — Stance lower <b>- 3 inch</b>";
         productBgElement.style.background =
-          "linear-gradient(0deg, #C7CCD3 30%, #FFFFFF 0%)";
+          "transition: opacity 0.5s ease linear-gradient(0deg, #C7CCD3 30%, #FFFFFF 0%)";
         break;
       default:
         break;
