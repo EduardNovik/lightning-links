@@ -1707,7 +1707,7 @@ body::-webkit-scrollbar {
   /* Ensure it's above the product images */
 }
 
-.image-container:nth-child(1) {
+.image-container:nth-child(2) {
   /* Positioning for the first image (considered as "second" in your loop) */
   top: 10%;
   /* Adjust based on design */
