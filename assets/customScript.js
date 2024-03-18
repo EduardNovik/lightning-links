@@ -8,7 +8,6 @@ const swatchButtonsElement = document.querySelectorAll(".swatch-btn");
 const swatchActiveButtonElement = document.querySelector(".swatch--active");
 const productBgElement = document.querySelector(".product-bg");
 const curtain = document.querySelector(".curtain");
-const carBodyElement = document.querySelector(".car-body;");
 
 const buyPopupCustomButtons = document.querySelectorAll(
   ".buyPopupCustomButtons"
