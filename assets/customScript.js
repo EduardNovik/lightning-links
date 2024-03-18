@@ -90,6 +90,7 @@ closeBuyPopupCustomButtons.forEach((button) => {
   });
 });
 
+// p element data changer-----
 const activeAtributeValue =
   swatchActiveButtonElement.getAttribute("data-swatch-option");
 switch (activeAtributeValue) {
@@ -109,30 +110,37 @@ switch (activeAtributeValue) {
     break;
 }
 
+// product-bg element data changer-----
+
 swatchButtonsElement.forEach((button) => {
   button.addEventListener("click", function () {
     const activeOptionValue = this.getAttribute("data-swatch-option");
+    const productBgElement = document.querySelector(".product-bg");
+
     switch (activeOptionValue) {
       case "MILD":
-        inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
+        productBgElement.style.setProperty("--gradientStart", "#C7CCD3");
+        productBgElement.style.setProperty("--gradientEnd", "#FFFFFF");
+        // Adjust the gradient percentage as needed
         productBgElement.style.background =
-          "linear-gradient(0deg, #C7CCD3 80%, #FFFFFF 0%)";
-        productBgElement.style.transition = "opacity 0.5s ease";
-        break;
+          "linear-gradient(0deg, var(--gradientStart) 80%, var(--gradientEnd) 0%)";
         break;
       case "MEDIUM":
-        inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
+        productBgElement.style.setProperty("--gradientStart", "#A8B1B8");
+        productBgElement.style.setProperty("--gradientEnd", "#FFFFFF");
+        // Adjust the gradient percentage as needed
         productBgElement.style.background =
-          "linear-gradient(0deg, #C7CCD3 50%, #FFFFFF 0%)";
-        productBgElement.style.transition = "opacity 0.5s ease";
+          "linear-gradient(0deg, var(--gradientStart) 50%, var(--gradientEnd) 0%)";
         break;
       case "STANCE":
-        inchValueElement.innerHTML = " — Stance lower <b>- 3 inch</b>";
+        productBgElement.style.setProperty("--gradientStart", "#8A949A");
+        productBgElement.style.setProperty("--gradientEnd", "#FFFFFF");
+        // Adjust the gradient percentage as needed
         productBgElement.style.background =
-          "linear-gradient(0deg, #C7CCD3 30%, #FFFFFF 0%)";
-        productBgElement.style.transition = "opacity 0.5s ease";
+          "linear-gradient(0deg, var(--gradientStart) 30%, var(--gradientEnd) 0%)";
         break;
       default:
+        // Handle default case or reset to initial values
         break;
     }
   });
