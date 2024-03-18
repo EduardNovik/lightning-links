@@ -4,8 +4,7 @@
       "type": "breadcrumbs",
       "custom_css": [
         ".breadcrumb {margin-top: 10px;}",
-        "nav.breadcrumb > :last-child {margin-top: 40px; display: block; font-size: 58px;}",
-        "nav.breadcrumb > span:before {margin-top: 40px; display: block; font-size: 58px;}"
+        "nav.breadcrumb > :last-child {margin-top: 40px; display: block; font-size: 58px;}"
       ],
       "settings": {
       }
