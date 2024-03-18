@@ -4,7 +4,7 @@
       "@type": "Product",
       "name": "{{ product.title |escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:                                                                         {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:                                                                               {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -225,7 +225,7 @@
     <div class="flex justify-center items-center w-full relative">
       {% for image in product.images %}
         {% if forloop.index == 2 %}
-          <div class="image-container absolute z-20 w-[65%]" style="top: 10%; left: 50%; transform: translate(-50%, -10%);">
+          <div class="image-container absolute z-20 w-[65%]">
             {% render 'image'
               , size: '900x'
               , src: image.src
@@ -233,7 +233,7 @@
               , class: 'car-body' %}
           </div>
           {% elif forloop.index == 3 %}
-          <div class="image-container absolute z-20 w-[65%]" style="top: 30%; left: 50%; transform: translate(-50%, -30%);">
+          <div class="image-container absolute z-20 w-[65%]">
             {% render 'image'
               , size: '900x'
               , src: image.src
