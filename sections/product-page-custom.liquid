@@ -4,7 +4,7 @@
       "@type": "Product",
       "name": "{{ product.title |escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:                                                                 {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:                                                                    {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -224,22 +224,23 @@
     <p class="inch-value text-xl z-30"></p>
     <div class="flex justify-center items-center w-full relative">
       {% for image in product.images %}
-        <div class="image-container absolute z-20 w-[65%]">
-          {% if forloop.index == 2 %}\
+        {% if forloop.index == 2 %}
+          <div class="image-container absolute z-20 w-[65%]" style="top: 10%; left: 50%; transform: translate(-50%, -10%);">
             {% render 'image'
               , size: '900x'
               , src: image.src
               , alt: image.alt
               , class: 'car-body' %}
-          {% endif %}
-          {% if forloop.index == 3 %}
+          </div>
+          {% elif forloop.index == 3 %}
+          <div class="image-container absolute z-20 w-[65%]" style="top: 30%; left: 50%; transform: translate(-50%, -30%);">
             {% render 'image'
               , size: '900x'
               , src: image.src
               , alt: image.alt
               , class: imageClass %}
-          {% endif %}
-        </div>
+          </div>
+        {% endif %}
       {% endfor %}
     </div>
   </div>
