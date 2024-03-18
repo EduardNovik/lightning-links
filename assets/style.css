@@ -654,8 +654,8 @@ video {
   z-index: -10;
 }
 
-.z-10 {
-  z-index: 10;
+.z-20 {
+  z-index: 20;
 }
 
 .z-50 {
@@ -1700,7 +1700,7 @@ body::-webkit-scrollbar {
 #bgElement {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 50vh;
   overflow: hidden;
 }
 
@@ -1715,7 +1715,7 @@ body::-webkit-scrollbar {
   transition: transform 0.5s ease-in-out;
   transform: translateY(0);
   /* Start fully covering the content */
-  z-index: 20;
+  z-index: 10;
   /* Ensure it's above the product images */
 }
 
