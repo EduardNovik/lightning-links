@@ -145,21 +145,3 @@ swatchButtonsElement.forEach((button) => {
     }
   });
 });
-
-window.addEventListener("resize", function () {
-  // Adjust positions based on viewport size
-  const imageContainers = document.querySelectorAll(".image-container");
-  if (window.innerWidth < 600) {
-    // Example breakpoint
-    // Adjust styles for mobile
-    imageContainers.forEach((container, index) => {
-      // Example: Adjust positioning for a tighter layout on mobile
-      container.style.top = `${20 + index * 20}%`;
-    });
-  } else {
-    // Reset or adjust styles for larger screens
-    imageContainers.forEach((container, index) => {
-      container.style.top = `${10 + index * 20}%`;
-    });
-  }
-});

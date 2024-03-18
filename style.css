@@ -280,10 +280,7 @@ body::-webkit-scrollbar {
   /* Positioning for the first image (considered as "second" in your loop) */
   top: 10%; /* Adjust based on design */
   left: 50%;
-  transform: translate(
-    -50%,
-    100%
-  ); /* Adjust for centering and vertical position */
+  transform: translate(-50%, 100%);
 }
 
 .image-container:last-child {
