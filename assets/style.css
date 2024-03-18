@@ -1253,6 +1253,10 @@ video {
   line-height: 1;
 }
 
+.text-\[23px\] {
+  font-size: 23px;
+}
+
 .text-\[9px\] {
   font-size: 9px;
 }
@@ -1687,6 +1691,40 @@ body::-webkit-scrollbar {
 
 .product__price--old {
   display: block !important;
+}
+
+@property --gradientStart {
+  syntax: "<color>";
+
+  initial-value: #c7ccd3;
+
+  /* Adjust to your initial gradient color */
+
+  inherits: false;
+}
+
+@property --gradientEnd {
+  syntax: "<color>";
+
+  initial-value: #ffffff;
+
+  /* Adjust to your initial gradient end color */
+
+  inherits: false;
+}
+
+.product-bg {
+  width: 100%;
+  /* Adjust as needed */
+  height: 300px;
+  /* Adjust as needed */
+  background: linear-gradient(
+    0deg,
+    var(--gradientStart) 80%,
+    var(--gradientEnd) 0%
+  );
+  transition: --gradientStart 1s, --gradientEnd 1s;
+  /* Smooth transition for the gradient */
 }
 
 .before\:absolute::before {
