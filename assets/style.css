@@ -1695,24 +1695,6 @@ body::-webkit-scrollbar {
   display: block !important;
 }
 
-.bread-title::before {
-  content: "Lighting links for ";
-}
-
-@media screen and (max-width: 1024px) {
-  .bread-title {
-    font-size: 28px;
-  }
-}
-
-/* For screens that are 768px or less */
-
-@media screen and (max-width: 768px) {
-  .bread-title {
-    font-size: 16px;
-  }
-}
-
 #bgElement {
   position: relative;
   width: 100%;
@@ -1748,6 +1730,34 @@ body::-webkit-scrollbar {
   left: 50%;
   transform: translate(-50%, 350%);
   /* Adjust based on design */
+}
+
+.breadcrumb {
+  margin-top: 10px;
+}
+
+.breadcrumb > :last-child {
+  margin-top: 40px;
+  display: block;
+  font-size: 58px;
+}
+
+.bread-title::before {
+  content: "Lighting links for ";
+}
+
+@media screen and (max-width: 1024px) {
+  .bread-title {
+    font-size: 28px;
+  }
+}
+
+/* For screens that are 768px or less */
+
+@media screen and (max-width: 768px) {
+  .bread-title {
+    font-size: 16px;
+  }
 }
 
 .before\:absolute::before {
