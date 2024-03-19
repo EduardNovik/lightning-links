@@ -1098,11 +1098,6 @@ video {
   background-color: rgb(236 239 243 / var(--tw-bg-opacity));
 }
 
-.bg-grigio-40 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(199 204 211 / var(--tw-bg-opacity));
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
