@@ -1732,6 +1732,7 @@ body::-webkit-scrollbar {
 
 .breadcrumb {
   margin-top: 10px;
+  font-family: 'Gosha Sans', Arial, sans-serif;
 }
 
 .bread-title::before {
@@ -1795,7 +1796,7 @@ body::-webkit-scrollbar {
 @media screen and (max-width: 768px) {
   .product-elevate-header {
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-size: 24px;
     line-height: 28px;
   }

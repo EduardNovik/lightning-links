@@ -293,6 +293,8 @@ body::-webkit-scrollbar {
 /* ----- breadcrumb*/
 .breadcrumb {
   margin-top: 10px;
+  font-family: "Gosha Sans", Arial, sans-serif;
+  font-weight: 400;
 }
 
 .bread-title::before {
