@@ -70,13 +70,16 @@
     "backTopBtn": true,
     "backTopBtnMobile": true,
     "bodyCSS": ".card__img--ratio {padding-top: 160px;}\n@media screen and (max-width: 767px) {\n.card__img--ratio {padding-top: 90px;\n}",
-    "checkout_logo_image": "shopify:\/\/shop_images\/logo.svg",
+    "checkout_header_image": "shopify:\/\/shop_images\/bg-white.jpg",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Frame_2.svg",
     "checkout_logo_position": "left",
-    "checkout_logo_size": "medium",
+    "checkout_logo_size": "small",
+    "checkout_input_background_color_mode": "transparent",
     "checkout_heading_font": "Roboto",
     "checkout_accent_color": "#fab60f",
     "checkout_button_color": "#202626",
     "checkout_error_color": "#EF0000",
+    "checkout_layout": "onepage",
     "checkoutWindow": true,
     "checkoutWindowText": "<p><strong>Love this theme?<\/strong><br\/><br\/>Get it forever for a single payment of 399$, all apps, features, support and updates included.<\/p>",
     "windowBgColor": "#000000",
@@ -186,7 +189,7 @@
       "header--default": {
         "type": "header--default",
         "custom_css": [
-          ".mobile-submenu-label {padding-left: 10px;}"
+
         ],
         "settings": {
           "layout": "stretchContent",
@@ -275,6 +278,20 @@
           "footer_logo": "shopify:\/\/shop_images\/logo.svg",
           "footer_background": "#5a6476",
           "footer_logo_width": 170
+        }
+      },
+      "banner--login": {
+        "type": "banner--login",
+        "settings": {
+          "layout": "default",
+          "height": 300,
+          "horizontalAlignment": "center",
+          "verticalAlignment": "middle",
+          "fontSize": "medium",
+          "contentColor": "rgba(0,0,0,0)",
+          "fillColor": "rgba(0,0,0,0)",
+          "overlayOpacity": 0,
+          "overlayColor": "#000000"
         }
       }
     },
