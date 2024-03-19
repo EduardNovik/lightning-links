@@ -228,8 +228,8 @@ span[data-swatch-option] {
 }
 
 .swatch--active {
-  background-color: #ebebeb;
-  border-color: #aaa;
+  background-color: #c7ccd3;
+  border-color: black;
 }
 
 body::-webkit-scrollbar {
