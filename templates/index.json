@@ -108,7 +108,7 @@
     "custom_section_pAJajT": {
       "type": "custom-section",
       "custom_css": [
-        ".container > div {gap: 0px;}"
+        ".container > div {gap: 0px !important;}"
       ],
       "settings": {
         "title": "Advantages",
