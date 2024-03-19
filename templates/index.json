@@ -17,6 +17,9 @@
     },
     "custom_section_cFQ3cq": {
       "type": "custom-section",
+      "custom_css": [
+        ".secondary-title{text-transform:none}"
+      ],
       "settings": {
         "title": "advantages",
         "color_scheme": "light",
