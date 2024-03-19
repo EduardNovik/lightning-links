@@ -1,0 +1,12 @@
+{% assign style = type | default: 'primary' %}
+{% assign buttonStyle = style | append: 'ButtonStyle' %}
+<button
+  type="submit"
+  {{ disabled }}
+  {% if name %}
+  name="{{name}}"
+  {% endif %}
+  class="button button--{{-style}} button--{{-settings[buttonStyle]}}  button--{{-style-}}__{{-settings[buttonStyle]}} {{class}}">
+  {% render 'icon-cart-white' %}
+  <span class="text-sm uppercase font-extrabold text-white">BUY</span>
+</button>
