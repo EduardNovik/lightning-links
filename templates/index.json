@@ -19,7 +19,8 @@
       "type": "custom-section",
       "custom_css": [
         ".secondary-title {text-transform: none;}",
-        "section{margin-top:100px}"
+        "section {margin-top: 50px;}",
+        "@media screen and (min-width: 768px) {section {margin-top: 100px; }}"
       ],
       "settings": {
         "title": "advantages",
