@@ -186,7 +186,7 @@
       "header--default": {
         "type": "header--default",
         "custom_css": [
-          ".header__logo {padding-left: 25px;}"
+          ".mobile-submenu-label {padding-left: 10px;}"
         ],
         "settings": {
           "layout": "stretchContent",
