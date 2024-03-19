@@ -1658,6 +1658,12 @@ span[data-swatch-option] {
   margin: 0px;
 }
 
+.swatch--active {
+  background-color: #ebebeb;
+  border-color: #aaa;
+  /* Change the border color */
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -1732,7 +1738,8 @@ body::-webkit-scrollbar {
 
 .breadcrumb {
   margin-top: 10px;
-  font-family: 'Gosha Sans', Arial, sans-serif;
+  font-family: "Gosha Sans", Arial, sans-serif;
+  font-weight: 400;
 }
 
 .bread-title::before {
