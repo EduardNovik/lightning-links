@@ -4,7 +4,7 @@
       "@type": "Product",
       "name": "{{ product.title |escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:                                                                            {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:                                                                                   {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -224,27 +224,27 @@
     <p class="inch-value text-xl z-30"></p>
     <div class="flex justify-center items-center w-full relative">
       {% comment %} {% for image in product.images %}
-                                                                  <div class="image-container absolute z-20 w-[65%]">
-                                                                    {% if forloop.index == 2 %}\
-                                                                      {% render 'image'
-                                                                        , size: '900x'
-                                                                        , src: image.src
-                                                                        , alt: image.alt
-                                                                        , class: 'car-body' %}
-                                                                    {% endif %}
-                                                                    {% if forloop.index == 3 %}
-                                                                      {% render 'image'
-                                                                        , size: '900x'
-                                                                        , src: image.src
-                                                                        , alt: image.alt
-                                                                        , class: imageClass %}
-                                                                    </div>
-                                                                  {% endif %}
-                                                {% endfor %} {% endcomment %}
+    <div class="image-container absolute z-20 w-[65%]">
+      {% if forloop.index == 2 %}\
+        {% render 'image'
+          , size: '900x'
+          , src: image.src
+          , alt: image.alt
+          , class: 'car-body' %}
+      {% endif %}
+      {% if forloop.index == 3 %}
+        {% render 'image'
+          , size: '900x'
+          , src: image.src
+          , alt: image.alt
+          , class: imageClass %}
+      </div>
+    {% endif %}
+{% endfor %} {% endcomment %}
     </div>
   </div>
 
-  <p class="font-gosha product-elevate-header font-[200]">ELEVATE YOUR
+  <p class="font-gosha product-elevate-header">ELEVATE YOUR
     <b>{{ product.title }}</b>
     WITH OUR PREMIUM AIR SUSPENSION GADGET</p>
 </div>
