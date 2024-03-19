@@ -18,7 +18,8 @@
     "custom_section_cFQ3cq": {
       "type": "custom-section",
       "custom_css": [
-        ".secondary-title{text-transform:none}"
+        ".secondary-title {text-transform: none;}",
+        "section{margin-top:100px}"
       ],
       "settings": {
         "title": "advantages",
