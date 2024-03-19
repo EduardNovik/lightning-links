@@ -36,6 +36,9 @@
     },
     "custom_section_tpNziy": {
       "type": "custom-section",
+      "custom_css": [
+        ".container {padding: 60px 10px;}"
+      ],
       "settings": {
         "title": "Brand Story",
         "color_scheme": "dark",
@@ -109,8 +112,7 @@
       "type": "custom-section",
       "custom_css": [
         ".container > div {gap: 0px !important;}",
-        "@media screen and (min-width: 1024px) {.container > div {gap: 0px !important; }}",
-        "@media screen and (min-width: 768px) {.container > div {gap: 0px !important; }}"
+        ".accent-text-wrapper {gap: 0px !important;}"
       ],
       "settings": {
         "title": "Advantages",
