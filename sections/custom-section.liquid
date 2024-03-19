@@ -1,5 +1,5 @@
 <section
-  class="py-10 md:py-16 lg:py24 overflow-hidden "
+  class="overflow-hidden "
   {% if section.settings.color_scheme == 'dark' %}
   style="background-color: var(--grigio-100); color: var(--grigio-0);"
   {% else %}
@@ -12,7 +12,7 @@
       <div class="flex flex-col gap-4  lg:gap-16 md:w-1/2">
         {% if section.settings.accent_text != blank %}
           <p
-            class="accent-text"
+            class="accent-text uppercase"
             {% if section.settings.color_scheme == 'dark' %}
             style="color: var(--grigio-0);"
             {% else %}
