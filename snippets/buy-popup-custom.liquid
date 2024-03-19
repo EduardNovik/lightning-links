@@ -167,17 +167,11 @@
         </p>
 
       </div>
-
-      {% comment %} <a class="button button--primary button--ghost  button--primary__ghost button--full-width" href="/checkout">
-                                                <button class="flex justify-center items-center w-full gap-2 py-4 px-3 bg-black hover:bg-yellow text-white">
-                                                  {% render 'icon-cart-white' %}
-                                                  <span class="text-sm uppercase font-extrabold text-white">BUY</span>
-                                                </button>
-                                    </a> {% endcomment %}
       <form
         class="w-full cart__form"
         action="{{ routes.cart_url }}"
         method="post"
+        style="padding-bottom: 0px"
         novalidate>
         <div>
           <div class="col-12 col-md start end-md checkout__button unflex">
