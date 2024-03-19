@@ -1732,16 +1732,18 @@ body::-webkit-scrollbar {
   /* Adjust based on design */
 }
 
+/* ----- */
+
 .breadcrumb {
   margin-top: 10px;
 }
 
-.breadcrumb > :last-child {
-  display: block;
-}
-
 .bread-title::before {
   content: "Lighting links for ";
+}
+
+.bread-title {
+  display: block;
 }
 
 @media screen and (min-width: 1025px) {
