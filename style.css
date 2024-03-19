@@ -312,27 +312,29 @@ body::-webkit-scrollbar {
 
 @media screen and (max-width: 1024px) {
   .bread-title {
-    font-size: 28px !important;
-    margin-top: 20px !important;
+    font-size: 28px;
+    line-height: 32px;
+    margin-top: 20px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .bread-title {
-    font-size: 16px !important;
-    margin-top: 10px !important;
-  }
+    font-size: 24px;
+    line-height: 28px;
+    margin-top: 10px;
 }
 
 /* ----- product-elevate-header*/
 
 .product-elevate-header {
-  width: 60%;
+  width: 70%;
 }
 
 @media screen and (min-width: 1025px) {
   .product-elevate-header {
     margin-top: 40px;
+    margin-bottom: 40px;
     font-size: 40px;
     line-height: 48px;
   }
@@ -341,7 +343,9 @@ body::-webkit-scrollbar {
 @media screen and (max-width: 1024px) {
   .product-elevate-header {
     margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 28px;
+    line-height: 32px;
   }
 }
 
@@ -349,6 +353,9 @@ body::-webkit-scrollbar {
 @media screen and (max-width: 768px) {
   .product-elevate-header {
     margin-top: 10px;
-    font-size: 16px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 28px;
+
   }
 }

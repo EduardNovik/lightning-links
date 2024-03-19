@@ -1758,7 +1758,8 @@ body::-webkit-scrollbar {
 
 @media screen and (max-width: 768px) {
   .bread-title {
-    font-size: 16px !important;
+    font-size: 24px !important;
+    line-height: 28px !important;
     margin-top: 10px !important;
   }
 }
@@ -1766,12 +1767,13 @@ body::-webkit-scrollbar {
 /* ----- product-elevate-header*/
 
 .product-elevate-header {
-  width: 60%;
+  width: 70%;
 }
 
 @media screen and (min-width: 1025px) {
   .product-elevate-header {
     margin-top: 40px;
+    margin-bottom: 40px;
     font-size: 40px;
     line-height: 48px;
   }
@@ -1780,7 +1782,9 @@ body::-webkit-scrollbar {
 @media screen and (max-width: 1024px) {
   .product-elevate-header {
     margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 28px;
+    line-height: 32px;
   }
 }
 
@@ -1789,7 +1793,9 @@ body::-webkit-scrollbar {
 @media screen and (max-width: 768px) {
   .product-elevate-header {
     margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 16px;
+    line-height: 20px;
   }
 }
 
