@@ -172,6 +172,19 @@
         </button>
       </a>
 
+      <div>
+        {% if settings.ajaxType == "disabled" %}
+          {% render 'button__submit'
+            , text: tran_update
+            , name: 'update'
+            , type: 'secondary'
+            , class: 'button--cart__update' %}
+        {% endif %}
+        {% render 'button__submit'
+          , text: tran_checkout
+          , name: 'checkout' class: "flex justify-center items-center w-full gap-2 py-4 px-3 bg-black hover:bg-yellow text-white" %}
+      </div>
+
     </div>
 
   </div>
