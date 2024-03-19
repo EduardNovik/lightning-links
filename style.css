@@ -294,18 +294,24 @@ body::-webkit-scrollbar {
   margin-top: 10px;
 }
 .breadcrumb > :last-child {
-  margin-top: 40px;
   display: block;
-  font-size: 58px;
 }
 
 .bread-title::before {
   content: "Lighting links for ";
 }
 
+@media screen and (min-width: 1025px) {
+  .bread-title {
+    margin-top: 40px;
+    font-size: 58px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .bread-title {
     font-size: 28px;
+    margin-top: 20px;
   }
 }
 
@@ -313,5 +319,6 @@ body::-webkit-scrollbar {
 @media screen and (max-width: 768px) {
   .bread-title {
     font-size: 16px;
+    margin-top: 10px;
   }
 }
