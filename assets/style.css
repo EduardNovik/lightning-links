@@ -1648,9 +1648,7 @@ section {
   }
 }
 
-.breadcrumb {
-  text-transform: uppercase;
-}
+/* -----swatch btn */
 
 span[data-swatch-option] {
   border: 1px solid #c7ccd3;
@@ -1667,6 +1665,8 @@ span[data-swatch-option] {
 body::-webkit-scrollbar {
   display: none;
 }
+
+/* -----slider */
 
 .slider__button {
   position: absolute;
@@ -1737,6 +1737,7 @@ body::-webkit-scrollbar {
 /* ----- breadcrumb*/
 
 .breadcrumb {
+  text-transform: uppercase;
   margin-top: 10px;
   font-family: "Gosha Sans", Arial, sans-serif;
   font-weight: 400;
