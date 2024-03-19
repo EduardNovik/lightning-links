@@ -176,12 +176,14 @@ section {
   font-size: 40px;
   line-height: 48px;
 }
+
+/* -----instagram block */
+
 .instagram-grig {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 40px;
-
   & > * {
     &:nth-child(1) {
       grid-column: 1 / span 1;
@@ -214,6 +216,49 @@ section {
     &:nth-child(8) {
       grid-column: 4 / span 1;
       grid-row: 2 / span 2;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .instagram-grig {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px;
+    & > * {
+      &:nth-child(1) {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 2;
+      }
+      &:nth-child(2) {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 1;
+      }
+      &:nth-child(3) {
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 1;
+      }
+      &:nth-child(4) {
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 2;
+      }
+      &:nth-child(5) {
+        grid-column: 1 / span 1;
+        grid-row: 4 / span 2;
+      }
+      &:nth-child(6) {
+        grid-column: 2 / span 1;
+        grid-row: 4 / span 1;
+      }
+      &:nth-child(7) {
+        grid-column: 1 / span 1;
+        grid-row: 6 / span 1;
+      }
+      &:nth-child(8) {
+        grid-column: 2 / span 1;
+        grid-row: 5 / span 2;
+      }
     }
   }
 }
@@ -297,6 +342,7 @@ body::-webkit-scrollbar {
 }
 
 /* ----- breadcrumb*/
+
 .breadcrumb {
   text-transform: uppercase;
   margin-top: 10px;
@@ -368,4 +414,14 @@ body::-webkit-scrollbar {
     font-size: 24px;
     line-height: 28px;
   }
+}
+
+/* -----header */
+
+.page__header--sticky {
+  padding-left: 25px;
+}
+
+.mobile-submenu-label {
+  padding-left: 10px;
 }
