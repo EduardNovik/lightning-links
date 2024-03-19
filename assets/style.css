@@ -1653,13 +1653,14 @@ section {
 }
 
 span[data-swatch-option] {
-  border: 2px solid #c7ccd3;
+  border: 1px solid #c7ccd3;
   background-color: white;
   margin: 0px;
 }
 
 .swatch--active {
   background-color: #c7ccd3 !important;
+  border: 1px solid #black;
   border-color: black !important;
   color: black !important;
 }
