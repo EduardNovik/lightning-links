@@ -1268,11 +1268,6 @@ video {
   font-size: 9px;
 }
 
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1286,6 +1281,10 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.font-\[200\] {
+  font-weight: 200;
 }
 
 .font-black {
@@ -1304,8 +1303,8 @@ video {
   font-weight: 500;
 }
 
-.font-\[200\] {
-  font-weight: 200;
+.font-semibold {
+  font-weight: 600;
 }
 
 .uppercase {
@@ -1865,11 +1864,6 @@ body::-webkit-scrollbar {
   transition-duration: 500ms;
 }
 
-.hover\:border-gray-700:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(55 65 81 / var(--tw-border-opacity));
-}
-
 .hover\:border-yellow:hover {
   --tw-border-opacity: 1;
   border-color: rgb(250 182 15 / var(--tw-border-opacity));
@@ -1878,11 +1872,6 @@ body::-webkit-scrollbar {
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-gray-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-gray-800:hover {
@@ -1897,11 +1886,6 @@ body::-webkit-scrollbar {
 
 .hover\:bg-opacity-0:hover {
   --tw-bg-opacity: 0;
-}
-
-.hover\:text-white:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:before\:h-\[calc\(100\%\+40px\)\]:hover::before {
