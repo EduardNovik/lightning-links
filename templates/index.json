@@ -219,29 +219,6 @@
         "title": "Instagram",
         "contacts_instagram": "https:\/\/www.instagram.com\/"
       }
-    },
-    "section_featured_product_HmxrhV": {
-      "type": "section__featured-product",
-      "settings": {
-        "custom_id": "",
-        "displayFor": "display--both",
-        "layout": "default",
-        "nomargin": false,
-        "scopedCSS": "",
-        "height": 0,
-        "padding": 0,
-        "backgroundColor": "rgba(0,0,0,0)",
-        "heading": "Check out this product!",
-        "headingColor": "rgba(0,0,0,0)",
-        "subheading": "...it's really cool!",
-        "subheadingColor": "rgba(0,0,0,0)",
-        "subheadingPosition": "below",
-        "headingAlignment": "start",
-        "product": "",
-        "showDescription": true,
-        "video_loop": true,
-        "video_autoplay": true
-      }
     }
   },
   "order": [
@@ -252,7 +229,6 @@
     "products_tDNdzk",
     "custom_section_pAJajT",
     "advantages_kD9rqK",
-    "instagram_UNh6hL",
-    "section_featured_product_HmxrhV"
+    "instagram_UNh6hL"
   ]
 }
