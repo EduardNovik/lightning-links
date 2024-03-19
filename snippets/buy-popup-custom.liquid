@@ -173,15 +173,9 @@
         method="post"
         style="padding-bottom: 0px"
         novalidate>
-
-        <div class="col-12 col-md-6 product__page--info unflex">
+        <div>
           {% form 'product'
             , product %}
-            {% render 'block__product-page--title' with product as product %}
-            {% render 'block__product-page--price' with product as product %}
-            {% if section.settings.showDescription %}
-              {% render 'block__product-page--description' with product as product %}{% endif %}
-            {% render 'block__product-page--swatch' with product as product %}
             {% render 'block__product-page--atc'
               , product: product
               , form: form %}
