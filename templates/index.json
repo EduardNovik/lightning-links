@@ -36,6 +36,9 @@
     },
     "custom_section_tpNziy": {
       "type": "custom-section",
+      "custom_css": [
+        ".container {padding: 60px 10px;}"
+      ],
       "settings": {
         "title": "Brand Story",
         "color_scheme": "dark",
