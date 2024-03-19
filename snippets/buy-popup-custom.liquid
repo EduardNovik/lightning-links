@@ -1,5 +1,66 @@
 {% assign current_variant = product.selected_or_first_available_variant %}
 {% assign s_type = settings.saleType | default: 'percent' %}
+{% assign tran_checkout = 'general.buttons.checkout' | t %}
+{% assign tran_update = 'general.buttons.update_cart' | t %}
+
+
+<script id="cartJavascript">
+  let cartPage = {};
+  cartPage.removeItem = async (t, id)=>{
+    let res = await BoosterTheme.cart.removeFromCart(false, id);
+  }
+  
+  cartPage.updateCart = async ()=>{
+    let time = new Date().getTime();
+    let cartData = await fetch(`${window.Shopify.routes.root}?section_id=cart-page`, {headers: { 'Pragma': 'no-cache', 'Cache-Control': 'no-cache, no-store, must-revalidate', 'Expires': 0 }}).then((data)=> data.text());
+    let div = document.createElement('div');
+    let currentCart = document.querySelector('.shopify-section.section--cart-page');
+    if(currentCart.dataset.lastUpdate > time){
+      return;
+    }
+    let p = document.createElement('div')
+    p.innerHTML = cartData
+    p.querySelector('[id="cartJavascript"]').remove()
+    currentCart.innerHTML = p.querySelector('.shopify-section.section--cart-page').innerHTML;
+    currentCart.dataset.lastUpdate = time;
+    BoosterTheme.events.trigger('booster:content:update', {trigger: 'cart-page'})
+  }
+  
+  {% unless settings.ajaxType == "disabled" %}
+  cartPage.quantityHandler = (event, req)=>{
+    let res = BoosterTheme.cart.quantityHandler(event, req);
+  }
+  
+  cartPage.updateQuantity = async (event)=>{
+    await BoosterTheme.cart.updateQuantity(event);
+  }
+  {% else %}
+  cartPage.quantityHandler = (event, req)=>{
+    event.preventDefault();
+    let {target} = event;
+    let input = target.closest('.quantity--input').querySelector('.quantity--input__input');
+    let value = parseInt(input.value);
+    if(!req && value){
+      input.value = --value;
+    } else {
+      input.value = ++value;
+    }
+    cartPage.updateQuantity({target: input});
+  }
+  
+  cartPage.updateQuantity = async (event)=>{
+    let {target} = event;
+    let key = target.dataset.variantId;
+    let inputs = target.closest('form').querySelectorAll(`[data-variant-id="${key}"]`);
+    for(let input of inputs){
+      input.value = target.value;
+    }
+  }
+  {% endunless %}
+  document.addEventListener('booster:cart:update', (e)=>{
+    cartPage.updateCart()
+  })
+</script>
 
 <div id="buy-popup-{{ product.handle }}" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 items-center justify-center buy-popup-custom flex invisible">
   <div class="bg-white p-6 max-w-[760px] w-full mx-4">
@@ -171,21 +232,92 @@
           <span class="text-sm uppercase font-extrabold text-white">BUY</span>
         </button>
       </a>
-
-      <div>
-        {% if settings.ajaxType == "disabled" %}
-          {% render 'button__submit'
-            , text: tran_update
-            , name: 'update'
-            , type: 'secondary'
-            , class: 'button--cart__update' %}
-        {% endif %}
-        {% render 'button__submit'
-          , text: tran_checkout
-          , name: 'checkout' class: "flex justify-center items-center w-full gap-2 py-4 px-3 bg-black hover:bg-yellow text-white" %}
-      </div>
+      <form
+        class="col-12 cart__form"
+        action="{{ routes.cart_url }}"
+        method="post"
+        novalidate>
+        <div>
+          <div class="col-12 col-md start end-md checkout__button unflex">
+            {% if settings.ajaxType == "disabled" %}
+              {% render 'button__submit'
+                , text: tran_update
+                , name: 'update'
+                , type: 'secondary'
+                , class: 'button--cart__update flex justify-center items-center w-full gap-2 py-4 px-3 bg-black hover:bg-yellow text-white' %}
+            {% endif %}
+            {% render 'button__submit'
+              , text: tran_checkout
+              , name: 'checkout flex justify-center items-center w-full gap-2 py-4 px-3 bg-black hover:bg-yellow text-white' %}
+          </div>
+        </div>
+      </form>
 
     </div>
 
   </div>
 </div>
+{% comment %} 
+      
+      {% schema %}
+        {
+          "name": "Cart page",
+          "class": "col-12 row max-width section--cart-page",
+          "settings": [
+            {
+              "type": "header",
+              "content": "Help"
+            },
+            {
+              "type": "paragraph",
+              "content": "[Click here to follow an interactive Tutorial](https://vimeo.com/58187608)"
+            },
+            {
+              "type": "radio",
+              "label": "Show discount in",
+              "options": [
+                {
+                  "value": "money",
+                  "label": "Money amount ($)"
+                }, {
+                  "value": "percent",
+                  "label": "Percent (%)"
+                }, {
+                  "value": "none",
+                  "label": "Don't show saved amount"
+                }
+              ],
+              "default": "money",
+              "id": "discount"
+            },
+            {
+              "type": "header",
+              "content": "Featured products"
+            }, {
+              "type": "collection",
+              "label": "Featured collection",
+              "info": "This collection will be shown if there are no products in the cart",
+              "id": "featured"
+            }
+          ],
+          "blocks": [
+            {
+              "type": "cartField",
+              "name": "Text field",
+              "settings": [
+                {
+                  "id": "required",
+                  "label": "This field is required",
+                  "type": "checkbox",
+                  "default": false
+                }, {
+                  "id": "label",
+                  "label": "Label",
+                  "default": "Additional field",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+{% endschema %} {% endcomment %}
