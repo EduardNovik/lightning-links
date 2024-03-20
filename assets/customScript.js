@@ -150,7 +150,7 @@ const variantButtons = document.querySelectorAll(".variant-btn");
 
 variantButtons.forEach(function (button) {
   button.addEventListener("click", function () {
-    const isSoldout = button.getAttribute("data-booster-soldout") === "true";
+    const isSoldout = button.getAttribute("data-swatch-soldout") === "true";
     const isActive = button.classList.contains("swatch--active");
     const hiddenBuyBtn = document.querySelector(".hidden-buy-btn");
     const visibleBuyBtn = document.querySelector(".visible-buy-btn");
