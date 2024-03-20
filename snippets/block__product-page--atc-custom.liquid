@@ -7,11 +7,12 @@
       value="{{product.selected_or_first_available_variant.id}}">
     {% render 'add-to-cart-button-custom'
       , type: 'secondary'
-      , price: product.price
+      , price: product.price,
+      , text: "BUY"
       , class: 'flex justify-center items-center w-full gap-2 py-4 px-3 bg-black hover:bg-yellow text-white' %}
   {% else %}
     {% render 'sold-out-button'
       , disabled: 'disabled'
-      , text: "BUY" %}
+       %}
   {% endif %}
 </div>
