@@ -36,28 +36,13 @@ button--{{-settings[style]}} button--{{-color-}}__{{-settings[style]}}
   {% else %}
   type="button"
   {% if variant %}
-  onclick="addToCartAndRedirectFirst(event);"
+  onclick="BoosterTheme.cart.addToCartJSON(event, {items: [{id: {{variant}}, quantity: {{quantity}}}]}); window.location.href = '/checkout';"
   {% else %}
-  onclick="addToCartAndRedirectSecond(event);"
+  onclick="BoosterTheme.cart.addToCart(event); window.location.href = '/checkout';"
   {% endif %}
   {% endif %}
   {% endunless -%}>
   {% render 'icon-cart-white' %}
   <span data-button-text>{{- text -}}</span>
 </button>
-
-<script>
-
-  function addToCartAndRedirectFirst(event) {
-    event.preventDefault();
-    BoosterTheme.cart.addToCartJSON(event, {items: [{id: {{variant}}, quantity: {{quantity}}}]});
-
-    window.location.href = '/checkout';
-  }
-
-  function addToCartAndRedirectSecond(event) {
-    event.preventDefault();
-    BoosterTheme.cart.addToCart(event);
-    window.location.href = '/checkout';
-  }
-</script>
+ 
