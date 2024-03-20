@@ -1,7 +1,7 @@
-{% comment %} {% assign current_variant = product.selected_or_first_available_variant %}
-  {% assign s_type = settings.saleType | default: 'percent' %}
-  {% assign tran_checkout = 'general.buttons.checkout' | t %}
-{% assign tran_update = 'general.buttons.update_cart' | t %} {% endcomment %}
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign s_type = settings.saleType | default: 'percent' %}
+{% assign tran_checkout = 'general.buttons.checkout' | t %}
+{% assign tran_update = 'general.buttons.update_cart' | t %}
 
 
 <script type="application/ld+json">
@@ -60,6 +60,8 @@
           </div>
         {% endfor %}
       </div>
+
+      {% comment %} VARIANTS {% endcomment %}
 
       {% comment %} VARIANTS {% endcomment %}
 
@@ -172,11 +174,11 @@
       {% endif %}
 
 
-      {% comment %} ---- {% endcomment %}
+      {% comment %} Price {% endcomment %}
 
-      <div class="flex items-center mb-5 justify-between gap-5 product__price--
-                font__family-- font__size-- 
-                " {{ block.shopify_attributes }}>
+      <div class="flex flex-col items-start justify-between gap-2 product__price--
+    font__family-- font__size-- 
+    " {{ block.shopify_attributes }}>
         <p class="mr-auto text-sm text-grigio-60">Price</p>
         {% if product.compare_at_price_min > 0 %}
           {% assign sale = true %}
@@ -190,21 +192,21 @@
           {% assign currsale = false %}
         {% endif %}
 
-        {% unless current_variant.price >= current_variant.compare_at_price %}
-          <p data-product-price-sale="{{product.id}}" class="text-sm product__price--old jsPrice">
-            {% if currsale %}
-              {{ current_variant.compare_at_price | money | strip_html }}{% endif %}
+        <div class="flex gap-4 items-center justify-start">
+          {% unless current_variant.price >= current_variant.compare_at_price %}
+            <p data-product-price-sale="{{product.id}}" class="text-sm product__price--old jsPrice">
+              {% if currsale %}
+                {{ current_variant.compare_at_price | money | strip_html }}{% endif %}
+            </p>
+          {% endunless %}
+          <p data-product-price="{{product.id}}" class="{% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}{% endunless %}{% endif %} jsPrice bg-yellow p-3 text-sm">
+            {% if settings.currencyFormat == 'money_with_currency_format' %}
+              {{ current_variant.price | money_with_currency | strip_html }}
+            {% else %}
+              {{ current_variant.price | money | strip_html }}
+            {% endif %}
           </p>
-        {% endunless %}
-
-        <p data-product-price="{{product.id}}" class="{% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}{% endunless %}{% endif %} jsPrice bg-yellow p-2 text-sm">
-          {% if settings.currencyFormat == 'money_with_currency_format' %}
-            {{ current_variant.price | money_with_currency | strip_html }}
-          {% else %}
-            {{ current_variant.price | money | strip_html }}
-          {% endif %}
-        </p>
-
+        </div>
       </div>
       {% form 'product'
         , product %}
@@ -218,62 +220,3 @@
 
   </div>
 </div>
-
-
-<script id="cartJavascript">
-  let cartPage = {};
-  cartPage.removeItem = async (t, id)=>{
-    let res = await BoosterTheme.cart.removeFromCart(false, id);
-  }
-  
-  cartPage.updateCart = async ()=>{
-    let time = new Date().getTime();
-    let cartData = await fetch(`${window.Shopify.routes.root}?section_id=cart-page`, {headers: { 'Pragma': 'no-cache', 'Cache-Control': 'no-cache, no-store, must-revalidate', 'Expires': 0 }}).then((data)=> data.text());
-    let div = document.createElement('div');
-    let currentCart = document.querySelector('.shopify-section.section--cart-page');
-    if(currentCart.dataset.lastUpdate > time){
-      return;
-    }
-    let p = document.createElement('div')
-    p.innerHTML = cartData
-    p.querySelector('[id="cartJavascript"]').remove()
-    currentCart.innerHTML = p.querySelector('.shopify-section.section--cart-page').innerHTML;
-    currentCart.dataset.lastUpdate = time;
-    BoosterTheme.events.trigger('booster:content:update', {trigger: 'cart-page'})
-  }
-  
-  {% unless settings.ajaxType == "disabled" %}
-  cartPage.quantityHandler = (event, req)=>{
-    let res = BoosterTheme.cart.quantityHandler(event, req);
-  }
-  
-  cartPage.updateQuantity = async (event)=>{
-    await BoosterTheme.cart.updateQuantity(event);
-  }
-  {% else %}
-  cartPage.quantityHandler = (event, req)=>{
-    event.preventDefault();
-    let {target} = event;
-    let input = target.closest('.quantity--input').querySelector('.quantity--input__input');
-    let value = parseInt(input.value);
-    if(!req && value){
-      input.value = --value;
-    } else {
-      input.value = ++value;
-    }
-    cartPage.updateQuantity({target: input});
-  }
-  
-  cartPage.updateQuantity = async (event)=>{
-    let {target} = event;
-    let key = target.dataset.variantId;
-    let inputs = target.closest('form').querySelectorAll(`[data-variant-id="${key}"]`);
-    for(let input of inputs){
-      input.value = target.value;
-    }
-  }
-  {% endunless %}
-  document.addEventListener('booster:cart:update', (e)=>{
-    cartPage.updateCart()
-  })
-</script>
