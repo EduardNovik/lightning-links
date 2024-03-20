@@ -9,7 +9,7 @@
       "@type": "Product",
       "name": "{{ product.title | escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:              {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:                  {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -28,27 +28,19 @@
 
 
 <script>
-  // Find all buttons with the class variant-btn
   const variantButtons = document.querySelectorAll('.variant-btn');
   
   // Loop through each button
   variantButtons.forEach(function(button) {
     // Add a click event listener to each button
     button.addEventListener('click', function() {
-      // Find the container element containing both the button and the quantity input
-      const container = button.closest('.container-modal'); // Replace 'container-class' with the actual class of the container
-  
-      // Find the input field containing the quantity within the container
-      const quantityInput = container.querySelector('input[name="quantity"]');
-  
-      // Get the value of the quantity input
-      let quantity = parseInt(quantityInput.value);
-  
-      // Increment the quantity by 1
-      quantity++;
-  
-      // Update the quantity input field with the new value
-      quantityInput.value = quantity;
+    const isSouldout = variantButtons.getAtribute('data-swatch-soldout') === 'true';
+    const isActive = button.classList.contains('swatch--active');
+    if (isSouldout && isActive) {
+      console.log('Not sold out');
+    } else {
+      console.log('Sold out');
+    }
     });
   });
 </script>
@@ -229,10 +221,7 @@
 
       {% form 'product'
         , product %}
-        {% if product_available %}
-          {% assign product_quantity = current_variant.inventory_quantity %}
-          <p>Available: {{ product_available }}</p>
-          <p>Quantity: {{ product_quantity }}</p>
+        {% if available_check %}
           {% render 'block__product-page--atc-custom'
             , product: product
             , form: form
