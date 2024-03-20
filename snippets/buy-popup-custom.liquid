@@ -4,6 +4,41 @@
 {% assign tran_update = 'general.buttons.update_cart' | t %}
 
 
+<script type="application/ld+json">
+  {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "{{ product.title |escape }}",
+      {% if product.featured_image != nil %}
+      "image" : ["https:                                                                                        {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      {% endif %}
+      "description": "{{ product.description | strip_html | escape }}",
+      "brand": {
+        "@type": "Brand",
+        "name": "{{ product.vendor |escape }}"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/{% if product.available %} InStock{% else %}SoldOut{% endif %}",
+        "price": "{{ product.price | money_without_currency }}",
+        "priceCurrency": "{{ shop.currency }}",
+        "url": "{{ shop.url }} {{ routes.root_url }} {{ product.url }}"
+      }
+    }
+</script>
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+{% assign featured_image = product.featured_image %}
+{% assign isAutoZoom = section.settings.autoZoom %}
+{% assign video_loop = section.settings.video_loop %}
+{% assign video_autoplay = section.settings.video_autoplay %}
+
+{% assign imageClass = '' %}
+{% if isAutoZoom %}
+  {% assign imageClass = 'image-zoom' %}
+{% endif %}
+
+
 <div id="buy-popup-{{ product.handle }}" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 items-center justify-center buy-popup-custom flex invisible">
   <div class="bg-white p-6 max-w-[760px] w-full mx-4">
     <div class="flex justify-between items-center mb-10">
