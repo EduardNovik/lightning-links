@@ -183,10 +183,7 @@
         {{ current_variant.store_availabilities }}
         {{ current_variant.inventory_quantity }}
       </p>
-      <p
-        data-product-price="{{product.id}}"
-        id="{{product.id}}"
-        data-store-availabilities="{{ current_variant.store_availabilities }}">
+      <p data-product-price="{{product.available}}" data-store-availabilities="{{ current_variant.store_availabilities }}">
 
         {{ current_variant.available }}
       </p>
