@@ -183,7 +183,25 @@
         {{ current_variant.store_availabilities }}
         {{ current_variant.inventory_quantity }}
       </p>
+      <p
+        data-product-price="{{product.id}}"
+        id="{{product.id}}"
+        data-store-availabilities="{{ current_variant.store_availabilities }}">
 
+        {{ current_variant.available }}
+      </p>
+      <p
+        data-product-price="{{product.id}}"
+        id="{{product.id}}"
+        data-store-availabilities="{{ current_variant.store_availabilities }}">
+        {{ current_variant.store_availabilities }}
+      </p>
+      <p
+        data-product-price="{{product.id}}"
+        id="{{product.id}}"
+        data-store-availabilities="{{ current_variant.store_availabilities }}">
+        {{ current_variant.inventory_quantity }}
+      </p>
       {% for product_option in product.options_with_values %}
         {% assign optix = 'option' | append: product_option.position %}
         {% for value in product_option.values %}
