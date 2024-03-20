@@ -340,12 +340,14 @@
 
     {% comment %}BUTTON {% endcomment %}
 
-    <a class="mt-[28px] button button--primary button--ghost  button--primary__ghost button--full-width" href="/checkout">
-      <button class="flex justify-center items-center w-full h-[44px] gap-2 p-3 bg-black hover:bg-yellow text-white">
-        {% render 'icon-cart-white' %}
-        <span class="text-sm uppercase font-extrabold text-white">BUY</span>
-      </button>
-    </a>
+    {% form 'product'
+        , product %}
+        {% render 'block__product-page--atc-custom'
+          , product: product
+          , form: form
+          , class="mt-6 "
+        %}
+    {% endform %}
 
   </div>
 </div>
