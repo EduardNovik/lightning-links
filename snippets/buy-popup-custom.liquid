@@ -193,7 +193,10 @@
 
       </div>
 
-      <p data-product-price="{{product.id}}" id="{{{{product.id}}}}">
+      <p
+        data-product-price="{{product.id}}"
+        id="{{{{product.id}}}}"
+        data-store-availabilities="{{ current_variant.store_availabilities }}">
         {{ current_variant.available }}
         {{ current_variant.store_availabilities }}
         {{ current_variant.inventory_quantity }}
@@ -213,30 +216,30 @@
 
 
     {% comment %} {% for product_option in product.options_with_values %}
-                                                                          {% assign optix = 'option' | append: product_option.position %}
-                                                                          {% for value in product_option.values %}
-                                                                            {% assign vars = avvars | where: optix, value %}
-                                                                            {% if vars.size == 0 %}
-                                                                              {% form 'product'
-                                                                                , product %}
-                                                                                {% render 'block__product-page--atc-custom'
-                                                                                  , product: false
-                                                                                  , form: form
-                                                                                  , class: ""
-                                                                                %}
-                                                                              {% endform %}
-                                                                            {% else %}
-                                                                              {% form 'product'
-                                                                                , product %}
-                                                                                {% render 'block__product-page--atc-custom'
-                                                                                  , product: product
-                                                                                  , form: form
-                                                                                  , class: ""
-                                                                                %}
-                                                                              {% endform %}
-                                                                            {% endif %}
-                                                                          {% endfor %}
-                                                  {% endfor %} {% endcomment %}
+                                                                                {% assign optix = 'option' | append: product_option.position %}
+                                                                                {% for value in product_option.values %}
+                                                                                  {% assign vars = avvars | where: optix, value %}
+                                                                                  {% if vars.size == 0 %}
+                                                                                    {% form 'product'
+                                                                                      , product %}
+                                                                                      {% render 'block__product-page--atc-custom'
+                                                                                        , product: false
+                                                                                        , form: form
+                                                                                        , class: ""
+                                                                                      %}
+                                                                                    {% endform %}
+                                                                                  {% else %}
+                                                                                    {% form 'product'
+                                                                                      , product %}
+                                                                                      {% render 'block__product-page--atc-custom'
+                                                                                        , product: product
+                                                                                        , form: form
+                                                                                        , class: ""
+                                                                                      %}
+                                                                                    {% endform %}
+                                                                                  {% endif %}
+                                                                                {% endfor %}
+                                                      {% endfor %} {% endcomment %}
     </div>
 
   </div>
