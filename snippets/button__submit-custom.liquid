@@ -1,15 +1,16 @@
-{% comment %} {% assign style = type | default: 'primary' %}
-  {% assign buttonStyle = style | append: 'ButtonStyle' %}
-  <button
-    type="submit"
-    {{ disabled }}
-    {% if name %}
-    name="{{name}}"
-    {% endif %}
-    class="button button--{{-style}} button--{{-settings[buttonStyle]}}  button--{{-style-}}__{{-settings[buttonStyle]}} {{class}}">
-    {% render 'icon-cart-white' %}
-    <span class="text-sm uppercase font-extrabold text-white">BUY</span>
-</button> {% endcomment %}
+{% assign style = type | default: 'primary' %}
+{% assign buttonStyle = style | append: 'ButtonStyle' %}
+<button
+  type="submit"
+  {{ disabled }}
+  {% if name %}
+  name="{{name}}"
+  onclick="BoosterTheme.cart.addToCartJSON(event, {items: [{id: {{variant}}, quantity: {{quantity}}}]});"
+  {% endif %}
+  class="button button--{{-style}} button--{{-settings[buttonStyle]}}  button--{{-style-}}__{{-settings[buttonStyle]}} {{class}}">
+  {% render 'icon-cart-white' %}
+  <span class="text-sm uppercase font-extrabold text-white">BUY</span>
+</button>
 
 
 {% assign button = button | default: 'addToCart' %}
@@ -33,35 +34,35 @@
   {% endunless %}
 {% endif %}
 
-<button
-  {% if name %}
-  name="{{name}}"
-  {% endif %}
-  data-buy-button="{{product.id}}"
-  data-original-text="{{-text-}}"
-  {{ disabled }}
-  class="button button--{{-button}} button--{{-color}} {% unless icon == 'none' %}button--icon{% endunless %}
-{% unless type == 'default' -%}
-button--{{-type}} button--{{-color-}}__{{-type}}
-{%- else -%}
-{% assign style = color | append: 'ButtonStyle' %}
-button--{{-settings[style]}} button--{{-color-}}__{{-settings[style]}}
-{%- endunless %} {{class-}}"
-  {% unless disabled %}
-  {% if settings.ajaxType == "disabled" %}
-  type="submit"
-  {% else %}
-  type="button"
-  {% if variant %}
-  onclick="BoosterTheme.cart.addToCartJSON(event, {items: [{id: {{variant}}, quantity: {{quantity}}}]});"
-  {% else %}
-  onclick="BoosterTheme.cart.addToCart(event);"
-  {% endif %}
-  {% endif %}
-  {% endunless -%}>
-  {% unless icon == 'none' %}
-    {% render 'get-icon' with icon as icon %}
-  {% endunless %}
-  {% render 'icon-cart-white' %}
-  <span class="text-sm uppercase font-extrabold text-white">BUY</span>
-</button>
+{% comment %} <button
+    {% if name %}
+    name="{{name}}"
+    {% endif %}
+    data-buy-button="{{product.id}}"
+    data-original-text="{{-text-}}"
+    {{ disabled }}
+    class="button button--{{-button}} button--{{-color}} {% unless icon == 'none' %}button--icon{% endunless %}
+  {% unless type == 'default' -%}
+  button--{{-type}} button--{{-color-}}__{{-type}}
+  {%- else -%}
+  {% assign style = color | append: 'ButtonStyle' %}
+  button--{{-settings[style]}} button--{{-color-}}__{{-settings[style]}}
+  {%- endunless %} {{class-}}"
+    {% unless disabled %}
+    {% if settings.ajaxType == "disabled" %}
+    type="submit"
+    {% else %}
+    type="button"
+    {% if variant %}
+    onclick="BoosterTheme.cart.addToCartJSON(event, {items: [{id: {{variant}}, quantity: {{quantity}}}]});"
+    {% else %}
+    onclick="BoosterTheme.cart.addToCart(event);"
+    {% endif %}
+    {% endif %}
+    {% endunless -%}>
+    {% unless icon == 'none' %}
+      {% render 'get-icon' with icon as icon %}
+    {% endunless %}
+    {% render 'icon-cart-white' %}
+    <span class="text-sm uppercase font-extrabold text-white">BUY</span>
+</button> {% endcomment %}
