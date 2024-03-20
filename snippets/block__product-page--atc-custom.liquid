@@ -1,0 +1,23 @@
+<div class="product__atc {% if block.settings.noMargin or noMargin %}margin__bottom--reduced{%endif-%}" {{ block.shopify_attributes }}>
+  {% if product.available %}
+    <input
+      style="display: none;"
+      name="id"
+      data-bstr-variant-input="{{product.id}}"
+      value="{{product.selected_or_first_available_variant.id}}">
+    {% render 'add-to-cart-button'
+      , type: 'secondary'
+      , price: product.price %}
+    {% if settings.dynamicCheckout %}
+      <div data-dynamic-button="{{product.id}}" class="col-12 no-gap checkout--dynamic">
+        {{ form | payment_button }}
+      {% comment %} {% if additional_checkout_buttons %}
+                                {{ content_for_additional_checkout_buttons }}
+                        {% endif %} {% endcomment %}
+      </div>
+    {% endif %}
+  {% else %}
+    {% render 'sold-out-button'
+      , disabled: 'disabled' %}
+  {% endif %}
+</div>
