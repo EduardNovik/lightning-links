@@ -279,7 +279,7 @@
                     {% assign vars = avvars | where: optix, value %}
                     {% if colorArray contains product_option_lc or imageArray contains product_option_lc %}
                       <span
-                        class="lazyload swatch--color w-full bg-grigio-20 border-2 border-grigio-40"
+                        class="lazyload swatch--color w-full border-2 border-grigio-40"
                         {%- render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%}
                         data-swatch-option="{{value| escape}}"
                         data-swatch-index="{{product.id}}-{{index}}"
@@ -288,7 +288,7 @@
                         {% endif %}></span>
                     {% else %}
                       <span
-                        class="w-full bg-grigio-20 border-2 border-grigio-40"
+                        class="w-full  border-2 border-grigio-40"
                         data-swatch-option="{{value| escape}}"
                         data-swatch-index="{{product.id}}-{{index}}"
                         {% if vars.size == 0 %}
