@@ -173,17 +173,17 @@
       </div>
       {% form 'product'
         , product %}
-        {% if product.available %}
+        {% if current_variant.available %}
           {% render 'block__product-page--atc-custom'
             , product: product
             , form: form
-            , class="col-12 col-md start end-md checkout__button unflex"
+            , class: "col-12 col-md start end-md checkout__button unflex"
           %}
         {% else %}
           {% render 'block__product-page--atc-custom'
             , product: false
             , form: form
-            , class="col-12 col-md start end-md checkout__button unflex"
+            , class: "col-12 col-md start end-md checkout__button unflex"
           %}
         {% endif %}
       {% endform %}
