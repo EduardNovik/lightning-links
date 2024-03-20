@@ -42,6 +42,8 @@ button--{{-settings[style]}} button--{{-color-}}__{{-settings[style]}}
   {% endif %}
   {% endif %}
   {% endunless -%}>
-  {% render 'icon-cart-white' %}
-  <span class="text-sm uppercase font-extrabold text-white">BUY</span>
+  {% unless icon == 'none' %}
+    {% render 'get-icon' with icon as icon %}
+  {% endunless %}
+  <span data-button-text>{{- text -}}</span>
 </button>
