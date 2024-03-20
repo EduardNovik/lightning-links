@@ -9,7 +9,7 @@
       "@type": "Product",
       "name": "{{ product.title | escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:                    {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:                     {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -140,26 +140,26 @@
                           {% if vars.size == 0 %}
                           data-swatch-soldout="true"
                           {% endif %}></span>
-                          {% if vars.size == 0 %}
-                           {% form 'product'
+                        {% if vars.size == 0 %}
+                          {% form 'product'
                             , product %}
-                              {% render 'block__product-page--atc-custom'
-                                , product: false
-                                , form: form
-                                , class: "checkout__button"
-                              %}
+                            {% render 'block__product-page--atc-custom'
+                              , product: false
+                              , form: form
+                              , class: "checkout__button"
+                            %}
                           {% endform %}
-                          {% else %}
-                            {% form 'product'
+                        {% else %}
+                          {% form 'product'
                             , product %}
-                              {% render 'block__product-page--atc-custom'
-                                , product: product
-                                , form: form
-                                , class: "checkout__button"
-                              %}
+                            {% render 'block__product-page--atc-custom'
+                              , product: product
+                              , form: form
+                              , class: "checkout__button"
+                            %}
                           {% endform %}
-                          {% endif %}
-                           
+                        {% endif %}
+
                       {% else %}
                         <span
                           id="btn-{{value| escape}}"
@@ -169,25 +169,25 @@
                           {% if vars.size == 0 %}
                           data-swatch-soldout="true"
                           {% endif %}>{{ value | escape }}</span>
-                                       {% if vars.size == 0 %}
-                           {% form 'product'
+                        {% if vars.size == 0 %}
+                          {% form 'product'
                             , product %}
-                              {% render 'block__product-page--atc-custom'
-                                , product: false
-                                , form: form
-                                , class: "checkout__button"
-                              %}
+                            {% render 'block__product-page--atc-custom'
+                              , product: false
+                              , form: form
+                              , class: "checkout__button"
+                            %}
                           {% endform %}
-                          {% else %}
-                            {% form 'product'
+                        {% else %}
+                          {% form 'product'
                             , product %}
-                              {% render 'block__product-page--atc-custom'
-                                , product: product
-                                , form: form
-                                , class: "checkout__button"
-                              %}
+                            {% render 'block__product-page--atc-custom'
+                              , product: product
+                              , form: form
+                              , class: "checkout__button"
+                            %}
                           {% endform %}
-                          {% endif %}
+                        {% endif %}
                       {% endif %}
                     {% endfor %}
                 {% endcase %}
@@ -233,41 +233,32 @@
 
       </div>
 
-      {% assign current_variant = product.selected_or_first_available_variant %}
-      {% assign product_available = current_variant.available %}
 
-      {% assign avvars = product.variants | where: 'available', true %}
-{% for product_option in product.options_with_values %}
-            {% assign optix = 'option' | append: product_option.position %}
-            {% for value in product_option.values %}
-              {% assign vars = avvars | where: optix, value %}
-              {% if vars.size == 0 %}
-                {% form 'product'
-                  , product %}
-                    {% render 'block__product-page--atc-custom'
-                      , product: product
-                      , form: form
-                      , class: "checkout__button"
-                    %}
-                {% endform %}
-                {% else %}
-              {% form 'product'
-                  , product %}
-                    {% render 'block__product-page--atc-custom'
-                      , product: false
-                      , form: form
-                      , class: "checkout__button"
-                    %}
-              {% endif %}
-            {% endfor %}
-          {% endfor %}
+      {% for product_option in product.options_with_values %}
+        {% assign optix = 'option' | append: product_option.position %}
+        {% for value in product_option.values %}
+          {% assign vars = avvars | where: optix, value %}
+          {% if vars.size == 0 %}
+            <p>"YES"</p>
+          {% else %}
+            <p>"No"</p>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+
+
+    {% comment %} {% form 'product'
+                        , product %}
+                          {% render 'block__product-page--atc-custom'
+                            , product: product
+                            , form: form
+                            , class: "checkout__button"
+                          %}
+                      {% endform %}
+                 {% endcomment %}
 
 
     </div>
 
   </div>
 </div>
-
-
-
-
