@@ -1806,11 +1806,12 @@ body::-webkit-scrollbar {
 
 .bread-title {
   display: block;
+  line-height: 60px;
 }
 
 @media screen and (min-width: 1025px) {
   .bread-title {
-    margin-top: 40px;
+    margin-top: 20px;
     font-size: 58px;
   }
 }
