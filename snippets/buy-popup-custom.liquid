@@ -173,20 +173,20 @@
         method="post"
         novalidate>
         {% comment %} <div>
-                              {% form 'product'
-                                , product %}
-                                {% render 'block__product-page--atc'
-                                  , product: product
-                                  , form: form %}
-                              {% endform %}
-                        </div> {% endcomment %}
+                                        {% form 'product'
+                                          , product %}
+                                          {% render 'block__product-page--atc'
+                                            , product: product
+                                            , form: form %}
+                                        {% endform %}
+                                </div> {% endcomment %}
         {% comment %} <div>
-                    {% render 'block__product-page--atc'
-                      , product: product
-                      , form: form %}
-                  </div>
-  
-                {% render 'add-to-cart-button', type: 'secondary', price: product.price %} {% endcomment %}
+                              {% render 'block__product-page--atc'
+                                , product: product
+                                , form: form %}
+                            </div>
+    
+                        {% render 'add-to-cart-button', type: 'secondary', price: product.price %} {% endcomment %}
         <div>
           <div class="col-12 col-md start end-md checkout__button unflex">
             {% if settings.ajaxType == "disabled" %}
