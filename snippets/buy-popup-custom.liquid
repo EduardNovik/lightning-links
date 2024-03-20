@@ -1,7 +1,7 @@
-{% assign current_variant = product.selected_or_first_available_variant %}
-{% assign s_type = settings.saleType | default: 'percent' %}
-{% assign tran_checkout = 'general.buttons.checkout' | t %}
-{% assign tran_update = 'general.buttons.update_cart' | t %}
+{% comment %} {% assign current_variant = product.selected_or_first_available_variant %}
+  {% assign s_type = settings.saleType | default: 'percent' %}
+  {% assign tran_checkout = 'general.buttons.checkout' | t %}
+{% assign tran_update = 'general.buttons.update_cart' | t %} {% endcomment %}
 
 
 <script type="application/ld+json">
@@ -10,7 +10,7 @@
       "@type": "Product",
       "name": "{{ product.title |escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:                                                                                        {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:                                                                                         {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
