@@ -752,10 +752,6 @@ video {
   margin-top: 24px;
 }
 
-.mt-\[28px\] {
-  margin-top: 28px;
-}
-
 .block {
   display: block;
 }
@@ -799,10 +795,6 @@ video {
 
 .h-24 {
   height: 6rem;
-}
-
-.h-\[44px\] {
-  height: 44px;
 }
 
 .h-full {
