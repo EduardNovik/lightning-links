@@ -171,10 +171,14 @@
         </p>
 
       </div>
-      {% assign product_available = current_variant.available %}
 
-      <p>{{ current_variant.available }}</p>
-      <p>{{ product.available }}</p>
+
+      {% assign current_variant = product.selected_or_first_available_variant %}
+      {% assign product_available = current_variant.available %}
+      {% assign product_quantity = current_variant.inventory_quantity %}
+
+      <p>Available: {{ product_available }}</p>
+      <p>Quantity: {{ product_quantity }}</p>
 
       {% form 'product'
         , product %}
