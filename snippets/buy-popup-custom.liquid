@@ -192,9 +192,6 @@
 
       {% form 'product'
         , product %}
-        {% render 'block__product-page--atc'
-          , product: product
-          , form: form %}
         <div class="col-12 col-md start end-md checkout__button unflex">
           {% if settings.ajaxType == "disabled" %}
             {% render 'button__submit-custom'
