@@ -1,5 +1,4 @@
-{% comment %} {% assign current_variant = product.selected_or_first_available_variant %} {% endcomment %}
-{% assign current_variant = product %}
+{% assign current_variant = product.selected_or_first_available_variant %}
 {% assign s_type = settings.saleType | default: 'percent' %}
 {% assign tran_checkout = 'general.buttons.checkout' | t %}
 {% assign tran_update = 'general.buttons.update_cart' | t %}
@@ -174,13 +173,19 @@
       </div>
       {% form 'product'
         , product %}
-        {% render 'block__product-page--atc-custom'
-          , product: product
- 
-          , variant: variant
-          , form: form
-          , class="col-12 col-md start end-md checkout__button unflex"
-        %}
+        {% if product.available %}
+          {% render 'block__product-page--atc-custom'
+            , product: product
+            , form: form
+            , class="col-12 col-md start end-md checkout__button unflex"
+          %}
+        {% else %}
+          {% render 'block__product-page--atc-custom'
+            , product: false
+            , form: form
+            , class="col-12 col-md start end-md checkout__button unflex"
+          %}
+        {% endif %}
       {% endform %}
     </div>
 
