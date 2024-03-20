@@ -3,35 +3,6 @@
 {% assign tran_checkout = 'general.buttons.checkout' | t %}
 {% assign tran_update = 'general.buttons.update_cart' | t %}
 
-<script type="application/ld+json">
-  {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "{{ product.title |escape }}",
-      {% if product.featured_image != nil %}
-      "image" : ["https:                                                                                        {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
-      {% endif %}
-      "description": "{{ product.description | strip_html | escape }}",
-      "brand": {
-        "@type": "Brand",
-        "name": "{{ product.vendor |escape }}"
-      },
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/{% if product.available %} InStock{% else %}SoldOut{% endif %}",
-        "price": "{{ product.price | money_without_currency }}",
-        "priceCurrency": "{{ shop.currency }}",
-        "url": "{{ shop.url }} {{ routes.root_url }} {{ product.url }}"
-      }
-    }
-</script>
-
-{% assign current_variant = product.selected_or_first_available_variant %}
-{% assign featured_image = product.featured_image %}
-{% assign isAutoZoom = section.settings.autoZoom %}
-{% assign video_loop = section.settings.video_loop %}
-{% assign video_autoplay = section.settings.video_autoplay %}
-
 
 <div id="buy-popup-{{ product.handle }}" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 items-center justify-center buy-popup-custom flex invisible">
   <div class="bg-white p-6 max-w-[760px] w-full mx-4">
@@ -55,7 +26,8 @@
         {% endfor %}
       </div>
 
-      {% comment %} ----- {% endcomment %}
+      {% comment %} VARIANTS {% endcomment %}
+
       {% if product.variants.size > 1 %}
 
         {% assign altSelector = settings.altSelectorList | downcase | split: ',' %}
@@ -109,9 +81,9 @@
                 {% assign selector_type = "dropdown" %}
               {% endif %}
             {% endif %}
-            <div>
+            <div class="flex flex-col gap-2">
               <p class="text-sm text-grigio-60">Chose your suspension style</p>
-              <div class="flex justify-between gap-2">
+              <div class="flex justify-between gap-3">
                 {% case selector_type %}
                   {% when 'dropdown' %}
                     <select data-swatch-index="{{product.id}}-{{index}}">
@@ -138,7 +110,8 @@
                       {% assign vars = avvars | where: optix, value %}
                       {% if colorArray contains product_option_lc or imageArray contains product_option_lc %}
                         <span
-                          class="lazyload swatch--color w-full  border-2 border-grigio-40"
+                          id="btn-{{value| escape}}"
+                          class="lazyload swatch--color swatch-btn w-full border-2 border-grigio-40"
                           {%- render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%}
                           data-swatch-option="{{value| escape}}"
                           data-swatch-index="{{product.id}}-{{index}}"
@@ -147,7 +120,8 @@
                           {% endif %}></span>
                       {% else %}
                         <span
-                          class="w-full border-2 border-grigio-40"
+                          id="btn-{{value| escape}}"
+                          class="swatch-btn w-full border-2 border-grigio-40"
                           data-swatch-option="{{value| escape}}"
                           data-swatch-index="{{product.id}}-{{index}}"
                           {% if vars.size == 0 %}
@@ -161,6 +135,7 @@
           {% endfor %}
         </div>
       {% endif %}
+
 
       {% comment %} ---- {% endcomment %}
 
