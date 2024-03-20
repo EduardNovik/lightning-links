@@ -9,7 +9,7 @@
       "@type": "Product",
       "name": "{{ product.title | escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:        {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:             {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -28,30 +28,29 @@
 
 
 <script>
+  // Find all buttons with the class variant-btn
+  const variantButtons = document.querySelectorAll('.variant-btn');
   
-    // Find all buttons with the class variant-btn
-    const variantButtons = document.querySelectorAll('.variant-btn');
+  // Loop through each button
+  variantButtons.forEach(function(button) {
+    // Add a click event listener to each button
+    button.addEventListener('click', function() {
+      // Find the container element containing both the button and the quantity input
+      const container = button.closest('.container-modal'); // Replace 'container-class' with the actual class of the container
   
-    // Loop through each button
-    variantButtons.forEach(function(button) {
-      // Add a click event listener to each button
-      button.addEventListener('click', function() {
-        // Find the parent form element of the button
-        const form = button.closest('form');
-        
-        // Find the input field containing the quantity
-        const quantityInput = form.querySelector('input[name="quantity"]');
+      // Find the input field containing the quantity within the container
+      const quantityInput = container.querySelector('input[name="quantity"]');
   
-        // Get the value of the quantity input
-        let quantity = parseInt(quantityInput.value);
+      // Get the value of the quantity input
+      let quantity = parseInt(quantityInput.value);
   
-        // Increment the quantity by 1
-        quantity++;
+      // Increment the quantity by 1
+      quantity++;
   
-        // Update the quantity input field with the new value
-        quantityInput.value = quantity;
-      });
+      // Update the quantity input field with the new value
+      quantityInput.value = quantity;
     });
+  });
 </script>
 
 
@@ -64,7 +63,7 @@
       </button>
     </div>
 
-    <div class="bg-[#ECEFF3]">
+    <div class="bg-[#ECEFF3] container-modal">
       <div class="flex justify-center items-center mb-10">
         {% for image in product.images %}
           <div class="w-[80%]">
@@ -166,6 +165,7 @@
                           {%- render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%}
                           data-swatch-option="{{value| escape}}"
                           data-swatch-index="{{product.id}}-{{index}}"
+                          data-avilable="{{vars.size}}"
                           {% if vars.size == 0 %}
                           data-swatch-soldout="true"
                           {% endif %}></span>
@@ -175,6 +175,7 @@
                           class="swatch-btn w-full border-2 border-grigio-40 variant-btn"
                           data-swatch-option="{{value| escape}}"
                           data-swatch-index="{{product.id}}-{{index}}"
+                          data-avilable="{{vars.size}}"
                           {% if vars.size == 0 %}
                           data-swatch-soldout="true"
                           {% endif %}>{{ value | escape }}</span>
@@ -235,13 +236,13 @@
           {% render 'block__product-page--atc-custom'
             , product: product
             , form: form
-            , class: "col-12 col-md start end-md checkout__button unflex"
+            , class: "checkout__button"
           %}
         {% else %}
           {% render 'block__product-page--atc-custom'
             , product: false
             , form: form
-            , class: "col-12 col-md start end-md checkout__button unflex"
+            , class: "checkout__button"
           %}
         {% endif %}
       {% endform %}
