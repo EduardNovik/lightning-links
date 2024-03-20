@@ -9,7 +9,7 @@
       "@type": "Product",
       "name": "{{ product.title | escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https: {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:   {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -195,17 +195,15 @@
 
       </div>
 
-
       {% assign current_variant = product.selected_or_first_available_variant %}
       {% assign product_available = current_variant.available %}
-      {% assign product_quantity = current_variant.inventory_quantity %}
-
-      <p>Available: {{ product_available }}</p>
-      <p>Quantity: {{ product_quantity }}</p>
 
       {% form 'product'
         , product %}
         {% if product_available %}
+          {% assign product_quantity = current_variant.inventory_quantity %}
+          <p>Available: {{ product_available }}</p>
+          <p>Quantity: {{ product_quantity }}</p>
           {% render 'block__product-page--atc-custom'
             , product: product
             , form: form
