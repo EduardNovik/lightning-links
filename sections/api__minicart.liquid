@@ -1,5 +1,5 @@
 {% capture cartHTML %}
-<div class="minicart z-50">
+<div class="minicart">
   <div class="minicart__entries fancy-scroll">
     <p class="h-reset minicart__title">{{'cart.page.title' | t}} <span>({{cart.item_count}})</span><span class="minicart__close" onclick="BoosterTheme.cart.close()">Close</span></p>
     {% if settings.cartTimer and cart.items.size > 0 %}

@@ -324,7 +324,6 @@ body::-webkit-scrollbar {
   height: 100%; /* Cover the whole area initially */
   background: #c7ccd3; /* Your curtain color */
   transition: transform 0.5s ease-in-out;
-  z-index: 10; /* Ensure it's above the product images */
 }
 
 .image-container:nth-child(2) {
