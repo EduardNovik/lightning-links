@@ -418,6 +418,10 @@ body::-webkit-scrollbar {
 
 /* -----header */
 
+.page__header--sticky {
+  padding-left: 0px;
+}
+
 @media screen and (min-width: 769px) {
   .page__header--sticky {
     padding-left: 25px;
