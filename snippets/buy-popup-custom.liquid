@@ -176,7 +176,8 @@
           <div class="col-12 col-md start end-md checkout__button unflex">
             {% if settings.ajaxType == "disabled" %}
               {% render 'button__submit-custom'
-                  type: 'secondary', price: product.price
+ type: 'secondary'
+                , price: product.price
                 , text: tran_update
                 , name: 'update'
                 , type: 'secondary'
