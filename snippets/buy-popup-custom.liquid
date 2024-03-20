@@ -171,9 +171,11 @@
         </p>
 
       </div>
+      {% assign product_available = current_variant.available %}
+
       {% form 'product'
         , product %}
-        {% if current_variant.available %}
+        {% if product_available %}
           {% render 'block__product-page--atc-custom'
             , product: product
             , form: form
