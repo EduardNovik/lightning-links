@@ -36,9 +36,9 @@ button--{{-settings[style]}} button--{{-color-}}__{{-settings[style]}}
   {% else %}
   type="button"
   {% if variant %}
-  onclick="BoosterTheme.cart.addToCartJSON(event, {items: [{id: {{variant}}, quantity: {{quantity}}}]});"
+  onclick="addToCartAndRedirectFirst(event)"
   {% else %}
-  onclick="BoosterTheme.cart.addToCart(event);"
+  onclick="addToCartAndRedirectSecond(event)"
   {% endif %}
   {% endif %}
   {% endunless -%}>
@@ -46,4 +46,18 @@ button--{{-settings[style]}} button--{{-color-}}__{{-settings[style]}}
   <span data-button-text>{{- text -}}</span>
 </button>
 
-{% comment %} <span class="text-sm uppercase font-extrabold text-white">BUY</span> {% endcomment %}
+<script>
+
+  function addToCartAndRedirectFirst(event) {
+    event.preventDefault();
+    BoosterTheme.cart.addToCartJSON(event, {items: [{id: {{variant}}, quantity: {{quantity}}}]});
+
+    window.location.href = '/checkout';
+  }
+
+  function addToCartAndRedirectSecond(event) {
+    event.preventDefault();
+    BoosterTheme.cart.addToCart(event);
+    window.location.href = '/checkout';
+  }
+</script>
