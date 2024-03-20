@@ -1883,10 +1883,6 @@ body::-webkit-scrollbar {
   padding-left: 10px;
 }
 
-#product_form_7887371862177 {
-  margin-top: 24px;
-}
-
 .before\:absolute::before {
   content: var(--tw-content);
   position: absolute;
