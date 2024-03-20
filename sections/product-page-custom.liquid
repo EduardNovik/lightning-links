@@ -4,7 +4,7 @@
       "@type": "Product",
       "name": "{{ product.title |escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:                                                                                   {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:                                                                                     {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -43,7 +43,7 @@
       <select
         name="car"
         id="car-select"
-        class="form-select block w-full p-3 border border-gray-300 bg-white shadow-sm focus:outline-none focus:ring-yellow focus:border-yellow sm:text-sm">
+        class="form-select block w-full p-3 border border-gray-300 bg-grigio-20 shadow-sm focus:outline-none focus:ring-yellow focus:border-yellow sm:text-sm">
         {% for product_option in collections.all.products %}
           <option
             value="{{ product_option.url }}"
@@ -147,7 +147,7 @@
                     {% if colorArray contains product_option_lc or imageArray contains product_option_lc %}
                       <span
                         id="btn-{{value| escape}}"
-                        class="lazyload swatch--color swatch-btn w-full bg-white border-2 border-grigio-40"
+                        class="lazyload swatch--color swatch-btn w-full bg-white border-2 border-grigio-20"
                         {%- render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%}
                         data-swatch-option="{{value| escape}}"
                         data-swatch-index="{{product.id}}-{{index}}"
@@ -157,7 +157,7 @@
                     {% else %}
                       <span
                         id="btn-{{value| escape}}"
-                        class="swatch-btn w-full bg-white border-2 border-grigio-40"
+                        class="swatch-btn w-full bg-white border-2 border-grigio-20"
                         data-swatch-option="{{value| escape}}"
                         data-swatch-index="{{product.id}}-{{index}}"
                         {% if vars.size == 0 %}
@@ -227,23 +227,23 @@
     <p class="inch-value text-xl z-30"></p>
     <div class="flex justify-center items-center w-full relative">
       {% comment %} {% for image in product.images %}
-<div class="image-container absolute z-20 w-[65%]">
-{% if forloop.index == 2 %}\
-{% render 'image'
-  , size: '900x'
-  , src: image.src
-  , alt: image.alt
-  , class: 'car-body' %}
-{% endif %}
-{% if forloop.index == 3 %}
-{% render 'image'
-  , size: '900x'
-  , src: image.src
-  , alt: image.alt
-  , class: imageClass %}
-</div>
-{% endif %}
-{% endfor %} {% endcomment %}
+                <div class="image-container absolute z-20 w-[65%]">
+                {% if forloop.index == 2 %}\
+                {% render 'image'
+                  , size: '900x'
+                  , src: image.src
+                  , alt: image.alt
+                  , class: 'car-body' %}
+                {% endif %}
+                {% if forloop.index == 3 %}
+                {% render 'image'
+                  , size: '900x'
+                  , src: image.src
+                  , alt: image.alt
+                  , class: imageClass %}
+                </div>
+                {% endif %}
+            {% endfor %} {% endcomment %}
     </div>
   </div>
 
