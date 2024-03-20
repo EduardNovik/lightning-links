@@ -9,7 +9,7 @@
       "@type": "Product",
       "name": "{{ product.title | escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:                  {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:                    {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -25,26 +25,6 @@
     }
   }
 </script>
-
-
-<script>
-  const variantButtons = document.querySelectorAll('.variant-btn');
-  
-  // Loop through each button
-  variantButtons.forEach(function(button) {
-    // Add a click event listener to each button
-    button.addEventListener('click', function() {
-    const isSouldout = variantButtons.getAtribute('data-swatch-soldout') === 'true';
-    const isActive = button.classList.contains('swatch--active');
-    if (isSouldout && isActive) {
-      console.log('Not sold out');
-    } else {
-      console.log('Sold out');
-    }
-    });
-  });
-</script>
-
 
 <div id="buy-popup-{{ product.handle }}" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 items-center justify-center buy-popup-custom flex invisible">
   <div class="bg-white p-6 max-w-[760px] w-full mx-4">
@@ -157,7 +137,6 @@
                           {%- render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%}
                           data-swatch-option="{{value| escape}}"
                           data-swatch-index="{{product.id}}-{{index}}"
-                          data-avilable="{{vars}}"
                           {% if vars.size == 0 %}
                           data-swatch-soldout="true"
                           {% endif %}></span>
@@ -167,7 +146,6 @@
                           class="swatch-btn w-full border-2 border-grigio-40 variant-btn"
                           data-swatch-option="{{value| escape}}"
                           data-swatch-index="{{product.id}}-{{index}}"
-                          data-avilable="{{vars}}"
                           {% if vars.size == 0 %}
                           data-swatch-soldout="true"
                           {% endif %}>{{ value | escape }}</span>
@@ -219,23 +197,38 @@
       {% assign current_variant = product.selected_or_first_available_variant %}
       {% assign product_available = current_variant.available %}
 
-      {% form 'product'
-        , product %}
-        {% if available_check %}
-          {% render 'block__product-page--atc-custom'
-            , product: product
-            , form: form
-            , class: "checkout__button"
-          %}
-        {% else %}
-          {% render 'block__product-page--atc-custom'
-            , product: false
-            , form: form
-            , class: "checkout__button"
-          %}
-        {% endif %}
-      {% endform %}
+      {% assign avvars = product.variants | where: 'available', true %}
+{% for product_option in product.options_with_values %}
+            {% assign optix = 'option' | append: product_option.position %}
+            {% for value in product_option.values %}
+              {% assign vars = avvars | where: optix, value %}
+              {% if vars.size == 0 %}
+                {% form 'product'
+                  , product %}
+                    {% render 'block__product-page--atc-custom'
+                      , product: product
+                      , form: form
+                      , class: "checkout__button"
+                    %}
+                {% endform %}
+                {% else %}
+              {% form 'product'
+                  , product %}
+                    {% render 'block__product-page--atc-custom'
+                      , product: false
+                      , form: form
+                      , class: "checkout__button"
+                    %}
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+
+
     </div>
 
   </div>
 </div>
+
+
+
+
