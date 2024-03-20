@@ -1,36 +1,8 @@
-<script type="application/ld+json">
-  {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "{{ product.title |escape }}",
-      {% if product.featured_image != nil %}
-      "image" : ["https:                                                                                           {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
-      {% endif %}
-      "description": "{{ product.description | strip_html | escape }}",
-      "brand": {
-        "@type": "Brand",
-        "name": "{{ product.vendor |escape }}"
-      },
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/{% if product.available %} InStock{% else %}SoldOut{% endif %}",
-        "price": "{{ product.price | money_without_currency }}",
-        "priceCurrency": "{{ shop.currency }}",
-        "url": "{{ shop.url }} {{ routes.root_url }} {{ product.url }}"
-      }
-    }
-</script>
-
 {% assign current_variant = product.selected_or_first_available_variant %}
-{% assign featured_image = product.featured_image %}
-{% assign isAutoZoom = section.settings.autoZoom %}
-{% assign video_loop = section.settings.video_loop %}
-{% assign video_autoplay = section.settings.video_autoplay %}
+{% assign s_type = settings.saleType | default: 'percent' %}
+{% assign tran_checkout = 'general.buttons.checkout' | t %}
+{% assign tran_update = 'general.buttons.update_cart' | t %}
 
-{% assign imageClass = '' %}
-{% if isAutoZoom %}
-  {% assign imageClass = 'image-zoom' %}
-{% endif %}
 
 <div id="buy-popup-{{ product.handle }}" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 items-center justify-center buy-popup-custom flex invisible">
   <div class="bg-white p-6 max-w-[760px] w-full mx-4">
@@ -165,11 +137,11 @@
       {% endif %}
 
 
-      {% comment %} Price {% endcomment %}
+      {% comment %} ---- {% endcomment %}
 
-      <div class="flex flex-col items-start justify-between gap-2 product__price--
-    font__family-- font__size-- 
-    " {{ block.shopify_attributes }}>
+      <div class="flex items-center mb-5 justify-between gap-5 product__price--
+                font__family-- font__size-- 
+                " {{ block.shopify_attributes }}>
         <p class="mr-auto text-sm text-grigio-60">Price</p>
         {% if product.compare_at_price_min > 0 %}
           {% assign sale = true %}
@@ -183,21 +155,21 @@
           {% assign currsale = false %}
         {% endif %}
 
-        <div class="flex gap-4 items-center justify-start">
-          {% unless current_variant.price >= current_variant.compare_at_price %}
-            <p data-product-price-sale="{{product.id}}" class="text-sm product__price--old jsPrice">
-              {% if currsale %}
-                {{ current_variant.compare_at_price | money | strip_html }}{% endif %}
-            </p>
-          {% endunless %}
-          <p data-product-price="{{product.id}}" class="{% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}{% endunless %}{% endif %} jsPrice bg-yellow p-3 text-sm">
-            {% if settings.currencyFormat == 'money_with_currency_format' %}
-              {{ current_variant.price | money_with_currency | strip_html }}
-            {% else %}
-              {{ current_variant.price | money | strip_html }}
-            {% endif %}
+        {% unless current_variant.price >= current_variant.compare_at_price %}
+          <p data-product-price-sale="{{product.id}}" class="text-sm product__price--old jsPrice">
+            {% if currsale %}
+              {{ current_variant.compare_at_price | money | strip_html }}{% endif %}
           </p>
-        </div>
+        {% endunless %}
+
+        <p data-product-price="{{product.id}}" class="{% if currsale %}{% unless current_variant.price >= current_variant.compare_at_price %}{% endunless %}{% endif %} jsPrice bg-yellow p-2 text-sm">
+          {% if settings.currencyFormat == 'money_with_currency_format' %}
+            {{ current_variant.price | money_with_currency | strip_html }}
+          {% else %}
+            {{ current_variant.price | money | strip_html }}
+          {% endif %}
+        </p>
+
       </div>
       {% form 'product'
         , product %}
