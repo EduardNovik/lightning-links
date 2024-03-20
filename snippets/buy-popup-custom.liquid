@@ -1,4 +1,37 @@
+<script type="application/ld+json">
+  {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "{{ product.title |escape }}",
+      {% if product.featured_image != nil %}
+      "image" : ["https:                                                                                            {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      {% endif %}
+      "description": "{{ product.description | strip_html | escape }}",
+      "brand": {
+        "@type": "Brand",
+        "name": "{{ product.vendor |escape }}"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/{% if product.available %} InStock{% else %}SoldOut{% endif %}",
+        "price": "{{ product.price | money_without_currency }}",
+        "priceCurrency": "{{ shop.currency }}",
+        "url": "{{ shop.url }} {{ routes.root_url }} {{ product.url }}"
+      }
+    }
+</script>
+
 {% assign current_variant = product.selected_or_first_available_variant %}
+{% assign featured_image = product.featured_image %}
+{% assign isAutoZoom = section.settings.autoZoom %}
+{% assign video_loop = section.settings.video_loop %}
+{% assign video_autoplay = section.settings.video_autoplay %}
+
+{% assign imageClass = '' %}
+{% if isAutoZoom %}
+  {% assign imageClass = 'image-zoom' %}
+{% endif %}
+
 {% assign s_type = settings.saleType | default: 'percent' %}
 {% assign tran_checkout = 'general.buttons.checkout' | t %}
 {% assign tran_update = 'general.buttons.update_cart' | t %}
@@ -183,22 +216,9 @@
         {{ current_variant.store_availabilities }}
         {{ current_variant.inventory_quantity }}
       </p>
-      <p data-product-price="{{product.available}}" data-store-availabilities="{{ current_variant.store_availabilities }}">
+      <p data-product-availability="{{product.available}}" data-store-availabilities="{{ current_variant.store_availabilities }}"></p>
+      <p>{{ product.available }}</p>
 
-        {{ current_variant.available }}
-      </p>
-      <p
-        data-product-price="{{product.id}}"
-        id="{{product.id}}"
-        data-store-availabilities="{{ current_variant.store_availabilities }}">
-        {{ current_variant.store_availabilities }}
-      </p>
-      <p
-        data-product-price="{{product.id}}"
-        id="{{product.id}}"
-        data-store-availabilities="{{ current_variant.store_availabilities }}">
-        {{ current_variant.inventory_quantity }}
-      </p>
       {% for product_option in product.options_with_values %}
         {% assign optix = 'option' | append: product_option.position %}
         {% for value in product_option.values %}
