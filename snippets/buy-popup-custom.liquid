@@ -172,25 +172,11 @@
         action="{{ routes.cart_url }}"
         method="post"
         novalidate>
-        {% comment %} <div>
-                                        {% form 'product'
-                                          , product %}
-                                          {% render 'block__product-page--atc'
-                                            , product: product
-                                            , form: form %}
-                                        {% endform %}
-                                </div> {% endcomment %}
-        {% comment %} <div>
-                              {% render 'block__product-page--atc'
-                                , product: product
-                                , form: form %}
-                            </div>
-    
-                        {% render 'add-to-cart-button', type: 'secondary', price: product.price %} {% endcomment %}
         <div>
           <div class="col-12 col-md start end-md checkout__button unflex">
             {% if settings.ajaxType == "disabled" %}
               {% render 'button__submit-custom'
+                  type: 'secondary', price: product.price
                 , text: tran_update
                 , name: 'update'
                 , type: 'secondary'
