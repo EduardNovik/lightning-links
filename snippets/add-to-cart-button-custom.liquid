@@ -36,9 +36,9 @@ button--{{-settings[style]}} button--{{-color-}}__{{-settings[style]}}
   {% else %}
   type="button"
   {% if variant %}
-  onclick='addToCartAndRedirectFirst(event)'
+  onclick="addToCartAndRedirectFirst(event);"
   {% else %}
-  onclick='addToCartAndRedirectSecond(event)'
+  onclick="addToCartAndRedirectSecond(event);"
   {% endif %}
   {% endif %}
   {% endunless -%}>
