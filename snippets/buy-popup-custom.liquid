@@ -169,27 +169,6 @@
             {{ current_variant.price | money | strip_html }}
           {% endif %}
         </p>
-        <div>
-          {% if current_variant.available %}
-            {% form 'product'
-              , product %}
-              {% render 'block__product-page--atc-custom'
-                , product: product
-                , form: form
-                , class: ""
-              %}
-            {% endform %}
-          {% else %}
-            {% form 'product'
-              , product %}
-              {% render 'block__product-page--atc-custom'
-                , product: false
-                , form: form
-                , class: ""
-              %}
-            {% endform %}
-          {% endif %}
-        </div>
       </div>
        <div class="visible-buy-btn">
         {% form 'product'
