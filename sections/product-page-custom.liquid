@@ -4,7 +4,7 @@
       "@type": "Product",
       "name": "{{ product.title |escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:                                                                                  {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:                                                                                   {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -219,12 +219,6 @@
       %}
     {% endform %}
 
-  {% comment %} <a class="mt-[28px] button button--primary button--ghost  button--primary__ghost button--full-width" href="/checkout">
-                          <button class="flex justify-center items-center w-full h-[44px] gap-2 p-3 bg-black hover:bg-yellow text-white">
-                            {% render 'icon-cart-white' %}
-                            <span class="text-sm uppercase font-extrabold text-white">BUY</span>
-                          </button>
-              </a> {% endcomment %}
   </div>
 
 
@@ -233,23 +227,23 @@
     <p class="inch-value text-xl z-30"></p>
     <div class="flex justify-center items-center w-full relative">
       {% comment %} {% for image in product.images %}
-                                                        <div class="image-container absolute z-20 w-[65%]">
-                                                          {% if forloop.index == 2 %}\
-                                                            {% render 'image'
-                                                              , size: '900x'
-                                                              , src: image.src
-                                                              , alt: image.alt
-                                                              , class: 'car-body' %}
-                                                          {% endif %}
-                                                          {% if forloop.index == 3 %}
-                                                            {% render 'image'
-                                                              , size: '900x'
-                                                              , src: image.src
-                                                              , alt: image.alt
-                                                              , class: imageClass %}
-                                                          </div>
-                                                        {% endif %}
-                                    {% endfor %} {% endcomment %}
+<div class="image-container absolute z-20 w-[65%]">
+{% if forloop.index == 2 %}\
+{% render 'image'
+  , size: '900x'
+  , src: image.src
+  , alt: image.alt
+  , class: 'car-body' %}
+{% endif %}
+{% if forloop.index == 3 %}
+{% render 'image'
+  , size: '900x'
+  , src: image.src
+  , alt: image.alt
+  , class: imageClass %}
+</div>
+{% endif %}
+{% endfor %} {% endcomment %}
     </div>
   </div>
 
