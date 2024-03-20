@@ -6,6 +6,11 @@
   {% if name %}
   name="{{name}}"
   {% endif %}
+  {% if variant %}
+  onclick="BoosterTheme.cart.addToCartJSON(event, {items: [{id: {{variant}}, quantity: {{quantity}}}]});"
+  {% else %}
+  onclick="BoosterTheme.cart.addToCart(event);"
+  {% endif %}
   class="button button--{{-style}} button--{{-settings[buttonStyle]}}  button--{{-style-}}__{{-settings[buttonStyle]}} {{class}}">
   {% render 'icon-cart-white' %}
   <span class="text-sm uppercase font-extrabold text-white">BUY</span>
