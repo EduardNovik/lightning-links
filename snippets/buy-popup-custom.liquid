@@ -169,17 +169,26 @@
             {{ current_variant.price | money | strip_html }}
           {% endif %}
         </p>
-        <div>
-          {% if current_variant.available %}
-            {% form 'product'
-              , product %}
-              {% render 'block__product-page--atc-custom'
-                , product: product
-                , form: form
-                , class: ""
-              %}
-            {% endform %}
-          {% else %}
+
+      </div>
+
+
+      <p
+        data-product-price="{{product.id}}"
+        id="{{product.id}}"
+        data-store-availabilities="{{ current_variant.store_availabilities }}">
+        {{ current_variant.price }}
+        {{ current_variant }}
+        {{ current_variant.available }}
+        {{ current_variant.store_availabilities }}
+        {{ current_variant.inventory_quantity }}
+      </p>
+
+      {% for product_option in product.options_with_values %}
+        {% assign optix = 'option' | append: product_option.position %}
+        {% for value in product_option.values %}
+          {% assign vars = avvars | where: optix, value %}
+          {% if vars.size == 0 %}
             {% form 'product'
               , product %}
               {% render 'block__product-page--atc-custom'
@@ -188,47 +197,18 @@
                 , class: ""
               %}
             {% endform %}
+          {% else %}
+            {% form 'product'
+              , product %}
+              {% render 'block__product-page--atc-custom'
+                , product: product
+                , form: form
+                , class: ""
+              %}
+            {% endform %}
           {% endif %}
-        </div>
-
-      </div>
-
-      <p
-        data-product-price="{{product.id}}"
-        id="{{product.id}}"
-        data-store-availabilities="{{ current_variant.store_availabilities }}">
-        {{ current_variant.price }}
-        {{ current_variant.available }}
-        {{ current_variant.store_availabilities }}
-        {{ current_variant.inventory_quantity }}
-      </p>
-
-
-    {% comment %} {% for product_option in product.options_with_values %}
-                          {% assign optix = 'option' | append: product_option.position %}
-                          {% for value in product_option.values %}
-                            {% assign vars = avvars | where: optix, value %}
-                            {% if vars.size == 0 %}
-                              {% form 'product'
-                                , product %}
-                                {% render 'block__product-page--atc-custom'
-                                  , product: false
-                                  , form: form
-                                  , class: ""
-                                %}
-                              {% endform %}
-                            {% else %}
-                              {% form 'product'
-                                , product %}
-                                {% render 'block__product-page--atc-custom'
-                                  , product: product
-                                  , form: form
-                                  , class: ""
-                                %}
-                              {% endform %}
-                            {% endif %}
-                          {% endfor %}
-                {% endfor %} {% endcomment %}
+        {% endfor %}
+      {% endfor %}
     </div>
 
   </div>
