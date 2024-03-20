@@ -172,7 +172,21 @@
         action="{{ routes.cart_url }}"
         method="post"
         novalidate>
-        {% render 'button__submit-custom'
+        {% comment %} <div>
+                                        {% form 'product'
+                                          , product %}
+                                          {% render 'block__product-page--atc'
+                                            , product: product
+                                            , form: form %}
+                                        {% endform %}
+                                </div> {% endcomment %}
+        <div>
+          {% render 'block__product-page--atc'
+            , product: product
+            , form: form %}
+        </div>
+
+        {% render 'add-to-cart-button'
           , type: 'secondary'
           , price: product.price %}
         <div>
