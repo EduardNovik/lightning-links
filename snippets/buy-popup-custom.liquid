@@ -9,7 +9,7 @@
       "@type": "Product",
       "name": "{{ product.title | escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:      {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:       {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -24,6 +24,34 @@
       "url": "{{ shop.url }} {{ product.url }}"
     }
   }
+</script>
+
+
+<script>
+  
+    // Find all buttons with the class variant-btn
+    const variantButtons = document.querySelectorAll('.variant-btn');
+  
+    // Loop through each button
+    variantButtons.forEach(function(button) {
+      // Add a click event listener to each button
+      button.addEventListener('click', function() {
+        // Find the parent form element of the button
+        const form = button.closest('form');
+        
+        // Find the input field containing the quantity
+        const quantityInput = form.querySelector('input[name="quantity"]');
+  
+        // Get the value of the quantity input
+        let quantity = parseInt(quantityInput.value);
+  
+        // Increment the quantity by 1
+        quantity++;
+  
+        // Update the quantity input field with the new value
+        quantityInput.value = quantity;
+      });
+    });
 </script>
 
 
@@ -134,7 +162,7 @@
                       {% if colorArray contains product_option_lc or imageArray contains product_option_lc %}
                         <span
                           id="btn-{{value| escape}}"
-                          class="lazyload swatch--color swatch-btn w-full border-2 border-grigio-40"
+                          class="lazyload swatch--color swatch-btn w-full border-2 border-grigio-40 variant-btn"
                           {%- render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%}
                           data-swatch-option="{{value| escape}}"
                           data-swatch-index="{{product.id}}-{{index}}"
@@ -144,7 +172,7 @@
                       {% else %}
                         <span
                           id="btn-{{value| escape}}"
-                          class="swatch-btn w-full border-2 border-grigio-40"
+                          class="swatch-btn w-full border-2 border-grigio-40 variant-btn"
                           data-swatch-option="{{value| escape}}"
                           data-swatch-index="{{product.id}}-{{index}}"
                           {% if vars.size == 0 %}
