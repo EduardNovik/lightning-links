@@ -156,13 +156,13 @@ variantButtons.forEach(function (button) {
     const visibleBuyBtn = document.querySelector(".visible-buy-btn");
 
     if (isSoldout && isActive) {
-      hiddenBuyBtn.classList.add("block");
       hiddenBuyBtn.classList.remove("hidden");
+      hiddenBuyBtn.classList.add("block");
       visibleBuyBtn.classList.remove("block");
       visibleBuyBtn.classList.add("hidden");
     } else {
-      hiddenBuyBtn.classList.remove("block");
       hiddenBuyBtn.classList.add("hidden");
+      hiddenBuyBtn.classList.remove("block");
       visibleBuyBtn.classList.add("block");
       visibleBuyBtn.classList.remove("hidden");
     }
