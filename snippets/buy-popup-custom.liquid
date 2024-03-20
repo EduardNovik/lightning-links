@@ -17,13 +17,13 @@
         "name": "{{ product.vendor | escape }}"
       },
       "offers": {
-        "@type": "Offer",
-        "availability": "{% if product.variants | where: 'available', true | size > 0 %} InStock{% else %}OutOfStock{% endif %}",
-        "price": "{{ product.price | money_without_currency }}",
-        "priceCurrency": "{{ shop.currency }}",
-        "url": "{{ shop.url }} {{ product.url }}"
-      }
+      "@type": "Offer",
+      "availability": "{% assign has_available_variant = false %}{% for variant in product.variants %}{% if variant.available %}{% assign has_available_variant = true %}{% endif %}{% endfor %}{% if has_available_variant %}InStock{% else %}OutOfStock{% endif %}",
+      "price": "{{ product.price | money_without_currency }}",
+      "priceCurrency": "{{ shop.currency }}",
+      "url": "{{ shop.url }} {{ product.url }}"
     }
+  }
 </script>
 
 
