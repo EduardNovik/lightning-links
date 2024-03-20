@@ -172,6 +172,9 @@
         action="{{ routes.cart_url }}"
         method="post"
         novalidate>
+        {% render 'button__submit-custom'
+          , type: 'secondary'
+          , price: product.price %}
         <div>
           <div class="col-12 col-md start end-md checkout__button unflex">
             {% if settings.ajaxType == "disabled" %}
@@ -184,6 +187,8 @@
                 , class: 'button--cart__update flex justify-center items-center w-full gap-2 py-4 px-3 bg-black hover:bg-yellow text-white' %}
             {% endif %}
             {% render 'button__submit-custom'
+ type: 'secondary'
+              , price: product.price
               , text: tran_checkout
               , name: 'checkout'
               , class: 'flex justify-center items-center w-full gap-2 py-4 px-3 bg-black hover:bg-yellow text-white'
