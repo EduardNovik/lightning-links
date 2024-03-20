@@ -4,7 +4,7 @@
       "@type": "Product",
       "name": "{{ product.title |escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:                                                                                                {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:                                                                                           {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -204,10 +204,7 @@
         </p>
 
       </div>
-
-      <p data-store-availabilities="{{product.id}}">{{ current_variant.available }}</p>
-
-      <div class="visible-buy-btn">
+        <div class="visible-buy-btn">
         {% form 'product'
               , product %}
               {% render 'block__product-page--atc-custom'
@@ -226,7 +223,6 @@
                 , class: ""
               %}
       </div>
-
 
       {% comment %} {% for product_option in product.options_with_values %}
         {% assign optix = 'option' | append: product_option.position %}
