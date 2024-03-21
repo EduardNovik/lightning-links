@@ -156,15 +156,11 @@ variantButtons.forEach(function (button) {
     const visibleBuyBtn = document.querySelector(".visible-buy-btn");
 
     if (isSoldout && isActive) {
-      hiddenBuyBtn.classList.remove("hidden");
-      hiddenBuyBtn.classList.add("block");
-      visibleBuyBtn.classList.remove("block");
-      visibleBuyBtn.classList.add("hidden");
+      hiddenBuyBtn.style.display = "block";
+      visibleBuyBtn.style.display = "none";
     } else {
-      hiddenBuyBtn.classList.add("hidden");
-      hiddenBuyBtn.classList.remove("block");
-      visibleBuyBtn.classList.add("block");
-      visibleBuyBtn.classList.remove("hidden");
+      visibleBuyBtn.style.display = "block";
+      hiddenBuyBtn.style.display = "none";
     }
   });
 });
