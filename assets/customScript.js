@@ -146,6 +146,34 @@ swatchButtonsElement.forEach((button) => {
   });
 });
 
+const carBodyModalElement = document.querySelector(".car-body-modal");
+const variantButtonsElement = document.querySelectorAll(".variant-btn");
+variantButtonsElement.forEach((button) => {
+  button.addEventListener("click", function () {
+    const activeOptionValue = this.getAttribute("data-swatch-option");
+    switch (activeOptionValue) {
+      case "MILD":
+        carBodyElement.classList.add("car-body-modal-mild");
+        console.log(carBodyElement);
+        console.log("MILD");
+        break;
+      case "MEDIUM":
+        carBodyElement.classList.add("car-body-modal-medium");
+        console.log(carBodyElement);
+        console.log("MEDIUM");
+
+        break;
+      case "STANCE":
+        carBodyElement.style.removeProperty("margin-bottom-stance");
+        console.log(carBodyElement);
+        console.log("STANCE");
+        break;
+      default:
+        break;
+    }
+  });
+});
+
 // const variantButtonsElement = document.querySelectorAll(".variant-btn");
 // variantButtonsElement.forEach((button) => {
 //   button.addEventListener("click", function () {
