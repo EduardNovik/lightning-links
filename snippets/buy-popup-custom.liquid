@@ -13,33 +13,33 @@
 
     <div class="bg-[#ECEFF3]">
       <div class="relative flex justify-center items-center mb-10 w-full max-w-[550px] m-auto h-[300px]">
-        {% comment %} {% for image in product.images %}
-                                                  <div class="absolute inset-0 flex justify-center items-center car-body-modal">
-                                                    {% if forloop.index == 2 %}
-                                                      {% render 'image'
-                                                        , size: '900x'
-                                                        , src: image.src
-                                                        , alt: image.alt
-                                                        , class: 'w-[80%]' %}
-                                                    {% endif %}
-                                                  </div>
-                                                  <div class="absolute flex justify-center items-center inset-0 car-wheels-modal">
-                                                    {% if forloop.index == 3 %}
-                                                      {% render 'image'
-                                                        , size: '900x'
-                                                        , src: image.src
-                                                        , alt: image.alt
-                                                        , class: 'w-[80%]' %}
-                                                    {% endif %}
-                                                  </div>
-                                        {% endfor %} {% endcomment %}
+        {% for image in product.images %}
+          <div class="absolute inset-0 flex justify-center items-center car-body-modal">
+            {% if forloop.index == 2 %}
+              {% render 'image'
+                , size: '900x'
+                , src: image.src
+                , alt: image.alt
+                , class: 'w-[80%]' %}
+            {% endif %}
+          </div>
+          <div class="absolute flex justify-center items-center inset-0 car-wheels-modal">
+            {% if forloop.index == 3 %}
+              {% render 'image'
+                , size: '900x'
+                , src: image.src
+                , alt: image.alt
+                , class: 'w-[80%]' %}
+            {% endif %}
+          </div>
+        {% endfor %}
 
-        <div class="absolute inset-0 flex justify-center items-center car-body-modal">
-          1
-        </div>
-        <div class="absolute flex justify-center items-center inset-0 car-wheels-modal">
-          2
-        </div>
+      {% comment %} <div class="absolute inset-0 flex justify-center items-center car-body-modal">
+                  1
+                </div>
+                <div class="absolute flex justify-center items-center inset-0 car-wheels-modal">
+                  2
+              </div> {% endcomment %}
 
       </div>
 
@@ -201,6 +201,3 @@
 
   </div>
 </div>
-
-
-
