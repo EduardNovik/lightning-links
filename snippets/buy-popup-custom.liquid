@@ -12,17 +12,27 @@
     </div>
 
     <div class="bg-[#ECEFF3]">
-      <div class="flex justify-center items-center mb-10">
+        <div class="flex justify-center items-center w-full relative">
         {% for image in product.images %}
-          <div class="w-[80%]">
+            <div class="image-container absolute z-20 w-[65%]">
+            {% if forloop.index == 2 %}\
             {% render 'image'
-              , size: '900x'
-              , src: image.src
-              , alt: image.alt
-              , class: imageClass %}
-          </div>
+                , size: '900x'
+                , src: image.src
+                , alt: image.alt
+                , class: 'car-body w-[80%]' %}
+            {% endif %}
+            {% if forloop.index == 3 %}
+            {% render 'image'
+                , size: '900x'
+                , src: image.src
+                , alt: image.alt
+                , class:'w-[80%] car-wheels'  %}
+            </div>
+            {% endif %}
         {% endfor %}
-      </div>
+         </div>
+  
 
       {% comment %} ----- {% endcomment %}
       {% if product.variants.size > 1 %}
