@@ -12,26 +12,17 @@
     </div>
 
     <div class="bg-[#ECEFF3]">
-      <div class="flex justify-center items-center w-full">
+      <div class="flex justify-center items-center mb-10">
         {% for image in product.images %}
-            <div class="image-container z-20 w-[65%]">
-            {% if forloop.index == 2 %}\
+          <div class="w-[80%]">
             {% render 'image'
-                , size: '900x'
-                , src: image.src
-                , alt: image.alt
-                , class: 'car-body w-[80%]' %}
-            {% endif %}
-            {% if forloop.index == 3 %}
-            {% render 'image'
-                , size: '900x'
-                , src: image.src
-                , alt: image.alt
-                , class:'w-[80%] car-wheels'  %}
-            </div>
-            {% endif %}
+              , size: '900x'
+              , src: image.src
+              , alt: image.alt
+              , class: imageClass %}
+          </div>
         {% endfor %}
-         </div>
+      </div>
 
       {% comment %} ----- {% endcomment %}
       {% if product.variants.size > 1 %}
@@ -194,28 +185,28 @@
 
 
 {% comment %} <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    const variantButtons = document.querySelectorAll(".variant-btn");
-    console.log(variantButtons);
-
-    variantButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-    const isSoldout = button.hasAttribute("data-swatch-soldout");
-    const isActive = button.classList.contains("swatch--active");
-    const hiddenBuyBtn = document.querySelector(".hidden-buy-btn");
-    const visibleBuyBtn = document.querySelector(".visible-buy-btn");
-    console.log(isSoldout, isActive, hiddenBuyBtn, visibleBuyBtn);
-
-    if (isSoldout && isActive) {
-        hiddenBuyBtn.style.display = "block";
-        visibleBuyBtn.style.display = "none";
-        console.log("Sold out");
-    } else {
-        visibleBuyBtn.style.display = "block";
-        hiddenBuyBtn.style.display = "none";
-        console.log("Not sold out");
-    }
-    });
-    });
-    });
+      document.addEventListener("DOMContentLoaded", function() {
+      const variantButtons = document.querySelectorAll(".variant-btn");
+      console.log(variantButtons);
+  
+      variantButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+      const isSoldout = button.hasAttribute("data-swatch-soldout");
+      const isActive = button.classList.contains("swatch--active");
+      const hiddenBuyBtn = document.querySelector(".hidden-buy-btn");
+      const visibleBuyBtn = document.querySelector(".visible-buy-btn");
+      console.log(isSoldout, isActive, hiddenBuyBtn, visibleBuyBtn);
+  
+      if (isSoldout && isActive) {
+          hiddenBuyBtn.style.display = "block";
+          visibleBuyBtn.style.display = "none";
+          console.log("Sold out");
+      } else {
+          visibleBuyBtn.style.display = "block";
+          hiddenBuyBtn.style.display = "none";
+          console.log("Not sold out");
+      }
+      });
+      });
+      });
 </script> {% endcomment %}
