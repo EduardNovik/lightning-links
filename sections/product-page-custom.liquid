@@ -4,7 +4,7 @@
       "@type": "Product",
       "name": "{{ product.title |escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:                                                                                             {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:                                                                                                {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -225,25 +225,27 @@
   <div id="bgElement" class="relative overflow-hidden mb-10">
     <div class="curtain"></div>
     <p class="inch-value text-xl z-30"></p>
-    <div class="flex justify-center items-center w-full relative">
-      {% comment %} {% for image in product.images %}
-                                  <div class="image-container absolute z-20 w-[65%]">
-                                  {% if forloop.index == 2 %}\
-                                  {% render 'image'
-                                    , size: '900x'
-                                    , src: image.src
-                                    , alt: image.alt
-                                    , class: 'car-body' %}
-                                  {% endif %}
-                                  {% if forloop.index == 3 %}
-                                  {% render 'image'
-                                    , size: '900x'
-                                    , src: image.src
-                                    , alt: image.alt
-                                    , class: imageClass %}
-                                  </div>
-                                  {% endif %}
-                {% endfor %} {% endcomment %}
+    <div class="relative flex justify-center items-center mb-10 w-full m-auto h-[300px]">
+      {% for image in product.images %}
+        <div class="absolute inset-0 flex justify-center items-center car-body">
+          {% if forloop.index == 2 %}
+            {% render 'image'
+              , size: '900x'
+              , src: image.src
+              , alt: image.alt
+              , class: 'w-[80%]' %}
+          {% endif %}
+        </div>
+        <div class="absolute flex justify-center items-center inset-0 car-wheels">
+          {% if forloop.index == 3 %}
+            {% render 'image'
+              , size: '900x'
+              , src: image.src
+              , alt: image.alt
+              , class: 'w-[80%]' %}
+          {% endif %}
+        </div>
+      {% endfor %}
     </div>
   </div>
 
