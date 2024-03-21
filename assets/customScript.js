@@ -121,15 +121,19 @@ swatchButtonsElement.forEach((button) => {
         inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
         curtain.style.transform = "translateY(30%)";
         if (carBodyElement) {
-          carBodyElement.style.transform = "translateY(5%)";
+          // carBodyElement.style.transform = "translateY(5%)";
           // carBodyElement.style.marginBottom = "10%";
+          carBodyElement.style.removeProperty("margin-top");
+          carBodyElement.style.marginTop = "5%";
         }
         break;
       case "MEDIUM":
         inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
         curtain.style.transform = "translateY(50%)";
         if (carBodyElement) {
-          carBodyElement.style.transform = "translateY(2%)";
+          // carBodyElement.style.transform = "translateY(2%)";
+          carBodyElement.style.removeProperty("margin-top");
+          carBodyElement.style.marginTop = "10%";
         }
 
         break;
@@ -138,8 +142,8 @@ swatchButtonsElement.forEach((button) => {
         curtain.style.transform = "translateY(80%)";
         if (carBodyElement) {
           // carBodyElement.style.transform = "translateY(1px)";
-          // carBodyElement.style.marginTop.remove()
-          // carBodyElement.style.marginTop = '12%'
+          carBodyElement.style.removeProperty("margin-top");
+          carBodyElement.style.marginTop = "12%";
         }
         break;
       default:
