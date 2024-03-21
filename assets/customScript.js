@@ -103,7 +103,6 @@ switch (activeAtributeValue) {
   case "MEDIUM":
     inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
     curtain.style.transform = "translateY(50%)";
-
     break;
 
   case "STANCE":
@@ -122,14 +121,15 @@ swatchButtonsElement.forEach((button) => {
         inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
         curtain.style.transform = "translateY(30%)";
         if (carBodyElement) {
-          carBodyElement.style.transform = "translateY(20px)";
+          carBodyElement.style.transform = "translateY(5%)";
+          // carBodyElement.style.marginBottom = "10%";
         }
         break;
       case "MEDIUM":
         inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
         curtain.style.transform = "translateY(50%)";
         if (carBodyElement) {
-          carBodyElement.style.transform = "translateY(15px)";
+          carBodyElement.style.transform = "translateY(2%)";
         }
 
         break;
@@ -137,7 +137,9 @@ swatchButtonsElement.forEach((button) => {
         inchValueElement.innerHTML = " — Stance lower <b>- 3 inch</b>";
         curtain.style.transform = "translateY(80%)";
         if (carBodyElement) {
-          carBodyElement.style.transform = "translateY(10px)";
+          // carBodyElement.style.transform = "translateY(1px)";
+          // carBodyElement.style.marginTop.remove()
+          // carBodyElement.style.marginTop = '12%'
         }
         break;
       default:
@@ -145,6 +147,8 @@ swatchButtonsElement.forEach((button) => {
     }
   });
 });
+
+// ------modal
 
 const carBodyModalElement = document.querySelector(".car-body-modal");
 const variantButtonsElement = document.querySelectorAll(".variant-btn");
