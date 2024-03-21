@@ -14,25 +14,25 @@
     <div class="bg-[#ECEFF3]">
       <div class="relative flex justify-center items-center mb-10 w-full max-w-[550px] m-auto h-[300px]">
         {% comment %} {% for image in product.images %}
-                                        <div class="absolute inset-0 flex justify-center items-center car-body-modal">
-                                          {% if forloop.index == 2 %}
-                                            {% render 'image'
-                                              , size: '900x'
-                                              , src: image.src
-                                              , alt: image.alt
-                                              , class: 'w-[80%]' %}
-                                          {% endif %}
-                                        </div>
-                                        <div class="absolute flex justify-center items-center inset-0 car-wheels-modal">
-                                          {% if forloop.index == 3 %}
-                                            {% render 'image'
-                                              , size: '900x'
-                                              , src: image.src
-                                              , alt: image.alt
-                                              , class: 'w-[80%]' %}
-                                          {% endif %}
-                                        </div>
-                                {% endfor %} {% endcomment %}
+                                                  <div class="absolute inset-0 flex justify-center items-center car-body-modal">
+                                                    {% if forloop.index == 2 %}
+                                                      {% render 'image'
+                                                        , size: '900x'
+                                                        , src: image.src
+                                                        , alt: image.alt
+                                                        , class: 'w-[80%]' %}
+                                                    {% endif %}
+                                                  </div>
+                                                  <div class="absolute flex justify-center items-center inset-0 car-wheels-modal">
+                                                    {% if forloop.index == 3 %}
+                                                      {% render 'image'
+                                                        , size: '900x'
+                                                        , src: image.src
+                                                        , alt: image.alt
+                                                        , class: 'w-[80%]' %}
+                                                    {% endif %}
+                                                  </div>
+                                        {% endfor %} {% endcomment %}
 
         <div class="absolute inset-0 flex justify-center items-center car-body-modal">
           1
@@ -217,9 +217,7 @@
             console.log("MILD");
             break;
         case "MEDIUM":
-            carBodyElement.style.marginBottom = "18%";
             carBodyElement.classList.add("car-body-modal-medium");
-  
             console.log(carBodyElement);
             console.log("MEDIUM");
     
@@ -240,28 +238,28 @@
 
 
 {% comment %} <script>
-                                                      document.addEventListener("DOMContentLoaded", function() {
-                                                      const variantButtons = document.querySelectorAll(".variant-btn");
-                                                      console.log(variantButtons);
-                                                      
-                                                      variantButtons.forEach(function (button) {
-                                                      button.addEventListener("click", function () {
-                                                      const isSoldout = button.hasAttribute("data-swatch-soldout");
-                                                      const isActive = button.classList.contains("swatch--active");
-                                                      const hiddenBuyBtn = document.querySelector(".hidden-buy-btn");
-                                                      const visibleBuyBtn = document.querySelector(".visible-buy-btn");
-                                                      console.log(isSoldout, isActive, hiddenBuyBtn, visibleBuyBtn);
-                                                      
-                                                      if (isSoldout && isActive) {
-                                                      hiddenBuyBtn.style.display = "block";
-                                                      visibleBuyBtn.style.display = "none";
-                                                      console.log("Sold out");
-                                                      } else {
-                                                      visibleBuyBtn.style.display = "block";
-                                                      hiddenBuyBtn.style.display = "none";
-                                                      console.log("Not sold out");
-                                                      }
-                                                      });
-                                                      });
-                                                      });
+                                                        document.addEventListener("DOMContentLoaded", function() {
+                                                        const variantButtons = document.querySelectorAll(".variant-btn");
+                                                        console.log(variantButtons);
+                                                        
+                                                        variantButtons.forEach(function (button) {
+                                                        button.addEventListener("click", function () {
+                                                        const isSoldout = button.hasAttribute("data-swatch-soldout");
+                                                        const isActive = button.classList.contains("swatch--active");
+                                                        const hiddenBuyBtn = document.querySelector(".hidden-buy-btn");
+                                                        const visibleBuyBtn = document.querySelector(".visible-buy-btn");
+                                                        console.log(isSoldout, isActive, hiddenBuyBtn, visibleBuyBtn);
+                                                        
+                                                        if (isSoldout && isActive) {
+                                                        hiddenBuyBtn.style.display = "block";
+                                                        visibleBuyBtn.style.display = "none";
+                                                        console.log("Sold out");
+                                                        } else {
+                                                        visibleBuyBtn.style.display = "block";
+                                                        hiddenBuyBtn.style.display = "none";
+                                                        console.log("Not sold out");
+                                                        }
+                                                        });
+                                                        });
+                                                        });
 </script> {% endcomment %}
