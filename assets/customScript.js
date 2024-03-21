@@ -121,19 +121,18 @@ swatchButtonsElement.forEach((button) => {
         inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
         curtain.style.transform = "translateY(30%)";
         if (carBodyElement) {
-          // carBodyElement.style.transform = "translateY(5%)";
-          // carBodyElement.style.marginBottom = "10%";
-          carBodyElement.style.removeProperty("margin-top");
-          carBodyElement.style.marginTop = "12%";
+          const currentMargin = parseFloat(carBodyElement.style.marginTop) || 0;
+          const newCarBodyMargin = currentMargin - 2;
+          carBodyElement.style.marginTop = newCarBodyMargin + "%";
         }
         break;
       case "MEDIUM":
         inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
         curtain.style.transform = "translateY(50%)";
         if (carBodyElement) {
-          // carBodyElement.style.transform = "translateY(2%)";
-          carBodyElement.style.removeProperty("margin-top");
-          carBodyElement.style.marginTop = "13%";
+          const currentMargin = parseFloat(carBodyElement.style.marginTop) || 0;
+          const newCarBodyMargin = currentMargin - 1;
+          carBodyElement.style.marginTop = newCarBodyMargin + "%";
         }
 
         break;
@@ -141,7 +140,6 @@ swatchButtonsElement.forEach((button) => {
         inchValueElement.innerHTML = " — Stance lower <b>- 3 inch</b>";
         curtain.style.transform = "translateY(80%)";
         if (carBodyElement) {
-          // carBodyElement.style.transform = "translateY(1px)";
           carBodyElement.style.removeProperty("margin-top");
           carBodyElement.style.marginTop = "14%";
         }
