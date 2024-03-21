@@ -124,7 +124,7 @@ swatchButtonsElement.forEach((button) => {
           // carBodyElement.style.transform = "translateY(5%)";
           // carBodyElement.style.marginBottom = "10%";
           carBodyElement.style.removeProperty("margin-top");
-          carBodyElement.style.marginTop = "10%";
+          carBodyElement.style.marginTop = "12%";
         }
         break;
       case "MEDIUM":
@@ -133,7 +133,7 @@ swatchButtonsElement.forEach((button) => {
         if (carBodyElement) {
           // carBodyElement.style.transform = "translateY(2%)";
           carBodyElement.style.removeProperty("margin-top");
-          carBodyElement.style.marginTop = "12%";
+          carBodyElement.style.marginTop = "13%";
         }
 
         break;
