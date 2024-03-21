@@ -214,6 +214,71 @@ swatchButtonsElement.forEach((button) => {
   });
 });
 
+window.addEventListener(
+  "resize",
+  function (event) {
+    const activeAtributeValue =
+      swatchActiveButtonElement.getAttribute("data-swatch-option");
+    const screenWidth = window.innerWidth;
+
+    switch (activeAtributeValue) {
+      case "MILD":
+        inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
+        curtain.style.transform = "translateY(30%)";
+        if (carBodyElement) {
+          carBodyElement.style.removeProperty("margin-top");
+          carBodyElement.style.marginTop = "12%";
+          if (screenWidth >= 1280) {
+            carBodyElement.style.removeProperty("margin-top");
+            carBodyElement.style.marginTop = "18%";
+          }
+          if (screenWidth >= 1536) {
+            carBodyElement.style.removeProperty("margin-top");
+            carBodyElement.style.marginTop = "20%";
+          }
+        }
+        break;
+
+      case "MEDIUM":
+        inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
+        curtain.style.transform = "translateY(50%)";
+        if (carBodyElement) {
+          carBodyElement.style.removeProperty("margin-top");
+          carBodyElement.style.marginTop = "13%";
+          if (screenWidth >= 1280) {
+            carBodyElement.style.removeProperty("margin-top");
+            carBodyElement.style.marginTop = "19%";
+          }
+          if (screenWidth >= 1536) {
+            carBodyElement.style.removeProperty("margin-top");
+            carBodyElement.style.marginTop = "21%";
+          }
+        }
+        break;
+
+      case "STANCE":
+        inchValueElement.innerHTML = " — Stance lower <b>- 3 inch</b>";
+        curtain.style.transform = "translateY(80%)";
+        if (carBodyElement) {
+          carBodyElement.style.removeProperty("margin-top");
+          carBodyElement.style.marginTop = "14%";
+          if (screenWidth >= 1280) {
+            carBodyElement.style.removeProperty("margin-top");
+            carBodyElement.style.marginTop = "20%";
+          }
+          if (screenWidth >= 1536) {
+            carBodyElement.style.removeProperty("margin-top");
+            carBodyElement.style.marginTop = "22%";
+          }
+        }
+        break;
+      default:
+        break;
+    }
+  },
+  true
+);
+
 // ------modal
 
 const carBodyModalElement = document.querySelector(".car-body-modal");
