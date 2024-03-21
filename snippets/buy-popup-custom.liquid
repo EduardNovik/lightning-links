@@ -139,8 +139,7 @@
                           data-swatch-index="{{product.id}}-{{index}}"
                           {% if vars.size == 0 %}
                           data-swatch-soldout="true"
-                          {% endif %}
-                          style="{% if vars.size == 0 %} cursor: not-allowed; pointer-events: none;{% endif %}"></span>
+                          {% endif %}></span>
                       {% else %}
                         <span
                           class="variant-btn w-full bg-white border-2 border-grigio-40"
@@ -148,8 +147,7 @@
                           data-swatch-index="{{product.id}}-{{index}}"
                           {% if vars.size == 0 %}
                           data-swatch-soldout="true"
-                          {% endif %}
-                          style="{% if vars.size == 0 %}cursor: not-allowed; pointer-events: none;{% endif %}">{{ value | escape }}</span>
+                          {% endif %}>{{ value | escape }}</span>
                       {% endif %}
                     {% endfor %}
                 {% endcase %}

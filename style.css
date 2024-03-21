@@ -431,3 +431,8 @@ body::-webkit-scrollbar {
 .mobile-submenu-label {
   padding-left: 10px;
 }
+
+.variant-btn[data-swatch-soldout="true"] {
+  pointer-events: none;
+  cursor: not-allowed;
+}
