@@ -277,6 +277,21 @@ window.addEventListener(
         }
         break;
       default:
+        if (carBodyElement) {
+          if (screenWidth < 1280) {
+            carBodyElement.style.removeProperty("margin-top");
+            carBodyElement.style.marginTop = "13%";
+          }
+
+          if (screenWidth >= 1280) {
+            carBodyElement.style.removeProperty("margin-top");
+            carBodyElement.style.marginTop = "19%";
+          }
+          if (screenWidth >= 1536) {
+            carBodyElement.style.removeProperty("margin-top");
+            carBodyElement.style.marginTop = "21%";
+          }
+        }
         break;
     }
   },
