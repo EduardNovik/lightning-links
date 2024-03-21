@@ -658,6 +658,10 @@ video {
   top: 1.25rem;
 }
 
+.top-\[calc\(50\%-10px\)\] {
+  top: calc(50% - 10px);
+}
+
 .-z-10 {
   z-index: -10;
 }
