@@ -12,6 +12,7 @@
     </div>
 
     <div class="bg-[#ECEFF3]">
+      <div class="flex justify-center items-center mb-10">
         <div class="flex justify-center items-center w-full relative">
         {% for image in product.images %}
             <div class="image-container absolute z-20 w-[65%]">
@@ -32,7 +33,7 @@
             {% endif %}
         {% endfor %}
          </div>
-  
+      </div>
 
       {% comment %} ----- {% endcomment %}
       {% if product.variants.size > 1 %}
