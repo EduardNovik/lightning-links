@@ -153,12 +153,14 @@ variantButtonsElement.forEach((button) => {
     switch (activeOptionValue) {
       case "MILD":
         carBodyElement.style.transform = "translateY(30%)";
+        carBodyElement.style.marginBottom = "10%";
         break;
       case "MEDIUM":
         carBodyElement.style.transform = "translateY(50%)";
+        carBodyElement.style.marginBottom = "20%";
         break;
       case "STANCE":
-        carBodyElement.style.transform = "translateY(80%)";
+        console.log("STANCE");
         break;
       default:
         break;
