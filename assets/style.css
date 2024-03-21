@@ -1876,6 +1876,11 @@ body::-webkit-scrollbar {
   padding-left: 10px;
 }
 
+.variant-btn[data-swatch-soldout="true"] {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
 .before\:absolute::before {
   content: var(--tw-content);
   position: absolute;
