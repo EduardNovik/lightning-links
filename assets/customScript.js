@@ -224,7 +224,9 @@ window.addEventListener(
     const screenWidth = window.innerWidth;
     console.log(activeAttributeValue);
 
-    switch (activeAtributeValue) {
+    switch (
+      activeAttributeValue // Corrected the variable name here
+    ) {
       case "MILD":
         if (carBodyElement) {
           if (screenWidth < 1280) {
