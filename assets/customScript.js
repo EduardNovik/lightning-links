@@ -122,14 +122,14 @@ swatchButtonsElement.forEach((button) => {
         inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
         curtain.style.transform = "translateY(30%)";
         if (carBodyElement) {
-          curtain.style.transform = "translateY(20px)";
+          carBodyElement.style.transform = "translateY(20px)";
         }
         break;
       case "MEDIUM":
         inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
         curtain.style.transform = "translateY(50%)";
         if (carBodyElement) {
-          curtain.style.transform = "translateY(15px)";
+          carBodyElement.style.transform = "translateY(15px)";
         }
 
         break;
@@ -137,7 +137,7 @@ swatchButtonsElement.forEach((button) => {
         inchValueElement.innerHTML = " — Stance lower <b>- 3 inch</b>";
         curtain.style.transform = "translateY(80%)";
         if (carBodyElement) {
-          curtain.style.transform = "translateY(10px)";
+          carBodyElement.style.transform = "translateY(10px)";
         }
         break;
       default:
