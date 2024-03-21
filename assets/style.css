@@ -841,10 +841,6 @@ video {
   width: 24rem;
 }
 
-.w-\[550px\] {
-  width: 550px;
-}
-
 .w-\[65\%\] {
   width: 65%;
 }
@@ -880,6 +876,10 @@ video {
 
 .max-w-80 {
   max-width: 20rem;
+}
+
+.max-w-\[550px\] {
+  max-width: 550px;
 }
 
 .max-w-\[750px\] {
@@ -2019,6 +2019,10 @@ body::-webkit-scrollbar {
 
   .sm\:mb-28 {
     margin-bottom: 7rem;
+  }
+
+  .sm\:h-auto {
+    height: auto;
   }
 
   .sm\:grid-cols-2 {
