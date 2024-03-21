@@ -145,3 +145,25 @@ swatchButtonsElement.forEach((button) => {
     }
   });
 });
+
+// const carBodyElement = document.querySelector(".car-body");
+// const variantButtonsElement = document.querySelectorAll(".variant-btn");
+// variantButtonsElement.forEach((button) => {
+// button.addEventListener("click", function () {
+//   const activeOptionValue = this.getAttribute("data-swatch-option");
+//   switch (activeOptionValue) {
+//     case "MILD":
+
+//       carBodyElement.style.transform = "translateY(30%)";
+//       break;
+//     case "MEDIUM":
+//       carBodyElement.style.transform = "translateY(50%)";
+//       break;
+//     case "STANCE":
+//       carBodyElement.style.transform = "translateY(80%)";
+//       break;
+//     default:
+//       break;
+//   }
+// });
+// });
