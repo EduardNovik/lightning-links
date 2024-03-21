@@ -217,10 +217,12 @@ swatchButtonsElement.forEach((button) => {
 window.addEventListener(
   "resize",
   function () {
-    const activeAtributeValue =
-      swatchActiveButtonElement.getAttribute("data-swatch-option");
+    const swatchActiveButtonElementWhileResize =
+      document.querySelector(".active"); // Adjust the selector as needed
+    const activeAttributeValue =
+      swatchActiveButtonElementWhileResize.getAttribute("data-swatch-option");
     const screenWidth = window.innerWidth;
-    console.log(activeAtributeValue);
+    console.log(activeAttributeValue);
 
     switch (activeAtributeValue) {
       case "MILD":
