@@ -147,6 +147,7 @@ swatchButtonsElement.forEach((button) => {
 });
 
 const variantButtons = document.querySelectorAll(".variant-btn");
+console.log(variantButtons);
 
 variantButtons.forEach(function (button) {
   button.addEventListener("click", function () {
