@@ -41,3 +41,8 @@ productBgElement.style.transition = "opacity 0.5s ease"; */
   transform: translateY(0); /* Start fully covering the content */
   z-index: 20; /* Ensure it's above the product images */
 }
+
+/* .variant-btn[data-swatch-soldout="true"] {
+  pointer-events: none;
+  cursor: not-allowed;
+} */

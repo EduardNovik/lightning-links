@@ -736,10 +736,6 @@ video {
   margin-bottom: 1.25rem;
 }
 
-.mb-\[16\%\] {
-  margin-bottom: 16%;
-}
-
 .mb-\[50px\] {
   margin-bottom: 50px;
 }
@@ -1900,10 +1896,9 @@ body::-webkit-scrollbar {
   padding-left: 10px;
 }
 
-/* .variant-btn[data-swatch-soldout="true"] {
-  pointer-events: none;
-  cursor: not-allowed;
-} */
+.car-wheels-modal {
+  margin-bottom: 16px;
+}
 
 .before\:absolute::before {
   content: var(--tw-content);

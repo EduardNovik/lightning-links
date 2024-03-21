@@ -432,7 +432,6 @@ body::-webkit-scrollbar {
   padding-left: 10px;
 }
 
-/* .variant-btn[data-swatch-soldout="true"] {
-  pointer-events: none;
-  cursor: not-allowed;
-} */
+.car-wheels-modal {
+  margin-bottom: 16px;
+}
