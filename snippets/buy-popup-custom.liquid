@@ -191,28 +191,26 @@
         </p>
 
       </div>
-
-      <div class="visible-buy-btn">
         {% form 'product'
           , product %}
           {% render 'block__product-page--atc-custom'
             , product: product
             , form: form
-            , class: ""
+            , class: "visible-buy-btn"
           %}
         {% endform %}
-      </div>
 
-      <div class="hidden-buy-btn">
+
+
         {% form 'product'
           , product %}
           {% render 'block__product-page--atc-custom'
             , product: false
             , form: form
-            , class: ""
+            , class: "hidden-buy-btn"
           %}
         {% endform %}
-      </div>
+
 
 
     </div>
