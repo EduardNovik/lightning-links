@@ -116,23 +116,40 @@ switch (activeAtributeValue) {
 swatchButtonsElement.forEach((button) => {
   button.addEventListener("click", function () {
     const activeOptionValue = this.getAttribute("data-swatch-option");
+    const screenWidth = window.innerWidth;
+
     switch (activeOptionValue) {
       case "MILD":
         inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
         curtain.style.transform = "translateY(30%)";
         if (carBodyElement) {
-          const currentMargin = parseFloat(carBodyElement.style.marginTop) || 0;
-          const newCarBodyMargin = currentMargin - 2;
-          carBodyElement.style.marginTop = newCarBodyMargin + "%";
+          carBodyElement.style.removeProperty("margin-top");
+          carBodyElement.style.marginTop = "12%";
+
+          if (screenWidth >= 1280) {
+            carBodyElement.style.removeProperty("margin-top");
+            carBodyElement.style.marginTop = "18%";
+          }
+          if (screenWidth >= 1536) {
+            carBodyElement.style.removeProperty("margin-top");
+            carBodyElement.style.marginTop = "20%";
+          }
         }
         break;
       case "MEDIUM":
         inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
         curtain.style.transform = "translateY(50%)";
         if (carBodyElement) {
-          const currentMargin = parseFloat(carBodyElement.style.marginTop) || 0;
-          const newCarBodyMargin = currentMargin - 1;
-          carBodyElement.style.marginTop = newCarBodyMargin + "%";
+          carBodyElement.style.removeProperty("margin-top");
+          carBodyElement.style.marginTop = "13%";
+          if (screenWidth >= 1280) {
+            carBodyElement.style.removeProperty("margin-top");
+            carBodyElement.style.marginTop = "19%";
+          }
+          if (screenWidth >= 1536) {
+            carBodyElement.style.removeProperty("margin-top");
+            carBodyElement.style.marginTop = "21%";
+          }
         }
 
         break;
@@ -142,6 +159,14 @@ swatchButtonsElement.forEach((button) => {
         if (carBodyElement) {
           carBodyElement.style.removeProperty("margin-top");
           carBodyElement.style.marginTop = "14%";
+          if (screenWidth >= 1280) {
+            carBodyElement.style.removeProperty("margin-top");
+            carBodyElement.style.marginTop = "20%";
+          }
+          if (screenWidth >= 1536) {
+            carBodyElement.style.removeProperty("margin-top");
+            carBodyElement.style.marginTop = "22%";
+          }
         }
         break;
       default:
