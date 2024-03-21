@@ -2,8 +2,9 @@
 {% assign s_type = settings.saleType | default: 'percent' %}
 
 <script>
+  document.addEventListener("DOMContentLoaded", function() {
     const variantButtons = document.querySelectorAll(".variant-btn");
-  console.log(variantButtons);
+    console.log(variantButtons);
   
   variantButtons.forEach(function (button) {
   button.addEventListener("click", function () {
@@ -22,6 +23,7 @@
       hiddenBuyBtn.style.display = "none";
       log("Not sold out");
     }
+  });
   });
   });
 </script>
