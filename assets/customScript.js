@@ -299,10 +299,10 @@ window.addEventListener(
 
 // ------modal
 
-const carBodyModalElement = document.querySelector(".car-body-modal");
 const variantButtonsElement = document.querySelectorAll(".variant-btn");
 variantButtonsElement.forEach((button) => {
   button.addEventListener("click", function () {
+    console.log("clicked");
     const activeOptionValue = this.getAttribute("data-swatch-option");
     switch (activeOptionValue) {
       case "MILD":
