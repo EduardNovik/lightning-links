@@ -1,6 +1,58 @@
 {% assign current_variant = product.selected_or_first_available_variant %}
 {% assign s_type = settings.saleType | default: 'percent' %}
 
+<script>
+const carBodyElement = document.querySelector(".car-body");
+const activeAtributeValue =
+  swatchActiveButtonElement.getAttribute("data-swatch-option");
+switch (activeAtributeValue) {
+  case "MILD":
+    curtain.style.transform = "translateY(30%)";
+    break;
+
+  case "MEDIUM":
+    curtain.style.transform = "translateY(50%)";
+
+    break;
+
+  case "STANCE":
+    curtain.style.transform = "translateY(80%)";
+    break;
+  default:
+    break;
+}
+
+swatchButtonsElement.forEach((button) => {
+  button.addEventListener("click", function () {
+    const activeOptionValue = this.getAttribute("data-swatch-option");
+    switch (activeOptionValue) {
+      case "MILD":
+
+        curtain.style.transform = "translateY(30%)";
+        // if (carBodyElement) {
+        //   curtain.style.transform = "translateY(20px)";
+        // }
+        break;
+      case "MEDIUM":
+        curtain.style.transform = "translateY(50%)";
+        // if (carBodyElement) {
+        //   curtain.style.transform = "translateY(15px)";
+        // }
+
+        break;
+      case "STANCE":
+        curtain.style.transform = "translateY(80%)";
+        // if (carBodyElement) {
+        //   curtain.style.transform = "translateY(10px)";
+        // }
+        break;
+      default:
+        break;
+    }
+  });
+});
+</script>
+
 
 <div id="buy-popup-{{ product.handle }}" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 items-center justify-center buy-popup-custom flex invisible">
   <div class="bg-white p-6 max-w-[760px] w-full mx-4">
