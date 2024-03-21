@@ -2,30 +2,30 @@
 {% assign s_type = settings.saleType | default: 'percent' %}
 
 {% comment %} <script>
-                          document.addEventListener("DOMContentLoaded", function() {
-                            const variantButtons = document.querySelectorAll(".variant-btn");
-                            console.log(variantButtons);
-                          
-                          variantButtons.forEach(function (button) {
-                          button.addEventListener("click", function () {
-                            const isSoldout = button.hasAttribute("data-swatch-soldout");
-                            const isActive = button.classList.contains("swatch--active");
-                            const hiddenBuyBtn = document.querySelector(".hidden-buy-btn");
-                            const visibleBuyBtn = document.querySelector(".visible-buy-btn");
-                            console.log(isSoldout, isActive, hiddenBuyBtn, visibleBuyBtn);
-                          
-                            if (isSoldout && isActive) {
-                              hiddenBuyBtn.style.display = "block";
-                              visibleBuyBtn.style.display = "none";
-                              console.log("Sold out");
-                            } else {
-                              visibleBuyBtn.style.display = "block";
-                              hiddenBuyBtn.style.display = "none";
-                              console.log("Not sold out");
-                            }
-                          });
-                          });
-                          });
+                                document.addEventListener("DOMContentLoaded", function() {
+                                  const variantButtons = document.querySelectorAll(".variant-btn");
+                                  console.log(variantButtons);
+                                
+                                variantButtons.forEach(function (button) {
+                                button.addEventListener("click", function () {
+                                  const isSoldout = button.hasAttribute("data-swatch-soldout");
+                                  const isActive = button.classList.contains("swatch--active");
+                                  const hiddenBuyBtn = document.querySelector(".hidden-buy-btn");
+                                  const visibleBuyBtn = document.querySelector(".visible-buy-btn");
+                                  console.log(isSoldout, isActive, hiddenBuyBtn, visibleBuyBtn);
+                                
+                                  if (isSoldout && isActive) {
+                                    hiddenBuyBtn.style.display = "block";
+                                    visibleBuyBtn.style.display = "none";
+                                    console.log("Sold out");
+                                  } else {
+                                    visibleBuyBtn.style.display = "block";
+                                    hiddenBuyBtn.style.display = "none";
+                                    console.log("Not sold out");
+                                  }
+                                });
+                                });
+                                });
 </script> {% endcomment %}
 
 <div id="buy-popup-{{ product.handle }}" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 items-center justify-center buy-popup-custom flex invisible">
@@ -132,22 +132,26 @@
                     {% for value in product_option.values %}
                       {% assign vars = avvars | where: optix, value %}
                       {% if colorArray contains product_option_lc or imageArray contains product_option_lc %}
-                        <span
-                          class="variant-btn lazyload swatch--color w-full bg-white border-2 border-grigio-40 {% if vars.size == 0 %}cursor-not-allowed pointer-events-none{% endif %}"
-                          {%- render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%}
-                          data-swatch-option="{{value| escape}}"
-                          data-swatch-index="{{product.id}}-{{index}}"
-                          {% if vars.size == 0 %}
-                          data-swatch-soldout="true"
-                          {% endif %}></span>
+                        <div class="{% if vars.size == 0 %}cursor-not-allowed{% endif %}">
+                          <span
+                            class="variant-btn lazyload swatch--color w-full bg-white border-2 border-grigio-40 {% if vars.size == 0 %}pointer-events-none{% endif %}"
+                            {%- render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%}
+                            data-swatch-option="{{value| escape}}"
+                            data-swatch-index="{{product.id}}-{{index}}"
+                            {% if vars.size == 0 %}
+                            data-swatch-soldout="true"
+                            {% endif %}></span>
+                        </div>
                       {% else %}
-                        <span
-                          class="variant-btn w-full bg-white border-2 border-grigio-40 {% if vars.size == 0 %} cursor-not-allowed pointer-events-none{% endif %}"
-                          data-swatch-option="{{value| escape}}"
-                          data-swatch-index="{{product.id}}-{{index}}"
-                          {% if vars.size == 0 %}
-                          data-swatch-soldout="true"
-                          {% endif %}>{{ value | escape }}</span>
+                        <div class="{% if vars.size == 0 %}cursor-not-allowed{% endif %}">
+                          <span
+                            class="variant-btn w-full bg-white border-2 border-grigio-40 {% if vars.size == 0 %}pointer-events-none{% endif %}"
+                            data-swatch-option="{{value| escape}}"
+                            data-swatch-index="{{product.id}}-{{index}}"
+                            {% if vars.size == 0 %}
+                            data-swatch-soldout="true"
+                            {% endif %}>{{ value | escape }}</span>
+                        </div>
                       {% endif %}
                     {% endfor %}
                 {% endcase %}
