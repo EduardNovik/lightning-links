@@ -143,8 +143,17 @@
                 </p>
                 
             </div>
+            <div class="visible-buy-btn">
+                {% form 'product'
+                    , product %}
+                    {% render 'block__product-page--atc-custom'
+                        , product: product
+                        , form: form
+                        , class: ""
+                    %}
+            </div>
 
-     <div class="visible-buy-btn">
+     {% comment %} <div class="visible-buy-btn">
                 {% form 'product'
                     , product %}
                     {% render 'block__product-page--atc-custom'
@@ -162,7 +171,7 @@
                         , form: form
                         , class: ""
                     %}
-            </div> 
+            </div>  {% endcomment %}
 
  
 
