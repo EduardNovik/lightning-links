@@ -1924,6 +1924,7 @@ body::-webkit-scrollbar {
 
 .car-body {
   margin-top: 12%;
+  transition: transform 0.5s ease, margin-top 0.5s ease;
 }
 
 .before\:absolute::before {
