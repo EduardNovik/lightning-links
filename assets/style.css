@@ -1900,6 +1900,18 @@ body::-webkit-scrollbar {
   margin-top: 16%;
 }
 
+.car-body-modal-mild {
+  margin-bottom: 3%;
+}
+
+.car-body-modal-medium {
+  margin-bottom: 2%;
+}
+
+.car-body-modal-stance {
+  margin-bottom: 1%;
+}
+
 .before\:absolute::before {
   content: var(--tw-content);
   position: absolute;
