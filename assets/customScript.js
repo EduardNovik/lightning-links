@@ -224,8 +224,10 @@ window.addEventListener(
     switch (activeAtributeValue) {
       case "MILD":
         if (carBodyElement) {
-          carBodyElement.style.removeProperty("margin-top");
-          carBodyElement.style.marginTop = "12%";
+          if (screenWidth < 1280) {
+            carBodyElement.style.removeProperty("margin-top");
+            carBodyElement.style.marginTop = "12%";
+          }
           if (screenWidth >= 1280) {
             carBodyElement.style.removeProperty("margin-top");
             carBodyElement.style.marginTop = "18%";
@@ -239,8 +241,11 @@ window.addEventListener(
 
       case "MEDIUM":
         if (carBodyElement) {
-          carBodyElement.style.removeProperty("margin-top");
-          carBodyElement.style.marginTop = "13%";
+          if (screenWidth < 1280) {
+            carBodyElement.style.removeProperty("margin-top");
+            carBodyElement.style.marginTop = "13%";
+          }
+
           if (screenWidth >= 1280) {
             carBodyElement.style.removeProperty("margin-top");
             carBodyElement.style.marginTop = "19%";
@@ -254,8 +259,10 @@ window.addEventListener(
 
       case "STANCE":
         if (carBodyElement) {
-          carBodyElement.style.removeProperty("margin-top");
-          carBodyElement.style.marginTop = "14%";
+          if (screenWidth < 1280) {
+            carBodyElement.style.removeProperty("margin-top");
+            carBodyElement.style.marginTop = "14%";
+          }
           if (screenWidth >= 1280) {
             carBodyElement.style.removeProperty("margin-top");
             carBodyElement.style.marginTop = "20%";
