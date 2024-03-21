@@ -146,24 +146,24 @@ swatchButtonsElement.forEach((button) => {
   });
 });
 
-const variantButtonsElement = document.querySelectorAll(".variant-btn");
-variantButtonsElement.forEach((button) => {
-  button.addEventListener("click", function () {
-    const activeOptionValue = this.getAttribute("data-swatch-option");
-    switch (activeOptionValue) {
-      case "MILD":
-        carBodyElement.style.transform = "translateY(30%)";
-        carBodyElement.style.marginBottom = "10%";
-        break;
-      case "MEDIUM":
-        carBodyElement.style.transform = "translateY(50%)";
-        carBodyElement.style.marginBottom = "20%";
-        break;
-      case "STANCE":
-        console.log("STANCE");
-        break;
-      default:
-        break;
-    }
-  });
-});
+// const variantButtonsElement = document.querySelectorAll(".variant-btn");
+// variantButtonsElement.forEach((button) => {
+//   button.addEventListener("click", function () {
+//     const activeOptionValue = this.getAttribute("data-swatch-option");
+//     switch (activeOptionValue) {
+//       case "MILD":
+//         carBodyElement.style.transform = "translateY(30%)";
+//         carBodyElement.style.marginBottom = "10%";
+//         break;
+//       case "MEDIUM":
+//         carBodyElement.style.transform = "translateY(50%)";
+//         carBodyElement.style.marginBottom = "20%";
+//         break;
+//       case "STANCE":
+//         console.log("STANCE");
+//         break;
+//       default:
+//         break;
+//     }
+//   });
+// });
