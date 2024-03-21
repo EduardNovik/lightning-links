@@ -145,4 +145,3 @@ swatchButtonsElement.forEach((button) => {
     }
   });
 });
-
