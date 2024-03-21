@@ -218,7 +218,7 @@ window.addEventListener(
   "resize",
   function () {
     const swatchActiveButtonElementWhileResize =
-      document.querySelector(".active"); // Adjust the selector as needed
+      document.querySelector(".swatch--active");
     const activeAttributeValue =
       swatchActiveButtonElementWhileResize.getAttribute("data-swatch-option");
     const screenWidth = window.innerWidth;
