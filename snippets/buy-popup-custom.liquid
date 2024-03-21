@@ -2,55 +2,45 @@
 {% assign s_type = settings.saleType | default: 'percent' %}
 
 <script>
-const carBodyElement = document.querySelector(".car-body");
-const activeAtributeValue =
+  const carBodyElement = document.querySelector(".car-body");
+  const activeAtributeValue =
   swatchActiveButtonElement.getAttribute("data-swatch-option");
-switch (activeAtributeValue) {
+  switch (activeAtributeValue) {
   case "MILD":
-    curtain.style.transform = "translateY(30%)";
+    carBodyElement.style.transform = "translateY(30%)";
     break;
-
+  
   case "MEDIUM":
-    curtain.style.transform = "translateY(50%)";
-
+    carBodyElement.style.transform = "translateY(50%)";
+  
     break;
-
+  
   case "STANCE":
-    curtain.style.transform = "translateY(80%)";
+    carBodyElement.style.transform = "translateY(80%)";
     break;
   default:
     break;
-}
-
-swatchButtonsElement.forEach((button) => {
+  }
+  
+  swatchButtonsElement.forEach((button) => {
   button.addEventListener("click", function () {
     const activeOptionValue = this.getAttribute("data-swatch-option");
     switch (activeOptionValue) {
       case "MILD":
-
-        curtain.style.transform = "translateY(30%)";
-        // if (carBodyElement) {
-        //   curtain.style.transform = "translateY(20px)";
-        // }
+  
+        carBodyElement.style.transform = "translateY(30%)";
         break;
       case "MEDIUM":
-        curtain.style.transform = "translateY(50%)";
-        // if (carBodyElement) {
-        //   curtain.style.transform = "translateY(15px)";
-        // }
-
+        curtain.style.transform = "translateY(50%)";  
         break;
       case "STANCE":
         curtain.style.transform = "translateY(80%)";
-        // if (carBodyElement) {
-        //   curtain.style.transform = "translateY(10px)";
-        // }
         break;
       default:
         break;
     }
   });
-});
+  });
 </script>
 
 
@@ -248,28 +238,28 @@ swatchButtonsElement.forEach((button) => {
 
 
 {% comment %} <script>
-                                              document.addEventListener("DOMContentLoaded", function() {
-                                              const variantButtons = document.querySelectorAll(".variant-btn");
-                                              console.log(variantButtons);
-                                          
-                                              variantButtons.forEach(function (button) {
-                                              button.addEventListener("click", function () {
-                                              const isSoldout = button.hasAttribute("data-swatch-soldout");
-                                              const isActive = button.classList.contains("swatch--active");
-                                              const hiddenBuyBtn = document.querySelector(".hidden-buy-btn");
-                                              const visibleBuyBtn = document.querySelector(".visible-buy-btn");
-                                              console.log(isSoldout, isActive, hiddenBuyBtn, visibleBuyBtn);
-                                          
-                                              if (isSoldout && isActive) {
-                                                  hiddenBuyBtn.style.display = "block";
-                                                  visibleBuyBtn.style.display = "none";
-                                                  console.log("Sold out");
-                                              } else {
-                                                  visibleBuyBtn.style.display = "block";
-                                                  hiddenBuyBtn.style.display = "none";
-                                                  console.log("Not sold out");
-                                              }
-                                              });
-                                              });
-                                              });
+                                                  document.addEventListener("DOMContentLoaded", function() {
+                                                  const variantButtons = document.querySelectorAll(".variant-btn");
+                                                  console.log(variantButtons);
+                                              
+                                                  variantButtons.forEach(function (button) {
+                                                  button.addEventListener("click", function () {
+                                                  const isSoldout = button.hasAttribute("data-swatch-soldout");
+                                                  const isActive = button.classList.contains("swatch--active");
+                                                  const hiddenBuyBtn = document.querySelector(".hidden-buy-btn");
+                                                  const visibleBuyBtn = document.querySelector(".visible-buy-btn");
+                                                  console.log(isSoldout, isActive, hiddenBuyBtn, visibleBuyBtn);
+                                              
+                                                  if (isSoldout && isActive) {
+                                                      hiddenBuyBtn.style.display = "block";
+                                                      visibleBuyBtn.style.display = "none";
+                                                      console.log("Sold out");
+                                                  } else {
+                                                      visibleBuyBtn.style.display = "block";
+                                                      hiddenBuyBtn.style.display = "none";
+                                                      console.log("Not sold out");
+                                                  }
+                                                  });
+                                                  });
+                                                  });
 </script> {% endcomment %}
