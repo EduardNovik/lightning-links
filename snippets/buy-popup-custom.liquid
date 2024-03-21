@@ -191,26 +191,25 @@
         </p>
 
       </div>
-        {% form 'product'
-          , product %}
-          {% render 'block__product-page--atc-custom'
-            , product: product
-            , form: form
-            , class: "visible-buy-btn"
-          %}
-        {% endform %}
+
+      {% form 'product'
+        , product %}
+        {% render 'block__product-page--atc-custom'
+          , product: product
+          , form: form
+          , class: "visible-buy-btn"
+        %}
+      {% endform %}
 
 
-
-        {% form 'product'
-          , product %}
-          {% render 'block__product-page--atc-custom'
-            , product: false
-            , form: form
-            , class: "hidden-buy-btn"
-          %}
-        {% endform %}
-
+      {% form 'product'
+        , product %}
+        {% render 'block__product-page--atc-custom'
+          , product: false
+          , form: form
+          , class: "hidden-buy-btn"
+        %}
+      {% endform %}
 
 
     </div>
