@@ -14,7 +14,7 @@
     <div class="bg-[#ECEFF3]">
       <div class="relative flex justify-center items-center mb-10 w-full max-w-[550px] m-auto h-[300px]">
         {% for image in product.images %}
-          <div class="absolute inset-0 flex justify-center items-center">
+          <div class="absolute flex justify-center items-center top-[calc(50%-10px)]">
             {% if forloop.index == 2 %}
               {% render 'image'
                 , size: '900x'
@@ -23,7 +23,7 @@
                 , class: 'w-[80%] car-body' %}
             {% endif %}
           </div>
-          <div class="absolute flex justify-center items-center top-[calc(50%-10px)]">
+          <div class="absolute inset-0 flex justify-center items-center">
             {% if forloop.index == 3 %}
               {% render 'image'
                 , size: '900x'
