@@ -1897,7 +1897,7 @@ body::-webkit-scrollbar {
 }
 
 .car-wheels-modal {
-  margin-bottom: 16px;
+  margin-top: 16;
 }
 
 .before\:absolute::before {
