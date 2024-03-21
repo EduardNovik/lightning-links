@@ -1427,22 +1427,12 @@ video {
   transition-duration: 150ms;
 }
 
-.transition-transform {
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .duration-200 {
   transition-duration: 200ms;
 }
 
 .duration-300 {
   transition-duration: 300ms;
-}
-
-.duration-500 {
-  transition-duration: 500ms;
 }
 
 .duration-700 {
@@ -1925,6 +1915,18 @@ body::-webkit-scrollbar {
 .car-body {
   margin-top: 12%;
   transition: transform 0.5s ease, margin-top 0.5s ease;
+}
+
+@media screen and (min-width: 1280px) {
+  .car-body {
+    margin-top: 20%;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .car-body {
+    margin-top: 22%;
+  }
 }
 
 .before\:absolute::before {
