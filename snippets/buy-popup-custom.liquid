@@ -14,8 +14,8 @@
     <div class="bg-[#ECEFF3]">
       <div class="flex justify-center items-center mb-10">
         {% for image in product.images %}
-            <div class=" z-20 w-[65%]">
-            {% if forloop.index == 2 %}\
+            <div class="z-20 w-[65%]">
+            {% if forloop.index == 2 %}
             {% render 'image'
                 , size: '900x'
                 , src: image.src
@@ -32,11 +32,7 @@
             {% endif %}
         {% endfor %}
       </div>
-
-      <div class="flex justify-center items-center w-full relative">
-        
-         </div>
-
+      
       {% comment %} ----- {% endcomment %}
       {% if product.variants.size > 1 %}
 
