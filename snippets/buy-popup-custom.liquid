@@ -1,6 +1,31 @@
 {% assign current_variant = product.selected_or_first_available_variant %}
 {% assign s_type = settings.saleType | default: 'percent' %}
 
+<script>
+    const variantButtons = document.querySelectorAll(".variant-btn");
+  console.log(variantButtons);
+  
+  variantButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    const isSoldout = button.getAttribute("data-swatch-soldout") === "true";
+    const isActive = button.classList.contains("swatch--active");
+    const hiddenBuyBtn = document.querySelector(".hidden-buy-btn");
+    const visibleBuyBtn = document.querySelector(".visible-buy-btn");
+    console.log(isSoldout, isActive, hiddenBuyBtn, visibleBuyBtn);
+  
+    if (isSoldout && isActive) {
+      hiddenBuyBtn.style.display = "block";
+      visibleBuyBtn.style.display = "none";
+      console.log("Sold out");
+    } else {
+      visibleBuyBtn.style.display = "block";
+      hiddenBuyBtn.style.display = "none";
+      log("Not sold out");
+    }
+  });
+  });
+</script>
+
 <div id="buy-popup-{{ product.handle }}" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 items-center justify-center buy-popup-custom flex invisible">
   <div class="bg-white p-6 max-w-[760px] w-full mx-4">
     <div class="flex justify-between items-center mb-10">
