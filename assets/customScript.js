@@ -220,6 +220,7 @@ window.addEventListener(
     const activeAtributeValue =
       swatchActiveButtonElement.getAttribute("data-swatch-option");
     const screenWidth = window.innerWidth;
+    console.log(activeAtributeValue);
 
     switch (activeAtributeValue) {
       case "MILD":
