@@ -2,30 +2,30 @@
 {% assign s_type = settings.saleType | default: 'percent' %}
 
 {% comment %} <script>
-                      document.addEventListener("DOMContentLoaded", function() {
-                        const variantButtons = document.querySelectorAll(".variant-btn");
-                        console.log(variantButtons);
-                      
-                      variantButtons.forEach(function (button) {
-                      button.addEventListener("click", function () {
-                        const isSoldout = button.hasAttribute("data-swatch-soldout");
-                        const isActive = button.classList.contains("swatch--active");
-                        const hiddenBuyBtn = document.querySelector(".hidden-buy-btn");
-                        const visibleBuyBtn = document.querySelector(".visible-buy-btn");
-                        console.log(isSoldout, isActive, hiddenBuyBtn, visibleBuyBtn);
-                      
-                        if (isSoldout && isActive) {
-                          hiddenBuyBtn.style.display = "block";
-                          visibleBuyBtn.style.display = "none";
-                          console.log("Sold out");
-                        } else {
-                          visibleBuyBtn.style.display = "block";
-                          hiddenBuyBtn.style.display = "none";
-                          console.log("Not sold out");
-                        }
-                      });
-                      });
-                      });
+                        document.addEventListener("DOMContentLoaded", function() {
+                          const variantButtons = document.querySelectorAll(".variant-btn");
+                          console.log(variantButtons);
+                        
+                        variantButtons.forEach(function (button) {
+                        button.addEventListener("click", function () {
+                          const isSoldout = button.hasAttribute("data-swatch-soldout");
+                          const isActive = button.classList.contains("swatch--active");
+                          const hiddenBuyBtn = document.querySelector(".hidden-buy-btn");
+                          const visibleBuyBtn = document.querySelector(".visible-buy-btn");
+                          console.log(isSoldout, isActive, hiddenBuyBtn, visibleBuyBtn);
+                        
+                          if (isSoldout && isActive) {
+                            hiddenBuyBtn.style.display = "block";
+                            visibleBuyBtn.style.display = "none";
+                            console.log("Sold out");
+                          } else {
+                            visibleBuyBtn.style.display = "block";
+                            hiddenBuyBtn.style.display = "none";
+                            console.log("Not sold out");
+                          }
+                        });
+                        });
+                        });
 </script> {% endcomment %}
 
 <div id="buy-popup-{{ product.handle }}" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 items-center justify-center buy-popup-custom flex invisible">
@@ -140,7 +140,7 @@
                           {% if vars.size == 0 %}
                           data-swatch-soldout="true"
                           {% endif %}
-                          style="{% if vars.size == 0 %} pointer-events: none; cursor: not-allowed; {% endif %}"></span>
+                          style="{% if vars.size == 0 %} cursor: not-allowed; {% endif %}"></span>
                       {% else %}
                         <span
                           class="variant-btn w-full bg-white border-2 border-grigio-40"
@@ -149,7 +149,7 @@
                           {% if vars.size == 0 %}
                           data-swatch-soldout="true"
                           {% endif %}
-                          style="{% if vars.size == 0 %} pointer-events: none; cursor: not-allowed; {% endif %}">{{ value | escape }}</span>
+                          style="{% if vars.size == 0 %}cursor: not-allowed; {% endif %}">{{ value | escape }}</span>
                       {% endif %}
                     {% endfor %}
                 {% endcase %}
