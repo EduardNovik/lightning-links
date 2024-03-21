@@ -146,25 +146,3 @@ swatchButtonsElement.forEach((button) => {
   });
 });
 
-// const variantButtons = document.querySelectorAll(".variant-btn");
-// console.log(variantButtons);
-
-// variantButtons.forEach(function (button) {
-//   button.addEventListener("click", function () {
-//     const isSoldout = button.getAttribute("data-swatch-soldout") === "true";
-//     const isActive = button.classList.contains("swatch--active");
-//     const hiddenBuyBtn = document.querySelector(".hidden-buy-btn");
-//     const visibleBuyBtn = document.querySelector(".visible-buy-btn");
-//     console.log(isSoldout, isActive, hiddenBuyBtn, visibleBuyBtn);
-
-//     if (isSoldout && isActive) {
-//       hiddenBuyBtn.style.display = "block";
-//       visibleBuyBtn.style.display = "none";
-//       console.log("Sold out");
-//     } else {
-//       visibleBuyBtn.style.display = "block";
-//       hiddenBuyBtn.style.display = "none";
-//       log("Not sold out");
-//     }
-//   });
-// });
