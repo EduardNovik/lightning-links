@@ -229,6 +229,7 @@ window.addEventListener(
     ) {
       case "MILD":
         if (carBodyElement) {
+          console.log("Inside MILD case");
           if (screenWidth < 1280) {
             carBodyElement.style.removeProperty("margin-top");
             carBodyElement.style.marginTop = "12%";
@@ -246,6 +247,7 @@ window.addEventListener(
 
       case "MEDIUM":
         if (carBodyElement) {
+          console.log("Inside MEDIUM case");
           if (screenWidth < 1280) {
             carBodyElement.style.removeProperty("margin-top");
             carBodyElement.style.marginTop = "13%";
@@ -264,6 +266,7 @@ window.addEventListener(
 
       case "STANCE":
         if (carBodyElement) {
+          console.log("Inside STANCE case");
           if (screenWidth < 1280) {
             carBodyElement.style.removeProperty("margin-top");
             carBodyElement.style.marginTop = "14%";
@@ -280,6 +283,7 @@ window.addEventListener(
         break;
       default:
         if (carBodyElement) {
+          console.log("Inside default case");
           if (screenWidth < 1280) {
             carBodyElement.style.removeProperty("margin-top");
             carBodyElement.style.marginTop = "13%";
