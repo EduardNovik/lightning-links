@@ -133,7 +133,7 @@
                       {% assign vars = avvars | where: optix, value %}
                       {% if colorArray contains product_option_lc or imageArray contains product_option_lc %}
                         <span
-                          class="variant-btn lazyload swatch--color w-full bg-white border-2 border-grigio-40"
+                          class="variant-btn lazyload swatch--color w-full bg-white border-2 border-grigio-40 {% if vars.size == 0 %}cursor-not-allowed pointer-events-none{% endif %}"
                           {%- render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%}
                           data-swatch-option="{{value| escape}}"
                           data-swatch-index="{{product.id}}-{{index}}"
@@ -142,7 +142,7 @@
                           {% endif %}></span>
                       {% else %}
                         <span
-                          class="variant-btn w-full bg-white border-2 border-grigio-40"
+                          class="variant-btn w-full bg-white border-2 border-grigio-40 {% if vars.size == 0 %} cursor-not-allowed pointer-events-none{% endif %}"
                           data-swatch-option="{{value| escape}}"
                           data-swatch-index="{{product.id}}-{{index}}"
                           {% if vars.size == 0 %}

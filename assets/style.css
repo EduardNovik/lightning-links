@@ -913,6 +913,10 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
 .resize {
   resize: both;
 }
@@ -1876,10 +1880,10 @@ body::-webkit-scrollbar {
   padding-left: 10px;
 }
 
-.variant-btn[data-swatch-soldout="true"] {
+/* .variant-btn[data-swatch-soldout="true"] {
   pointer-events: none;
   cursor: not-allowed;
-}
+} */
 
 .before\:absolute::before {
   content: var(--tw-content);
