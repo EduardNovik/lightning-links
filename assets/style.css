@@ -736,6 +736,10 @@ video {
   margin-bottom: 1.25rem;
 }
 
+.mb-\[16\%\] {
+  margin-bottom: 16%;
+}
+
 .mb-\[50px\] {
   margin-bottom: 50px;
 }
