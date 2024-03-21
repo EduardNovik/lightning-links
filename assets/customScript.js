@@ -223,8 +223,6 @@ window.addEventListener(
 
     switch (activeAtributeValue) {
       case "MILD":
-        inchValueElement.innerHTML = " — Mild lower <b>- 1 inch</b>";
-        curtain.style.transform = "translateY(30%)";
         if (carBodyElement) {
           carBodyElement.style.removeProperty("margin-top");
           carBodyElement.style.marginTop = "12%";
@@ -240,8 +238,6 @@ window.addEventListener(
         break;
 
       case "MEDIUM":
-        inchValueElement.innerHTML = " — Medium lower <b>- 2 inch</b>";
-        curtain.style.transform = "translateY(50%)";
         if (carBodyElement) {
           carBodyElement.style.removeProperty("margin-top");
           carBodyElement.style.marginTop = "13%";
@@ -257,8 +253,6 @@ window.addEventListener(
         break;
 
       case "STANCE":
-        inchValueElement.innerHTML = " — Stance lower <b>- 3 inch</b>";
-        curtain.style.transform = "translateY(80%)";
         if (carBodyElement) {
           carBodyElement.style.removeProperty("margin-top");
           carBodyElement.style.marginTop = "14%";
