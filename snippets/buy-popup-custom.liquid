@@ -23,7 +23,7 @@
                 , class: 'w-[80%] car-body' %}
             {% endif %}
           </div>
-          <div class="absolute flex justify-center items-center top-[calc(50%--15px)]">
+          <div class="absolute flex justify-center items-center transform translate-y-10">
             {% if forloop.index == 3 %}
               {% render 'image'
                 , size: '900x'
@@ -196,28 +196,28 @@
 
 
 {% comment %} <script>
-                                document.addEventListener("DOMContentLoaded", function() {
-                                const variantButtons = document.querySelectorAll(".variant-btn");
-                                console.log(variantButtons);
-                            
-                                variantButtons.forEach(function (button) {
-                                button.addEventListener("click", function () {
-                                const isSoldout = button.hasAttribute("data-swatch-soldout");
-                                const isActive = button.classList.contains("swatch--active");
-                                const hiddenBuyBtn = document.querySelector(".hidden-buy-btn");
-                                const visibleBuyBtn = document.querySelector(".visible-buy-btn");
-                                console.log(isSoldout, isActive, hiddenBuyBtn, visibleBuyBtn);
-                            
-                                if (isSoldout && isActive) {
-                                    hiddenBuyBtn.style.display = "block";
-                                    visibleBuyBtn.style.display = "none";
-                                    console.log("Sold out");
-                                } else {
-                                    visibleBuyBtn.style.display = "block";
-                                    hiddenBuyBtn.style.display = "none";
-                                    console.log("Not sold out");
-                                }
-                                });
-                                });
-                                });
+                                  document.addEventListener("DOMContentLoaded", function() {
+                                  const variantButtons = document.querySelectorAll(".variant-btn");
+                                  console.log(variantButtons);
+                              
+                                  variantButtons.forEach(function (button) {
+                                  button.addEventListener("click", function () {
+                                  const isSoldout = button.hasAttribute("data-swatch-soldout");
+                                  const isActive = button.classList.contains("swatch--active");
+                                  const hiddenBuyBtn = document.querySelector(".hidden-buy-btn");
+                                  const visibleBuyBtn = document.querySelector(".visible-buy-btn");
+                                  console.log(isSoldout, isActive, hiddenBuyBtn, visibleBuyBtn);
+                              
+                                  if (isSoldout && isActive) {
+                                      hiddenBuyBtn.style.display = "block";
+                                      visibleBuyBtn.style.display = "none";
+                                      console.log("Sold out");
+                                  } else {
+                                      visibleBuyBtn.style.display = "block";
+                                      hiddenBuyBtn.style.display = "none";
+                                      console.log("Not sold out");
+                                  }
+                                  });
+                                  });
+                                  });
 </script> {% endcomment %}
