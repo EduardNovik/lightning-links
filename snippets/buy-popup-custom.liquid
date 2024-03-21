@@ -194,30 +194,56 @@
   </div>
 </div>
 
+<script>
+  const carBodyElement = document.querySelector(".car-body");
+  
+  const variantButtonsElement = document.querySelectorAll(".variant-btn");
+  variantButtonsElement.forEach((button) => {
+  button.addEventListener("click", function () {
+    const activeOptionValue = this.getAttribute("data-swatch-option");
+    switch (activeOptionValue) {
+      case "MILD":
+        carBodyElement.style.transform = "translateY(30%)";
+        carBodyElement.style.marginBottom = "10%";
+        break;
+      case "MEDIUM":
+        carBodyElement.style.transform = "translateY(50%)";
+        carBodyElement.style.marginBottom = "20%";
+        break;
+      case "STANCE":
+        console.log("STANCE");
+        break;
+      default:
+        break;
+    }
+  });
+  });
+</script>
+
 
 {% comment %} <script>
-                                                    document.addEventListener("DOMContentLoaded", function() {
-                                                    const variantButtons = document.querySelectorAll(".variant-btn");
-                                                    console.log(variantButtons);
-                                                
-                                                    variantButtons.forEach(function (button) {
-                                                    button.addEventListener("click", function () {
-                                                    const isSoldout = button.hasAttribute("data-swatch-soldout");
-                                                    const isActive = button.classList.contains("swatch--active");
-                                                    const hiddenBuyBtn = document.querySelector(".hidden-buy-btn");
-                                                    const visibleBuyBtn = document.querySelector(".visible-buy-btn");
-                                                    console.log(isSoldout, isActive, hiddenBuyBtn, visibleBuyBtn);
-                                                
-                                                    if (isSoldout && isActive) {
-                                                        hiddenBuyBtn.style.display = "block";
-                                                        visibleBuyBtn.style.display = "none";
-                                                        console.log("Sold out");
-                                                    } else {
-                                                        visibleBuyBtn.style.display = "block";
-                                                        hiddenBuyBtn.style.display = "none";
-                                                        console.log("Not sold out");
-                                                    }
-                                                    });
-                                                    });
-                                                    });
+    document.addEventListener("DOMContentLoaded", function() {
+    const variantButtons = document.querySelectorAll(".variant-btn");
+    console.log(variantButtons);
+    
+    variantButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+    const isSoldout = button.hasAttribute("data-swatch-soldout");
+    const isActive = button.classList.contains("swatch--active");
+    const hiddenBuyBtn = document.querySelector(".hidden-buy-btn");
+    const visibleBuyBtn = document.querySelector(".visible-buy-btn");
+    console.log(isSoldout, isActive, hiddenBuyBtn, visibleBuyBtn);
+    
+    if (isSoldout && isActive) {
+    hiddenBuyBtn.style.display = "block";
+    visibleBuyBtn.style.display = "none";
+    console.log("Sold out");
+    } else {
+    visibleBuyBtn.style.display = "block";
+    hiddenBuyBtn.style.display = "none";
+    console.log("Not sold out");
+    }
+    });
+    });
+    });
 </script> {% endcomment %}
