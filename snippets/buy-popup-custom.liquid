@@ -132,7 +132,7 @@
                     {% for value in product_option.values %}
                       {% assign vars = avvars | where: optix, value %}
                       {% if colorArray contains product_option_lc or imageArray contains product_option_lc %}
-                        <div class="{% if vars.size == 0 %}cursor-not-allowed{% endif %}">
+                        <div class="w-full {% if vars.size == 0 %}cursor-not-allowed{% endif %}">
                           <span
                             class="variant-btn lazyload swatch--color w-full bg-white border-2 border-grigio-40 {% if vars.size == 0 %}pointer-events-none{% endif %}"
                             {%- render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%}
@@ -143,7 +143,7 @@
                             {% endif %}></span>
                         </div>
                       {% else %}
-                        <div class="{% if vars.size == 0 %}cursor-not-allowed{% endif %}">
+                        <div class="w-full {% if vars.size == 0 %}cursor-not-allowed{% endif %}">
                           <span
                             class="variant-btn w-full bg-white border-2 border-grigio-40 {% if vars.size == 0 %}pointer-events-none{% endif %}"
                             data-swatch-option="{{value| escape}}"
