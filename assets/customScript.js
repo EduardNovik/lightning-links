@@ -79,6 +79,7 @@ buyPopupCustomButtons.forEach((button) => {
     if (popup) {
       popup.classList.remove("invisible");
       body.classList.toggle("overflow-hidden");
+      attachVariantButtonListener();
     }
   });
 });
@@ -296,3 +297,43 @@ window.addEventListener(
   },
   true
 );
+
+function attachVariantButtonListener() {
+  const variantButtonsElement = document.querySelectorAll(".variant-btn");
+  const carBodyElement = document.querySelector(".car-body-modal");
+
+  variantButtonsElement.forEach((button) => {
+    button.addEventListener("click", function () {
+      console.log("clicked");
+      const activeOptionValue = this.getAttribute("data-swatch-option");
+      switch (activeOptionValue) {
+        case "MILD":
+          if (carBodyElement) {
+            carBodyElement.style.marginBottom = "3%";
+            // carBodyElement.classList.add("car-body-modal-mild");
+            console.log(carBodyElement);
+            console.log("MILD");
+          }
+          break;
+        case "MEDIUM":
+          if (carBodyElement) {
+            // carBodyElement.classList.add("car-body-modal-medium");
+            carBodyElement.style.marginBottom = "2%";
+            console.log(carBodyElement);
+            console.log("MEDIUM");
+          }
+          break;
+        case "STANCE":
+          if (carBodyElement) {
+            // carBodyElement.style.removeProper("margin-bottom-stance");
+            carBodyElement.style.marginBottom = "1%";
+            console.log(carBodyElement);
+            console.log("STANCE");
+          }
+          break;
+        default:
+          break;
+      }
+    });
+  });
+}
