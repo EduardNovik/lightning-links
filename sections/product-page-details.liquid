@@ -108,7 +108,7 @@
   <div class="flex justify-start items-center flex-col gap-6">
 
     <p class="w-full text-start text-2xl font-bold">How it works?</p>
-    <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
+    <p>{{section.settings.text1_id.text}}</p>
 
     <div
     {% unless section.settings.backgroundImage == nil -%}{% render 'background', image: section.settings.backgroundImage %}{%- endunless %}
@@ -508,7 +508,22 @@
       "accept": ["youtube", "vimeo"],
       "id": "video",
       "label": "Video URL"
-    }
+    },
+    {
+        "type": "text",
+        "id": "text1_id",
+        "label": "Add text1"
+    },
+    {
+        "type": "text",
+        "id": "text2_id",
+        "label": "Add text2"
+    },
+    {
+        "type": "text",
+        "id": "text3_id",
+        "label": "Add text3"
+    },
     ],
     "blocks": [
       {
