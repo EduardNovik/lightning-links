@@ -1926,6 +1926,20 @@ body::-webkit-scrollbar {
   margin-top: 12%;
 }
 
+@media screen and (min-width: 1280px) {
+  #wheels-TESLA\ MODEL\ S\ 2022\+ {
+    margin-top: 18%;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  #wheels-TESLA\ MODEL\ S\ 2022\+ {
+    margin-top: 21%;
+  }
+}
+
+/* cross-over and general */
+
 .car-wheels {
   margin-top: 30%;
 }
