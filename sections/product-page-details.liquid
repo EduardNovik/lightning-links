@@ -134,7 +134,8 @@
 
 
     <p class="w-full text-xl font-bold mt-6">Advantages</p>
-     <p>{{section.settings.text2_id}}</p>
+    <p>{{section.settings.text2_id}}</p>
+
 
     <div div class="w-full">
       {% for linkBlock in section.blocks %}
@@ -146,6 +147,7 @@
 
     <p class="w-full text-xl font-bold mt-6">Result</p>
     <p>{{section.settings.text3_id}}</p>
+
 
     <div data-bstr-section-slider="{{section.id}}" {% if section.settings.autoplay %}data-autoplay=true{% endif %} onmouseover="this.dataset.paused = -1;" onmouseout="this.dataset.paused = new Date().getTime();" 
     id="s--{{section.id}}" class="w-full {% render 'common-class', section: section, class: 'slider slider--responsive', vAlign: false %}">
@@ -181,8 +183,7 @@
         {% for product_option in collections.all.products %}
           <option
             value="{{ product_option.url }}"
-            {% if product_option.title == product.title %}
-            selected{% endif %}>
+            {% if product_option.title == product.title %} selected{% endif %}>
             {{ product_option.title }}
           </option>
         {% endfor %}
