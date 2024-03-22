@@ -1,5 +1,5 @@
 <section class="container mx-auto">
-  <h5 class="section-header mb-12 sm:mb-28">{{ section.settings.title }}</h5>
+  <h5 class="section-header mb-[50px] md:mb-[100px]">{{ section.settings.title }}</h5>
 
   <div class="mb-12 sm:mb-28 instagram-grig">
     {% for post in section.blocks %}
@@ -9,16 +9,14 @@
           alt="{{ post.settings.title }}"
           class=" w-full h-full object-cover"
           width="100%"
-          height="auto"
-        >
+          height="auto">
         <div class="absolute bottom-0 ring-0 flex justify-between items-center text-white w-full p-2 gap-3 md:p-3 lg:p-4">
           <div class="bg-yellow flex justify-center items-center rounded-full aspect-square size-5 md:size-6 lg:size-7">
             <img
               src="{{settings.favicon | image_url}}"
               alt=""
               width="100%"
-              height="auto"
-            >
+              height="auto">
           </div>
 
           <p class="mr-auto text-white overflow-hidden overflow-ellipsis whitespace-nowrap">
@@ -27,66 +25,70 @@
 
           <div class="size-5 md:size-6 lg:size-7">
             {% render 'icon-instagram' %}
-            </div>
+          </div>
         </div>
       </a>
     {% endfor %}
   </div>
 
-  <a
-    href="{{ section.settings.contacts_instagram }}"
-    class="buttonWithLine block w-fit mx-auto relative py-2 px-3 border border-grigio-40 uppercase font-extrabold"
-  >
-    Following instagram
-  </a>
+  <div class="relative text-center">
+    <div class="absolute top-0 bg-grigio-40" style="
+    height: 1px;
+    width: 50%;
+    max-width: 480px;
+    left: 50%;
+    transform: translate(-50%, 0px)">
+</div>
+    <a href="{{ section.settings.contacts_instagram }}" class="relative buttonWithLine block w-fit mx-auto py-2 px-3 border border-grigio-40 uppercase font-extrabold hover:border-yellow">
+      Following instagram
+    </a>
+  </div>
+
 </section>
 
 {% schema %}
-{
-  "name": "Instagram",
-  "max_blocks": 8,
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Title",
-      "default": "Reviews"
-    },
-    {
-      "type": "text",
-      "id": "contacts_instagram",
-      "label": "Contacts Instagram",
-      "default": "https://www.instagram.com/"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "slide",
-      "name": "Post",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title"
-        },
-        {
-          "type": "text",
-          "id": "post_url",
-          "label": "Rost URL",
-          "default": "https://www.instagram.com/"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Instagram"
-    }
-  ]
-}
+  {
+    "name": "Instagram",
+    "max_blocks": 8,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Reviews"
+      }, {
+        "type": "text",
+        "id": "contacts_instagram",
+        "label": "Contacts Instagram",
+        "default": "https://www.instagram.com/"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "slide",
+        "name": "Post",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }, {
+            "type": "text",
+            "id": "post_url",
+            "label": "Rost URL",
+            "default": "https://www.instagram.com/"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Instagram"
+      }
+    ]
+  }
 {% endschema %}

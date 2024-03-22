@@ -1,46 +1,40 @@
 <section
-  class="py-10 md:py-16 lg:py24 overflow-hidden "
+  class="overflow-hidden "
   {% if section.settings.color_scheme == 'dark' %}
-    style="background-color: var(--grigio-100); color: var(--grigio-0);"
+  style="background-color: var(--grigio-100); color: var(--grigio-0);"
   {% else %}
-    style="background-color: inherit; color: inherit;"
-  {% endif %}
->
+  style="background-color: inherit; color: inherit;"
+  {% endif %}>
   <div class="container mx-auto flex flex-col relative">
     <h5 class="section-header mb-12">{{ section.settings.title }}</h5>
 
     <div class="flex flex-col md:flex-row justify-between items-center gap-10">
-      <div class="flex flex-col gap-4  lg:gap-16 md:w-1/2">
+      <div class="flex flex-col gap-4 lg:gap-16 md:w-1/2 accent-text-wrapper">
         {% if section.settings.accent_text != blank %}
           <p
-            class="accent-text"
+            class="accent-text uppercase"
             {% if section.settings.color_scheme == 'dark' %}
-              style="color: var(--grigio-0);"
+            style="color: var(--grigio-0);"
             {% else %}
-              style="color: inherit;"
-            {% endif %}
-          >
+            style="color: inherit;"
+            {% endif %}>
             {{ section.settings.accent_text }}
           </p>
         {% endif %}
         {% if section.settings.secondary_title != blank %}
-          <h5>{{ section.settings.secondary_title }}</h5>
+          <h5 class="secondary-title">{{ section.settings.secondary_title }}</h5>
         {% endif %}
         <p
           {% if section.settings.color_scheme == 'dark' %}
-            style="color: var(--grigio-0);"
+          style="color: var(--grigio-0);"
           {% else %}
-            style="color: inherit;"
-          {% endif %}
-        >
+          style="color: inherit;"
+          {% endif %}>
           {{ section.settings.text }}
         </p>
 
         {% if section.settings.button_text != blank %}
-          <a
-            href="{{ section.settings.button_url }}"
-             class="w-fit px-4 py-2 border-2 border-gray-500 text-base font-medium text-gray-700 hover:border-gray-700 hover:text-white hover:bg-gray-700 transition duration-300 ease-in-out"
-          >
+          <a href="{{ section.settings.button_url }}" class="w-fit px-4 py-2 border-[1px] border-grigio-40 text-sm font-semibold text-black hover:border-yellow  transition duration-300 ease-in-out uppercase">
             {{- section.settings.button_text -}}
           </a>
         {% endif %}
@@ -53,8 +47,7 @@
             src="{{ section.settings.image | img_url: '1024x1024' }}"
             alt="{{ section.settings.title }}"
             width="100%"
-            height="auto"
-          >
+            height="auto">
         {% endif %}
 
         {% if section.settings.video_url %}
@@ -63,8 +56,7 @@
             loop
             playsinline
             muted
-            class="max-w-80 w-1/2 md:w-2/3 mx-auto h-full object-cover"
-          >
+            class="max-w-80 w-1/2 md:w-2/3 mx-auto h-full object-cover">
             <source src="{{ section.settings.video_url }}">
           </video>
         {% endif %}
@@ -72,91 +64,80 @@
     </div>
 
     {% if section.settings.absolute_image %}
-      <div
-        class="w-full h-full pointer-events-none object-cover absolute bottom-0 left-0 bg-no-repeat bg-contain z-[1] transform -translate-x-[15%]"
-        style='background-image: url("{{section.settings.absolute_image | image_url: width: 600}}"); background-position-y: 80%;'
-      ></div>
+      <div class="w-[70%] h-full pointer-events-none object-cover absolute bottom-0 left-0 bg-no-repeat bg-contain z-[1] transform -translate-x-[-40%]" style='background-image: url("{{section.settings.absolute_image | image_url: width: 600}}"); background-position-y: 80%;'></div>
     {% endif %}
   </div>
 </section>
 
 {% schema %}
-{
-  "name": "Cutom Section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Title",
-      "default": "Section Title"
-    },
-    {
-      "type": "select",
-      "id": "color_scheme",
-      "label": "Color Scheme",
-      "options": [
-        {
-          "value": "light",
-          "label": "Light"
-        },
-        {
-          "value": "dark",
-          "label": "Dark"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "id": "accent_text",
-      "label": "Accent Text"
-    },
-    {
-      "type": "text",
-      "id": "secondary_title",
-      "label": "Secondary Title"
-    },
-    {
-      "type": "text",
-      "id": "text",
-      "label": "Text",
-      "default": "This is a custom section"
-    },
-    {
-      "type": "text",
-      "id": "button_text",
-      "label": "Button Text"
-    },
-    {
-      "type": "url",
-      "id": "button_url",
-      "label": "Button URL"
-    },
-    {
-      "type": "textarea",
-      "id": "custom_liquid",
-      "label": "Custom Liquid",
-      "default": "<h1>Custom Liquid</h1>"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "absolute_image",
-      "label": "Absolute Image"
-    },
-    {
-      "type": "url",
-      "id": "video_url",
-      "label": "Video URL"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Custom Section"
-    }
-  ]
-}
+  {
+    "name": "Cutom Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Section Title"
+      },
+      {
+        "type": "select",
+        "id": "color_scheme",
+        "label": "Color Scheme",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          }, {
+            "value": "dark",
+            "label": "Dark"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "accent_text",
+        "label": "Accent Text"
+      },
+      {
+        "type": "text",
+        "id": "secondary_title",
+        "label": "Secondary Title"
+      }, {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default": "This is a custom section"
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text"
+      }, {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button URL"
+      }, {
+        "type": "textarea",
+        "id": "custom_liquid",
+        "label": "Custom Liquid",
+        "default": "<h1>Custom Liquid</h1>"
+      }, {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }, {
+        "type": "image_picker",
+        "id": "absolute_image",
+        "label": "Absolute Image"
+      }, {
+        "type": "url",
+        "id": "video_url",
+        "label": "Video URL"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Section"
+      }
+    ]
+  }
 {% endschema %}

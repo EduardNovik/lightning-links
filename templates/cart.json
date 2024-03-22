@@ -8,6 +8,9 @@
     },
     "content": {
       "type": "cart-page",
+      "custom_css": [
+
+      ],
       "settings": {
         "discount": "money",
         "featured": ""

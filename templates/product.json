@@ -3,8 +3,7 @@
     "breadcrumbs": {
       "type": "breadcrumbs",
       "custom_css": [
-        ".breadcrumb {margin-top: 10px;}",
-        "nav.breadcrumb > :last-child {margin-top: 40px; display: block; font-size: 58px;}"
+
       ],
       "settings": {
       }
@@ -166,7 +165,10 @@
         "delayAnimation": false,
         "imagePosition": "left",
         "imageWidth": "9",
-        "video": "https:\/\/www.youtube.com\/watch?v=T5jZ4Wf7W6o"
+        "video": "https:\/\/www.youtube.com\/watch?v=T5jZ4Wf7W6o",
+        "text1_id": "Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.",
+        "text2_id": "Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.",
+        "text3_id": "Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system."
       }
     }
   },

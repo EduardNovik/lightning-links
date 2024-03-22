@@ -1,7 +1,4 @@
-<div
-  href="{{product.url}}"
-  class="productItem relative mt-8 mb-10 before:absolute before:-top-[20px] before:left-1/2 before:-translate-x-1/2 before:bg-opacity-0 hover:before:bg-opacity-100 before:bg-grigio-100 before:w-full before:h-0 before:-z-10 hover:before:w-[calc(100%+40px)] hover:before:h-[calc(100%+40px)] transition before:duration-500 group"
->
+<div href="{{product.url}}" class="productItem relative mt-8 mb-10 before:absolute before:-top-[20px] before:left-1/2 before:-translate-x-1/2 before:bg-opacity-0 hover:before:bg-opacity-100 before:bg-grigio-100 before:w-full before:h-0 before:-z-10 hover:before:w-[calc(100%+40px)] hover:before:h-[calc(100%+40px)] transition before:duration-500 group">
   <div class="flex flex-col [&>*]:uppercase [&>*]:text-2xl group-hover:text-white transition duration-200">
     <span>{{ product.metafields.custom.brand }}</span>
     <span>{{ product.metafields.custom.model }}</span>
@@ -14,8 +11,7 @@
       src="{{ product.featured_image | img_url: 'master' }}"
       alt="{{ product.title }}"
       width="100%"
-      height="100%"
-    >
+      height="100%">
   </a>
   <div class="flex items-center justify-between gap-5">
     {% if product.compare_at_price %}
@@ -36,4 +32,3 @@
     </button>
   </div>
 </div>
-

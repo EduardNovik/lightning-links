@@ -1,51 +1,54 @@
 <div class="breadcrumbs__wrapper container mx-auto">
-{% unless template == 'index' or settings.breadcrumbs == false %}
-<nav class="breadcrumb breadcrumbs--default inherit" role="navigation" aria-label="breadcrumbs">
-  <a href="/{% unless request.locale.primary %}{{ request.locale.root_url }}{% endunless %}" title="{{'navigation.breadcrumbs.home' | t}}">{{'navigation.breadcrumbs.home' | t}}</a>
-  {% if template contains 'page' %}
-    <span aria-hidden="true">/</span>
-    <span>{{ page.title }}</span>
-  {% elsif template == 'list-collections' %}
-    <span aria-hidden="true">/</span>
-    <span>{{'navigation.breadcrumbs.collections' | t}}</span>
-  {% elsif template == 'cart' %}
-    <span aria-hidden="true">/</span>
-    <span>{{'navigation.breadcrumbs.cart' | t}}</span>
-  {% elsif template contains 'product' %}
-    {% if collection.url %}
-      <span aria-hidden="true">/</span>
-      {{ collection.title | link_to: collection.url }}
-    {% endif %}
-    <span aria-hidden="true">/</span>
-    <span>{{ product.title }}</span>
-  {% elsif template contains 'collection' and collection.handle %}
-    <span aria-hidden="true">/</span>
-    {% if current_tags %}
-      {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
-      {{ collection.title | link_to: url }}
-      <span aria-hidden="true">/</span>
-      <span>{{ current_tags | join: " + " }}</span>
-    {% else %}
-      <span>{{ collection.title }}</span>
-    {% endif %}
-  {% elsif template == 'blog' %}
-    <span aria-hidden="true">/</span>
-    {% if current_tags %}
-      {{ blog.title | link_to: blog.url }}
-      <span aria-hidden="true">/</span>
-      <span>{{ current_tags | join: " + " }}</span>
-    {% else %}
-    <span>{{ blog.title }}</span>
-    {% endif %}
-  {% elsif template == 'article' %}
-    <span aria-hidden="true">/</span>
-    {{ blog.title | link_to: blog.url }}
-    <span aria-hidden="true">/</span>
-    <span>{{ article.title }}</span>
-  {% else %}
-   <span aria-hidden="true">/</span>
-   <span>{{ page_title }}</span>
-  {% endif %}
-</nav>
-{% endunless %}
+  {% unless template == 'index' or settings.breadcrumbs == false %}
+    <nav
+      class="breadcrumb breadcrumbs--default inherit"
+      role="navigation"
+      aria-label="breadcrumbs">
+      <a href="/{% unless request.locale.primary %}{{ request.locale.root_url }}{% endunless %}" title="{{'navigation.breadcrumbs.home' | t}}">{{ 'navigation.breadcrumbs.home' | t }}</a>
+      {% if template contains 'page' %}
+        <span>/</span>
+        <span class="bread-title">{{ page.title }}</span>
+      {% elsif template == 'list-collections' %}
+        <span>/</span>
+        <span class="bread-title">{{ 'navigation.breadcrumbs.collections' | t }}</span>
+      {% elsif template == 'cart' %}
+        <span>/</span>
+        <span class="bread-title">{{ 'navigation.breadcrumbs.cart' | t }}</span>
+      {% elsif template contains 'product' %}
+        {% if collection.url %}
+          <span>/</span>
+          {{ collection.title | link_to: collection.url }}
+        {% endif %}
+        <span>/</span>
+        <span class="bread-title">{{ product.title }}</span>
+      {% elsif template contains 'collection' and collection.handle %}
+        <span>/</span>
+        {% if current_tags %}
+          {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+          {{ collection.title | link_to: url }}
+          <span>/</span>
+          <span class="bread-title">{{ current_tags | join: " + " }}</span>
+        {% else %}
+          <span class="bread-title">{{ collection.title }}</span>
+        {% endif %}
+      {% elsif template == 'blog' %}
+        <span>/</span>
+        {% if current_tags %}
+          {{ blog.title | link_to: blog.url }}
+          <span>/</span>
+          <span class="bread-title">{{ current_tags | join: " + " }}</span>
+        {% else %}
+          <span class="bread-title">{{ blog.title }}</span>
+        {% endif %}
+      {% elsif template == 'article' %}
+        <span>/</span>
+        {{ blog.title | link_to: blog.url }}
+        <span>/</span>
+        <span class="bread-title">{{ article.title }}</span>
+      {% else %}
+        <span>/</span>
+        <span class="bread-title">{{ page_title }}</span>
+      {% endif %}
+    </nav>
+  {% endunless %}
 </div>

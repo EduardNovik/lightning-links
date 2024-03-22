@@ -1,53 +1,63 @@
 <section class="container mx-auto ">
   <h5 class="section-header mb-12">
-    {{ section.settings.title }}
+    {{ section.settings.title }} FOR
   </h5>
 
   <div class="productsContainer grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
     {% for block in section.blocks %}
       {% assign product = all_products[block.settings.product] %}
-      {% render 'product-item', product: product %}
-      {% render 'buy-popup-custom', product: product %}
+      {% render 'product-item'
+        , product: product %}
+      {% render 'buy-popup-custom'
+        , product: product %}
     {% endfor %}
   </div>
-  <a
-    href="/collections/all"
-    class="buttonWithLine block w-fit mx-auto relative py-2 px-3 border border-grigio-40 uppercase font-extrabold"
-  >
-    Show all
-  </a>
+
+  <div class="relative text-center">
+    <div class="absolute top-0 bg-grigio-40" style="
+    height: 1px;
+    width: 50%;
+    max-width: 480px;
+    left: 50%;
+    transform: translate(-50%, 0px)">
+</div>
+    <a href="/collections/all" class="relative buttonWithLine block w-fit mx-auto py-2 px-3 border border-grigio-40 uppercase font-extrabold hover:border-yellow">
+      Show all
+    </a>
+  </div>
+
 </section>
 
 {% schema %}
-{
-  "name": "Recommended product",
-  "max_blocks": 6,
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Title",
-      "default": "Products"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Recommended product"
-    }
-  ],
+  {
+    "name": "Recommended product",
+    "max_blocks": 6,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Products"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Recommended product"
+      }
+    ],
 
-  "blocks": [
-    {
-      "type": "product",
-      "name": "Product",
-      "settings": [
-        {
-          "type": "product",
-          "id": "product",
-          "label": "Product item"
-        }
-      ]
-    }
-  ]
-}
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product item"
+          }
+        ]
+      }
+    ]
+  }
 {% endschema %}

@@ -108,7 +108,7 @@
   <div class="flex justify-start items-center flex-col gap-6">
 
     <p class="w-full text-start text-2xl font-bold">How it works?</p>
-    <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
+    <p>{{section.settings.text1_id}}</p>
 
     <div
     {% unless section.settings.backgroundImage == nil -%}{% render 'background', image: section.settings.backgroundImage %}{%- endunless %}
@@ -134,7 +134,8 @@
 
 
     <p class="w-full text-xl font-bold mt-6">Advantages</p>
-    <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
+    <p>{{section.settings.text2_id}}</p>
+
 
     <div div class="w-full">
       {% for linkBlock in section.blocks %}
@@ -145,7 +146,8 @@
     </div>
 
     <p class="w-full text-xl font-bold mt-6">Result</p>
-    <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
+    <p>{{section.settings.text3_id}}</p>
+
 
     <div data-bstr-section-slider="{{section.id}}" {% if section.settings.autoplay %}data-autoplay=true{% endif %} onmouseover="this.dataset.paused = -1;" onmouseout="this.dataset.paused = new Date().getTime();" 
     id="s--{{section.id}}" class="w-full {% render 'common-class', section: section, class: 'slider slider--responsive', vAlign: false %}">
@@ -177,12 +179,11 @@
       <select
         name="car"
         id="car-select-mini"
-        class="form-select block w-full p-3 border border-gray-300 bg-white shadow-sm focus:outline-none focus:ring-yellow focus:border-yellow sm:text-sm">
+        class="form-select block w-full p-3 border border-gray-300 bg-grigio-20 shadow-sm focus:outline-none focus:ring-yellow focus:border-yellow sm:text-sm">
         {% for product_option in collections.all.products %}
           <option
             value="{{ product_option.url }}"
-            {% if product_option.title == product.title %}
-            selected{% endif %}>
+            {% if product_option.title == product.title %} selected{% endif %}>
             {{ product_option.title }}
           </option>
         {% endfor %}
@@ -279,7 +280,7 @@
                     {% assign vars = avvars | where: optix, value %}
                     {% if colorArray contains product_option_lc or imageArray contains product_option_lc %}
                       <span
-                        class="lazyload swatch--color w-full bg-white border-2 border-grigio-40"
+                        class="lazyload swatch--color w-full border-2 border-grigio-40"
                         {%- render 'swatch__custom-finder', value: value, colorImages: colorImages, useImages: useImages, ix: ix -%}
                         data-swatch-option="{{value| escape}}"
                         data-swatch-index="{{product.id}}-{{index}}"
@@ -288,7 +289,7 @@
                         {% endif %}></span>
                     {% else %}
                       <span
-                        class="w-full bg-white border-2 border-grigio-40"
+                        class="w-full  border-2 border-grigio-40"
                         data-swatch-option="{{value| escape}}"
                         data-swatch-index="{{product.id}}-{{index}}"
                         {% if vars.size == 0 %}
@@ -340,12 +341,14 @@
 
     {% comment %}BUTTON {% endcomment %}
 
-    <a class="mt-[28px] button button--primary button--ghost  button--primary__ghost button--full-width" href="/checkout">
-      <button class="flex justify-center items-center w-full h-[44px] gap-2 p-3 bg-black hover:bg-yellow text-white">
-        {% render 'icon-cart-white' %}
-        <span class="text-sm uppercase font-extrabold text-white">BUY</span>
-      </button>
-    </a>
+    {% form 'product'
+        , product %}
+        {% render 'block__product-page--atc-custom'
+          , product: product
+          , form: form
+          , class="mt-6 "
+        %}
+    {% endform %}
 
   </div>
 </div>
@@ -501,11 +504,29 @@
       ],
       "default": "6"
     },
-    {
-      "type": "video_url",
+    { 
       "accept": ["youtube", "vimeo"],
+      "type": "video_url",
       "id": "video",
       "label": "Video URL"
+    },
+    {
+        "type": "text",
+        "id": "text1_id",
+        "label": "Add text1",
+        "default": "Add text1"
+    },
+    {
+        "type": "text",
+        "id": "text2_id",
+        "label": "Add text2",
+        "default": "Add text2"
+    },
+    {
+        "type": "text",
+        "id": "text3_id",
+        "label": "Add text3",
+        "default": "Add text3"
     }
     ],
     "blocks": [
