@@ -189,7 +189,7 @@
       "header--default": {
         "type": "header--default",
         "custom_css": [
-
+          ".nav__link__holder:nth-child(2) {order: 3;}"
         ],
         "settings": {
           "layout": "stretchContent",
