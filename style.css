@@ -431,7 +431,8 @@ body::-webkit-scrollbar {
 .mobile-submenu-label {
   padding-left: 10px;
 }
-/* ------- */
+/* MODAL-ANIMATION------ */
+
 .car-wheels-modal {
   margin-top: 16%;
 }
@@ -446,7 +447,7 @@ body::-webkit-scrollbar {
 .car-body-modal-stance {
   margin-bottom: 1%;
 }
-/* ---------- */
+/* PRODUCT-ANIMATION---------- */
 
 .car-wheels {
   margin-top: 30%;
