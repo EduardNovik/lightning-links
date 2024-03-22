@@ -73,6 +73,9 @@ if (quickOrderBtn) {
 
 function attachVariantButtonListener() {
   const variantButtonsElement = document.querySelectorAll(".variant-btn");
+  const variantButtonElement = document.querySelector(".variant-btn");
+  const activeOptionValue =
+    variantButtonElement.getAttribute("data-swatch-option");
 
   variantButtonsElement.forEach((button) => {
     button.addEventListener("click", function () {
@@ -104,24 +107,50 @@ function attachVariantButtonListener() {
           }
           break;
         default:
+          carBodyElement.style.marginBottom = "2%";
           break;
       }
     });
   });
 }
 
-// buyPopupCustomButtons.forEach((button) => {
-//   button.addEventListener("click", function () {
-//     // This 'this' keyword refers to the button clicked
-//     const popupId = this.getAttribute("data-popup-id");
-//     const popup = document.getElementById(popupId);
-//     if (popup) {
-//       popup.classList.remove("invisible");
-//       body.classList.toggle("overflow-hidden");
-//       attachVariantButtonListener();
-//     }
-//   });
-// });
+function updateVariantStyleListener() {
+  const variantButtonsElement = document.querySelectorAll(".variant-btn");
+
+  variantButtonsElement.forEach(() => {
+    const activeOptionValue = this.getAttribute("data-swatch-option");
+    const selectedOptionValue = this.classList.contains("swatch--active");
+    const modal = this.closest(".buy-popup-custom");
+    const carBodyElement = modal.querySelector(".car-body-modal");
+
+    switch (activeOptionValue && selectedOptionValue) {
+      case "MILD":
+        if (carBodyElement && selectedOptionValue) {
+          carBodyElement.style.marginBottom = "3%";
+          console.log(carBodyElement);
+          console.log("MILD");
+        }
+        break;
+      case "MEDIUM":
+        if (carBodyElement && selectedOptionValue) {
+          carBodyElement.style.marginBottom = "2%";
+          console.log(carBodyElement);
+          console.log("MEDIUM");
+        }
+        break;
+      case "STANCE":
+        if (carBodyElement && selectedOptionValue) {
+          carBodyElement.style.marginBottom = "1%";
+          console.log(carBodyElement);
+          console.log("STANCE");
+        }
+        break;
+      default:
+        carBodyElement.style.marginBottom = "2%";
+        break;
+    }
+  });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   const buyPopupCustomButtons = document.querySelectorAll(
@@ -132,8 +161,9 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function () {
       const popupId = this.getAttribute("data-popup-id");
       const popup = document.getElementById(popupId);
-      attachVariantButtonListener(); // Call the function after opening the modal
       if (popup) {
+        updateVariantStyleListener();
+        attachVariantButtonListener();
         popup.classList.remove("invisible");
         document.body.classList.toggle("overflow-hidden");
       }
