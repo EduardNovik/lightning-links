@@ -435,6 +435,8 @@ body::-webkit-scrollbar {
 
 .car-wheels-modal {
   margin-top: 16%;
+}
+.car-body-modal {
   transition: transform 0.5s ease, margin-bottom 0.5s ease;
 }
 
