@@ -133,10 +133,10 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function () {
       const popupId = this.getAttribute("data-popup-id");
       const popup = document.getElementById(popupId);
+      attachVariantButtonListener(); // Call the function after opening the modal
       if (popup) {
         popup.classList.remove("invisible");
         document.body.classList.toggle("overflow-hidden");
-        attachVariantButtonListener(); // Call the function after opening the modal
       }
     });
   });
