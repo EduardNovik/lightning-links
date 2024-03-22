@@ -117,13 +117,13 @@ function attachVariantButtonListener() {
 function updateVariantStyleListener() {
   const variantButtonsElement = document.querySelectorAll(".variant-btn");
 
-  variantButtonsElement.forEach(() => {
-    const activeOptionValue = this.getAttribute("data-swatch-option");
-    const selectedOptionValue = this.classList.contains("swatch--active");
-    const modal = this.closest(".buy-popup-custom");
+  variantButtonsElement.forEach((button) => {
+    const activeOptionValue = button.getAttribute("data-swatch-option");
+    const selectedOptionValue = button.classList.contains("swatch--active");
+    const modal = button.closest(".buy-popup-custom");
     const carBodyElement = modal.querySelector(".car-body-modal");
 
-    switch (activeOptionValue && selectedOptionValue) {
+    switch (activeOptionValue) {
       case "MILD":
         if (carBodyElement && selectedOptionValue) {
           carBodyElement.style.marginBottom = "3%";
