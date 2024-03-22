@@ -85,14 +85,12 @@ function attachVariantButtonListener() {
         case "MILD":
           if (carBodyElement) {
             carBodyElement.style.marginBottom = "3%";
-            // carBodyElement.classList.add("car-body-modal-mild");
             console.log(carBodyElement);
             console.log("MILD");
           }
           break;
         case "MEDIUM":
           if (carBodyElement) {
-            // carBodyElement.classList.add("car-body-modal-medium");
             carBodyElement.style.marginBottom = "2%";
             console.log(carBodyElement);
             console.log("MEDIUM");
@@ -100,7 +98,6 @@ function attachVariantButtonListener() {
           break;
         case "STANCE":
           if (carBodyElement) {
-            // carBodyElement.style.removeProper("margin-bottom-stance");
             carBodyElement.style.marginBottom = "1%";
             console.log(carBodyElement);
             console.log("STANCE");
