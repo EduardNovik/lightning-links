@@ -73,12 +73,14 @@ if (quickOrderBtn) {
 
 function attachVariantButtonListener() {
   const variantButtonsElement = document.querySelectorAll(".variant-btn");
-  const carBodyElement = document.querySelector(".car-body-modal");
 
   variantButtonsElement.forEach((button) => {
     button.addEventListener("click", function () {
-      console.log("clicked");
       const activeOptionValue = this.getAttribute("data-swatch-option");
+
+      const modal = this.closest(".buy-popup-custom");
+      const carBodyElement = modal.querySelector(".car-body-modal");
+
       switch (activeOptionValue) {
         case "MILD":
           if (carBodyElement) {
