@@ -432,6 +432,12 @@ body::-webkit-scrollbar {
   padding-left: 10px;
 }
 /* MODAL-ANIMATION------ */
+/* tesla */
+#modal-body-TESLA\ MODEL\ S\ 2022\+ {
+  margin-top: -3%;
+}
+
+/* cross-over and general */
 
 .car-wheels-modal {
   margin-top: 16%;
