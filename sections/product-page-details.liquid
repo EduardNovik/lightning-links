@@ -108,7 +108,7 @@
   <div class="flex justify-start items-center flex-col gap-6">
 
     <p class="w-full text-start text-2xl font-bold">How it works?</p>
-    <p>{{section.settings.text1_id.text}}</p>
+    <p>{{section.settings.text1_id}}</p>
 
     <div
     {% unless section.settings.backgroundImage == nil -%}{% render 'background', image: section.settings.backgroundImage %}{%- endunless %}
@@ -134,7 +134,7 @@
 
 
     <p class="w-full text-xl font-bold mt-6">Advantages</p>
-    <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
+     <p>{{section.settings.text2_id}}</p>
 
     <div div class="w-full">
       {% for linkBlock in section.blocks %}
@@ -145,7 +145,7 @@
     </div>
 
     <p class="w-full text-xl font-bold mt-6">Result</p>
-    <p>Discover the ultimate solution for a seamless and adjustable driving experience with our state-of-the-art air suspension gadget. Designed for car enthusiasts and everyday drivers alike, our product offers unparalleled control over your vehicle's suspension system.</p>
+    <p>{{section.settings.text3_id}}</p>
 
     <div data-bstr-section-slider="{{section.id}}" {% if section.settings.autoplay %}data-autoplay=true{% endif %} onmouseover="this.dataset.paused = -1;" onmouseout="this.dataset.paused = new Date().getTime();" 
     id="s--{{section.id}}" class="w-full {% render 'common-class', section: section, class: 'slider slider--responsive', vAlign: false %}">
@@ -512,17 +512,20 @@
     {
         "type": "text",
         "id": "text1_id",
-        "label": "Add text1"
+        "label": "Add text1",
+        "default": "Add text1"
     },
     {
         "type": "text",
         "id": "text2_id",
-        "label": "Add text2"
+        "label": "Add text2",
+        "default": "Add text2"
     },
     {
         "type": "text",
         "id": "text3_id",
-        "label": "Add text3"
+        "label": "Add text3",
+        "default": "Add text3"
     },
     ],
     "blocks": [
