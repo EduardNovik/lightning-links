@@ -1888,10 +1888,14 @@ body::-webkit-scrollbar {
   padding-left: 10px;
 }
 
-/* ------- */
+/* MODAL-ANIMATION------ */
 
 .car-wheels-modal {
   margin-top: 16%;
+}
+
+.car-body-modal {
+  transition: transform 0.25s ease, margin-bottom 0.25s ease;
 }
 
 .car-body-modal-mild {
@@ -1906,7 +1910,7 @@ body::-webkit-scrollbar {
   margin-bottom: 1%;
 }
 
-/* ---------- */
+/* PRODUCT-ANIMATION---------- */
 
 .car-wheels {
   margin-top: 30%;
