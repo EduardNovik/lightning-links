@@ -48,7 +48,7 @@
         "button_text": "",
         "button_url": "",
         "custom_liquid": "<h1>Custom Liquid<\/h1>",
-        "image": "shopify:\/\/shop_images\/yellow_car.png",
+        "image": "shopify:\/\/shop_images\/car_yellow2_228e8ef9-1aa7-43ce-bfa6-6b1bbc946942.png",
         "absolute_image": "shopify:\/\/shop_images\/Group_82.png",
         "video_url": ""
       }
@@ -59,37 +59,37 @@
         "product_Pd8QDn": {
           "type": "product",
           "settings": {
-            "product": "bmw-m5-2020"
+            "product": "audi-a6"
           }
         },
         "product_GfKiNn": {
           "type": "product",
           "settings": {
-            "product": "mercedes-benz-glb-250-specs-2020"
+            "product": "cadillac-escalade-2021"
           }
         },
         "product_kkT7Bk": {
           "type": "product",
           "settings": {
-            "product": "porsche-macan-2020"
+            "product": "lamborghini-urus-2017"
           }
         },
         "product_n6VPrF": {
           "type": "product",
           "settings": {
-            "product": "bmw-x5-2020"
+            "product": "range-rover-2023"
           }
         },
         "product_EEVLAN": {
           "type": "product",
           "settings": {
-            "product": "audi-q5-2020"
+            "product": "tesla-model-x"
           }
         },
         "product_bynXgD": {
           "type": "product",
           "settings": {
-            "product": "audi-a3-2020"
+            "product": "porsche-cayenne-2017"
           }
         }
       },
