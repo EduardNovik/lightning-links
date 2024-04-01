@@ -17,6 +17,7 @@
     </span>
     scroll down
   </p>
+  <img src="{{ section.settings.image }}" alt="absolute image">
 </section>
 
 {% schema %}
@@ -41,6 +42,10 @@
         "label": "Video"
       },
       {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Absolut Image"
+      }, {
         "type": "range",
         "id": "padding_top",
         "label": "Padding Top",
