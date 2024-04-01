@@ -479,7 +479,7 @@ body::-webkit-scrollbar {
 /* cross-over and general */
 
 .car-wheels {
-  margin-top: 21%;
+  margin-top: 13%;
 }
 
 .car-body {
@@ -489,7 +489,7 @@ body::-webkit-scrollbar {
 
 @media screen and (min-width: 1280px) {
   .car-body {
-    margin-top: 20%;
+    margin-top: 19%;
   }
 }
 
