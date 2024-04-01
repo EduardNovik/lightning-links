@@ -441,7 +441,7 @@ body::-webkit-scrollbar {
 /* cross-over and general */
 
 .car-wheels-modal {
-  margin-top: 16%;
+  margin-top: -2%;
 }
 .car-body-modal {
   transition: transform 0.25s ease, margin-bottom 0.25s ease;
@@ -466,14 +466,14 @@ body::-webkit-scrollbar {
 
 @media screen and (min-width: 1280px) {
   #wheels-TESLA\ MODEL\ S\ 2022\+ {
-  margin-top: 18%;
-}
+    margin-top: 18%;
+  }
 }
 
 @media screen and (min-width: 1536px) {
-   #wheels-TESLA\ MODEL\ S\ 2022\+ {
-  margin-top: 21%;
-}
+  #wheels-TESLA\ MODEL\ S\ 2022\+ {
+    margin-top: 21%;
+  }
 }
 
 /* cross-over and general */
