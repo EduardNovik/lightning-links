@@ -17,7 +17,10 @@
     </span>
     scroll down
   </p>
-  <img src="{{ section.settings.image }}" alt="absolute image" class="absolute w-full h-auto bottom-0">
+  <img
+    src="{{ section.settings.image| img_url: 'original'}}"
+    alt="absolute image"
+    class="absolute w-full h-auto bottom-0">
 </section>
 
 {% schema %}
