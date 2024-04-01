@@ -487,14 +487,13 @@ body::-webkit-scrollbar {
   transition: transform 0.5s ease, margin-top 0.5s ease;
 }
 
-
 @media screen and (min-width: 1280px) {
   .car-body {
-    margin-top: 19%;
+    margin-top: 20%;
   }
   .car-wheels {
-  margin-top: 19%;
-}
+    margin-top: 13%;
+  }
 }
 
 @media screen and (min-width: 1536px) {
@@ -502,6 +501,6 @@ body::-webkit-scrollbar {
     margin-top: 22%;
   }
   .car-wheels {
-  margin-top: 22%;
-}
+    margin-top: 13%;
+  }
 }
