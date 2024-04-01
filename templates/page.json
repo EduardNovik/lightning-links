@@ -17,6 +17,7 @@
     },
     "content": {
       "type": "page",
+      "disabled": true,
       "settings": {
         "layout": "default",
         "enableShortcodes": false
@@ -25,7 +26,8 @@
     "crumbs_FQUnFc": {
       "type": "crumbs",
       "custom_css": [
-        ".breadcrumb {margin-top: 10px; margin-bottom: 20px;}"
+        ".breadcrumb {margin-top: 10px;}",
+        "nav.breadcrumb > :last-child {margin-top: 40px; display: block; font-size: 58px;}"
       ],
       "settings": {
       }
@@ -33,7 +35,7 @@
     "product_filter_custom_8DYCTx": {
       "type": "product-filter-custom",
       "custom_css": [
-        ".container {margin-top: 10px;}"
+        ".container {margin-top: 50px;}"
       ],
       "settings": {
       }
