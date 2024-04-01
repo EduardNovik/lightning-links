@@ -17,10 +17,10 @@
     </span>
     scroll down
   </p>
-  <img
-    src="{{ section.settings.image| img_url: 'original'}}"
-    alt="absolute image"
-    class="absolute w-full h-auto bottom-0">
+{% comment %} <img
+      src="{{ section.settings.image| img_url: 'original'}}"
+      alt="absolute image"
+    class="absolute w-full h-auto bottom-0"> {% endcomment %}
 </section>
 
 {% schema %}
@@ -45,10 +45,6 @@
         "label": "Video"
       },
       {
-        "type": "image_picker",
-        "id": "image",
-        "label": "Absolut Image"
-      }, {
         "type": "range",
         "id": "padding_top",
         "label": "Padding Top",
