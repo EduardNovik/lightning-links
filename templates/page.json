@@ -35,7 +35,7 @@
     "product_filter_custom_8DYCTx": {
       "type": "product-filter-custom",
       "custom_css": [
-        ".container {margin-top: 40px;}"
+        ".container {margin-top: 60px;}"
       ],
       "settings": {
       }
