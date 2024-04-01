@@ -805,6 +805,10 @@ video {
   height: 300px;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .h-full {
   height: 100%;
 }
@@ -1899,7 +1903,7 @@ body::-webkit-scrollbar {
 /* cross-over and general */
 
 .car-wheels-modal {
-  margin-top: 16%;
+  margin-top: -2%;
 }
 
 .car-body-modal {
@@ -2147,9 +2151,8 @@ body::-webkit-scrollbar {
     padding-right: 1.25rem;
   }
 
-  .md\:py-14 {
+  .md\:pt-14 {
     padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
   }
 
   .md\:text-lg {
