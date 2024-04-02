@@ -504,3 +504,32 @@ body::-webkit-scrollbar {
     margin-top: 22%;
   }
 }
+
+.quick-btn {
+  right: 0px;
+}
+@media (min-width: 640px) {
+  .quick-btn {
+    right: -437px;
+  }
+}
+@media (min-width: 768px) {
+  .quick-btn {
+    right: -564px;
+  }
+}
+@media (min-width: 1024px) {
+  .quick-btn {
+    right: -821px;
+  }
+}
+@media (min-width: 1280px) {
+  .quick-btn {
+    right: -1332px;
+  }
+}
+@media (min-width: 1536px) {
+  .quick-btn {
+    right: -1332px;
+  }
+}
