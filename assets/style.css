@@ -1969,6 +1969,42 @@ body::-webkit-scrollbar {
   }
 }
 
+.container-quick-ordr {
+  width: 100%;
+  position: relative;
+  /* Already set as relative */
+}
+
+@media (min-width: 640px) {
+  .container-quick-ordr {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-quick-ordr {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-quick-ordr {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-quick-ordr {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container-quick-ordr {
+    max-width: 1536px;
+  }
+}
+
 .before\:absolute::before {
   content: var(--tw-content);
   position: absolute;
