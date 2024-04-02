@@ -1949,39 +1949,64 @@ body::-webkit-scrollbar {
   }
 }
 
+/* .quick-btn-scroll {
+  right: 0px;
+}
+@media (min-width: 640px) {
+  .quick-btn-scroll {
+    right: -437px;
+  }
+}
+@media (min-width: 768px) {
+  .quick-btn-scroll {
+    right: -564px;
+  }
+}
+@media (min-width: 1024px) {
+  .quick-btn-scroll {
+    right: -821px;
+  }
+}
+@media (min-width: 1280px) {
+  .quick-btn-scroll {
+    right: -1077px;
+  }
+}
+@media (min-width: 1536px) {
+  .quick-btn-scroll {
+    right: -1332px;
+  }
+} */
+
 .quick-btn {
   right: 0px;
 }
 
-@media (min-width: 640px) {
+/* @media (min-width: 640px) {
   .quick-btn {
     right: -437px;
   }
 }
-
 @media (min-width: 768px) {
   .quick-btn {
     right: -564px;
   }
 }
-
 @media (min-width: 1024px) {
   .quick-btn {
     right: -821px;
   }
 }
-
 @media (min-width: 1280px) {
   .quick-btn {
     right: -1077px;
   }
 }
-
 @media (min-width: 1536px) {
   .quick-btn {
     right: -1332px;
   }
-}
+} */
 
 .before\:absolute::before {
   content: var(--tw-content);
