@@ -487,7 +487,7 @@ body::-webkit-scrollbar {
   }
 }
 
-.quick-btn-scroll {
+/* .quick-btn-scroll {
   right: 0px;
 }
 @media (min-width: 640px) {
@@ -514,12 +514,12 @@ body::-webkit-scrollbar {
   .quick-btn-scroll {
     right: -1332px;
   }
-}
+} */
 
 .quick-btn {
   right: 0px;
 }
-@media (min-width: 640px) {
+/* @media (min-width: 640px) {
   .quick-btn {
     right: -437px;
   }
@@ -543,4 +543,4 @@ body::-webkit-scrollbar {
   .quick-btn {
     right: -1332px;
   }
-}
+} */

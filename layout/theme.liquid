@@ -169,52 +169,20 @@
 
     {% render 'layout__custom-code--body' %}
 
-    {% comment %} <div class="relative container">
-                        <div class="absolute container quick-btn">
-                          <div class="fixed bottom-0 flex gap-2">
-                            {% if settings.quickOrderButton %}
-                              <button id="quickOrderBtn" class="w-fit uppercase p-2 bg-grigio-20 font-black">
-                                quick order
-                              </button>
-                            {% endif %}
-                            {% if settings.backTopBtn %}
-                              {% render 'scroll_top_button' %}
-                            {% endif %}
-                          </div>
-                        </div>
-                </div> {% endcomment %}
-
-    {% if settings.backTopBtn %}
-      <div class="relative container">
-        <div class="absolute container quick-btn-scroll">
-          <div class="fixed bottom-0 flex gap-2">
-            {% if settings.quickOrderButton %}
-              <button id="quickOrderBtn" class="w-fit uppercase p-2 bg-grigio-20 font-black">
-                quick order
-              </button>
-            {% endif %}
-            {% if settings.backTopBtn %}
-              {% render 'scroll_top_button' %}
-            {% endif %}
-          </div>
+    <div class="relative container">
+      <div class="absolute container right-0">
+        <div class="fixed bottom-0 flex gap-2">
+          {% if settings.quickOrderButton %}
+            <button id="quickOrderBtn" class="w-fit uppercase p-2 bg-grigio-20 font-black">
+              quick order
+            </button>
+          {% endif %}
+          {% if settings.backTopBtn %}
+            {% render 'scroll_top_button' %}
+          {% endif %}
         </div>
       </div>
-    {% else %}
-      <div class="relative container">
-        <div class="absolute container quick-btn">
-          <div class="fixed bottom-0 flex gap-2">
-            {% if settings.quickOrderButton %}
-              <button id="quickOrderBtn" class="w-fit uppercase p-2 bg-grigio-20 font-black">
-                quick order
-              </button>
-            {% endif %}
-            {% if settings.backTopBtn %}
-              {% render 'scroll_top_button' %}
-            {% endif %}
-          </div>
-        </div>
-      </div>
-    {% endif %}
+    </div>
 
     {% if settings.discount_popup_enable %}
       {% render 'discount_popup' %}
