@@ -6,7 +6,6 @@
         "title": "Get Easy Your Car lower",
         "text": "+ other benefits",
         "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c82a636c716b441f99819572195793ce.mp4",
-        "image": "shopify:\/\/shop_images\/background_2.png",
         "padding_top": 20,
         "padding_bottom": 20
       }
@@ -131,8 +130,11 @@
       "type": "advantages",
       "settings": {
         "advantage_1": "style",
+        "advantage_1_url": "shopify:\/\/products\/audi-a6",
         "advantage_2": "reducing fuel consumption",
+        "advantage_2_url": "",
         "advantage_3": "effective aerodynamics",
+        "advantage_3_url": "",
         "image": "shopify:\/\/shop_images\/Frame_76.png",
         "padding_top": 20,
         "padding_bottom": 20
