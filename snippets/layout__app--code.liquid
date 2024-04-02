@@ -51,18 +51,17 @@
 <div class="relative container">
   <div class="absolute container right-0">
     {% if settings.gdpr %}
-      <div id="bstr--notice" class="gdpr__holder right-0 left-auto w-fit p-0 md:px-4 xl:px-16">
+      <div id="bstr--notice" class="gdpr__holder p-0 container right-0">
         <div class="gdpr__notice w-fit bg-grigio-100 uppercase">
           {% comment %} <p class=" text-white">
-                                            {{settings.gdprText}}
-                                      </p> {% endcomment %}
-
+                              {{settings.gdprText}}
+                  </p> {% endcomment %}
           <div class="flex gap-2">
             <p class="text-white text-xs md:text-lg flex justify-center items-center text-center">WE use cookie</p>
             <p>
               <a class="text-white hover:bg-yellow font-roboto flex w-fit h-full text-xs justify-center items-center px-2 text-center" href="{{settings.gdprLink}}">
                 Read More
-              </a>
+            </a>
             </p>
             <div class="gdpr__buttons text-xs bg-white p-2 ">
               {% render 'button--onclick'
@@ -76,3 +75,4 @@
     {% endif %}
   </div>
 </div>
+gdpr__holder right-0 left-auto w-fit p-0 md:px-4 xl:px-16
