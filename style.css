@@ -457,26 +457,8 @@ body::-webkit-scrollbar {
 .car-body-modal-stance {
   margin-bottom: 1%;
 }
+
 /* PRODUCT-ANIMATION---------- */
-
-/* tesla */
-/* #wheels-TESLA\ MODEL\ S\ 2022\+ {
-  margin-top: 12%;
-}
-
-@media screen and (min-width: 1280px) {
-  #wheels-TESLA\ MODEL\ S\ 2022\+ {
-    margin-top: 18%;
-  }
-}
-
-@media screen and (min-width: 1536px) {
-  #wheels-TESLA\ MODEL\ S\ 2022\+ {
-    margin-top: 21%;
-  }
-} */
-
-/* cross-over and general */
 
 .car-wheels {
   margin-top: 13%;
@@ -502,6 +484,35 @@ body::-webkit-scrollbar {
   }
   .car-wheels {
     margin-top: 22%;
+  }
+}
+
+.quick-btn-scroll {
+  right: 0px;
+}
+@media (min-width: 640px) {
+  .quick-btn-scroll {
+    right: -437px;
+  }
+}
+@media (min-width: 768px) {
+  .quick-btn-scroll {
+    right: -564px;
+  }
+}
+@media (min-width: 1024px) {
+  .quick-btn-scroll {
+    right: -821px;
+  }
+}
+@media (min-width: 1280px) {
+  .quick-btn-scroll {
+    right: -1077px;
+  }
+}
+@media (min-width: 1536px) {
+  .quick-btn-scroll {
+    right: -1332px;
   }
 }
 

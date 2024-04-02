@@ -169,20 +169,52 @@
 
     {% render 'layout__custom-code--body' %}
 
-    <div class="relative container">
-      <div class="absolute container quick-btn">
-        <div class="fixed bottom-0 flex gap-2">
-          {% if settings.quickOrderButton %}
-            <button id="quickOrderBtn" class="w-fit uppercase p-2 bg-grigio-20 font-black">
-              quick order
-            </button>
-          {% endif %}
-          {% if settings.backTopBtn %}
-            {% render 'scroll_top_button' %}
-          {% endif %}
+    {% comment %} <div class="relative container">
+            <div class="absolute container quick-btn">
+              <div class="fixed bottom-0 flex gap-2">
+                {% if settings.quickOrderButton %}
+                  <button id="quickOrderBtn" class="w-fit uppercase p-2 bg-grigio-20 font-black">
+                    quick order
+                  </button>
+                {% endif %}
+                {% if settings.backTopBtn %}
+                  {% render 'scroll_top_button' %}
+                {% endif %}
+              </div>
+            </div>
+        </div> {% endcomment %}
+
+    {% if settings.backTopBtn %}
+      <div class="relative container">
+        <div class="absolute container quick-btn-scroll">
+          <div class="fixed bottom-0 flex gap-2">
+            {% if settings.quickOrderButton %}
+              <button id="quickOrderBtn" class="w-fit uppercase p-2 bg-grigio-20 font-black">
+                quick order
+              </button>
+            {% endif %}
+            {% if settings.backTopBtn %}
+              {% render 'scroll_top_button' %}
+            {% endif %}
+          </div>
         </div>
       </div>
-    </div>
+    {% else %}
+      <div class="relative container">
+        <div class="absolute container quick-btn">
+          <div class="fixed bottom-0 flex gap-2">
+            {% if settings.quickOrderButton %}
+              <button id="quickOrderBtn" class="w-fit uppercase p-2 bg-grigio-20 font-black">
+                quick order
+              </button>
+            {% endif %}
+            {% if settings.backTopBtn %}
+              {% render 'scroll_top_button' %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
 
     {% if settings.discount_popup_enable %}
       {% render 'discount_popup' %}
