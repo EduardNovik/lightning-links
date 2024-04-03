@@ -1,9 +1,11 @@
 <div class="container">
   <div class="flex md:flex-row flex-col gap-8  mt-[60px]">
-    <img
-      src="{{ section.settings.imageProduct| img_url: 'original'}}"
-      alt="image product"
-      class="imageProduct md:w-[45%] h-auto w-full">
+    <div class="md:w-[45%] h-auto w-full">
+      <img
+        src="{{ section.settings.imageProduct| img_url: 'original'}}"
+        alt="image product"
+        class="imageProduct">
+    </div>
     <div class="h-auto w-[10%] flex items-center justify-center">
       <img
         src="{{ section.settings.imageArrow| img_url: 'original'}}"
