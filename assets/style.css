@@ -756,6 +756,10 @@ video {
   margin-top: 60px;
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
 .block {
   display: block;
 }
