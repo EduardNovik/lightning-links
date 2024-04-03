@@ -4,14 +4,16 @@
       src="{{ section.settings.imageProduct| img_url: 'original'}}"
       alt="image product"
       class="imageProduct md:w-[40%] h-auto w-full">
-    <img
-      src="{{ section.settings.imageArrow| img_url: 'original'}}"
-      alt="image arrow"
-      class="imageArrow md:block hidden h-auto w-[10%]">
-    <img
-      src="{{ section.settings.imageArrow| img_url: 'original'}}"
-      alt="image arrow"
-      class="imageArrow md:hidden block h-auto w-[10%] rotate-90">
+      <div class="h-auto w-[10%]">
+        <img
+        src="{{ section.settings.imageArrow| img_url: 'original'}}"
+        alt="image arrow"
+        class="imageArrow md:block hidden">
+        <img
+        src="{{ section.settings.imageArrow| img_url: 'original'}}"
+        alt="image arrow"
+        class="imageArrow md:hidden block rotate-90">
+        </div>
     <img
       src="{{ section.settings.imageResult| img_url: 'original'}}"
       alt="image result"
