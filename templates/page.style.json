@@ -53,8 +53,8 @@
     "image_custom_w78UNG": {
       "type": "image-custom",
       "settings": {
-        "imageBefore": "shopify:\/\/shop_images\/TeslaModelS_full.png",
-        "imageAfter": "shopify:\/\/shop_images\/TeslaModelS_full.png",
+        "imageBefore": "shopify:\/\/shop_images\/before.png",
+        "imageAfter": "shopify:\/\/shop_images\/after.png",
         "padding_top": 0,
         "padding_bottom": 0
       }
