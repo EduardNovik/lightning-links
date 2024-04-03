@@ -39,6 +39,8 @@
         "text_fuel1": "",
         "text_fuel2": "",
         "text_fuel3": "",
+        "imageProduct": "shopify:\/\/shop_images\/link_img.png",
+        "imageArrow": "shopify:\/\/shop_images\/arrow2.png",
         "imageResult": "shopify:\/\/shop_images\/before.png",
         "padding_top": 20,
         "padding_bottom": 20
