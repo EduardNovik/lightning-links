@@ -31,11 +31,29 @@
       ],
       "settings": {
       }
+    },
+    "product_filter_custom_3ndthF": {
+      "type": "product-filter-custom",
+      "custom_css": [
+        ".container {margin-top:60px;}"
+      ],
+      "settings": {
+      }
+    },
+    "all_products_dg6XVN": {
+      "type": "all-products",
+      "custom_css": [
+
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "banner",
     "content",
-    "crumbs_FQUnFc"
+    "crumbs_FQUnFc",
+    "product_filter_custom_3ndthF",
+    "all_products_dg6XVN"
   ]
 }
