@@ -1,0 +1,72 @@
+<div class="flex md:flex-row flex-col gap-8 container mt-[60px]">
+  <img
+    src="{{ section.settings.imageProduct| img_url: 'original'}}"
+    alt="image product"
+    class="imageFuel md:w-1/2 h-auto w-full">
+  <img
+    src="{{ section.settings.imageArrow| img_url: 'original'}}"
+    alt="image arrow"
+    class="imageFuel md:w-1/2 h-auto w-full">
+  <img
+    src="{{ section.settings.imageResult| img_url: 'original'}}"
+    alt="image result"
+    class="imageFuel md:w-1/2 h-auto w-full">
+</div>
+
+
+{% schema %}
+  {
+    "name": "image-image-custom",
+    "settings": [
+      {
+        "type": "text",
+        "id": "text_fuel1",
+        "label": "Text 1"
+      },
+      {
+        "type": "text",
+        "id": "text_fuel2",
+        "label": "Text 2"
+      },
+      {
+        "type": "text",
+        "id": "text_fuel3",
+        "label": "Text 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "imageProduct",
+        "label": "Image Product"
+      }, {
+        "type": "image_picker",
+        "id": "imageArrow",
+        "label": "Image Arrow"
+      }, {
+        "type": "image_picker",
+        "id": "imageResult",
+        "label": "Image Result"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 20
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 20
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image + Image Custom"
+      }
+    ]
+  }
+{% endschema %}
