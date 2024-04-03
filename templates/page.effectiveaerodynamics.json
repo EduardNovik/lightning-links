@@ -32,11 +32,23 @@
       ],
       "settings": {
       }
+    },
+    "image_image_custom_Hip7PB": {
+      "type": "image-image-custom",
+      "settings": {
+        "text_fuel1": "",
+        "text_fuel2": "",
+        "text_fuel3": "",
+        "imageResult": "shopify:\/\/shop_images\/before.png",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
     }
   },
   "order": [
     "banner",
     "content",
-    "crumbs_FQUnFc"
+    "crumbs_FQUnFc",
+    "image_image_custom_Hip7PB"
   ]
 }
