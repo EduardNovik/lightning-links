@@ -49,6 +49,15 @@
       "settings": {
         "rich_text": "<h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio vero aliquid omnis deserunt assumenda necessitatibus consequuntur facere quam suscipit. Amet odio nam quo aliquid mollitia, eius cum suscipit possimus enim.Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio vero aliquid omnis deserunt assumenda necessitatibus consequuntur facere quam suscipit. Amet odio nam quo aliquid mollitia, eius cum suscipit possimus enim.<\/h6><h6><br\/>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio vero aliquid omnis deserunt assumenda necessitatibus consequuntur facere quam suscipit. Amet odio nam quo aliquid mollitia, eius cum suscipit possimus enim.Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio vero aliquid omnis deserunt assumenda necessitatibus consequuntur facere quam suscipit. Amet odio nam quo aliquid mollitia, eius cum suscipit possimus enim.<\/h6>"
       }
+    },
+    "image_custom_w78UNG": {
+      "type": "image-custom",
+      "settings": {
+        "imageBefore": "shopify:\/\/shop_images\/TeslaModelS_full.png",
+        "imageAfter": "shopify:\/\/shop_images\/TeslaModelS_full.png",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
@@ -56,6 +65,7 @@
     "content",
     "crumbs_FQUnFc",
     "text_block_CBVzH4",
-    "text_block_7wP6Nx"
+    "text_block_7wP6Nx",
+    "image_custom_w78UNG"
   ]
 }
