@@ -2196,6 +2196,10 @@ body::-webkit-scrollbar {
     width: 40%;
   }
 
+  .md\:w-\[45\%\] {
+    width: 45%;
+  }
+
   .md\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
