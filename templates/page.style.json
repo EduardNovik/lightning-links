@@ -35,7 +35,7 @@
     "text_block_CBVzH4": {
       "type": "text-block",
       "custom_css": [
-        "h1 {margin-top: 60px; text-align: center; line-height: 60px;}"
+        "h1 {margin-top: 60px; text-align: center; line-height: 65px;}"
       ],
       "settings": {
         "rich_text": "<h1>Feel the difference<\/h1>"
@@ -44,7 +44,7 @@
     "text_block_7wP6Nx": {
       "type": "text-block",
       "custom_css": [
-        "h6 {margin-top: 20px;}"
+
       ],
       "settings": {
         "rich_text": "<h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio vero aliquid omnis deserunt assumenda necessitatibus consequuntur facere quam suscipit. Amet odio nam quo aliquid mollitia, eius cum suscipit possimus enim.Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio vero aliquid omnis deserunt assumenda necessitatibus consequuntur facere quam suscipit. Amet odio nam quo aliquid mollitia, eius cum suscipit possimus enim.<\/h6><h6><br\/>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio vero aliquid omnis deserunt assumenda necessitatibus consequuntur facere quam suscipit. Amet odio nam quo aliquid mollitia, eius cum suscipit possimus enim.Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio vero aliquid omnis deserunt assumenda necessitatibus consequuntur facere quam suscipit. Amet odio nam quo aliquid mollitia, eius cum suscipit possimus enim.<\/h6>"
