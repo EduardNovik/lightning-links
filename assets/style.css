@@ -638,10 +638,6 @@ video {
   left: 0%;
 }
 
-.left-auto {
-  left: auto;
-}
-
 .right-0 {
   right: 0px;
 }
@@ -2180,11 +2176,6 @@ body::-webkit-scrollbar {
     padding: 0.75rem;
   }
 
-  .md\:px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
   .md\:px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -2285,13 +2276,6 @@ body::-webkit-scrollbar {
 
   .lg\:pt-16 {
     padding-top: 4rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .xl\:px-16 {
-    padding-left: 4rem;
-    padding-right: 4rem;
   }
 }
 
