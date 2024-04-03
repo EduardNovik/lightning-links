@@ -27,16 +27,30 @@
       "type": "crumbs",
       "custom_css": [
         ".breadcrumb {margin-top: 10px;}",
-        "nav.breadcrumb > :last-child {margin-top: 40px; display: block; font-size: 58px; line-height: 65px; }",
+        "nav.breadcrumb > :last-child {margin-top: 20px; display: block; font-size: 58px; line-height: 65px;}",
         "@media screen and (max-width: 500px) {nav.breadcrumb > :last-child {font-size: 40px; line-height: 50px; }}"
       ],
       "settings": {
+      }
+    },
+    "image_image_custom_Hip7PB": {
+      "type": "image-image-custom",
+      "settings": {
+        "text_fuel1": "",
+        "text_fuel2": "",
+        "text_fuel3": "",
+        "imageProduct": "shopify:\/\/shop_images\/link_img.png",
+        "imageArrow": "shopify:\/\/shop_images\/arrow2.png",
+        "imageResult": "shopify:\/\/shop_images\/before.png",
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     }
   },
   "order": [
     "banner",
     "content",
-    "crumbs_FQUnFc"
+    "crumbs_FQUnFc",
+    "image_image_custom_Hip7PB"
   ]
 }
