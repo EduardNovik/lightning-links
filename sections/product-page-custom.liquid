@@ -4,7 +4,7 @@
       "@type": "Product",
       "name": "{{ product.title |escape }}",
       {% if product.featured_image != nil %}
-      "image" : ["https:                                                                                                        {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
+      "image" : ["https:                                                                                                         {{ product.featured_image | img_url: '960x960' }}", "https:{{ product.featured_image | img_url: '960x720' }}", "https:{{ product.featured_image | img_url: '960x540' }}"],
       {% endif %}
       "description": "{{ product.description | strip_html | escape }}",
       "brand": {
@@ -233,7 +233,7 @@
               , size: '900x'
               , src: image.src
               , alt: image.alt
-              , class: 'w-[80%]' %}
+              , class: 'w-[70%]' %}
           </div>
         {% endif %}
         {% if forloop.index == 3 %}
@@ -242,7 +242,7 @@
               , size: '900x'
               , src: image.src
               , alt: image.alt
-              , class: 'w-[80%]' %}
+              , class: 'w-[70%]' %}
           </div>
         {% endif %}
       {% endfor %}

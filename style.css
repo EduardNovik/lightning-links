@@ -441,7 +441,7 @@ body::-webkit-scrollbar {
 /* cross-over and general */
 
 .car-wheels-modal {
-  margin-top: 16%;
+  margin-top: -2%;
 }
 .car-body-modal {
   transition: transform 0.25s ease, margin-bottom 0.25s ease;
@@ -457,29 +457,11 @@ body::-webkit-scrollbar {
 .car-body-modal-stance {
   margin-bottom: 1%;
 }
+
 /* PRODUCT-ANIMATION---------- */
 
-/* tesla */
-#wheels-TESLA\ MODEL\ S\ 2022\+ {
-  margin-top: 12%;
-}
-
-@media screen and (min-width: 1280px) {
-  #wheels-TESLA\ MODEL\ S\ 2022\+ {
-  margin-top: 18%;
-}
-}
-
-@media screen and (min-width: 1536px) {
-   #wheels-TESLA\ MODEL\ S\ 2022\+ {
-  margin-top: 21%;
-}
-}
-
-/* cross-over and general */
-
 .car-wheels {
-  margin-top: 30%;
+  margin-top: 13%;
 }
 
 .car-body {
@@ -491,10 +473,74 @@ body::-webkit-scrollbar {
   .car-body {
     margin-top: 20%;
   }
+  .car-wheels {
+    margin-top: 19%;
+  }
 }
 
 @media screen and (min-width: 1536px) {
   .car-body {
     margin-top: 22%;
   }
+  .car-wheels {
+    margin-top: 22%;
+  }
 }
+
+/* .quick-btn-scroll {
+  right: 0px;
+}
+@media (min-width: 640px) {
+  .quick-btn-scroll {
+    right: -437px;
+  }
+}
+@media (min-width: 768px) {
+  .quick-btn-scroll {
+    right: -564px;
+  }
+}
+@media (min-width: 1024px) {
+  .quick-btn-scroll {
+    right: -821px;
+  }
+}
+@media (min-width: 1280px) {
+  .quick-btn-scroll {
+    right: -1077px;
+  }
+}
+@media (min-width: 1536px) {
+  .quick-btn-scroll {
+    right: -1332px;
+  }
+} */
+
+.quick-btn {
+  right: 0px;
+}
+/* @media (min-width: 640px) {
+  .quick-btn {
+    right: -437px;
+  }
+}
+@media (min-width: 768px) {
+  .quick-btn {
+    right: -564px;
+  }
+}
+@media (min-width: 1024px) {
+  .quick-btn {
+    right: -821px;
+  }
+}
+@media (min-width: 1280px) {
+  .quick-btn {
+    right: -1077px;
+  }
+}
+@media (min-width: 1536px) {
+  .quick-btn {
+    right: -1332px;
+  }
+} */

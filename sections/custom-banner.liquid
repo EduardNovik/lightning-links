@@ -1,17 +1,14 @@
-<section class="relative min-h-[50vw] custom-banner">
-  <div class="container mx-auto">
-    <div class="flex items-end justify-between py-8 md:py-14">
-      <h1 class="text-7xl uppercase">{{ section.settings.title }}</h1>
-      <p class="text-grigio-60">{{ section.settings.text }}</p>
-    </div>
+<section class="relative min-h-[50vw] custom-banner container">
+  <div class="flex items-end justify-between pt-8 md:pt-14">
+    <h1 class="text-7xl uppercase">{{ section.settings.title }}</h1>
+    <p class="text-grigio-60">{{ section.settings.text }}</p>
   </div>
   <video
     autoplay
     loop
     playsinline
     muted
-    class="w-full -z-10"
-  >
+    class="w-full -z-10">
     <source src="{{ section.settings.video }}" type="video/mp4">
   </video>
   <p class="absolute left-[0%] sm:left-[2%] bottom-[15%] font-bold flex gap-2 items-center transform justify-center -rotate-90 text-[9px] md:text-sm">
@@ -20,52 +17,55 @@
     </span>
     scroll down
   </p>
+{% comment %} <img
+        src="{{ section.settings.image| img_url: 'original'}}"
+        alt="absolute image"
+    class="absolute w-full h-auto bottom-0"> {% endcomment %}
 </section>
 
 {% schema %}
-{
-  "name": "banner",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Title",
-      "default": "Banner Title"
-    },
-    {
-      "type": "text",
-      "id": "text",
-      "label": "Text",
-      "default": "Banner Text"
-    },
-    {
-      "type": "text",
-      "id": "video",
-      "label": "Video"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "label": "Padding Top",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "default": 20
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "label": "Padding Bottom",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "default": 20
-    }
-  ],
-  "presets": [
-    {
-      "name": "Banner"
-    }
-  ]
-}
+  {
+    "name": "banner",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Banner Title"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default": "Banner Text"
+      },
+      {
+        "type": "text",
+        "id": "video",
+        "label": "Video"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 20
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 20
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner"
+      }
+    ]
+  }
 {% endschema %}

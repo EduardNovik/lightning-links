@@ -638,16 +638,8 @@ video {
   left: 0%;
 }
 
-.left-auto {
-  left: auto;
-}
-
 .right-0 {
   right: 0px;
-}
-
-.right-3 {
-  right: 0.75rem;
 }
 
 .top-0 {
@@ -732,6 +724,10 @@ video {
   margin-bottom: 1.25rem;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
 .mb-\[50px\] {
   margin-bottom: 50px;
 }
@@ -754,6 +750,10 @@ video {
 
 .mt-\[24px\] {
   margin-top: 24px;
+}
+
+.mt-\[60px\] {
+  margin-top: 60px;
 }
 
 .block {
@@ -805,6 +805,10 @@ video {
   height: 300px;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .h-full {
   height: 100%;
 }
@@ -829,12 +833,20 @@ video {
   width: 50%;
 }
 
+.w-2\/3 {
+  width: 66.666667%;
+}
+
 .w-3\/4 {
   width: 75%;
 }
 
 .w-96 {
   width: 24rem;
+}
+
+.w-\[10\%\] {
+  width: 10%;
 }
 
 .w-\[70\%\] {
@@ -1270,6 +1282,11 @@ video {
   line-height: 2.25rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .text-7xl {
   font-size: 4.5rem;
   line-height: 1;
@@ -1328,6 +1345,10 @@ video {
 
 .normal-case {
   text-transform: none;
+}
+
+.leading-\[65px\] {
+  line-height: 65px;
 }
 
 .text-black {
@@ -1899,7 +1920,7 @@ body::-webkit-scrollbar {
 /* cross-over and general */
 
 .car-wheels-modal {
-  margin-top: 16%;
+  margin-top: -2%;
 }
 
 .car-body-modal {
@@ -1920,28 +1941,8 @@ body::-webkit-scrollbar {
 
 /* PRODUCT-ANIMATION---------- */
 
-/* tesla */
-
-#wheels-TESLA\ MODEL\ S\ 2022\+ {
-  margin-top: 12%;
-}
-
-@media screen and (min-width: 1280px) {
-  #wheels-TESLA\ MODEL\ S\ 2022\+ {
-    margin-top: 18%;
-  }
-}
-
-@media screen and (min-width: 1536px) {
-  #wheels-TESLA\ MODEL\ S\ 2022\+ {
-    margin-top: 21%;
-  }
-}
-
-/* cross-over and general */
-
 .car-wheels {
-  margin-top: 30%;
+  margin-top: 13%;
 }
 
 .car-body {
@@ -1953,13 +1954,80 @@ body::-webkit-scrollbar {
   .car-body {
     margin-top: 20%;
   }
+
+  .car-wheels {
+    margin-top: 19%;
+  }
 }
 
 @media screen and (min-width: 1536px) {
   .car-body {
     margin-top: 22%;
   }
+
+  .car-wheels {
+    margin-top: 22%;
+  }
 }
+
+/* .quick-btn-scroll {
+  right: 0px;
+}
+@media (min-width: 640px) {
+  .quick-btn-scroll {
+    right: -437px;
+  }
+}
+@media (min-width: 768px) {
+  .quick-btn-scroll {
+    right: -564px;
+  }
+}
+@media (min-width: 1024px) {
+  .quick-btn-scroll {
+    right: -821px;
+  }
+}
+@media (min-width: 1280px) {
+  .quick-btn-scroll {
+    right: -1077px;
+  }
+}
+@media (min-width: 1536px) {
+  .quick-btn-scroll {
+    right: -1332px;
+  }
+} */
+
+.quick-btn {
+  right: 0px;
+}
+
+/* @media (min-width: 640px) {
+  .quick-btn {
+    right: -437px;
+  }
+}
+@media (min-width: 768px) {
+  .quick-btn {
+    right: -564px;
+  }
+}
+@media (min-width: 1024px) {
+  .quick-btn {
+    right: -821px;
+  }
+}
+@media (min-width: 1280px) {
+  .quick-btn {
+    right: -1077px;
+  }
+}
+@media (min-width: 1536px) {
+  .quick-btn {
+    right: -1332px;
+  }
+} */
 
 .before\:absolute::before {
   content: var(--tw-content);
@@ -2096,10 +2164,6 @@ body::-webkit-scrollbar {
 }
 
 @media (min-width: 768px) {
-  .md\:right-16 {
-    right: 4rem;
-  }
-
   .md\:mb-10 {
     margin-bottom: 2.5rem;
   }
@@ -2108,8 +2172,16 @@ body::-webkit-scrollbar {
     margin-bottom: 100px;
   }
 
+  .md\:block {
+    display: block;
+  }
+
   .md\:grid {
     display: grid;
+  }
+
+  .md\:hidden {
+    display: none;
   }
 
   .md\:size-6 {
@@ -2125,6 +2197,10 @@ body::-webkit-scrollbar {
     width: 66.666667%;
   }
 
+  .md\:w-\[45\%\] {
+    width: 45%;
+  }
+
   .md\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
@@ -2137,19 +2213,13 @@ body::-webkit-scrollbar {
     padding: 0.75rem;
   }
 
-  .md\:px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
   .md\:px-5 {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
 
-  .md\:py-14 {
+  .md\:pt-14 {
     padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
   }
 
   .md\:text-lg {
@@ -2243,13 +2313,6 @@ body::-webkit-scrollbar {
 
   .lg\:pt-16 {
     padding-top: 4rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .xl\:px-16 {
-    padding-left: 4rem;
-    padding-right: 4rem;
   }
 }
 

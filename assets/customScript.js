@@ -198,7 +198,7 @@ switch (activeAtributeValue) {
       }
       if (screenWidth >= 1536) {
         carBodyElement.style.removeProperty("margin-top");
-        carBodyElement.style.marginTop = "20%";
+        carBodyElement.style.marginTop = "21.5%";
       }
     }
     break;
@@ -215,7 +215,7 @@ switch (activeAtributeValue) {
       }
       if (screenWidth >= 1536) {
         carBodyElement.style.removeProperty("margin-top");
-        carBodyElement.style.marginTop = "21%";
+        carBodyElement.style.marginTop = "22%";
       }
     }
     break;
@@ -232,7 +232,7 @@ switch (activeAtributeValue) {
       }
       if (screenWidth >= 1536) {
         carBodyElement.style.removeProperty("margin-top");
-        carBodyElement.style.marginTop = "22%";
+        carBodyElement.style.marginTop = "22.5%";
       }
     }
     break;
@@ -259,7 +259,7 @@ swatchButtonsElement.forEach((button) => {
           }
           if (screenWidth >= 1536) {
             carBodyElement.style.removeProperty("margin-top");
-            carBodyElement.style.marginTop = "20%";
+            carBodyElement.style.marginTop = "21.5%";
           }
         }
         break;
@@ -275,7 +275,7 @@ swatchButtonsElement.forEach((button) => {
           }
           if (screenWidth >= 1536) {
             carBodyElement.style.removeProperty("margin-top");
-            carBodyElement.style.marginTop = "21%";
+            carBodyElement.style.marginTop = "22%";
           }
         }
 
@@ -292,7 +292,7 @@ swatchButtonsElement.forEach((button) => {
           }
           if (screenWidth >= 1536) {
             carBodyElement.style.removeProperty("margin-top");
-            carBodyElement.style.marginTop = "22%";
+            carBodyElement.style.marginTop = "22.5%";
           }
         }
         break;
@@ -324,7 +324,7 @@ window.addEventListener(
           }
           if (screenWidth >= 1536) {
             carBodyElement.style.removeProperty("margin-top");
-            carBodyElement.style.marginTop = "20%";
+            carBodyElement.style.marginTop = "21.5%";
           }
         }
         break;
@@ -342,7 +342,7 @@ window.addEventListener(
           }
           if (screenWidth >= 1536) {
             carBodyElement.style.removeProperty("margin-top");
-            carBodyElement.style.marginTop = "21%";
+            carBodyElement.style.marginTop = "22%";
           }
         }
         break;
@@ -359,7 +359,7 @@ window.addEventListener(
           }
           if (screenWidth >= 1536) {
             carBodyElement.style.removeProperty("margin-top");
-            carBodyElement.style.marginTop = "22%";
+            carBodyElement.style.marginTop = "22.5%";
           }
         }
         break;
@@ -376,7 +376,7 @@ window.addEventListener(
           }
           if (screenWidth >= 1536) {
             carBodyElement.style.removeProperty("margin-top");
-            carBodyElement.style.marginTop = "21%";
+            carBodyElement.style.marginTop = "22%";
           }
         }
         break;

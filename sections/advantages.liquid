@@ -1,20 +1,23 @@
 <section class="container mx-auto">
+
   <div class="flex flex-col lg:flex-row relative min-h-[40vw] gap-[1px]">
-    <div class="bg-grigio-100 flex-auto bg-opacity-80 hover:bg-opacity-0 w-full flex items-center justify-center  transition ease-in-out  px-[5%] py-8">
+
+    <a href="{{ section.settings.advantage_1_url }}" class="bg-grigio-100 flex-auto bg-opacity-80 hover:bg-opacity-0 w-full flex items-center justify-center  transition ease-in-out  px-[5%] py-8">
       <h4 class="text-center text-white">
         {{ section.settings.advantage_1 }}
       </h4>
-    </div>
-    <div class="bg-grigio-100 flex-auto bg-opacity-80 hover:bg-opacity-0 w-full flex items-center justify-center  transition ease-in-out  px-[5%] py-8">
+    </a>
+
+    <a href="{{ section.settings.advantage_2_url }}" class="bg-grigio-100 flex-auto bg-opacity-80 hover:bg-opacity-0 w-full flex items-center justify-center  transition ease-in-out  px-[5%] py-8">
       <h4 class="text-center text-white">
         {{ section.settings.advantage_2 }}
       </h4>
-    </div>
-    <div class="bg-grigio-100 flex-auto bg-opacity-80 hover:bg-opacity-0 w-full flex items-center justify-center  transition ease-in-out  px-[5%] py-8">
+    </a>
+    <a href="{{ section.settings.advantage_3_url }}" class="bg-grigio-100 flex-auto bg-opacity-80 hover:bg-opacity-0 w-full flex items-center justify-center  transition ease-in-out  px-[5%] py-8">
       <h4 class="text-center text-white">
         {{ section.settings.advantage_3 }}
       </h4>
-    </div>
+    </a>
     <div class="w-full h-full object-cover absolute top-0 left-0 -z-10 bg-no-repeat bg-bottom bg-cover" style='background-image: url("{{section.settings.image | image_url: width: 1200}}")'></div>
   </div>
 </section>
@@ -30,18 +33,30 @@
         "default": "Advantage 1"
       },
       {
+        "type": "url",
+        "id": "advantage_1_url",
+        "label": "Advantage 1 URL"
+      },
+      {
         "type": "text",
         "id": "advantage_2",
         "label": "Advantage 2",
         "default": "Advantage 2"
       },
       {
+        "type": "url",
+        "id": "advantage_2_url",
+        "label": "Advantage 2 URL"
+      }, {
         "type": "text",
         "id": "advantage_3",
         "label": "Advantage 3",
         "default": "Advantage 3"
-      },
-      {
+      }, {
+        "type": "url",
+        "id": "advantage_3_url",
+        "label": "Advantage 3 URL"
+      }, {
         "type": "image_picker",
         "id": "image",
         "label": "Background image"
