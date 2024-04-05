@@ -1,7 +1,7 @@
 <div id="advantage_style" class="flex flex-col gap-4">
   <h1 class="text-4xl header-style leading-10">{{ section.settings.text_style1 }}</h1>
   <p>{{ section.settings.text_style2 }}</p>
-  <p>{{ section.settings.text_style2 }}</p>
+  <p>{{ section.settings.text_style3 }}</p>
   <div class="flex md:flex-row flex-col gap-8 container">
     <img
       src="{{ section.settings.imageBefore| img_url: 'original'}}"
@@ -17,7 +17,7 @@
 
 {% schema %}
   {
-    "name": "image-custom",
+    "name": "image style custom",
     "settings": [
       {
         "type": "text",
@@ -31,7 +31,7 @@
       },
       {
         "type": "text",
-        "id": "text_style2",
+        "id": "text_style3",
         "label": "Text 3"
       },
       {
@@ -62,7 +62,7 @@
     ],
     "presets": [
       {
-        "name": "Images Custom"
+        "name": "Images Style Custom"
       }
     ]
   }
