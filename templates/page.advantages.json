@@ -63,7 +63,7 @@
         "imageProduct": "shopify:\/\/shop_images\/link_img.png",
         "imageArrow": "shopify:\/\/shop_images\/arrow2.png",
         "imageResult": "shopify:\/\/shop_images\/before.png",
-        "linkBtn": "",
+        "linkBtn": "shopify:\/\/pages\/shop",
         "padding_top": 20,
         "padding_bottom": 20
       }
