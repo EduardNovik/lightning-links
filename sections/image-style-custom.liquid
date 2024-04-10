@@ -1,0 +1,69 @@
+<div id="advantage_style" class="flex flex-col gap-4 items-center justify-start container mt-[60px]">
+  <h1 class="text-4xl header-style leading-10 text-center">{{ section.settings.text_style1 }}</h1>
+  <p>{{ section.settings.text_style2 }}</p>
+  <p>{{ section.settings.text_style3 }}</p>
+  <div class="flex md:flex-row flex-col gap-8">
+    <img
+      src="{{ section.settings.imageBefore| img_url: 'original'}}"
+      alt="image before"
+      class="imageBefore md:w-1/2 h-auto w-full">
+    <img
+      src="{{ section.settings.imageAfter| img_url: 'original'}}"
+      alt="image after"
+      class="imageAfter md:w-1/2 h-auto w-full">
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "image style custom",
+    "settings": [
+      {
+        "type": "text",
+        "id": "text_style1",
+        "label": "Text 1"
+      },
+      {
+        "type": "text",
+        "id": "text_style2",
+        "label": "Text 2"
+      },
+      {
+        "type": "text",
+        "id": "text_style3",
+        "label": "Text 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "imageBefore",
+        "label": "Background image1"
+      }, {
+        "type": "image_picker",
+        "id": "imageAfter",
+        "label": "Background image2"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding Top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 20
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding Bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 20
+      }
+    ],
+    "presets": [
+      {
+        "name": "Images Style Custom"
+      }
+    ]
+  }
+{% endschema %}

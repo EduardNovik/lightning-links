@@ -1347,8 +1347,8 @@ video {
   text-transform: none;
 }
 
-.leading-\[65px\] {
-  line-height: 65px;
+.leading-10 {
+  line-height: 2.5rem;
 }
 
 .text-black {

@@ -126,15 +126,15 @@
         "video_url": ""
       }
     },
-    "advantages_kD9rqK": {
-      "type": "advantages",
+    "advantages_custom_hCrnbQ": {
+      "type": "advantages-custom",
       "settings": {
-        "advantage_1": "style",
-        "advantage_1_url": "shopify:\/\/pages\/style",
-        "advantage_2": "reducing fuel consumption",
-        "advantage_2_url": "shopify:\/\/pages\/reducing-fuel-consumption",
+        "advantage_1": "STYLE",
+        "advantage_1_url": "shopify:\/\/pages\/advantages",
+        "advantage_2": "REDUCING FUEL CONSUMPTION",
+        "advantage_2_url": "shopify:\/\/pages\/advantages",
         "advantage_3": "effective aerodynamics",
-        "advantage_3_url": "shopify:\/\/pages\/effective-aerodynamics",
+        "advantage_3_url": "shopify:\/\/pages\/advantages",
         "image": "shopify:\/\/shop_images\/Frame_76.png",
         "padding_top": 20,
         "padding_bottom": 20
@@ -231,7 +231,7 @@
     "custom_section_tpNziy",
     "products_tDNdzk",
     "custom_section_pAJajT",
-    "advantages_kD9rqK",
+    "advantages_custom_hCrnbQ",
     "instagram_UNh6hL"
   ]
 }
