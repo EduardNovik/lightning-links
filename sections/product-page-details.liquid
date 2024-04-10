@@ -139,12 +139,12 @@
 
     <div div class="w-full">
       {% for linkBlock in section.blocks %}
-          {% if linkBlock.settings.video_car %}
+        {% comment %} {% if linkBlock.settings.video_car %}
+        {% endif %} {% endcomment %}
             {% comment %} <img src="{{ linkBlock.settings.icon1 | img_url: 'original' }}" alt="image advantages" class="advantages"> {% endcomment %}
             <video autoplay loop playsinline muted class="w-full -z-10 advantages">
                 <source src="{{ section.settings.video_car }}" type="video/mp4">
             </video>
-          {% endif %}
       {% endfor %}
     </div>
 
