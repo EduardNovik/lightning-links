@@ -139,8 +139,11 @@
 
     <div div class="w-full">
       {% for linkBlock in section.blocks %}
-          {% if linkBlock.settings.icon1 %}
-            <img src="{{ linkBlock.settings.icon1 | img_url: 'original' }}" alt="image advantages" class="advantages">
+          {% if linkBlock.settings.video_car %}
+            {% comment %} <img src="{{ linkBlock.settings.icon1 | img_url: 'original' }}" alt="image advantages" class="advantages"> {% endcomment %}
+            <video autoplay loop playsinline muted class="w-full -z-10 advantages">
+                <source src="{{ section.settings.video_car }}" type="video/mp4">
+            </video>
           {% endif %}
       {% endfor %}
     </div>
@@ -510,6 +513,11 @@
       "id": "video",
       "label": "Video URL"
     },
+    {
+        "type": "text",
+        "id": "video_car",
+        "label": "Video"
+      },
     {
         "type": "text",
         "id": "text1_id",
